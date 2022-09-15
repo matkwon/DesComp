@@ -1,0 +1,124 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "08/26/2022 10:58:56"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          ROM1024x8
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module ROM1024x8_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [9:0] Endereco;
+// wires                                               
+wire [7:0] Dado;
+
+// assign statements (if any)                          
+ROM1024x8 i1 (
+// port map - connection between master ports and signals/registers   
+	.Dado(Dado),
+	.Endereco(Endereco)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+// Endereco[ 9 ]
+initial
+begin
+	Endereco[9] = 1'b0;
+end 
+// Endereco[ 8 ]
+initial
+begin
+	Endereco[8] = 1'b0;
+end 
+// Endereco[ 7 ]
+initial
+begin
+	Endereco[7] = 1'b0;
+end 
+// Endereco[ 6 ]
+initial
+begin
+	Endereco[6] = 1'b0;
+	Endereco[6] = #640000 1'b1;
+end 
+// Endereco[ 5 ]
+initial
+begin
+	Endereco[5] = 1'b0;
+	Endereco[5] = #320000 1'b1;
+	Endereco[5] = #320000 1'b0;
+	Endereco[5] = #320000 1'b1;
+end 
+// Endereco[ 4 ]
+initial
+begin
+	repeat(3)
+	begin
+		Endereco[4] = 1'b0;
+		Endereco[4] = #160000 1'b1;
+		# 160000;
+	end
+	Endereco[4] = 1'b0;
+end 
+// Endereco[ 3 ]
+initial
+begin
+	repeat(6)
+	begin
+		Endereco[3] = 1'b0;
+		Endereco[3] = #80000 1'b1;
+		# 80000;
+	end
+	Endereco[3] = 1'b0;
+end 
+// Endereco[ 2 ]
+initial
+begin
+	repeat(12)
+	begin
+		Endereco[2] = 1'b0;
+		Endereco[2] = #40000 1'b1;
+		# 40000;
+	end
+	Endereco[2] = 1'b0;
+end 
+// Endereco[ 1 ]
+always
+begin
+	Endereco[1] = 1'b0;
+	Endereco[1] = #20000 1'b1;
+	#20000;
+end 
+// Endereco[ 0 ]
+always
+begin
+	Endereco[0] = 1'b0;
+	Endereco[0] = #10000 1'b1;
+	#10000;
+end 
+endmodule
+

@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/DesComp/Aula2/atv1/simulation/qsim
+vROM1024x8
+Z1 !s110 1661522340
+!i10b 1
+!s100 0[XBPUbdQj`z3]KG0Kg7R0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IdhnaoY6MX@JM]@kiL@k_81
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1661522337
+8ROM1024x8.vo
+FROM1024x8.vo
+!i122 0
+L0 32 466
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1661522340.000000
+!s107 ROM1024x8.vo|
+!s90 -work|work|ROM1024x8.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@r@o@m1024x8
+vROM1024x8_vlg_vec_tst
+R1
+!i10b 1
+!s100 1FAd3i]^CnAK>`zF6h;>H0
+R2
+I@MGb>JS=lUWI_SQ<X5E2X0
+R3
+R0
+w1661522336
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 94
+R4
+r1
+!s85 0
+31
+R5
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R6
+R7
+n@r@o@m1024x8_vlg_vec_tst
