@@ -1,46 +1,3 @@
-/*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off jeq -c jeq --vector_source="C:/DesComp/Aula5/atv2/Waveform.vwf" --testbench_file="C:/DesComp/Aula5/atv2/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off jeq -c jeq --vector_source="C:/DesComp/Aula5/atv2/Waveform.vwf" --testbench_file="C:/DesComp/Aula5/atv2/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/DesComp/Aula5/atv2/simulation/qsim/" jeq -c jeq</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/DesComp/Aula5/atv2/simulation/qsim/" jeq -c jeq</tnetlist_cmd>
-<modelsim_script>onerror {exit -code 1}
-vlib work
-vcom -work work jeq.vho
-vcom -work work Waveform.vwf.vht
-vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula5_2_vhd_vec_tst
-vcd file -direction jeq.msim.vcd
-vcd add -internal Aula5_2_vhd_vec_tst/*
-vcd add -internal Aula5_2_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-</modelsim_script>
-<modelsim_script_timing>onerror {exit -code 1}
-vlib work
-vcom -work work jeq.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax Aula5_2_vhd_vec_tst/i1=jeq_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula5_2_vhd_vec_tst
-vcd file -direction jeq.msim.vcd
-vcd add -internal Aula5_2_vhd_vec_tst/*
-vcd add -internal Aula5_2_vhd_vec_tst/i1/*
-proc simTimestamp {} {
-    echo "Simulation time: $::now ps"
-    if { [string equal running [runStatus]] } {
-        after 2500 simTimestamp
-    }
-}
-after 2500 simTimestamp
-run -all
-quit -f
-</modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
-</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -83,7 +40,7 @@ SIGNAL("KEY[0]")
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
-	PARENT = "KEY";
+	PARENT = "";
 }
 
 SIGNAL("LED_FlagIN")
@@ -453,7 +410,33 @@ TRANSITION_LIST("KEY[0]")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 14;
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 			LEVEL 0 FOR 10.0;
 			LEVEL 1 FOR 10.0;
 		}
@@ -465,7 +448,14 @@ TRANSITION_LIST("LED_FlagIN")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 210.0;
+		}
 	}
 }
 
@@ -474,7 +464,13 @@ TRANSITION_LIST("LED_FlagOUT")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 70.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -483,7 +479,15 @@ TRANSITION_LIST("LED_INSTRU[12]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -492,7 +496,15 @@ TRANSITION_LIST("LED_INSTRU[11]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 130.0;
+		}
 	}
 }
 
@@ -501,7 +513,15 @@ TRANSITION_LIST("LED_INSTRU[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 10.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 130.0;
+		}
 	}
 }
 
@@ -510,7 +530,17 @@ TRANSITION_LIST("LED_INSTRU[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 110.0;
+		}
 	}
 }
 
@@ -519,7 +549,15 @@ TRANSITION_LIST("LED_INSTRU[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -528,7 +566,11 @@ TRANSITION_LIST("LED_INSTRU[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -537,7 +579,11 @@ TRANSITION_LIST("LED_INSTRU[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -546,7 +592,11 @@ TRANSITION_LIST("LED_INSTRU[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -555,7 +605,11 @@ TRANSITION_LIST("LED_INSTRU[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -564,7 +618,14 @@ TRANSITION_LIST("LED_INSTRU[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 90.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 110.0;
+		}
 	}
 }
 
@@ -573,7 +634,15 @@ TRANSITION_LIST("LED_INSTRU[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 30.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 110.0;
+		}
 	}
 }
 
@@ -582,7 +651,13 @@ TRANSITION_LIST("LED_INSTRU[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 150.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 110.0;
+		}
 	}
 }
 
@@ -591,7 +666,17 @@ TRANSITION_LIST("LED_INSTRU[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 110.0;
+		}
 	}
 }
 
@@ -600,7 +685,13 @@ TRANSITION_LIST("LED_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 130.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -609,7 +700,13 @@ TRANSITION_LIST("LED_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 130.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -618,7 +715,13 @@ TRANSITION_LIST("LED_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 130.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -627,7 +730,13 @@ TRANSITION_LIST("LED_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 130.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -636,7 +745,13 @@ TRANSITION_LIST("LED_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 130.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -645,7 +760,14 @@ TRANSITION_LIST("LED_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 210.0;
+		}
 	}
 }
 
@@ -654,7 +776,13 @@ TRANSITION_LIST("LED_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 130.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -663,7 +791,17 @@ TRANSITION_LIST("LED_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 
@@ -672,7 +810,11 @@ TRANSITION_LIST("PC_OUT[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -681,7 +823,11 @@ TRANSITION_LIST("PC_OUT[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -690,7 +836,11 @@ TRANSITION_LIST("PC_OUT[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -699,7 +849,11 @@ TRANSITION_LIST("PC_OUT[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -708,7 +862,11 @@ TRANSITION_LIST("PC_OUT[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+		}
 	}
 }
 
@@ -717,7 +875,12 @@ TRANSITION_LIST("PC_OUT[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 110.0;
+			LEVEL 1 FOR 170.0;
+		}
 	}
 }
 
@@ -726,7 +889,14 @@ TRANSITION_LIST("PC_OUT[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 110.0;
+		}
 	}
 }
 
@@ -735,7 +905,15 @@ TRANSITION_LIST("PC_OUT[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 110.0;
+		}
 	}
 }
 
@@ -744,7 +922,17 @@ TRANSITION_LIST("PC_OUT[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 30.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 60.0;
+			LEVEL 0 FOR 20.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 110.0;
+		}
 	}
 }
 
@@ -753,7 +941,15 @@ TRANSITION_LIST("LED_Hab")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 280.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 50.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 60.0;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 130.0;
+		}
 	}
 }
 

@@ -48,6 +48,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LED_Hab",
+					"strict" : false
+				},
+				{
 					"name" : "LED_INSTRU[0]",
 					"strict" : false
 				},

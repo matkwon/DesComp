@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/21/2022 17:21:05"
+-- Generated on "09/21/2022 17:42:49"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Aula5_2
 -- 
@@ -36,6 +36,9 @@ ARCHITECTURE Aula5_2_arch OF Aula5_2_vhd_vec_tst IS
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL LED_FlagIN : STD_LOGIC;
+SIGNAL LED_FlagOUT : STD_LOGIC;
+SIGNAL LED_Hab : STD_LOGIC;
 SIGNAL LED_INSTRU : STD_LOGIC_VECTOR(12 DOWNTO 0);
 SIGNAL LED_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -43,6 +46,9 @@ COMPONENT Aula5_2
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	LED_FlagIN : OUT STD_LOGIC;
+	LED_FlagOUT : OUT STD_LOGIC;
+	LED_Hab : OUT STD_LOGIC;
 	LED_INSTRU : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);
 	LED_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	PC_OUT : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
@@ -54,6 +60,9 @@ BEGIN
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
 	KEY => KEY,
+	LED_FlagIN => LED_FlagIN,
+	LED_FlagOUT => LED_FlagOUT,
+	LED_Hab => LED_Hab,
 	LED_INSTRU => LED_INSTRU,
 	LED_OUT => LED_OUT,
 	PC_OUT => PC_OUT

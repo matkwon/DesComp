@@ -14,6 +14,7 @@ entity Aula5_2 is
 	 PC_OUT: out std_logic_vector(larguraInstru-1 downto 0);
 	 LED_FlagIN  : out std_logic;
 	 LED_FlagOUT  : out std_logic;
+	 LED_Hab  : out std_logic;
 	 LED_INSTRU  : out std_logic_vector(12 downto 0);
 	 LED_OUT		 : out std_logic_vector(larguraDados-1 downto 0)
   );
@@ -157,6 +158,7 @@ LED_INSTRU <= ROM_decoder;
 LED_OUT <= Saida_ULA;
 LED_FlagIN <= FlagIgualIN;
 LED_FlagOUT <= FlagIgualOUT;
+LED_Hab <= HabilitaFlag;
 
 PC_OUT <= Endereco;
 

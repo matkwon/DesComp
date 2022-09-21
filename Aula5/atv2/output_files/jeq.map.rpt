@@ -1,5 +1,5 @@
 Analysis & Synthesis report for jeq
-Wed Sep 21 17:27:05 2022
+Wed Sep 21 17:41:54 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -57,14 +57,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep 21 17:27:05 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 21 17:41:54 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; jeq                                         ;
 ; Top-level Entity Name           ; Aula5_2                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 34                                          ;
-; Total pins                      ; 37                                          ;
+; Total pins                      ; 38                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -215,14 +215,14 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 34           ;
 ;                                             ;              ;
-; I/O pins                                    ; 37           ;
+; I/O pins                                    ; 38           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 34           ;
-; Total fan-out                               ; 518          ;
-; Average fan-out                             ; 2.55         ;
+; Total fan-out                               ; 520          ;
+; Average fan-out                             ; 2.54         ;
 +---------------------------------------------+--------------+
 
 
@@ -231,7 +231,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name         ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
-; |Aula5_2                        ; 95 (6)              ; 34 (0)                    ; 0                 ; 0          ; 37   ; 0            ; |Aula5_2                            ; Aula5_2             ; work         ;
+; |Aula5_2                        ; 95 (6)              ; 34 (0)                    ; 0                 ; 0          ; 38   ; 0            ; |Aula5_2                            ; Aula5_2             ; work         ;
 ;    |ULASomaSubPassa:ULA1|       ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_2|ULASomaSubPassa:ULA1       ; ULASomaSubPassa     ; work         ;
 ;    |decoderInstru:decoder|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_2|decoderInstru:decoder      ; decoderInstru       ; work         ;
 ;    |flipflop:REGB|              ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_2|flipflop:REGB              ; flipflop            ; work         ;
@@ -538,7 +538,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 21                          ;
 ;         5 data inputs ; 12                          ;
 ;         6 data inputs ; 4                           ;
-; boundary_port         ; 37                          ;
+; boundary_port         ; 38                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.70                        ;
 ; Average LUT depth     ; 6.88                        ;
@@ -560,13 +560,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Sep 21 17:26:51 2022
+    Info: Processing started: Wed Sep 21 17:41:40 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off jeq -c jeq
 Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file aula5_2.vhd
-    Info (12022): Found design unit 1: Aula5_2-arquitetura File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 23
+    Info (12022): Found design unit 1: Aula5_2-arquitetura File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 24
     Info (12023): Found entity 1: Aula5_2 File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file de0_cv_golden_top.v
     Info (12023): Found entity 1: DE0_CV_golden_top File: C:/DesComp/Aula5/atv2/DE0_CV_golden_top.v Line: 54
@@ -599,16 +599,16 @@ Info (12021): Found 2 design units, including 1 entities, in source file flipflo
     Info (12022): Found design unit 1: flipflop-comportamento File: C:/DesComp/Aula5/atv2/flipflop.vhd Line: 12
     Info (12023): Found entity 1: flipflop File: C:/DesComp/Aula5/atv2/flipflop.vhd Line: 4
 Info (12127): Elaborating entity "Aula5_2" for the top level hierarchy
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 65
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 69
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 80
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX2" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 87
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 94
-Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:REGB" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 102
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 110
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 117
-Info (12128): Elaborating entity "ULASomaSubPassa" for hierarchy "ULASomaSubPassa:ULA1" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 123
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 130
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 66
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 70
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 81
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX2" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 88
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 95
+Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:REGB" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 103
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 111
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 118
+Info (12128): Elaborating entity "ULASomaSubPassa" for hierarchy "ULASomaSubPassa:ULA1" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 124
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 131
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: C:/DesComp/Aula5/atv2/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
@@ -621,10 +621,10 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[6]" feeding internal logic into a wire File: C:/DesComp/Aula5/atv2/memoriaRAM.vhd Line: 17
     Warning (13049): Converted tri-state buffer "memoriaRAM:RAM|dado_out[7]" feeding internal logic into a wire File: C:/DesComp/Aula5/atv2/memoriaRAM.vhd Line: 17
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED_INSTRU[4]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 17
-    Warning (13410): Pin "LED_INSTRU[5]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 17
-    Warning (13410): Pin "LED_INSTRU[6]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 17
-    Warning (13410): Pin "LED_INSTRU[7]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 17
+    Warning (13410): Pin "LED_INSTRU[4]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 18
+    Warning (13410): Pin "LED_INSTRU[5]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 18
+    Warning (13410): Pin "LED_INSTRU[6]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 18
+    Warning (13410): Pin "LED_INSTRU[7]" is stuck at GND File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -633,13 +633,13 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 13
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 13
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aula5/atv2/Aula5_2.vhd Line: 13
-Info (21057): Implemented 156 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 157 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 32 output pins
+    Info (21059): Implemented 33 output pins
     Info (21061): Implemented 119 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
     Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Wed Sep 21 17:27:05 2022
+    Info: Processing ended: Wed Sep 21 17:41:54 2022
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:29
 

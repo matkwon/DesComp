@@ -12,14 +12,14 @@ entity ULASomaSubPassa is
 end entity;
 
 architecture comportamento of ULASomaSubPassa is
-   signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
    signal soma :      STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+   signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
    signal passa : 	 STD_LOGIC_VECTOR((larguraDados-1) downto 0);
     begin
-      subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
       soma      <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
+      subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
       passa     <= STD_LOGIC_VECTOR(unsigned(entradaB));
-      saida <= subtracao when (seletor = "00") else
-					soma when (seletor = "01") else
+      saida <= soma when (seletor = "00") else
+					subtracao when (seletor = "01") else
 					passa;
 end architecture;
