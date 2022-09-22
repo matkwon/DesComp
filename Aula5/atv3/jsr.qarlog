@@ -1,0 +1,27 @@
+Quartus Prime Archive log --	/home/joao/descomp_oficial/DesComp/Aula5/atv3/jsr.qarlog
+
+Archive:	/home/joao/descomp_oficial/DesComp/Aula5/atv3/jsr.qar
+Date:		Thu Sep 22 11:07:09 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/Aula5_3.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/DE0_CV_golden_top.v
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/ULASomaSubPassa.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/Waveform.vwf
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/decoderInstru.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/edgeDetector.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/flipflop.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/jsr.qpf
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/jsr.qsf
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/jsr_assignment_defaults.qdf
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/memoriaRAM.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/memoriaROM.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/muxGenerico2x1.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/muxGenerico4x1.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/registradorGenerico.vhd
+/home/joao/descomp_oficial/DesComp/Aula5/atv3/somaConstante.vhd
+	======= Total: 16 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -33,11 +33,10 @@ architecture arquitetura of Aula5_3 is
   signal MUXPC : std_logic_vector (larguraInstru-1 downto 0);
   signal CLK : std_logic;
   signal SelMUX : std_logic;
-  signal SelMUX2 : std_logic;
+  signal SelMUX2 : std_logic_vector(1 downto 0);
   signal FlagIgualIN : std_logic;
   signal FlagIgualOUT : std_logic;
-  signal JMP : std_logic;
-  signal JEQ : std_logic;
+  signal JMP, JEQ, RET, JSR : std_logic;
   signal Habilita_A : std_logic;
   signal HabilitaFlag : std_logic;
   signal habLeituraMEM : std_logic;
@@ -48,7 +47,9 @@ architecture arquitetura of Aula5_3 is
   signal Opcode : std_logic_vector (3 downto 0);
   signal Imediato : std_logic_vector (larguraInstru-1 downto 0);
   signal Habilita_RAM : std_logic;
-  signal Sinais_Controle : std_logic_vector (8 downto 0);
+  signal Sinais_Controle : std_logic_vector (11 downto 0);
+  signal EndRet_MUX : std_logic_vector (larguraInstru-1 downto 0);
+  signal HabEscritaEnd : std_logic;
 
 begin
 
@@ -85,12 +86,22 @@ MUX1 :  entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
                  saida_MUX => MUX_OUT);
 
 -- O port map completo do MUX.
-MUX2 :  entity work.muxGenerico2x1 generic map (larguraDados => larguraInstru)
+MUX2 :  entity work.muxGenerico4x1 generic map (larguraDados => larguraInstru)
         port map( entradaA_MUX => proxPC,
                  entradaB_MUX =>  Imediato,
+					  entradaC_MUX =>  EndRet_MUX,
+					  entradaD_MUX =>  "000000000",
                  seletor_MUX => SelMUX2,
                  saida_MUX => MUXPC);
 
+-- O port map completo do registrador End Retorno.
+REGC : entity work.registradorGenerico generic map (larguraDados => larguraInstru)
+       port map (DIN => proxPC,
+					  DOUT => EndRet_MUX,
+					  ENABLE => HabEscritaEnd,
+					  CLK => CLK,
+					  RST => Reset_A);
+					  
 -- O port map completo do Acumulador.
 REGA : entity work.registradorGenerico generic map (larguraDados => larguraDados)
        port map (DIN => Saida_ULA,
@@ -140,7 +151,10 @@ Habilita_RAM <= Imediato(8);
 Reset_A <= '0';
 Opcode <= ROM_decoder(12 downto 9);
 
-JMP <= Sinais_Controle(8);
+HabEscritaEnd <= Sinais_Controle(11);
+JMP <= Sinais_Controle(10);
+RET <= Sinais_Controle(9);
+JSR <= Sinais_Controle(8);
 JEQ <= Sinais_Controle(7);
 SelMUX <= Sinais_Controle(6);
 Habilita_A <= Sinais_Controle(5);
@@ -152,7 +166,10 @@ habEscritaMEM <= Sinais_Controle(0);
 FlagIgualIN <= (not Saida_ULA(7)) and (not Saida_ULA(6)) and (not Saida_ULA(5)) and (not Saida_ULA(4)) and 
 					(not Saida_ULA(3)) and (not Saida_ULA(2)) and (not Saida_ULA(1)) and (not Saida_ULA(0));
 
-SelMUX2 <= (JMP and not JEQ) or (not JMP and JEQ and FlagIgualOUT);
+SelMUX2(1) <= NOT JMP AND RET AND NOT JSR AND NOT JEQ;
+SelMux2(0) <= (JMP AND NOT RET AND NOT JSR AND NOT JEQ) OR 
+				  (NOT JMP AND NOT RET AND NOT JSR AND JEQ AND FlagIgualOUT) OR 
+				  (NOT JMP AND NOT RET AND JSR AND NOT JEQ);
 
 LED_INSTRU <= ROM_decoder;
 LED_OUT <= Saida_ULA;
