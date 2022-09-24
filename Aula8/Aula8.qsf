@@ -39,10 +39,10 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY CPU
+set_global_assignment -name TOP_LEVEL_ENTITY Computador
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "MON MAY  5 11:54:18 2014"
-set_global_assignment -name LAST_QUARTUS_VERSION "16.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_location_assignment PIN_H13 -to CLOCK2_50
@@ -271,6 +271,9 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VHDL_FILE flipflop.vhd
 set_global_assignment -name VHDL_FILE CPU.vhd
 set_global_assignment -name VHDL_FILE ULASomaSubPassa.vhd
 set_global_assignment -name VHDL_FILE somaConstante.vhd
@@ -284,6 +287,9 @@ set_global_assignment -name VHDL_FILE decoderInstru.vhd
 set_global_assignment -name VERILOG_FILE DE0_CV_golden_top.v
 set_global_assignment -name VHDL_FILE registradorFlagIgual.vhd
 set_global_assignment -name VHDL_FILE logicaDesvio.vhd
+set_global_assignment -name VHDL_FILE Computador.vhd
+set_global_assignment -name VHDL_FILE decoder3x8.vhd
+set_global_assignment -name VHDL_FILE dataAddresser.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -493,6 +499,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
-set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
-set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
