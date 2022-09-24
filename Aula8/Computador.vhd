@@ -15,7 +15,7 @@ entity Computador is
 		KEY		  : in std_logic_vector(3 downto 0);
 		LED8, LED9 : out std_logic;
 		LEDR		  : out std_logic_vector(larguraDados-1 downto 0);
-		PC_OUT	  : out std_logic_vector(larguraInstru-1 downto 0)
+		PC_OUT	  : out std_logic_vector(larguraEnderecos-1 downto 0)
 	);
 end entity;
 
@@ -90,10 +90,12 @@ FF2 : entity work.flipflop port map (DIN => DATA_WR(0),
 												 ENABLE => HabL9,
 												 CLK => CLK,
 												 RST => '0');
-        
-															  
+
+
 HabLR <= WR and Bloco(4) and EndPerif(0);
 HabL8 <= WR and Bloco(4) and EndPerif(1);
 HabL9 <= WR and Bloco(4) and EndPerif(2);
-															  
+
+PC_OUT <= EndROM;
+
 end architecture;
