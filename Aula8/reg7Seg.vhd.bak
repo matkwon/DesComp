@@ -1,0 +1,27 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+
+entity reg7Seg is
+    port
+    (
+        Dado : in std_logic_vector(3 downto 0);
+        Habilita, CLK, RST : in std_logic;
+        saida7seg : out std_logic_vector(6 downto 0)
+    );
+end entity;
+
+architecture comportamento of reg7Seg is
+    signal RegConv: std_logic_vector(3 downto 0);
+begin
+    
+REG : entity work.registradorGenerico generic map (larguraDados => 4)
+													  port map (DIN => Dado;
+																   DOUT => RegConv;
+																   ENABLE => Habilita;
+																   CLK => CLK;
+																	RST => RST)
+															
+Conv : entity work.conversorHex7Seg port map (dadoHex => RegConv;
+														    saida7seg => saida7seg)
+	 
+end architecture;
