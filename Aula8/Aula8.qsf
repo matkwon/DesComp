@@ -502,4 +502,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
 set_global_assignment -name VHDL_FILE reg7Seg.vhd
+set_global_assignment -name VHDL_FILE buffer_3_state_8x8.vhd
+set_global_assignment -name VHDL_FILE buffer_3_state_1x8.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

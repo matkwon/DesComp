@@ -133,16 +133,30 @@ Display5 : entity work.reg7Seg port map(Dado => DATA_WR(3 downto 0),
 													 CLK => CLK,
 													 saida7seg => HEX5);
 
+TristateSWR : entity work.buffer_3_state_8x8
+				  port map(entrada => SWR, habilita => HabSWR, saida => DATA_RD);
 
-SWR <= SW7 & SW6 & SW5 & SW4 & SW3 & SW2 & SW1 & SW0;
-DATA_RD <= "ZZZZZZZZ" when (HabSWR = '0') else SWR;
-DATA_RD <= "ZZZZZZZZ" when (HabSW8 = '0') else "0000000" & SW8;
-DATA_RD <= "ZZZZZZZZ" when (HabSW9 = '0') else "0000000" & SW9;
-DATA_RD <= "ZZZZZZZZ" when (HabKEY0 = '0') else "0000000" & KEY0;
-DATA_RD <= "ZZZZZZZZ" when (HabKEY1 = '0') else "0000000" & KEY1;
-DATA_RD <= "ZZZZZZZZ" when (HabKEY2 = '0') else "0000000" & KEY2;
-DATA_RD <= "ZZZZZZZZ" when (HabKEY3 = '0') else "0000000" & KEY3;
-DATA_RD <= "ZZZZZZZZ" when (HabFPGAReset = '0') else "0000000" & FPGA_RESET;
+TristateSW8 : entity work.buffer_3_state_1x8
+				  port map(entrada => SW8, habilita => HabSW8, saida => DATA_RD);
+
+TristateSW9 : entity work.buffer_3_state_1x8
+				  port map(entrada => SW9, habilita => HabSW9, saida => DATA_RD);
+
+TristateKEY0 : entity work.buffer_3_state_1x8
+					port map(entrada => KEY0, habilita => HabKEY0, saida => DATA_RD);
+
+TristateKEY1 : entity work.buffer_3_state_1x8
+					port map(entrada => KEY1, habilita => HabKEY1, saida => DATA_RD);
+
+TristateKEY2 : entity work.buffer_3_state_1x8
+					port map(entrada => KEY2, habilita => HabKEY2, saida => DATA_RD);
+
+TristateKEY3 : entity work.buffer_3_state_1x8
+					port map(entrada => KEY3, habilita => HabKEY3, saida => DATA_RD);
+
+TristateFPGAReset : entity work.buffer_3_state_1x8
+						  port map(entrada => FPGA_RESET, habilita => HabFPGAReset, saida => DATA_RD);
+
 	 
 HabLR <= WR and Bloco(4) and EndPerif(0) and not Endereco(5);
 HabL8 <= WR and Bloco(4) and EndPerif(1) and not Endereco(5);
@@ -155,6 +169,7 @@ HabHex3 <= WR and Bloco(4) and EndPerif(3) and Endereco(5);
 HabHex4 <= WR and Bloco(4) and EndPerif(4) and Endereco(5);
 HabHex5 <= WR and Bloco(4) and EndPerif(5) and Endereco(5);
 
+SWR <= SW7 & SW6 & SW5 & SW4 & SW3 & SW2 & SW1 & SW0;
 HabSWR <= RD and Bloco(5) and EndPerif(0) and not Endereco(5);
 HabSW8 <= RD and Bloco(5) and EndPerif(1) and not Endereco(5);
 HabSW9 <= RD and Bloco(5) and EndPerif(2) and not Endereco(5);

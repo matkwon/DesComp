@@ -14,21 +14,21 @@ KEY[0] => reg7seg:Display5.CLK
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-SW0 => DATA_RD[0].DATAIN
-SW1 => DATA_RD[1].DATAIN
-SW2 => DATA_RD[2].DATAIN
-SW3 => DATA_RD[3].DATAIN
-SW4 => DATA_RD[4].DATAIN
-SW5 => DATA_RD[5].DATAIN
-SW6 => DATA_RD[6].DATAIN
-SW7 => DATA_RD[7].DATAIN
-SW8 => DATA_RD[0].DATAIN
-SW9 => DATA_RD[0].DATAIN
-KEY0 => DATA_RD[0].DATAIN
-KEY1 => DATA_RD[0].DATAIN
-KEY2 => DATA_RD[0].DATAIN
-KEY3 => DATA_RD[0].DATAIN
-FPGA_RESET => DATA_RD[0].DATAIN
+SW0 => buffer_3_state_8x8:TristateSWR.entrada[0]
+SW1 => buffer_3_state_8x8:TristateSWR.entrada[1]
+SW2 => buffer_3_state_8x8:TristateSWR.entrada[2]
+SW3 => buffer_3_state_8x8:TristateSWR.entrada[3]
+SW4 => buffer_3_state_8x8:TristateSWR.entrada[4]
+SW5 => buffer_3_state_8x8:TristateSWR.entrada[5]
+SW6 => buffer_3_state_8x8:TristateSWR.entrada[6]
+SW7 => buffer_3_state_8x8:TristateSWR.entrada[7]
+SW8 => buffer_3_state_1x8:TristateSW8.entrada
+SW9 => buffer_3_state_1x8:TristateSW9.entrada
+KEY0 => buffer_3_state_1x8:TristateKEY0.entrada
+KEY1 => buffer_3_state_1x8:TristateKEY1.entrada
+KEY2 => buffer_3_state_1x8:TristateKEY2.entrada
+KEY3 => buffer_3_state_1x8:TristateKEY3.entrada
+FPGA_RESET => buffer_3_state_1x8:TristateFPGAReset.entrada
 LED8 <= flipflop:FF1.DOUT
 LED9 <= flipflop:FF2.DOUT
 LEDR[0] <= registradorgenerico:REGLED.DOUT[0]
@@ -1552,5 +1552,172 @@ saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_8x8:TristateSWR
+entrada[0] => saida[0].DATAIN
+entrada[1] => saida[1].DATAIN
+entrada[2] => saida[2].DATAIN
+entrada[3] => saida[3].DATAIN
+entrada[4] => saida[4].DATAIN
+entrada[5] => saida[5].DATAIN
+entrada[6] => saida[6].DATAIN
+entrada[7] => saida[7].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateSW8
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateSW9
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateKEY0
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateKEY1
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateKEY2
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateKEY3
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|buffer_3_state_1x8:TristateFPGAReset
+entrada => saida[0].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
 
 

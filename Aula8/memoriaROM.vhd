@@ -34,18 +34,23 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)   := LDI   & "000000001";
-		  tmp(1)   := STA   & "000000000";
-        tmp(2)   := SOMA  & "000000000";
-        tmp(3)   := STA   & "000000001";
-        tmp(4)   := LDA   & "000000000";
-        tmp(5)   := STA   & "100000001";
-        tmp(6)   := STA   & "100000010";
-        tmp(7)   := LDI   & "001010101";
-        tmp(8)   := STA   & "100000000";
-        tmp(9)   := LDI   & "100101010";
-        tmp(10)  := STA   & "100000000";
-        tmp(11)  := JMP   & "000001011";
+        tmp(0)   := LDA   & "101000000";
+		  tmp(1)   := STA   & "100100000";
+        tmp(2)   := LDA   & "101000001";
+        tmp(3)   := STA   & "100100001";
+        tmp(4)   := LDA   & "101000010";
+        tmp(5)   := STA   & "100100010";
+        tmp(6)   := LDA   & "101100000";
+        tmp(7)   := STA   & "100100011";
+        tmp(8)   := LDA   & "101100001";
+        tmp(9)   := STA   & "100100100";
+        tmp(10)  := LDA   & "101100010";
+        tmp(11)  := STA   & "100100101";
+        tmp(12)  := LDA   & "101100011";
+        tmp(13)  := STA   & "100000001";
+        tmp(14)  := LDA   & "101100100";
+        tmp(15)  := STA   & "100000010";
+        tmp(16)  := JMP   & "000000000";
         return tmp;
     end initMemory;
 
