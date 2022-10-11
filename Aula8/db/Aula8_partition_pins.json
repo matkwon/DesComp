@@ -252,7 +252,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW8",
+					"name" : "SW0",
 					"strict" : false
 				},
 				{
@@ -260,27 +260,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY3",
-					"strict" : false
-				},
-				{
-					"name" : "KEY1",
-					"strict" : false
-				},
-				{
-					"name" : "KEY0",
-					"strict" : false
-				},
-				{
-					"name" : "KEY2",
-					"strict" : false
-				},
-				{
-					"name" : "SW0",
-					"strict" : false
-				},
-				{
-					"name" : "FPGA_RESET",
+					"name" : "SW8",
 					"strict" : false
 				},
 				{

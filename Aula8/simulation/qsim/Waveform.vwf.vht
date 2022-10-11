@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/10/2022 18:04:27"
+-- Generated on "10/11/2022 18:11:47"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Computador
 -- 
@@ -35,7 +35,7 @@ ARCHITECTURE Computador_arch OF Computador_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
-SIGNAL FPGA_RESET : STD_LOGIC;
+SIGNAL FPGA_RESET_IN : STD_LOGIC;
 SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -43,10 +43,10 @@ SIGNAL HEX3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX5 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL KEY0 : STD_LOGIC;
-SIGNAL KEY1 : STD_LOGIC;
-SIGNAL KEY2 : STD_LOGIC;
-SIGNAL KEY3 : STD_LOGIC;
+SIGNAL KEY0_IN : STD_LOGIC;
+SIGNAL KEY1_IN : STD_LOGIC;
+SIGNAL KEY2_IN : STD_LOGIC;
+SIGNAL KEY3_IN : STD_LOGIC;
 SIGNAL LED8 : STD_LOGIC;
 SIGNAL LED9 : STD_LOGIC;
 SIGNAL LEDR : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -64,7 +64,7 @@ SIGNAL SW9 : STD_LOGIC;
 COMPONENT Computador
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
-	FPGA_RESET : IN STD_LOGIC;
+	FPGA_RESET_IN : IN STD_LOGIC;
 	HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -72,10 +72,10 @@ COMPONENT Computador
 	HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	HEX5 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	KEY0 : IN STD_LOGIC;
-	KEY1 : IN STD_LOGIC;
-	KEY2 : IN STD_LOGIC;
-	KEY3 : IN STD_LOGIC;
+	KEY0_IN : IN STD_LOGIC;
+	KEY1_IN : IN STD_LOGIC;
+	KEY2_IN : IN STD_LOGIC;
+	KEY3_IN : IN STD_LOGIC;
 	LED8 : OUT STD_LOGIC;
 	LED9 : OUT STD_LOGIC;
 	LEDR : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -97,7 +97,7 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
-	FPGA_RESET => FPGA_RESET,
+	FPGA_RESET_IN => FPGA_RESET_IN,
 	HEX0 => HEX0,
 	HEX1 => HEX1,
 	HEX2 => HEX2,
@@ -105,10 +105,10 @@ BEGIN
 	HEX4 => HEX4,
 	HEX5 => HEX5,
 	KEY => KEY,
-	KEY0 => KEY0,
-	KEY1 => KEY1,
-	KEY2 => KEY2,
-	KEY3 => KEY3,
+	KEY0_IN => KEY0_IN,
+	KEY1_IN => KEY1_IN,
+	KEY2_IN => KEY2_IN,
+	KEY3_IN => KEY3_IN,
 	LED8 => LED8,
 	LED9 => LED9,
 	LEDR => LEDR,
@@ -141,82 +141,67 @@ BEGIN
 WAIT;
 END PROCESS t_prcs_KEY_0;
 
--- FPGA_RESET
-t_prcs_FPGA_RESET: PROCESS
+-- KEY0_IN
+t_prcs_KEY0_IN: PROCESS
 BEGIN
-	FPGA_RESET <= '0';
+	KEY0_IN <= '1';
+	WAIT FOR 20000 ps;
+	KEY0_IN <= '0';
+	WAIT FOR 470000 ps;
+	KEY0_IN <= '1';
 WAIT;
-END PROCESS t_prcs_FPGA_RESET;
+END PROCESS t_prcs_KEY0_IN;
 
--- KEY0
-t_prcs_KEY0: PROCESS
+-- KEY1_IN
+t_prcs_KEY1_IN: PROCESS
 BEGIN
-	KEY0 <= '0';
+	KEY1_IN <= '1';
+	WAIT FOR 20000 ps;
+	KEY1_IN <= '0';
+	WAIT FOR 470000 ps;
+	KEY1_IN <= '1';
 WAIT;
-END PROCESS t_prcs_KEY0;
+END PROCESS t_prcs_KEY1_IN;
 
--- KEY1
-t_prcs_KEY1: PROCESS
+-- KEY2_IN
+t_prcs_KEY2_IN: PROCESS
 BEGIN
-	KEY1 <= '1';
+	KEY2_IN <= '1';
+	WAIT FOR 20000 ps;
+	KEY2_IN <= '0';
+	WAIT FOR 470000 ps;
+	KEY2_IN <= '1';
 WAIT;
-END PROCESS t_prcs_KEY1;
+END PROCESS t_prcs_KEY2_IN;
 
--- KEY2
-t_prcs_KEY2: PROCESS
+-- KEY3_IN
+t_prcs_KEY3_IN: PROCESS
 BEGIN
-	KEY2 <= '0';
+	KEY3_IN <= '1';
+	WAIT FOR 20000 ps;
+	KEY3_IN <= '0';
+	WAIT FOR 470000 ps;
+	KEY3_IN <= '1';
 WAIT;
-END PROCESS t_prcs_KEY2;
+END PROCESS t_prcs_KEY3_IN;
 
--- KEY3
-t_prcs_KEY3: PROCESS
+-- FPGA_RESET_IN
+t_prcs_FPGA_RESET_IN: PROCESS
 BEGIN
-	KEY3 <= '1';
+	FPGA_RESET_IN <= '1';
+	WAIT FOR 20000 ps;
+	FPGA_RESET_IN <= '0';
+	WAIT FOR 470000 ps;
+	FPGA_RESET_IN <= '1';
 WAIT;
-END PROCESS t_prcs_KEY3;
+END PROCESS t_prcs_FPGA_RESET_IN;
 
--- SW0
-t_prcs_SW0: PROCESS
+-- SW7
+t_prcs_SW7: PROCESS
 BEGIN
-	SW0 <= '0';
+	SW7 <= '0';
 WAIT;
-END PROCESS t_prcs_SW0;
-
--- SW1
-t_prcs_SW1: PROCESS
-BEGIN
-	SW1 <= '0';
-WAIT;
-END PROCESS t_prcs_SW1;
-
--- SW2
-t_prcs_SW2: PROCESS
-BEGIN
-	SW2 <= '0';
-WAIT;
-END PROCESS t_prcs_SW2;
-
--- SW3
-t_prcs_SW3: PROCESS
-BEGIN
-	SW3 <= '0';
-WAIT;
-END PROCESS t_prcs_SW3;
-
--- SW4
-t_prcs_SW4: PROCESS
-BEGIN
-	SW4 <= '1';
-WAIT;
-END PROCESS t_prcs_SW4;
-
--- SW5
-t_prcs_SW5: PROCESS
-BEGIN
-	SW5 <= '0';
-WAIT;
-END PROCESS t_prcs_SW5;
+END PROCESS t_prcs_SW7;
 
 -- SW6
 t_prcs_SW6: PROCESS
@@ -225,17 +210,52 @@ BEGIN
 WAIT;
 END PROCESS t_prcs_SW6;
 
--- SW7
-t_prcs_SW7: PROCESS
+-- SW5
+t_prcs_SW5: PROCESS
 BEGIN
-	SW7 <= '1';
+	SW5 <= '0';
 WAIT;
-END PROCESS t_prcs_SW7;
+END PROCESS t_prcs_SW5;
+
+-- SW4
+t_prcs_SW4: PROCESS
+BEGIN
+	SW4 <= '0';
+WAIT;
+END PROCESS t_prcs_SW4;
+
+-- SW3
+t_prcs_SW3: PROCESS
+BEGIN
+	SW3 <= '0';
+WAIT;
+END PROCESS t_prcs_SW3;
+
+-- SW2
+t_prcs_SW2: PROCESS
+BEGIN
+	SW2 <= '0';
+WAIT;
+END PROCESS t_prcs_SW2;
+
+-- SW1
+t_prcs_SW1: PROCESS
+BEGIN
+	SW1 <= '0';
+WAIT;
+END PROCESS t_prcs_SW1;
+
+-- SW0
+t_prcs_SW0: PROCESS
+BEGIN
+	SW0 <= '1';
+WAIT;
+END PROCESS t_prcs_SW0;
 
 -- SW8
 t_prcs_SW8: PROCESS
 BEGIN
-	SW8 <= '0';
+	SW8 <= '1';
 WAIT;
 END PROCESS t_prcs_SW8;
 

@@ -16,8 +16,8 @@ entity Computador is
 		SW0, SW1, SW2,
 		SW3, SW4, SW5,
 		SW6, SW7, SW8,
-		SW9, KEY0, KEY1,
-		KEY2, KEY3, FPGA_RESET : in std_logic;
+		SW9, KEY0_IN, KEY1_IN,
+		KEY2_IN, KEY3_IN, FPGA_RESET_IN : in std_logic;
 		LED8, LED9 : out std_logic;
 		LEDR		  : out std_logic_vector(larguraDados-1 downto 0);
 		PC_OUT	  : out std_logic_vector(larguraEnderecos-1 downto 0);
@@ -40,6 +40,11 @@ architecture arquitetura of Computador is
   signal Endereco, EndROM	  : std_logic_vector(larguraEnderecos-1 downto 0);
   signal Instrucao 		 	  : std_logic_vector(larguraInstru-1 downto 0);
   signal EndPerif, Bloco 	  : std_logic_vector(larguraDados-1 downto 0);
+  signal limpa_leitura		  : std_logic;
+  
+  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET : std_logic;
+  
+  signal FF_TRI0, FF_TRI1, FF_TRI2, FF_TRI3, FF_TRI_FPGA_RESET : std_logic;
 
 begin
 
@@ -102,6 +107,53 @@ FF2 : entity work.flipflop port map (DIN => DATA_WR(0),
 												 ENABLE => HabL9,
 												 CLK => CLK,
 												 RST => '0');
+												 
+BORDA_KEY0 : entity work.edgeDetector(bordaDescida)
+        port map (clk => CLK, entrada => KEY0_IN, saida => KEY0);
+												 
+BORDA_KEY1 : entity work.edgeDetector(bordaDescida)
+        port map (clk => CLK, entrada => KEY1_IN, saida => KEY1);
+												 
+BORDA_KEY2 : entity work.edgeDetector(bordaDescida)
+        port map (clk => CLK, entrada => KEY2_IN, saida => KEY2);
+												 
+BORDA_KEY3 : entity work.edgeDetector(bordaDescida)
+        port map (clk => CLK, entrada => KEY3_IN, saida => KEY3);
+												 
+BORDA_FPGA_RESET : entity work.edgeDetector(bordaDescida)
+        port map (clk => CLK, entrada => FPGA_RESET_IN, saida => FPGA_RESET);
+												 
+FF_KEY0 : entity work.flipflop port map (DIN => '1',
+												 DOUT => FF_TRI0,
+												 ENABLE => '1',
+												 CLK => KEY0,
+												 RST => limpa_leitura);
+												 
+FF_KEY1 : entity work.flipflop port map (DIN => '1',
+												 DOUT => FF_TRI1,
+												 ENABLE => '1',
+												 CLK => KEY1,
+												 RST => limpa_leitura);
+												 
+FF_KEY2 : entity work.flipflop port map (DIN => '1',
+												 DOUT => FF_TRI2,
+												 ENABLE => '1',
+												 CLK => KEY2,
+												 RST => limpa_leitura);
+												 
+FF_KEY3 : entity work.flipflop port map (DIN => '1',
+												 DOUT => FF_TRI3,
+												 ENABLE => '1',
+												 CLK => KEY3,
+												 RST => limpa_leitura);
+												 
+FF_FPGA_RESET : entity work.flipflop port map (DIN => '1',
+												 DOUT => FF_TRI_FPGA_RESET,
+												 ENABLE => '1',
+												 CLK => FPGA_RESET,
+												 RST => limpa_leitura);
+												 
+
 
 Display0 : entity work.reg7Seg port map(Dado => DATA_WR(3 downto 0),
 													 Habilita => HabHex0,
@@ -143,20 +195,22 @@ TristateSW9 : entity work.buffer_3_state_1x8
 				  port map(entrada => SW9, habilita => HabSW9, saida => DATA_RD);
 
 TristateKEY0 : entity work.buffer_3_state_1x8
-					port map(entrada => KEY0, habilita => HabKEY0, saida => DATA_RD);
+					port map(entrada => FF_TRI0, habilita => HabKEY0, saida => DATA_RD);
 
 TristateKEY1 : entity work.buffer_3_state_1x8
-					port map(entrada => KEY1, habilita => HabKEY1, saida => DATA_RD);
+					port map(entrada => FF_TRI1, habilita => HabKEY1, saida => DATA_RD);
 
 TristateKEY2 : entity work.buffer_3_state_1x8
-					port map(entrada => KEY2, habilita => HabKEY2, saida => DATA_RD);
+					port map(entrada => FF_TRI2, habilita => HabKEY2, saida => DATA_RD);
 
 TristateKEY3 : entity work.buffer_3_state_1x8
-					port map(entrada => KEY3, habilita => HabKEY3, saida => DATA_RD);
+					port map(entrada => FF_TRI3, habilita => HabKEY3, saida => DATA_RD);
 
 TristateFPGAReset : entity work.buffer_3_state_1x8
-						  port map(entrada => FPGA_RESET, habilita => HabFPGAReset, saida => DATA_RD);
+						  port map(entrada => FF_TRI_FPGA_RESET, habilita => HabFPGAReset, saida => DATA_RD);
 
+limpa_leitura <= Endereco(8) and Endereco(7) and Endereco(6) and Endereco(5) and Endereco(4) and 
+						Endereco(3) and Endereco(2) and Endereco(1) and Endereco(0) and WR;
 	 
 HabLR <= WR and Bloco(4) and EndPerif(0) and not Endereco(5);
 HabL8 <= WR and Bloco(4) and EndPerif(1) and not Endereco(5);

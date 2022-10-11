@@ -5,6 +5,11 @@ KEY[0] => memoriaram:RAM.clk
 KEY[0] => registradorgenerico:REGLED.CLK
 KEY[0] => flipflop:FF1.CLK
 KEY[0] => flipflop:FF2.CLK
+KEY[0] => edgedetector:BORDA_KEY0.clk
+KEY[0] => edgedetector:BORDA_KEY1.clk
+KEY[0] => edgedetector:BORDA_KEY2.clk
+KEY[0] => edgedetector:BORDA_KEY3.clk
+KEY[0] => edgedetector:BORDA_FPGA_RESET.clk
 KEY[0] => reg7seg:Display0.CLK
 KEY[0] => reg7seg:Display1.CLK
 KEY[0] => reg7seg:Display2.CLK
@@ -24,11 +29,11 @@ SW6 => buffer_3_state_8x8:TristateSWR.entrada[6]
 SW7 => buffer_3_state_8x8:TristateSWR.entrada[7]
 SW8 => buffer_3_state_1x8:TristateSW8.entrada
 SW9 => buffer_3_state_1x8:TristateSW9.entrada
-KEY0 => buffer_3_state_1x8:TristateKEY0.entrada
-KEY1 => buffer_3_state_1x8:TristateKEY1.entrada
-KEY2 => buffer_3_state_1x8:TristateKEY2.entrada
-KEY3 => buffer_3_state_1x8:TristateKEY3.entrada
-FPGA_RESET => buffer_3_state_1x8:TristateFPGAReset.entrada
+KEY0_IN => edgedetector:BORDA_KEY0.entrada
+KEY1_IN => edgedetector:BORDA_KEY1.entrada
+KEY2_IN => edgedetector:BORDA_KEY2.entrada
+KEY3_IN => edgedetector:BORDA_KEY3.entrada
+FPGA_RESET_IN => edgedetector:BORDA_FPGA_RESET.entrada
 LED8 <= flipflop:FF1.DOUT
 LED9 <= flipflop:FF2.DOUT
 LEDR[0] <= registradorgenerico:REGLED.DOUT[0]
@@ -803,6 +808,81 @@ RST => DOUT~reg0.ACLR
 
 
 |Computador|flipflop:FF2
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|Computador|edgeDetector:BORDA_KEY0
+clk => saidaQ.CLK
+entrada => saidaQ.DATAIN
+entrada => saida.IN1
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|edgeDetector:BORDA_KEY1
+clk => saidaQ.CLK
+entrada => saidaQ.DATAIN
+entrada => saida.IN1
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|edgeDetector:BORDA_KEY2
+clk => saidaQ.CLK
+entrada => saidaQ.DATAIN
+entrada => saida.IN1
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|edgeDetector:BORDA_KEY3
+clk => saidaQ.CLK
+entrada => saidaQ.DATAIN
+entrada => saida.IN1
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|edgeDetector:BORDA_FPGA_RESET
+clk => saidaQ.CLK
+entrada => saidaQ.DATAIN
+entrada => saida.IN1
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Computador|flipflop:FF_KEY0
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|Computador|flipflop:FF_KEY1
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|Computador|flipflop:FF_KEY2
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|Computador|flipflop:FF_KEY3
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|Computador|flipflop:FF_FPGA_RESET
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA

@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula8 -c Aula8 --vector_source="C:/DesComp/Aula8/Waveform.vwf" --testbench_file="C:/DesComp/Aula8/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula8 -c Aula8 --vector_source="C:/DesComp/Aula8/Waveform.vwf" --testbench_file="C:/DesComp/Aula8/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/DesComp/Aula8/simulation/qsim/" Aula8 -c Aula8</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/DesComp/Aula8/simulation/qsim/" Aula8 -c Aula8</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula8 -c Aula8 --vector_source="/home/joao/descomp_oficial/DesComp/Aula8/Waveform.vwf" --testbench_file="/home/joao/descomp_oficial/DesComp/Aula8/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula8 -c Aula8 --vector_source="/home/joao/descomp_oficial/DesComp/Aula8/Waveform.vwf" --testbench_file="/home/joao/descomp_oficial/DesComp/Aula8/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/joao/descomp_oficial/DesComp/Aula8/simulation/qsim/" Aula8 -c Aula8</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/joao/descomp_oficial/DesComp/Aula8/simulation/qsim/" Aula8 -c Aula8</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work Aula8.vho
@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 </modelsim_script>
@@ -40,6 +41,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 </modelsim_script_timing>
@@ -78,16 +80,6 @@ HEADER
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
-}
-
-SIGNAL("FPGA_RESET")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
 }
 
 SIGNAL("HEX0")
@@ -580,46 +572,6 @@ SIGNAL("KEY[0]")
 	PARENT = "";
 }
 
-SIGNAL("KEY0")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("KEY1")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("KEY2")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("KEY3")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 SIGNAL("LED8")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -932,16 +884,57 @@ SIGNAL("SW9")
 
 GROUP("SWR")
 {
-	MEMBERS = "SW0", "SW1", "SW2", "SW3", "SW4", "SW5", "SW6", "SW7";
+	MEMBERS = "SW7", "SW6", "SW5", "SW4", "SW3", "SW2", "SW1", "SW0";
 }
 
-TRANSITION_LIST("FPGA_RESET")
+SIGNAL("FPGA_RESET_IN")
 {
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-	}
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("KEY0_IN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("KEY1_IN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("KEY2_IN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("KEY3_IN")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
 }
 
 TRANSITION_LIST("HEX0[6]")
@@ -1338,42 +1331,6 @@ TRANSITION_LIST("KEY[0]")
 	}
 }
 
-TRANSITION_LIST("KEY0")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-	}
-}
-
-TRANSITION_LIST("KEY1")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 500.0;
-	}
-}
-
-TRANSITION_LIST("KEY2")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
-	}
-}
-
-TRANSITION_LIST("KEY3")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 500.0;
-	}
-}
-
 TRANSITION_LIST("LED8")
 {
 	NODE
@@ -1550,7 +1507,7 @@ TRANSITION_LIST("SW0")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
@@ -1586,7 +1543,7 @@ TRANSITION_LIST("SW4")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 500.0;
+		LEVEL 0 FOR 500.0;
 	}
 }
 
@@ -1613,7 +1570,7 @@ TRANSITION_LIST("SW7")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 500.0;
+		LEVEL 0 FOR 500.0;
 	}
 }
 
@@ -1622,7 +1579,7 @@ TRANSITION_LIST("SW8")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 500.0;
+		LEVEL 1 FOR 500.0;
 	}
 }
 
@@ -1632,6 +1589,61 @@ TRANSITION_LIST("SW9")
 	{
 		REPEAT = 1;
 		LEVEL 1 FOR 500.0;
+	}
+}
+
+TRANSITION_LIST("FPGA_RESET_IN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 470.0;
+		LEVEL 1 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("KEY0_IN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 470.0;
+		LEVEL 1 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("KEY1_IN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 470.0;
+		LEVEL 1 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("KEY2_IN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 470.0;
+		LEVEL 1 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("KEY3_IN")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 470.0;
+		LEVEL 1 FOR 10.0;
 	}
 }
 
@@ -1646,7 +1658,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "FPGA_RESET";
+	CHANNEL = "KEY0_IN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -1655,7 +1667,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "KEY0";
+	CHANNEL = "KEY1_IN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -1664,7 +1676,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "KEY1";
+	CHANNEL = "KEY2_IN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
@@ -1673,7 +1685,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "KEY2";
+	CHANNEL = "KEY3_IN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
@@ -1682,7 +1694,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "KEY3";
+	CHANNEL = "FPGA_RESET_IN";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
@@ -1701,7 +1713,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW0";
+	CHANNEL = "SW7";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 7;
@@ -1711,7 +1723,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW1";
+	CHANNEL = "SW6";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 8;
@@ -1721,7 +1733,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW2";
+	CHANNEL = "SW5";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 9;
@@ -1731,7 +1743,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW3";
+	CHANNEL = "SW4";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 10;
@@ -1741,7 +1753,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW4";
+	CHANNEL = "SW3";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 11;
@@ -1751,7 +1763,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW5";
+	CHANNEL = "SW2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 12;
@@ -1761,7 +1773,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW6";
+	CHANNEL = "SW1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 13;
@@ -1771,7 +1783,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "SW7";
+	CHANNEL = "SW0";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 14;

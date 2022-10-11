@@ -1,0 +1,36 @@
+Quartus Prime Archive log --	/home/joao/descomp_oficial/DesComp/Aula8/Aula8.qarlog
+
+Archive:	/home/joao/descomp_oficial/DesComp/Aula8/Aula8.qar
+Date:		Tue Oct 11 18:20:48 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/joao/descomp_oficial/DesComp/Aula8/Aula8.qpf
+/home/joao/descomp_oficial/DesComp/Aula8/Aula8.qsf
+/home/joao/descomp_oficial/DesComp/Aula8/Aula8_assignment_defaults.qdf
+/home/joao/descomp_oficial/DesComp/Aula8/CPU.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/Computador.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/DE0_CV_golden_top.v
+/home/joao/descomp_oficial/DesComp/Aula8/ULASomaSubPassa.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/Waveform.vwf
+/home/joao/descomp_oficial/DesComp/Aula8/buffer_3_state_1x8.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/buffer_3_state_8x8.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/conversorHex7Seg.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/dataAddresser.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/decoder3x8.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/decoderInstru.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/edgeDetector.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/flipflop.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/logicaDesvio.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/memoriaRAM.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/memoriaROM.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/muxGenerico2x1.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/muxGenerico4x1.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/reg7Seg.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/registradorFlagIgual.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/registradorGenerico.vhd
+/home/joao/descomp_oficial/DesComp/Aula8/somaConstante.vhd
+	======= Total: 25 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
