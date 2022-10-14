@@ -25,14 +25,14 @@ architecture comportamento of decoderInstru is
   begin
 saida <= "000000000000" when opcode = NOP else
          "000000110010" when opcode = LDA else
-         "000000100010" when opcode = SOMA else
-         "000000101010" when opcode = SUB else
+         "000000101010" when opcode = SOMA else
+         "000000100010" when opcode = SUB else
          "000000111010" when opcode = ANDD else
          "000001110000" when opcode = LDI else
          "000000010001" when opcode = STA else
          "010000000000" when opcode = JMP else
          "000010000000" when opcode = JEQ else
-         "000000000100" when opcode = CEQ else
+         "000000000110" when opcode = CEQ else
 			"100100000000" when opcode = JSR else
 			"001000000000" when opcode = RET else
          "000000000000";  -- NOP para os opcodes Indefinidos

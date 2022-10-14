@@ -71,8 +71,8 @@ Regras:
 
 
 
-assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
-destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' #Arquivo de entrada de contem o assembly
+destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)

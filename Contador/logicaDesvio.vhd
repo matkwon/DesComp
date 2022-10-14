@@ -9,7 +9,9 @@ end entity;
 
 architecture comportamento of logicaDesvio is
 begin
-   DOUT(1) <= NOT JMP AND RET AND NOT JSR AND NOT JEQ;
+   DOUT(1) <= NOT JMP
+			 AND RET AND NOT JSR AND NOT JEQ;
+	
 	DOUT(0) <= (JMP AND NOT RET AND NOT JSR AND NOT JEQ) OR 
 				  (NOT JMP AND NOT RET AND NOT JSR AND JEQ AND FlagIgual) OR 
 				  (NOT JMP AND NOT RET AND JSR AND NOT JEQ);

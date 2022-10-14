@@ -17,6 +17,7 @@ entity Contador is
 		SW			  	 : in std_logic_vector(9 downto 0);
 		LEDR		  	 : out std_logic_vector(9 downto 0);
 		PC_OUT	  	 : out std_logic_vector(larguraEnderecos-1 downto 0);
+		testeinA, testeinB : out std_logic_vector(larguraDados-1 downto 0);
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5	: out std_logic_vector(6 downto 0)
 	);
 end entity;
@@ -42,7 +43,7 @@ architecture arquitetura of Contador is
   
   signal LED8, LED9 : std_logic;
   signal LEDb		  : std_logic_vector(larguraDados-1 downto 0);
-  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET : std_logic;
+  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET, flagteste : std_logic;
   
   signal FF_TRI0, FF_TRI1, FF_TRI2, FF_TRI3, FF_TRI_FPGA_RESET : std_logic;
 
@@ -70,7 +71,10 @@ CPU : entity work.CPU generic map (larguraDados => larguraDados,
 											  ADDR => Endereco,
 											  ROM_ADDR => EndROM,
 											  RD => RD,
-											  WR => WR);
+											  WR => WR,
+											  flagteste => flagteste,
+											  testeinA => testeinA,
+											  testeinB => testeinB);
 
 RAM : entity work.memoriaRAM generic map (dataWidth => larguraDados, 
 														addrWidth => larguraRAM)
@@ -109,11 +113,11 @@ FF2 : entity work.flipflop port map (DIN => DATA_WR(0),
 												 CLK => CLK,
 												 RST => '0');
 												 
-BORDA_KEY0 : entity work.edgeDetector(bordaDescida)
-        port map (clk => CLK, entrada => KEY(0), saida => KEY0);
+BORDA_KEY0 : entity work.edgeDetector(bordaSubida)
+        port map (clk => CLK, entrada => not KEY(0), saida => KEY0);
 												 
-BORDA_KEY1 : entity work.edgeDetector(bordaDescida)
-        port map (clk => CLK, entrada => KEY(1), saida => KEY1);
+BORDA_KEY1 : entity work.edgeDetector(bordaSubida)
+        port map (clk => CLK, entrada => not KEY(1), saida => KEY1);
 												 
 BORDA_KEY2 : entity work.edgeDetector(bordaDescida)
         port map (clk => CLK, entrada => KEY(2), saida => KEY2);
@@ -210,9 +214,33 @@ TristateKEY3 : entity work.buffer_3_state_1x8
 TristateFPGAReset : entity work.buffer_3_state_1x8
 						  port map(entrada => FF_TRI_FPGA_RESET, habilita => HabFPGAReset, saida => DATA_RD);
 
-limpa_leitura_KEY0 <= WR when (Endereco = "111111111") else '0';
-limpa_leitura_KEY1 <= WR when (Endereco = "111111110") else '0';
-limpa_leitura_FPGA_RESET <= WR when (Endereco = "111111101") else '0';
+limpa_leitura_KEY0 <= WR and Endereco(8) 
+								 and Endereco(7) 
+								 and Endereco(6) 
+								 and Endereco(5) 
+								 and Endereco(4) 
+								 and Endereco(3) 
+								 and Endereco(2) 
+								 and Endereco(1) 
+								 and Endereco(0);
+limpa_leitura_KEY1 <= WR and Endereco(8) 
+								 and Endereco(7) 
+								 and Endereco(6) 
+								 and Endereco(5) 
+								 and Endereco(4) 
+								 and Endereco(3) 
+								 and Endereco(2) 
+								 and Endereco(1) 
+								 and not Endereco(0);
+limpa_leitura_FPGA_RESET <= WR and Endereco(8) 
+										 and Endereco(7) 
+										 and Endereco(6) 
+										 and Endereco(5) 
+										 and Endereco(4) 
+										 and Endereco(3) 
+										 and Endereco(2) 
+										 and not Endereco(1) 
+										 and Endereco(0);
 	 
 HabLR <= WR and Bloco(4) and EndPerif(0) and not Endereco(5);
 HabL8 <= WR and Bloco(4) and EndPerif(1) and not Endereco(5);
@@ -235,6 +263,7 @@ HabKEY1 <= RD and Bloco(5) and EndPerif(1) and Endereco(5);
 HabKEY2 <= RD and Bloco(5) and EndPerif(2) and Endereco(5);
 HabKEY3 <= RD and Bloco(5) and EndPerif(3) and Endereco(5);
 HabFPGAReset <= RD and Bloco(5) and EndPerif(4) and Endereco(5);
+
 
 
 LEDR <= LED9 & LED8 & LEDb;

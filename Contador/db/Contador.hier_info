@@ -30,76 +30,92 @@ SW[6] => buffer_3_state_8x8:TristateSWb.entrada[6]
 SW[7] => buffer_3_state_8x8:TristateSWb.entrada[7]
 SW[8] => buffer_3_state_1x8:TristateSW8.entrada
 SW[9] => buffer_3_state_1x8:TristateSW9.entrada
-LEDR[0] << registradorgenerico:REGLED.DOUT[0]
-LEDR[1] << registradorgenerico:REGLED.DOUT[1]
-LEDR[2] << registradorgenerico:REGLED.DOUT[2]
-LEDR[3] << registradorgenerico:REGLED.DOUT[3]
-LEDR[4] << registradorgenerico:REGLED.DOUT[4]
-LEDR[5] << registradorgenerico:REGLED.DOUT[5]
-LEDR[6] << registradorgenerico:REGLED.DOUT[6]
-LEDR[7] << registradorgenerico:REGLED.DOUT[7]
-LEDR[8] << flipflop:FF1.DOUT
-LEDR[9] << flipflop:FF2.DOUT
-PC_OUT[0] << cpu:CPU.ROM_ADDR[0]
-PC_OUT[1] << cpu:CPU.ROM_ADDR[1]
-PC_OUT[2] << cpu:CPU.ROM_ADDR[2]
-PC_OUT[3] << cpu:CPU.ROM_ADDR[3]
-PC_OUT[4] << cpu:CPU.ROM_ADDR[4]
-PC_OUT[5] << cpu:CPU.ROM_ADDR[5]
-PC_OUT[6] << cpu:CPU.ROM_ADDR[6]
-PC_OUT[7] << cpu:CPU.ROM_ADDR[7]
-PC_OUT[8] << cpu:CPU.ROM_ADDR[8]
-HEX0[0] << reg7seg:Display0.saida7seg[0]
-HEX0[1] << reg7seg:Display0.saida7seg[1]
-HEX0[2] << reg7seg:Display0.saida7seg[2]
-HEX0[3] << reg7seg:Display0.saida7seg[3]
-HEX0[4] << reg7seg:Display0.saida7seg[4]
-HEX0[5] << reg7seg:Display0.saida7seg[5]
-HEX0[6] << reg7seg:Display0.saida7seg[6]
-HEX1[0] << reg7seg:Display1.saida7seg[0]
-HEX1[1] << reg7seg:Display1.saida7seg[1]
-HEX1[2] << reg7seg:Display1.saida7seg[2]
-HEX1[3] << reg7seg:Display1.saida7seg[3]
-HEX1[4] << reg7seg:Display1.saida7seg[4]
-HEX1[5] << reg7seg:Display1.saida7seg[5]
-HEX1[6] << reg7seg:Display1.saida7seg[6]
-HEX2[0] << reg7seg:Display2.saida7seg[0]
-HEX2[1] << reg7seg:Display2.saida7seg[1]
-HEX2[2] << reg7seg:Display2.saida7seg[2]
-HEX2[3] << reg7seg:Display2.saida7seg[3]
-HEX2[4] << reg7seg:Display2.saida7seg[4]
-HEX2[5] << reg7seg:Display2.saida7seg[5]
-HEX2[6] << reg7seg:Display2.saida7seg[6]
-HEX3[0] << reg7seg:Display3.saida7seg[0]
-HEX3[1] << reg7seg:Display3.saida7seg[1]
-HEX3[2] << reg7seg:Display3.saida7seg[2]
-HEX3[3] << reg7seg:Display3.saida7seg[3]
-HEX3[4] << reg7seg:Display3.saida7seg[4]
-HEX3[5] << reg7seg:Display3.saida7seg[5]
-HEX3[6] << reg7seg:Display3.saida7seg[6]
-HEX4[0] << reg7seg:Display4.saida7seg[0]
-HEX4[1] << reg7seg:Display4.saida7seg[1]
-HEX4[2] << reg7seg:Display4.saida7seg[2]
-HEX4[3] << reg7seg:Display4.saida7seg[3]
-HEX4[4] << reg7seg:Display4.saida7seg[4]
-HEX4[5] << reg7seg:Display4.saida7seg[5]
-HEX4[6] << reg7seg:Display4.saida7seg[6]
-HEX5[0] << reg7seg:Display5.saida7seg[0]
-HEX5[1] << reg7seg:Display5.saida7seg[1]
-HEX5[2] << reg7seg:Display5.saida7seg[2]
-HEX5[3] << reg7seg:Display5.saida7seg[3]
-HEX5[4] << reg7seg:Display5.saida7seg[4]
-HEX5[5] << reg7seg:Display5.saida7seg[5]
-HEX5[6] << reg7seg:Display5.saida7seg[6]
+LEDR[0] <= registradorgenerico:REGLED.DOUT[0]
+LEDR[1] <= registradorgenerico:REGLED.DOUT[1]
+LEDR[2] <= registradorgenerico:REGLED.DOUT[2]
+LEDR[3] <= registradorgenerico:REGLED.DOUT[3]
+LEDR[4] <= registradorgenerico:REGLED.DOUT[4]
+LEDR[5] <= registradorgenerico:REGLED.DOUT[5]
+LEDR[6] <= registradorgenerico:REGLED.DOUT[6]
+LEDR[7] <= registradorgenerico:REGLED.DOUT[7]
+LEDR[8] <= flipflop:FF1.DOUT
+LEDR[9] <= flipflop:FF2.DOUT
+PC_OUT[0] <= cpu:CPU.ROM_ADDR[0]
+PC_OUT[1] <= cpu:CPU.ROM_ADDR[1]
+PC_OUT[2] <= cpu:CPU.ROM_ADDR[2]
+PC_OUT[3] <= cpu:CPU.ROM_ADDR[3]
+PC_OUT[4] <= cpu:CPU.ROM_ADDR[4]
+PC_OUT[5] <= cpu:CPU.ROM_ADDR[5]
+PC_OUT[6] <= cpu:CPU.ROM_ADDR[6]
+PC_OUT[7] <= cpu:CPU.ROM_ADDR[7]
+PC_OUT[8] <= cpu:CPU.ROM_ADDR[8]
+testeinA[0] <= cpu:CPU.testeinA[0]
+testeinA[1] <= cpu:CPU.testeinA[1]
+testeinA[2] <= cpu:CPU.testeinA[2]
+testeinA[3] <= cpu:CPU.testeinA[3]
+testeinA[4] <= cpu:CPU.testeinA[4]
+testeinA[5] <= cpu:CPU.testeinA[5]
+testeinA[6] <= cpu:CPU.testeinA[6]
+testeinA[7] <= cpu:CPU.testeinA[7]
+testeinB[0] <= cpu:CPU.testeinB[0]
+testeinB[1] <= cpu:CPU.testeinB[1]
+testeinB[2] <= cpu:CPU.testeinB[2]
+testeinB[3] <= cpu:CPU.testeinB[3]
+testeinB[4] <= cpu:CPU.testeinB[4]
+testeinB[5] <= cpu:CPU.testeinB[5]
+testeinB[6] <= cpu:CPU.testeinB[6]
+testeinB[7] <= cpu:CPU.testeinB[7]
+HEX0[0] <= reg7seg:Display0.saida7seg[0]
+HEX0[1] <= reg7seg:Display0.saida7seg[1]
+HEX0[2] <= reg7seg:Display0.saida7seg[2]
+HEX0[3] <= reg7seg:Display0.saida7seg[3]
+HEX0[4] <= reg7seg:Display0.saida7seg[4]
+HEX0[5] <= reg7seg:Display0.saida7seg[5]
+HEX0[6] <= reg7seg:Display0.saida7seg[6]
+HEX1[0] <= reg7seg:Display1.saida7seg[0]
+HEX1[1] <= reg7seg:Display1.saida7seg[1]
+HEX1[2] <= reg7seg:Display1.saida7seg[2]
+HEX1[3] <= reg7seg:Display1.saida7seg[3]
+HEX1[4] <= reg7seg:Display1.saida7seg[4]
+HEX1[5] <= reg7seg:Display1.saida7seg[5]
+HEX1[6] <= reg7seg:Display1.saida7seg[6]
+HEX2[0] <= reg7seg:Display2.saida7seg[0]
+HEX2[1] <= reg7seg:Display2.saida7seg[1]
+HEX2[2] <= reg7seg:Display2.saida7seg[2]
+HEX2[3] <= reg7seg:Display2.saida7seg[3]
+HEX2[4] <= reg7seg:Display2.saida7seg[4]
+HEX2[5] <= reg7seg:Display2.saida7seg[5]
+HEX2[6] <= reg7seg:Display2.saida7seg[6]
+HEX3[0] <= reg7seg:Display3.saida7seg[0]
+HEX3[1] <= reg7seg:Display3.saida7seg[1]
+HEX3[2] <= reg7seg:Display3.saida7seg[2]
+HEX3[3] <= reg7seg:Display3.saida7seg[3]
+HEX3[4] <= reg7seg:Display3.saida7seg[4]
+HEX3[5] <= reg7seg:Display3.saida7seg[5]
+HEX3[6] <= reg7seg:Display3.saida7seg[6]
+HEX4[0] <= reg7seg:Display4.saida7seg[0]
+HEX4[1] <= reg7seg:Display4.saida7seg[1]
+HEX4[2] <= reg7seg:Display4.saida7seg[2]
+HEX4[3] <= reg7seg:Display4.saida7seg[3]
+HEX4[4] <= reg7seg:Display4.saida7seg[4]
+HEX4[5] <= reg7seg:Display4.saida7seg[5]
+HEX4[6] <= reg7seg:Display4.saida7seg[6]
+HEX5[0] <= reg7seg:Display5.saida7seg[0]
+HEX5[1] <= reg7seg:Display5.saida7seg[1]
+HEX5[2] <= reg7seg:Display5.saida7seg[2]
+HEX5[3] <= reg7seg:Display5.saida7seg[3]
+HEX5[4] <= reg7seg:Display5.saida7seg[4]
+HEX5[5] <= reg7seg:Display5.saida7seg[5]
+HEX5[6] <= reg7seg:Display5.saida7seg[6]
 
 
 |Contador|CPU:CPU
 CLK => registradorgenerico:REGA.CLK
-CLK => registradorflagigual:REGB.CLK
+CLK => flipflop:FF_Zero.CLK
 CLK => registradorgenerico:REGC.CLK
 CLK => registradorgenerico:PC.CLK
 RST => registradorgenerico:REGA.RST
-RST => registradorflagigual:REGB.RST
+RST => flipflop:FF_Zero.RST
 RST => registradorgenerico:REGC.RST
 INSTRU[0] => muxgenerico2x1:MUX1.entradaB_MUX[0]
 INSTRU[0] => muxgenerico4x1:MUX2.entradaB_MUX[0]
@@ -147,6 +163,22 @@ DOUT[4] <= registradorgenerico:REGA.DOUT[4]
 DOUT[5] <= registradorgenerico:REGA.DOUT[5]
 DOUT[6] <= registradorgenerico:REGA.DOUT[6]
 DOUT[7] <= registradorgenerico:REGA.DOUT[7]
+testeinA[0] <= registradorgenerico:REGA.DOUT[0]
+testeinA[1] <= registradorgenerico:REGA.DOUT[1]
+testeinA[2] <= registradorgenerico:REGA.DOUT[2]
+testeinA[3] <= registradorgenerico:REGA.DOUT[3]
+testeinA[4] <= registradorgenerico:REGA.DOUT[4]
+testeinA[5] <= registradorgenerico:REGA.DOUT[5]
+testeinA[6] <= registradorgenerico:REGA.DOUT[6]
+testeinA[7] <= registradorgenerico:REGA.DOUT[7]
+testeinB[0] <= muxgenerico2x1:MUX1.saida_MUX[0]
+testeinB[1] <= muxgenerico2x1:MUX1.saida_MUX[1]
+testeinB[2] <= muxgenerico2x1:MUX1.saida_MUX[2]
+testeinB[3] <= muxgenerico2x1:MUX1.saida_MUX[3]
+testeinB[4] <= muxgenerico2x1:MUX1.saida_MUX[4]
+testeinB[5] <= muxgenerico2x1:MUX1.saida_MUX[5]
+testeinB[6] <= muxgenerico2x1:MUX1.saida_MUX[6]
+testeinB[7] <= muxgenerico2x1:MUX1.saida_MUX[7]
 ADDR[0] <= INSTRU[0].DB_MAX_OUTPUT_PORT_TYPE
 ADDR[1] <= INSTRU[1].DB_MAX_OUTPUT_PORT_TYPE
 ADDR[2] <= INSTRU[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -167,6 +199,7 @@ ROM_ADDR[7] <= registradorgenerico:PC.DOUT[7]
 ROM_ADDR[8] <= registradorgenerico:PC.DOUT[8]
 RD <= decoderinstru:decoder.saida[1]
 WR <= decoderinstru:decoder.saida[0]
+flagteste <= flipflop:FF_Zero.DOUT
 
 
 |Contador|CPU:CPU|decoderInstru:decoder
@@ -364,15 +397,8 @@ RST => DOUT[6]~reg0.ACLR
 RST => DOUT[7]~reg0.ACLR
 
 
-|Contador|CPU:CPU|registradorFlagIgual:REGB
-DIN[0] => DOUT.IN1
-DIN[1] => DOUT.IN1
-DIN[2] => DOUT.IN1
-DIN[3] => DOUT.IN1
-DIN[4] => DOUT.IN1
-DIN[5] => DOUT.IN1
-DIN[6] => DOUT.IN0
-DIN[7] => DOUT.IN1
+|Contador|CPU:CPU|flipflop:FF_Zero
+DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
@@ -587,6 +613,7 @@ saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+flagZero <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Contador|memoriaRAM:RAM
@@ -835,15 +862,15 @@ RST => DOUT~reg0.ACLR
 
 |Contador|edgeDetector:BORDA_KEY0
 clk => saidaQ.CLK
-entrada => saidaQ.DATAIN
 entrada => saida.IN1
+entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Contador|edgeDetector:BORDA_KEY1
 clk => saidaQ.CLK
-entrada => saidaQ.DATAIN
 entrada => saida.IN1
+entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 

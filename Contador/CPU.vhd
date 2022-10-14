@@ -12,9 +12,9 @@ entity CPU is
     RST : in std_logic;
     INSTRU: in std_logic_vector(larguraInstru-1 downto 0);
     DIN: in std_logic_vector(larguraDados-1 downto 0);
-	 DOUT: out std_logic_vector(larguraDados-1 downto 0);
+	 DOUT, testeinA, testeinB : out std_logic_vector(larguraDados-1 downto 0);
     ADDR, ROM_ADDR: out std_logic_vector(larguraEnderecos-1 downto 0);
-	 RD, WR: out std_logic
+	 RD, WR, flagteste: out std_logic
   );
 end entity;
 
@@ -24,7 +24,7 @@ architecture arquitetura of CPU is
 -- Faltam alguns sinais:
   signal MUX_OUT, Saida_ULA, RegULA : std_logic_vector (larguraDados-1 downto 0);
   signal proxPC, MUXPC, lastAddr : std_logic_vector (larguraEnderecos-1 downto 0);
-  signal SelMUX : std_logic;
+  signal SelMUX, FlagZero : std_logic;
   signal SelMUX2 : std_logic_vector(1 downto 0);
   signal JMP, JEQ, RET, JSR, FlagIgual : std_logic;
   signal Habilita_A, HabilitaFlag, HabEscritaEnd : std_logic;
@@ -65,12 +65,11 @@ REGA : entity work.registradorGenerico generic map (larguraDados => larguraDados
 																	 RST => RST);
 
 -- O port map completo do Flag de Igual.
-REGB : entity work.registradorFlagIgual generic map (larguraDados => larguraDados)
-														 port map (DIN => Saida_ULA,
-																	  DOUT => FlagIgual,
-																	  ENABLE => HabilitaFlag,
-																	  CLK => CLK,
-																	  RST => RST);
+FF_Zero : entity work.flipflop port map (DIN => FlagZero,
+													  DOUT => FlagIgual,
+													  ENABLE => HabilitaFlag,
+													  CLK => CLK,
+													  RST => RST);
 
 -- O port map completo do registrador End Retorno.
 REGC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
@@ -107,7 +106,8 @@ ULA1 : entity work.ULA generic map (larguraDados => larguraDados)
 								  port map (entradaA => RegULA,
 								  			   entradaB => MUX_OUT,
 								  			   saida => Saida_ULA,
-								  			   seletor => Operacao_ULA);
+								  			   seletor => Operacao_ULA,
+												flagZero => FlagZero);
 
 
 Opcode <= INSTRU(larguraInstru-1 downto larguraInstru-4);
@@ -127,5 +127,10 @@ ROM_ADDR <= lastAddr;
 ADDR <= INSTRU(larguraEnderecos-1 downto 0);
 RD <= Sinais_Controle(1);
 WR <= Sinais_Controle(0);
+
+flagteste <= FlagIgual;
+testeinA <= RegULA;
+testeinB <= MUX_OUT;
+
 
 end architecture;

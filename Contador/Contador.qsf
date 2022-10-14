@@ -49,31 +49,8 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE somaConstante.vhd
-set_global_assignment -name VHDL_FILE registradorGenerico.vhd
-set_global_assignment -name VHDL_FILE registradorFlagIgual.vhd
-set_global_assignment -name VHDL_FILE reg7Seg.vhd
-set_global_assignment -name VHDL_FILE muxGenerico4x1.vhd
-set_global_assignment -name VHDL_FILE muxGenerico2x1.vhd
-set_global_assignment -name VHDL_FILE memoriaROM.vhd
-set_global_assignment -name VHDL_FILE memoriaRAM.vhd
-set_global_assignment -name VHDL_FILE logicaDesvio.vhd
-set_global_assignment -name VHDL_FILE flipflop.vhd
-set_global_assignment -name VHDL_FILE edgeDetector.vhd
-set_global_assignment -name VHDL_FILE decoderInstru.vhd
-set_global_assignment -name VHDL_FILE decoder3x8.vhd
-set_global_assignment -name VHDL_FILE dataAddresser.vhd
-set_global_assignment -name VHDL_FILE CPU.vhd
-set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
-set_global_assignment -name VHDL_FILE buffer_3_state_8x8.vhd
-set_global_assignment -name VHDL_FILE buffer_3_state_1x8.vhd
-set_global_assignment -name VHDL_FILE Contador.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name VHDL_FILE ULA.vhd
 
 #============================================================
 # FAMILY "Cyclone V"
@@ -284,4 +261,29 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
 
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VHDL_FILE somaConstante.vhd
+set_global_assignment -name VHDL_FILE registradorGenerico.vhd
+set_global_assignment -name VHDL_FILE reg7Seg.vhd
+set_global_assignment -name VHDL_FILE muxGenerico4x1.vhd
+set_global_assignment -name VHDL_FILE muxGenerico2x1.vhd
+set_global_assignment -name VHDL_FILE memoriaROM.vhd
+set_global_assignment -name VHDL_FILE memoriaRAM.vhd
+set_global_assignment -name VHDL_FILE logicaDesvio.vhd
+set_global_assignment -name VHDL_FILE flipflop.vhd
+set_global_assignment -name VHDL_FILE edgeDetector.vhd
+set_global_assignment -name VHDL_FILE decoderInstru.vhd
+set_global_assignment -name VHDL_FILE decoder3x8.vhd
+set_global_assignment -name VHDL_FILE dataAddresser.vhd
+set_global_assignment -name VHDL_FILE CPU.vhd
+set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
+set_global_assignment -name VHDL_FILE buffer_3_state_8x8.vhd
+set_global_assignment -name VHDL_FILE buffer_3_state_1x8.vhd
+set_global_assignment -name VHDL_FILE Contador.vhd
+set_global_assignment -name VHDL_FILE ULA.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
