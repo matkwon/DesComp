@@ -115,14 +115,14 @@ BORDA_KEY0 : entity work.edgeDetector(bordaSubida)
 BORDA_KEY1 : entity work.edgeDetector(bordaSubida)
         port map (clk => CLK, entrada => not KEY(1), saida => KEY1);
 												 
-BORDA_KEY2 : entity work.edgeDetector(bordaDescida)
-        port map (clk => CLK, entrada => KEY(2), saida => KEY2);
+BORDA_KEY2 : entity work.edgeDetector(bordaSubida)
+        port map (clk => CLK, entrada => not KEY(2), saida => KEY2);
 												 
-BORDA_KEY3 : entity work.edgeDetector(bordaDescida)
-        port map (clk => CLK, entrada => KEY(3), saida => KEY3);
+BORDA_KEY3 : entity work.edgeDetector(bordaSubida)
+        port map (clk => CLK, entrada => not KEY(3), saida => KEY3);
 												 
-BORDA_FPGA_RESET : entity work.edgeDetector(bordaDescida)
-        port map (clk => CLK, entrada => FPGA_RESET_N, saida => FPGA_RESET);
+BORDA_FPGA_RESET : entity work.edgeDetector(bordaSubida)
+        port map (clk => CLK, entrada => not FPGA_RESET_N, saida => FPGA_RESET);
 												 
 FF_KEY0 : entity work.flipflop port map (DIN => '1',
 												 DOUT => FF_TRI0,
@@ -197,6 +197,7 @@ TristateSW9 : entity work.buffer_3_state_1x8
 
 TristateKEY0 : entity work.buffer_3_state_1x8
 					port map(entrada => FF_TRI0, habilita => HabKEY0, saida => DATA_RD);
+-- DATA_RD(0) <= 'Z' when (HabKEY0 = '0') else entrada;
 
 TristateKEY1 : entity work.buffer_3_state_1x8
 					port map(entrada => FF_TRI1, habilita => HabKEY1, saida => DATA_RD);
@@ -228,14 +229,32 @@ limpa_leitura_KEY1 <= WR and Endereco(8)
 								 and Endereco(2) 
 								 and Endereco(1) 
 								 and not Endereco(0);
+limpa_leitura_KEY2 <= WR and Endereco(8) 
+								 and Endereco(7) 
+								 and Endereco(6) 
+								 and Endereco(5) 
+								 and Endereco(4) 
+								 and Endereco(3) 
+								 and Endereco(2) 
+								 and not Endereco(1) 
+								 and Endereco(0);
+limpa_leitura_KEY3 <= WR and Endereco(8) 
+								 and Endereco(7) 
+								 and Endereco(6) 
+								 and Endereco(5) 
+								 and Endereco(4) 
+								 and Endereco(3) 
+								 and Endereco(2) 
+								 and not Endereco(1) 
+								 and not Endereco(0);
 limpa_leitura_FPGA_RESET <= WR and Endereco(8) 
 										 and Endereco(7) 
 										 and Endereco(6) 
 										 and Endereco(5) 
 										 and Endereco(4) 
 										 and Endereco(3) 
-										 and Endereco(2) 
-										 and not Endereco(1) 
+										 and not Endereco(2) 
+										 and Endereco(1) 
 										 and Endereco(0);
 	 
 HabLR <= WR and Bloco(4) and EndPerif(0) and not Endereco(5);

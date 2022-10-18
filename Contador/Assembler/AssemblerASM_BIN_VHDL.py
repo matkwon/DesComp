@@ -71,37 +71,87 @@ Regras:
 
 
 
-assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' #Arquivo de entrada de contem o assembly
-destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+# assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' #Arquivo de entrada de contem o assembly
+# destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
+destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)
 mne =	{ 
-       "NOP":   "0",
-       "LDA":   "1",
-       "SOMA":  "2",
-       "SUB":   "3",
-       "AND":   "4",
-       "LDI":   "5",
-       "STA":   "6",
-       "JMP":   "7",
-       "JEQ":   "8",
-       "CEQ":   "9",
-       "JSR":   "A",
-       "RET":   "B",
+        "NOP":   "0",
+        "LDA":   "1",
+        "SOMA":  "2",
+        "SUB":   "3",
+        "AND":   "4",
+        "LDI":   "5",
+        "STA":   "6",
+        "CLR":   "6",
+        "JMP":   "7",
+        "JEQ":   "8",
+        "CEQ":   "9",
+        "JSR":   "A",
+        "RET":   "B",
 }
+
+#endereco de variáveis, outputs e labels
+addr = {
+        "LEDb": "256",
+        "LED8": "257",
+        "LED9": "258",
+
+        "HEX0": "288",
+        "HEX1": "289",
+        "HEX2": "290",
+        "HEX3": "291",
+        "HEX4": "292",
+        "HEX5": "293",
+
+        "SWb": "320",
+        "SW8": "321",
+        "SW9": "322",
+
+        "KEY0": "352",
+        "KEY1": "353",
+        "KEY2": "354",
+        "KEY3": "355",
+        "FPGA_RESET": "356",
+
+        "LIM0": "2",
+        "LIM1": "3",
+        "LIM2": "4",
+        "LIM3": "5",
+        "LIM4": "6",
+        "LIM5": "7",
+
+        "MEM0": "8",
+        "MEM1": "9",
+        "MEM2": "11",
+        "MEM3": "12",
+        "MEM4": "13",
+        "MEM5": "14",
+
+        "FLAG": "15",
+}
+
+flagClear = False
 
 #Converte o valor após o caractere arroba '@'
 #em um valor hexadecimal de 2 dígitos (8 bits)
-def  converteArroba(line):
+def converteArroba(line):
     line = line.split('@')
-    line[1] = bin(int(line[1]))[2:].upper().zfill(9)
+    if line[1] in addr.keys():
+        line[1] = addr[line[1]]
+    if flagClear:
+        line[1] = bin(863 - int(line[1]))[2:].upper().zfill(9)
+    else:
+        line[1] = bin(int(line[1]))[2:].upper().zfill(9)
     line = ''.join(line)
     return line
  
 #Converte o valor após o caractere cifrão'$'
 #em um valor hexadecimal de 2 dígitos (8 bits) 
-def  converteCifrao(line):
+def converteCifrao(line):
     line = line.split('$')
     line[1] = bin(int(line[1]))[2:].upper().zfill(9)
     line = ''.join(line)
@@ -126,13 +176,15 @@ def defineInstrucao(line):
     
 #Consulta o dicionário e "converte" o mnemônico em
 #seu respectivo valor em hexadecimal
-def trataMnemonico(line):
+def trataMnemonico(line, flagClear):
     line = line.replace("\n", "") #Remove o caracter de final de linha
     line = line.replace("\t", "") #Remove o caracter de tabulacao
     line = line.split(' ')
+    if line[0] == "CLR":
+        flagClear = True
     line[0] = format(int("0x" + mne[line[0]], 16), "b").zfill(4)
     line = "".join(line)
-    return line
+    return line, flagClear
 
 with open(assembly, "r") as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas
@@ -142,21 +194,38 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
 
     cont = 0 #Cria uma variável para contagem
     
-    for line in lines:        
+    for line in lines:
+        if ':' in line:
+            line = line.split(':')
+            addr[line[0]] = cont
+        cont+=1
+
+    cont = 0
+    
+    for line in lines:
         
         #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
             line = line.replace("\n", "")
             print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
         
+        elif ':' in line:
+            line = line.split(':')
+            line = 'tmp(' + str(cont) + ') := "0000000000000";\t-- (LABEL) ' + line[0] + '\n'
+            cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
+            f.write(line) #Escreve no arquivo BIN.txt
+            print(line,end = '') #Print apenas para debug
+        
         #Se a linha for válida para conversão, executa
         else:
+
+            flagClear = False
             
             #Exemplo de linha => 1. JSR @14 #comentario1
             comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha. Ex: #comentario1
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
             
-            instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+            instrucaoLine, flagClear = trataMnemonico(instrucaoLine, flagClear) #Trata o mnemonico. Ex(JSR @14): x"9" @14
 
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 instrucaoLine = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
