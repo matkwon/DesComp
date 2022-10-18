@@ -1,23 +1,24 @@
 """
-Criado em 07/Fevereiro/2022
+Criado em 18/10/2022
 
-@autor: Marco Mello e Paulo Santos
+@autor: Matheus Kwon e João Zsigmond
+
+Inspirado no seguinte código: https://github.com/Insper/DesignComputadores/tree/master/AssemblerASM_BIN_VHDL
 
 
 Regras:
 
-1) O Arquivo ASM.txt não pode conter linhas iniciadas com caracter ' ' ou '\n')
-2) Linhas somente com comentários são excluídas 
-3) Instruções sem comentário no arquivo ASM receberão como comentário no arquivo BIN a própria instrução
-4) Exemplo de codigo invalido:
-                            0.___JSR @14 #comentario1
-                            1.___#comentario2           << Invalido ( Linha somente com comentário )
-                            2.___                       << Invalido ( Linha vazia )
-                            3.___JMP @5  #comentario3
-                            4.___JEQ @9
-                            5.___NOP
-                            6.___NOP
-                            7.___                       << Invalido ( Linha vazia )
+1) No Arquivo ASM.txt, linhas iniciadas com caracter ' ' ou '\n' ou '#' serão ignoradas.
+2) Esse conversor serve para arquitetura Registrador-Memória.
+2) Exemplo de codigo invalido:
+                            0.___JSR @14 #comentario1   << Válido
+                            1.___#comentario2           << Válido, mas ignorado ( Somente comentário )
+                            2.___                       << Válido, mas ignorado ( Linha vazia )
+                            3.___JMP @5  #comentario3   << Válido
+                            4.___JEQ @9                 << Válido
+                            5.___NOP                    << Válido
+                            6.___NOP                    << Válido
+                            7.___                       << Válido ( Linha vazia )
                             8.___LDI $5                 << Invalido ( Linha iniciada com espaço (' ') )
                             9.___ STA $0
                             10.__CEQ @0
@@ -31,7 +32,7 @@ Regras:
                             18.__NOP
                             19.__RET
                                 
-5) Exemplo de código válido (Arquivo ASM.txt):
+3) Exemplo de código válido (Arquivo ASM.txt):
                             0.___JSR @14 #comentario1
                             1.___JMP @5  #comentario3
                             2.___JEQ @9
@@ -71,10 +72,10 @@ Regras:
 
 
 
-assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' #Arquivo de entrada de contem o assembly
-destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
-# assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
-# destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+# assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' #Arquivo de entrada de contem o assembly
+# destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
+destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)
@@ -134,28 +135,41 @@ addr = {
         "FLAG": "15",
 }
 
+regs = {
+        "R0" : "00",
+        "R1" : "01",
+        "R2" : "10",
+        "R3" : "11",
+}
+
 flagClear = False
 
 #Converte o valor após o caractere arroba '@'
 #em um valor hexadecimal de 2 dígitos (8 bits)
 def converteArroba(line):
-    line = line.split('@')
-    if line[1] in addr.keys():
-        line[1] = addr[line[1]]
+    line = line.split('@')[1].split(', ')[0]
+    if line in addr.keys():
+        line = addr[line]
     if flagClear:
-        line[1] = bin(863 - int(line[1]))[2:].upper().zfill(9)
+        return bin(863 - int(line))[2:].upper().zfill(9)
     else:
-        line[1] = bin(int(line[1]))[2:].upper().zfill(9)
-    line = ''.join(line)
-    return line
+        return bin(int(line))[2:].upper().zfill(9)
  
 #Converte o valor após o caractere cifrão'$'
 #em um valor hexadecimal de 2 dígitos (8 bits) 
 def converteCifrao(line):
     line = line.split('$')
-    line[1] = bin(int(line[1]))[2:].upper().zfill(9)
-    line = ''.join(line)
-    return line
+    return bin(int(line[1]))[2:].upper().zfill(9)
+
+def converteReg(line):
+    line = line.split(' ')
+    if len(line) > 2:
+        if '@' in line[1]:
+            return regs[line[2]]
+        else:
+            return regs[line[1].strip(',')]
+    else:
+        return "00"
         
 #Define a string que representa o comentário
 #a partir do caractere cerquilha '#'
@@ -170,7 +184,7 @@ def defineComentario(line):
 #Remove o comentário a partir do caractere cerquilha '#',
 #deixando apenas a instrução
 def defineInstrucao(line):
-    line = line.split('#')
+    line = line.split(' #')
     line = line[0]
     return line
     
@@ -182,9 +196,7 @@ def trataMnemonico(line, flagClear):
     line = line.split(' ')
     if line[0] == "CLR":
         flagClear = True
-    line[0] = format(int("0x" + mne[line[0]], 16), "b").zfill(4)
-    line = "".join(line)
-    return line, flagClear
+    return format(int("0x" + mne[line[0]], 16), "b").zfill(4), flagClear
 
 with open(assembly, "r") as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas
@@ -195,24 +207,25 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
     cont = 0 #Cria uma variável para contagem
     
     for line in lines:
-        if ':' in line:
+        if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
+            cont-=1
+        elif ':' in line:
             line = line.split(':')
             addr[line[0]] = cont
+            cont-=1
         cont+=1
 
     cont = 0
     
     for line in lines:
         
-        #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
+        #Verifica se a linha começa com caracteres '\n' ou ' ' ou '#'
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
-            line = line.replace("\n", "")
-            print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
+            pass
         
         elif ':' in line:
             line = line.split(':')
-            line = 'tmp(' + str(cont) + ') := "0000000000000";\t-- (LABEL) ' + line[0] + '\n'
-            cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
+            line = '\n-- LABEL ' + line[0] + '\n'
             f.write(line) #Escreve no arquivo BIN.txt
             print(line,end = '') #Print apenas para debug
         
@@ -224,20 +237,22 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             #Exemplo de linha => 1. JSR @14 #comentario1
             comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha. Ex: #comentario1
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
-            
-            instrucaoLine, flagClear = trataMnemonico(instrucaoLine, flagClear) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+
+            opcode, flagClear = trataMnemonico(instrucaoLine, flagClear) #Trata o mnemonico. Ex(JSR @14): x"9" @14
 
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
-                instrucaoLine = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
+                imed = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
+                reg = converteReg(instrucaoLine)
                     
             elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$' 
-                instrucaoLine = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
+                imed = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
+                reg = converteReg(instrucaoLine)
                 
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
-                instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
-                instrucaoLine = instrucaoLine + '000000000' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
+                imed = "000000000" #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
+                reg = converteReg(instrucaoLine)
             
-            line = 'tmp(' + str(cont) + ') := "' + instrucaoLine + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
+            line = 'tmp(' + str(cont) + ') := "' + opcode + '" & "' + reg + '" & "' + imed + '" ;\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
                                                                                                        #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
                                         

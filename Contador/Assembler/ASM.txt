@@ -1,23 +1,24 @@
-LDI $0
-STA @0
-STA @2
-LDI $1
-STA @1
-NOP
-LDA @KEY2
-AND
-CEQ @0
+Setup:
+LDI R1, $0
+STA @0, R1
+STA @2, R1
+LDI R0, $1
+STA @1, R0
+
+Loop:
+LDA R0, @KEY2 #a
+AND R0, $1
+CEQ R0, @0
 JEQ @11
 JSR @Incremento
-NOP
-JMP @5
+JMP @Loop
 
 Incremento:
 CLR @KEY2
-LDA @2
-SOMA @1
-AND $15
-STA @2
-STA @HEX0
-STA @LED9
+LDA R0, @2
+SOMA R0, @1
+AND R0, $15
+STA R0, @2
+STA R0, @HEX0
+STA R0, @LED9
 RET

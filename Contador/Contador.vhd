@@ -188,20 +188,6 @@ Display5 : entity work.reg7Seg port map(Dado => DATA_WR(3 downto 0),
 
 TristateSWb : entity work.buffer_3_state_8x8
 				  port map(entrada => SWb, habilita => HabSWb, saida => DATA_RD);
---TristateSW8 : entity work.buffer_3_state_1x8
---				  port map(entrada => SW(8), habilita => HabSW8, saida => DATA_RD);
---TristateSW9 : entity work.buffer_3_state_1x8
---				  port map(entrada => SW(9), habilita => HabSW9, saida => DATA_RD);
---TristateKEY0 : entity work.buffer_3_state_1x8
---					port map(entrada => FF_TRI0, habilita => HabKEY0, saida => DATA_RD);
---TristateKEY1 : entity work.buffer_3_state_1x8
---					port map(entrada => FF_TRI1, habilita => HabKEY1, saida => DATA_RD);
---TristateKEY2 : entity work.buffer_3_state_1x8
---					port map(entrada => FF_TRI2, habilita => HabKEY2, saida => DATA_RD);
---TristateKEY3 : entity work.buffer_3_state_1x8
---					port map(entrada => FF_TRI3, habilita => HabKEY3, saida => DATA_RD);
---TristateFPGAReset : entity work.buffer_3_state_1x8
---						  port map(entrada => FF_TRI_FPGA_RESET, habilita => HabFPGAReset, saida => DATA_RD);
 						  
 DATA_RD(0) <= 'Z' when (HabSW8 = '0') else SW(8);
 DATA_RD(0) <= 'Z' when (HabSW9 = '0') else SW(9);
