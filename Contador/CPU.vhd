@@ -5,7 +5,8 @@ entity CPU is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
         larguraEnderecos : natural := 9;
-        larguraInstru : natural := 13
+        larguraInstru : natural := 15;
+		  larguraEndRegs : natural := 2
   );
   port   (
     CLK : in std_logic;
@@ -27,7 +28,7 @@ architecture arquitetura of CPU is
   signal SelMUX, FlagZero : std_logic;
   signal SelMUX2 : std_logic_vector(1 downto 0);
   signal JMP, JEQ, RET, JSR, FlagIgual : std_logic;
-  signal Habilita_A, HabilitaFlag, HabEscritaEnd : std_logic;
+  signal HabilitaRegs, HabilitaFlag, HabEscritaEnd : std_logic;
   signal Operacao_ULA : std_logic_vector (1 downto 0);
   signal Opcode : std_logic_vector (3 downto 0);
   signal Sinais_Controle : std_logic_vector (11 downto 0);
@@ -56,13 +57,13 @@ MUX2 :  entity work.muxGenerico4x1 generic map (larguraDados => larguraEnderecos
 															   seletor_MUX => SelMUX2,
 															   saida_MUX => MUXPC);
 					  
--- O port map completo do Acumulador.
-REGA : entity work.registradorGenerico generic map (larguraDados => larguraDados)
-														port map (DIN => Saida_ULA,
-																	 DOUT => RegULA,
-																	 ENABLE => Habilita_A,
-																	 CLK => CLK,
-																	 RST => RST);
+-- O port map completo dos Registradores acumuladores.
+REGs : entity work.bancoRegistradoresArqRegMem generic map (larguraDados => larguraDados, larguraEndBancoRegs => larguraEndRegs)
+																  port map (clk => CLK,
+																				endereco => INSTRU(larguraInstru-4-1 downto larguraInstru-4-larguraEndRegs),
+																				dadoEscrita => Saida_ULA,
+																				habilitaEscrita => HabilitaRegs,
+																				saida  => RegULA);
 
 -- O port map completo do Flag de Igual.
 FF_Zero : entity work.flipflop port map (DIN => FlagZero,
@@ -72,12 +73,12 @@ FF_Zero : entity work.flipflop port map (DIN => FlagZero,
 													  RST => RST);
 
 -- O port map completo do registrador End Retorno.
-REGC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
-														port map (DIN => proxPC,
-																	 DOUT => EndRet_MUX,
-																	 ENABLE => HabEscritaEnd,
-																	 CLK => CLK,
-																	 RST => RST);
+REGRet : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
+														  port map (DIN => proxPC,
+														  			   DOUT => EndRet_MUX,
+														  			   ENABLE => HabEscritaEnd,
+														  			   CLK => CLK,
+														  			   RST => RST);
 
 -- O port map completo da Lógica de Desvio.
 LogicaDesvio : entity work.logicaDesvio
@@ -118,7 +119,7 @@ RET <= Sinais_Controle(9);
 JSR <= Sinais_Controle(8);
 JEQ <= Sinais_Controle(7);
 SelMUX <= Sinais_Controle(6);
-Habilita_A <= Sinais_Controle(5);
+HabilitaRegs <= Sinais_Controle(5);
 Operacao_ULA <= Sinais_Controle(4 downto 3);
 HabilitaFlag <= Sinais_Controle(2);
 

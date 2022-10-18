@@ -28,79 +28,78 @@ SW[4] => buffer_3_state_8x8:TristateSWb.entrada[4]
 SW[5] => buffer_3_state_8x8:TristateSWb.entrada[5]
 SW[6] => buffer_3_state_8x8:TristateSWb.entrada[6]
 SW[7] => buffer_3_state_8x8:TristateSWb.entrada[7]
-SW[8] => buffer_3_state_1x8:TristateSW8.entrada
-SW[9] => buffer_3_state_1x8:TristateSW9.entrada
-LEDR[0] <= registradorgenerico:REGLED.DOUT[0]
-LEDR[1] <= registradorgenerico:REGLED.DOUT[1]
-LEDR[2] <= registradorgenerico:REGLED.DOUT[2]
-LEDR[3] <= registradorgenerico:REGLED.DOUT[3]
-LEDR[4] <= registradorgenerico:REGLED.DOUT[4]
-LEDR[5] <= registradorgenerico:REGLED.DOUT[5]
-LEDR[6] <= registradorgenerico:REGLED.DOUT[6]
-LEDR[7] <= registradorgenerico:REGLED.DOUT[7]
-LEDR[8] <= flipflop:FF1.DOUT
-LEDR[9] <= flipflop:FF2.DOUT
-PC_OUT[0] <= cpu:CPU.ROM_ADDR[0]
-PC_OUT[1] <= cpu:CPU.ROM_ADDR[1]
-PC_OUT[2] <= cpu:CPU.ROM_ADDR[2]
-PC_OUT[3] <= cpu:CPU.ROM_ADDR[3]
-PC_OUT[4] <= cpu:CPU.ROM_ADDR[4]
-PC_OUT[5] <= cpu:CPU.ROM_ADDR[5]
-PC_OUT[6] <= cpu:CPU.ROM_ADDR[6]
-PC_OUT[7] <= cpu:CPU.ROM_ADDR[7]
-PC_OUT[8] <= cpu:CPU.ROM_ADDR[8]
-HEX0[0] <= reg7seg:Display0.saida7seg[0]
-HEX0[1] <= reg7seg:Display0.saida7seg[1]
-HEX0[2] <= reg7seg:Display0.saida7seg[2]
-HEX0[3] <= reg7seg:Display0.saida7seg[3]
-HEX0[4] <= reg7seg:Display0.saida7seg[4]
-HEX0[5] <= reg7seg:Display0.saida7seg[5]
-HEX0[6] <= reg7seg:Display0.saida7seg[6]
-HEX1[0] <= reg7seg:Display1.saida7seg[0]
-HEX1[1] <= reg7seg:Display1.saida7seg[1]
-HEX1[2] <= reg7seg:Display1.saida7seg[2]
-HEX1[3] <= reg7seg:Display1.saida7seg[3]
-HEX1[4] <= reg7seg:Display1.saida7seg[4]
-HEX1[5] <= reg7seg:Display1.saida7seg[5]
-HEX1[6] <= reg7seg:Display1.saida7seg[6]
-HEX2[0] <= reg7seg:Display2.saida7seg[0]
-HEX2[1] <= reg7seg:Display2.saida7seg[1]
-HEX2[2] <= reg7seg:Display2.saida7seg[2]
-HEX2[3] <= reg7seg:Display2.saida7seg[3]
-HEX2[4] <= reg7seg:Display2.saida7seg[4]
-HEX2[5] <= reg7seg:Display2.saida7seg[5]
-HEX2[6] <= reg7seg:Display2.saida7seg[6]
-HEX3[0] <= reg7seg:Display3.saida7seg[0]
-HEX3[1] <= reg7seg:Display3.saida7seg[1]
-HEX3[2] <= reg7seg:Display3.saida7seg[2]
-HEX3[3] <= reg7seg:Display3.saida7seg[3]
-HEX3[4] <= reg7seg:Display3.saida7seg[4]
-HEX3[5] <= reg7seg:Display3.saida7seg[5]
-HEX3[6] <= reg7seg:Display3.saida7seg[6]
-HEX4[0] <= reg7seg:Display4.saida7seg[0]
-HEX4[1] <= reg7seg:Display4.saida7seg[1]
-HEX4[2] <= reg7seg:Display4.saida7seg[2]
-HEX4[3] <= reg7seg:Display4.saida7seg[3]
-HEX4[4] <= reg7seg:Display4.saida7seg[4]
-HEX4[5] <= reg7seg:Display4.saida7seg[5]
-HEX4[6] <= reg7seg:Display4.saida7seg[6]
-HEX5[0] <= reg7seg:Display5.saida7seg[0]
-HEX5[1] <= reg7seg:Display5.saida7seg[1]
-HEX5[2] <= reg7seg:Display5.saida7seg[2]
-HEX5[3] <= reg7seg:Display5.saida7seg[3]
-HEX5[4] <= reg7seg:Display5.saida7seg[4]
-HEX5[5] <= reg7seg:Display5.saida7seg[5]
-HEX5[6] <= reg7seg:Display5.saida7seg[6]
+SW[8] => DATA_RD[0].DATAIN
+SW[9] => DATA_RD[0].DATAIN
+LEDR[0] << registradorgenerico:REGLED.DOUT[0]
+LEDR[1] << registradorgenerico:REGLED.DOUT[1]
+LEDR[2] << registradorgenerico:REGLED.DOUT[2]
+LEDR[3] << registradorgenerico:REGLED.DOUT[3]
+LEDR[4] << registradorgenerico:REGLED.DOUT[4]
+LEDR[5] << registradorgenerico:REGLED.DOUT[5]
+LEDR[6] << registradorgenerico:REGLED.DOUT[6]
+LEDR[7] << registradorgenerico:REGLED.DOUT[7]
+LEDR[8] << flipflop:FF1.DOUT
+LEDR[9] << flipflop:FF2.DOUT
+PC_OUT[0] << cpu:CPU.ROM_ADDR[0]
+PC_OUT[1] << cpu:CPU.ROM_ADDR[1]
+PC_OUT[2] << cpu:CPU.ROM_ADDR[2]
+PC_OUT[3] << cpu:CPU.ROM_ADDR[3]
+PC_OUT[4] << cpu:CPU.ROM_ADDR[4]
+PC_OUT[5] << cpu:CPU.ROM_ADDR[5]
+PC_OUT[6] << cpu:CPU.ROM_ADDR[6]
+PC_OUT[7] << cpu:CPU.ROM_ADDR[7]
+PC_OUT[8] << cpu:CPU.ROM_ADDR[8]
+HEX0[0] << reg7seg:Display0.saida7seg[0]
+HEX0[1] << reg7seg:Display0.saida7seg[1]
+HEX0[2] << reg7seg:Display0.saida7seg[2]
+HEX0[3] << reg7seg:Display0.saida7seg[3]
+HEX0[4] << reg7seg:Display0.saida7seg[4]
+HEX0[5] << reg7seg:Display0.saida7seg[5]
+HEX0[6] << reg7seg:Display0.saida7seg[6]
+HEX1[0] << reg7seg:Display1.saida7seg[0]
+HEX1[1] << reg7seg:Display1.saida7seg[1]
+HEX1[2] << reg7seg:Display1.saida7seg[2]
+HEX1[3] << reg7seg:Display1.saida7seg[3]
+HEX1[4] << reg7seg:Display1.saida7seg[4]
+HEX1[5] << reg7seg:Display1.saida7seg[5]
+HEX1[6] << reg7seg:Display1.saida7seg[6]
+HEX2[0] << reg7seg:Display2.saida7seg[0]
+HEX2[1] << reg7seg:Display2.saida7seg[1]
+HEX2[2] << reg7seg:Display2.saida7seg[2]
+HEX2[3] << reg7seg:Display2.saida7seg[3]
+HEX2[4] << reg7seg:Display2.saida7seg[4]
+HEX2[5] << reg7seg:Display2.saida7seg[5]
+HEX2[6] << reg7seg:Display2.saida7seg[6]
+HEX3[0] << reg7seg:Display3.saida7seg[0]
+HEX3[1] << reg7seg:Display3.saida7seg[1]
+HEX3[2] << reg7seg:Display3.saida7seg[2]
+HEX3[3] << reg7seg:Display3.saida7seg[3]
+HEX3[4] << reg7seg:Display3.saida7seg[4]
+HEX3[5] << reg7seg:Display3.saida7seg[5]
+HEX3[6] << reg7seg:Display3.saida7seg[6]
+HEX4[0] << reg7seg:Display4.saida7seg[0]
+HEX4[1] << reg7seg:Display4.saida7seg[1]
+HEX4[2] << reg7seg:Display4.saida7seg[2]
+HEX4[3] << reg7seg:Display4.saida7seg[3]
+HEX4[4] << reg7seg:Display4.saida7seg[4]
+HEX4[5] << reg7seg:Display4.saida7seg[5]
+HEX4[6] << reg7seg:Display4.saida7seg[6]
+HEX5[0] << reg7seg:Display5.saida7seg[0]
+HEX5[1] << reg7seg:Display5.saida7seg[1]
+HEX5[2] << reg7seg:Display5.saida7seg[2]
+HEX5[3] << reg7seg:Display5.saida7seg[3]
+HEX5[4] << reg7seg:Display5.saida7seg[4]
+HEX5[5] << reg7seg:Display5.saida7seg[5]
+HEX5[6] << reg7seg:Display5.saida7seg[6]
 
 
 |Contador|CPU:CPU
-CLK => registradorgenerico:REGA.CLK
+CLK => bancoregistradoresarqregmem:REGs.clk
 CLK => flipflop:FF_Zero.CLK
-CLK => registradorgenerico:REGC.CLK
+CLK => registradorgenerico:REGRet.CLK
 CLK => registradorgenerico:PC.CLK
-RST => registradorgenerico:REGA.RST
 RST => flipflop:FF_Zero.RST
-RST => registradorgenerico:REGC.RST
+RST => registradorgenerico:REGRet.RST
 INSTRU[0] => muxgenerico2x1:MUX1.entradaB_MUX[0]
 INSTRU[0] => muxgenerico4x1:MUX2.entradaB_MUX[0]
 INSTRU[0] => ADDR[0].DATAIN
@@ -127,10 +126,12 @@ INSTRU[7] => muxgenerico4x1:MUX2.entradaB_MUX[7]
 INSTRU[7] => ADDR[7].DATAIN
 INSTRU[8] => muxgenerico4x1:MUX2.entradaB_MUX[8]
 INSTRU[8] => ADDR[8].DATAIN
-INSTRU[9] => decoderinstru:decoder.opcode[0]
-INSTRU[10] => decoderinstru:decoder.opcode[1]
-INSTRU[11] => decoderinstru:decoder.opcode[2]
-INSTRU[12] => decoderinstru:decoder.opcode[3]
+INSTRU[9] => bancoregistradoresarqregmem:REGs.endereco[0]
+INSTRU[10] => bancoregistradoresarqregmem:REGs.endereco[1]
+INSTRU[11] => decoderinstru:decoder.opcode[0]
+INSTRU[12] => decoderinstru:decoder.opcode[1]
+INSTRU[13] => decoderinstru:decoder.opcode[2]
+INSTRU[14] => decoderinstru:decoder.opcode[3]
 DIN[0] => muxgenerico2x1:MUX1.entradaA_MUX[0]
 DIN[1] => muxgenerico2x1:MUX1.entradaA_MUX[1]
 DIN[2] => muxgenerico2x1:MUX1.entradaA_MUX[2]
@@ -139,14 +140,14 @@ DIN[4] => muxgenerico2x1:MUX1.entradaA_MUX[4]
 DIN[5] => muxgenerico2x1:MUX1.entradaA_MUX[5]
 DIN[6] => muxgenerico2x1:MUX1.entradaA_MUX[6]
 DIN[7] => muxgenerico2x1:MUX1.entradaA_MUX[7]
-DOUT[0] <= registradorgenerico:REGA.DOUT[0]
-DOUT[1] <= registradorgenerico:REGA.DOUT[1]
-DOUT[2] <= registradorgenerico:REGA.DOUT[2]
-DOUT[3] <= registradorgenerico:REGA.DOUT[3]
-DOUT[4] <= registradorgenerico:REGA.DOUT[4]
-DOUT[5] <= registradorgenerico:REGA.DOUT[5]
-DOUT[6] <= registradorgenerico:REGA.DOUT[6]
-DOUT[7] <= registradorgenerico:REGA.DOUT[7]
+DOUT[0] <= bancoregistradoresarqregmem:REGs.saida[0]
+DOUT[1] <= bancoregistradoresarqregmem:REGs.saida[1]
+DOUT[2] <= bancoregistradoresarqregmem:REGs.saida[2]
+DOUT[3] <= bancoregistradoresarqregmem:REGs.saida[3]
+DOUT[4] <= bancoregistradoresarqregmem:REGs.saida[4]
+DOUT[5] <= bancoregistradoresarqregmem:REGs.saida[5]
+DOUT[6] <= bancoregistradoresarqregmem:REGs.saida[6]
+DOUT[7] <= bancoregistradoresarqregmem:REGs.saida[7]
 ADDR[0] <= INSTRU[0].DB_MAX_OUTPUT_PORT_TYPE
 ADDR[1] <= INSTRU[1].DB_MAX_OUTPUT_PORT_TYPE
 ADDR[2] <= INSTRU[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -321,47 +322,51 @@ saida_MUX[7] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 saida_MUX[8] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Contador|CPU:CPU|registradorGenerico:REGA
-DIN[0] => DOUT[0]~reg0.DATAIN
-DIN[1] => DOUT[1]~reg0.DATAIN
-DIN[2] => DOUT[2]~reg0.DATAIN
-DIN[3] => DOUT[3]~reg0.DATAIN
-DIN[4] => DOUT[4]~reg0.DATAIN
-DIN[5] => DOUT[5]~reg0.DATAIN
-DIN[6] => DOUT[6]~reg0.DATAIN
-DIN[7] => DOUT[7]~reg0.DATAIN
-DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-ENABLE => DOUT[7]~reg0.ENA
-ENABLE => DOUT[6]~reg0.ENA
-ENABLE => DOUT[5]~reg0.ENA
-ENABLE => DOUT[4]~reg0.ENA
-ENABLE => DOUT[3]~reg0.ENA
-ENABLE => DOUT[2]~reg0.ENA
-ENABLE => DOUT[1]~reg0.ENA
-ENABLE => DOUT[0]~reg0.ENA
-CLK => DOUT[0]~reg0.CLK
-CLK => DOUT[1]~reg0.CLK
-CLK => DOUT[2]~reg0.CLK
-CLK => DOUT[3]~reg0.CLK
-CLK => DOUT[4]~reg0.CLK
-CLK => DOUT[5]~reg0.CLK
-CLK => DOUT[6]~reg0.CLK
-CLK => DOUT[7]~reg0.CLK
-RST => DOUT[0]~reg0.ACLR
-RST => DOUT[1]~reg0.ACLR
-RST => DOUT[2]~reg0.ACLR
-RST => DOUT[3]~reg0.ACLR
-RST => DOUT[4]~reg0.ACLR
-RST => DOUT[5]~reg0.ACLR
-RST => DOUT[6]~reg0.ACLR
-RST => DOUT[7]~reg0.ACLR
+|Contador|CPU:CPU|bancoRegistradoresArqRegMem:REGs
+clk => registrador~10.CLK
+clk => registrador~0.CLK
+clk => registrador~1.CLK
+clk => registrador~2.CLK
+clk => registrador~3.CLK
+clk => registrador~4.CLK
+clk => registrador~5.CLK
+clk => registrador~6.CLK
+clk => registrador~7.CLK
+clk => registrador~8.CLK
+clk => registrador~9.CLK
+clk => registrador.CLK0
+endereco[0] => registrador~1.DATAIN
+endereco[0] => registrador.WADDR
+endereco[0] => registrador.RADDR
+endereco[1] => registrador~0.DATAIN
+endereco[1] => registrador.WADDR1
+endereco[1] => registrador.RADDR1
+dadoEscrita[0] => registrador~9.DATAIN
+dadoEscrita[0] => registrador.DATAIN
+dadoEscrita[1] => registrador~8.DATAIN
+dadoEscrita[1] => registrador.DATAIN1
+dadoEscrita[2] => registrador~7.DATAIN
+dadoEscrita[2] => registrador.DATAIN2
+dadoEscrita[3] => registrador~6.DATAIN
+dadoEscrita[3] => registrador.DATAIN3
+dadoEscrita[4] => registrador~5.DATAIN
+dadoEscrita[4] => registrador.DATAIN4
+dadoEscrita[5] => registrador~4.DATAIN
+dadoEscrita[5] => registrador.DATAIN5
+dadoEscrita[6] => registrador~3.DATAIN
+dadoEscrita[6] => registrador.DATAIN6
+dadoEscrita[7] => registrador~2.DATAIN
+dadoEscrita[7] => registrador.DATAIN7
+habilitaEscrita => registrador~10.DATAIN
+habilitaEscrita => registrador.WE
+saida[0] <= registrador.DATAOUT
+saida[1] <= registrador.DATAOUT1
+saida[2] <= registrador.DATAOUT2
+saida[3] <= registrador.DATAOUT3
+saida[4] <= registrador.DATAOUT4
+saida[5] <= registrador.DATAOUT5
+saida[6] <= registrador.DATAOUT6
+saida[7] <= registrador.DATAOUT7
 
 
 |Contador|CPU:CPU|flipflop:FF_Zero
@@ -372,7 +377,7 @@ CLK => DOUT~reg0.CLK
 RST => DOUT~reg0.ACLR
 
 
-|Contador|CPU:CPU|registradorGenerico:REGC
+|Contador|CPU:CPU|registradorGenerico:REGRet
 DIN[0] => DOUT[0]~reg0.DATAIN
 DIN[1] => DOUT[1]~reg0.DATAIN
 DIN[2] => DOUT[2]~reg0.DATAIN
@@ -671,6 +676,8 @@ Dado[9] <= memROM.DATAOUT9
 Dado[10] <= memROM.DATAOUT10
 Dado[11] <= memROM.DATAOUT11
 Dado[12] <= memROM.DATAOUT12
+Dado[13] <= memROM.DATAOUT13
+Dado[14] <= memROM.DATAOUT14
 
 
 |Contador|dataAddresser:DataAddr
@@ -843,22 +850,22 @@ saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 |Contador|edgeDetector:BORDA_KEY2
 clk => saidaQ.CLK
-entrada => saidaQ.DATAIN
 entrada => saida.IN1
+entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Contador|edgeDetector:BORDA_KEY3
 clk => saidaQ.CLK
-entrada => saidaQ.DATAIN
 entrada => saida.IN1
+entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Contador|edgeDetector:BORDA_FPGA_RESET
 clk => saidaQ.CLK
-entrada => saidaQ.DATAIN
 entrada => saida.IN1
+entrada => saidaQ.DATAIN
 saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -1655,146 +1662,6 @@ entrada[4] => saida[4].DATAIN
 entrada[5] => saida[5].DATAIN
 entrada[6] => saida[6].DATAIN
 entrada[7] => saida[7].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateSW8
-entrada => saida[0].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateSW9
-entrada => saida[0].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateKEY0
-entrada => saida[0].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateKEY1
-entrada => saida[0].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateKEY2
-entrada => saida[0].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateKEY3
-entrada => saida[0].DATAIN
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Contador|buffer_3_state_1x8:TristateFPGAReset
-entrada => saida[0].DATAIN
 habilita => saida[0].OE
 habilita => saida[1].OE
 habilita => saida[2].OE
