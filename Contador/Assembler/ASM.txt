@@ -5,15 +5,15 @@ LDI $1
 STA @1
 NOP
 LDA @352
-STA @288
 CEQ @0
 JEQ @11
-JSR @13
+JSR @12
 NOP
 JMP @5
-STA @511
+STA @511    # Func Incremento
 LDA @2
 SOMA @1
 STA @2
 STA @258
-RET
+STA @288
+RET         # End Incremento

@@ -17,7 +17,6 @@ entity Contador is
 		SW			  	 : in std_logic_vector(9 downto 0);
 		LEDR		  	 : out std_logic_vector(9 downto 0);
 		PC_OUT	  	 : out std_logic_vector(larguraEnderecos-1 downto 0);
-		testeinA, testeinB : out std_logic_vector(larguraDados-1 downto 0);
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5	: out std_logic_vector(6 downto 0)
 	);
 end entity;
@@ -43,7 +42,7 @@ architecture arquitetura of Contador is
   
   signal LED8, LED9 : std_logic;
   signal LEDb		  : std_logic_vector(larguraDados-1 downto 0);
-  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET, flagteste : std_logic;
+  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET : std_logic;
   
   signal FF_TRI0, FF_TRI1, FF_TRI2, FF_TRI3, FF_TRI_FPGA_RESET : std_logic;
 
@@ -71,10 +70,7 @@ CPU : entity work.CPU generic map (larguraDados => larguraDados,
 											  ADDR => Endereco,
 											  ROM_ADDR => EndROM,
 											  RD => RD,
-											  WR => WR,
-											  flagteste => flagteste,
-											  testeinA => testeinA,
-											  testeinB => testeinB);
+											  WR => WR);
 
 RAM : entity work.memoriaRAM generic map (dataWidth => larguraDados, 
 														addrWidth => larguraRAM)

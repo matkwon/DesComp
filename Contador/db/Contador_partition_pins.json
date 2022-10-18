@@ -48,70 +48,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "testeinA[0]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[4]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[5]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[6]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinA[7]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[0]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[6]",
-					"strict" : false
-				},
-				{
-					"name" : "testeinB[7]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX0[0]",
 					"strict" : false
 				},
@@ -140,31 +76,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[0]",
+					"name" : "HEX4[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[1]",
+					"name" : "HEX4[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[2]",
+					"name" : "HEX4[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[3]",
+					"name" : "HEX4[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[4]",
+					"name" : "HEX4[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[5]",
+					"name" : "HEX4[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX1[6]",
+					"name" : "HEX4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
@@ -204,11 +148,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
+					"name" : "KEY[0]",
 					"strict" : false
 				}
 			]

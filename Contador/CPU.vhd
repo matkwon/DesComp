@@ -12,9 +12,9 @@ entity CPU is
     RST : in std_logic;
     INSTRU: in std_logic_vector(larguraInstru-1 downto 0);
     DIN: in std_logic_vector(larguraDados-1 downto 0);
-	 DOUT, testeinA, testeinB : out std_logic_vector(larguraDados-1 downto 0);
+	 DOUT: out std_logic_vector(larguraDados-1 downto 0);
     ADDR, ROM_ADDR: out std_logic_vector(larguraEnderecos-1 downto 0);
-	 RD, WR, flagteste: out std_logic
+	 RD, WR: out std_logic
   );
 end entity;
 
@@ -128,9 +128,6 @@ ADDR <= INSTRU(larguraEnderecos-1 downto 0);
 RD <= Sinais_Controle(1);
 WR <= Sinais_Controle(0);
 
-flagteste <= FlagIgual;
-testeinA <= RegULA;
-testeinB <= MUX_OUT;
 
 
 end architecture;
