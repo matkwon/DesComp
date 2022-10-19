@@ -87,72 +87,72 @@ destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' # Arquivo de saída que con
 # Definição dos mnemônicos e seus 
 # respectivo OPCODEs (em Decimal)
 mne =	{ 
-        "NOP":   "0",
-        "LDA":   "1",
-        "SOMA":  "2",
-        "SUB":   "3",
-        "AND":   "4",
-        "LDI":   "5",
-        "STA":   "6",
-        "CLR":   "6",
-        "JMP":   "7",
-        "JEQ":   "8",
-        "CEQ":   "9",
-        "JSR":   "10",
-        "RET":   "11",
+        "NOP":   0,
+        "LDA":   1,
+        "SOMA":  2,
+        "SUB":   3,
+        "AND":   4,
+        "LDI":   5,
+        "STA":   6,
+        "CLR":   6,
+        "JMP":   7,
+        "JEQ":   8,
+        "CEQ":   9,
+        "JSR":   10,
+        "RET":   11,
 }
 
 # Endereco de variáveis, outputs e 
 # labels (em Decimal)
 addr = {
-        "LEDb": "256",
-        "LED8": "257",
-        "LED9": "258",
+        "LEDb": 256,
+        "LED8": 257,
+        "LED9": 258,
 
-        "HEX0": "288",
-        "HEX1": "289",
-        "HEX2": "290",
-        "HEX3": "291",
-        "HEX4": "292",
-        "HEX5": "293",
+        "HEX0": 288,
+        "HEX1": 289,
+        "HEX2": 290,
+        "HEX3": 291,
+        "HEX4": 292,
+        "HEX5": 293,
 
-        "SWb": "320",
-        "SW8": "321",
-        "SW9": "322",
+        "SWb": 320,
+        "SW8": 321,
+        "SW9": 322,
 
-        "KEY0": "352",
-        "KEY1": "353",
-        "KEY2": "354",
-        "KEY3": "355",
-        "FPGA_RESET": "356",
+        "KEY0": 352,
+        "KEY1": 353,
+        "KEY2": 354,
+        "KEY3": 355,
+        "FPGA_RESET": 356,
 
-        "LIM0": "2",
-        "LIM1": "3",
-        "LIM2": "4",
-        "LIM3": "5",
-        "LIM4": "6",
-        "LIM5": "7",
+        "LIM0": 2,
+        "LIM1": 3,
+        "LIM2": 4,
+        "LIM3": 5,
+        "LIM4": 6,
+        "LIM5": 7,
 
-        "MEM0": "8",
-        "MEM1": "9",
-        "MEM2": "11",
-        "MEM3": "12",
-        "MEM4": "13",
-        "MEM5": "14",
+        "MEM0": 8,
+        "MEM1": 9,
+        "MEM2": 11,
+        "MEM3": 12,
+        "MEM4": 13,
+        "MEM5": 14,
 
-        "FLAG": "15",
+        "FLAG": 15,
 }
 
 # Endereçamento de registradores (em Decimal)
 regs = {
-        "R0" : "0",
-        "R1" : "1",
-        "R2" : "2",
-        "R3" : "3",
-        "R4" : "4",
-        "R5" : "5",
-        "R6" : "6",
-        "R7" : "7",
+        "R0" : 0,
+        "R1" : 1,
+        "R2" : 2,
+        "R3" : 3,
+        "R4" : 4,
+        "R5" : 5,
+        "R6" : 6,
+        "R7" : 7,
 }
 
 # Flag para indicar limpeza de botão
@@ -165,15 +165,15 @@ def converteArroba(line):
     if line in addr.keys():
         line = addr[line]
     if flagClear:
-        return bin(863 - int(line))[2:].upper().zfill(9)
+        return f"{863-int(line):09b}"
     else:
-        return bin(int(line))[2:].upper().zfill(9)
+        return f"{int(line):09b}"
  
 # Converte o valor após o caractere cifrão'$'
 # em um valor binário de 9 bits
 def converteCifrao(line):
     line = line.split('$')
-    return bin(int(line[1]))[2:].upper().zfill(9)
+    return f"{int(line[1]):09b}"
 
 # Consulta o dicionário de registradores e "converte"
 # o registrador em seu respectivo valor em binário
@@ -181,9 +181,9 @@ def converteReg(line):
     line = line.split(' ')
     if len(line) > 2:
         if '@' in line[1]:
-            return bin(int(regs[line[2]]))[2:].upper().zfill(3)
+            return f"{regs[line[2]]:03b}"
         else:
-            return bin(int(regs[line[1].strip(',')]))[2:].upper().zfill(3)
+            return f"{regs[line[1].strip(',')]:03b}"
     else:
         return "000"
 
@@ -202,7 +202,7 @@ def trataMnemonico(line, flagClear):
     line = line.split(' ')
     if line[0] == "CLR":
         flagClear = True
-    return bin(int(mne[line[0]]))[2:].upper().zfill(4), flagClear
+    return f"{mne[line[0]]:04b}", flagClear
 
 with open(assembly, "r") as f: # Abre o arquivo ASM
     lines = f.readlines() # Lê as linhas
