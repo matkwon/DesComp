@@ -1,5 +1,5 @@
 Assembler report for Contador
-Tue Oct 18 19:13:16 2022
+Tue Oct 18 21:06:30 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Oct 18 19:13:16 2022 ;
+; Assembler Status      ; Successful - Tue Oct 18 21:06:30 2022 ;
 ; Revision Name         ; Contador                              ;
 ; Top-level Entity Name ; Contador                              ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------------------------------------------------------+
 ; Option         ; Setting                                                ;
 +----------------+--------------------------------------------------------+
-; JTAG usercode  ; 0x0051FEFD                                             ;
-; Checksum       ; 0x0051FEFD                                             ;
+; JTAG usercode  ; 0x00527F88                                             ;
+; Checksum       ; 0x00527F88                                             ;
 +----------------+--------------------------------------------------------+
 
 
@@ -78,13 +78,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 18 19:13:10 2022
+    Info: Processing started: Tue Oct 18 21:06:25 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Contador -c Contador
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4819 megabytes
-    Info: Processing ended: Tue Oct 18 19:13:16 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4817 megabytes
+    Info: Processing ended: Tue Oct 18 21:06:30 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

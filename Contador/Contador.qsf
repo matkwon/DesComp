@@ -281,7 +281,6 @@ set_global_assignment -name VHDL_FILE dataAddresser.vhd
 set_global_assignment -name VHDL_FILE CPU.vhd
 set_global_assignment -name VHDL_FILE conversorHex7Seg.vhd
 set_global_assignment -name VHDL_FILE buffer_3_state_8x8.vhd
-set_global_assignment -name VHDL_FILE buffer_3_state_1x8.vhd
 set_global_assignment -name VHDL_FILE Contador.vhd
 set_global_assignment -name VHDL_FILE ULA.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf

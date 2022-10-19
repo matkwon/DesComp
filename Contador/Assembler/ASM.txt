@@ -1,15 +1,17 @@
 Setup:
-LDI R1, $0
-STA @0, R1
-STA @2, R1
-LDI R0, $1
-STA @1, R0
+LDI R0, $0
+STA @0, R0
+STA @2, R0
+LDI R1, $1
+STA @1, R1
+LDI R1, $10
+STA @10, R1
 
 Loop:
 LDA R0, @KEY2 #a
-AND R0, $1
+AND R0, @1
 CEQ R0, @0
-JEQ @11
+JEQ @Loop
 JSR @Incremento
 JMP @Loop
 
@@ -17,7 +19,6 @@ Incremento:
 CLR @KEY2
 LDA R0, @2
 SOMA R0, @1
-AND R0, $15
 STA R0, @2
 STA R0, @HEX0
 STA R0, @LED9

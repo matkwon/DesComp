@@ -33,22 +33,29 @@ Regras:
                             19.__RET
                                 
 3) Exemplo de código válido (Arquivo ASM.txt):
-                            0.___JSR @14 #comentario1
-                            1.___JMP @5  #comentario3
-                            2.___JEQ @9
-                            3.___NOP
-                            4.___NOP
-                            5.___LDI $5
-                            6.___STA $0
-                            7.___CEQ @0
-                            8.___JMP @2  #comentario4
-                            9.___NOP
-                            10.__LDI $4
-                            11.__CEQ @0
-                            12.__JEQ @3
-                            13.__JMP @13
-                            14.__NOP
-                            15.__RET
+                            0.___Setup:
+                            0.___LDI R1, $0
+                            1.___STA @0, R1 # Constante 0
+                            2.___STA @2, R1 # 
+                            3.___LDI R0, $1
+                            4.___STA @1, R0
+                            4.___
+                            4.___Loop:
+                            5.___LDA R0, @KEY2
+                            6.___AND R0, @1
+                            7.___CEQ R0, @0
+                            8.___JEQ @Loop
+                            9.___JSR @Incremento
+                            10.__JMP @Loop
+                            10.__
+                            10.__Incremento:
+                            11.__CLR @KEY2
+                            12.__LDA R0, @2
+                            13.__SOMA R0, @1
+                            14.__STA R0, @2
+                            15.__STA R0, @HEX0
+                            16.__STA R0, @LED9
+                            17.__RET
                             
 6) Resultado do código válido (Arquivo BIN.txt):
                             0.__tmp(0) := x"90E"; -- comentario1
@@ -72,13 +79,13 @@ Regras:
 
 
 
-# assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' #Arquivo de entrada de contem o assembly
-# destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
-assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
-destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' # Arquivo de entrada de contém o assembly
+destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
+# assembly = 'ASM.txt' # Arquivo de entrada de contém o assembly
+# destinoBIN = 'BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
 
-#definição dos mnemônicos e seus
-#respectivo OPCODEs (em Hexadecimal)
+# Definição dos mnemônicos e seus 
+# respectivo OPCODEs (em Decimal)
 mne =	{ 
         "NOP":   "0",
         "LDA":   "1",
@@ -91,11 +98,12 @@ mne =	{
         "JMP":   "7",
         "JEQ":   "8",
         "CEQ":   "9",
-        "JSR":   "A",
-        "RET":   "B",
+        "JSR":   "10",
+        "RET":   "11",
 }
 
-#endereco de variáveis, outputs e labels
+# Endereco de variáveis, outputs e 
+# labels (em Decimal)
 addr = {
         "LEDb": "256",
         "LED8": "257",
@@ -135,17 +143,23 @@ addr = {
         "FLAG": "15",
 }
 
+# Endereçamento de registradores (em Decimal)
 regs = {
-        "R0" : "00",
-        "R1" : "01",
-        "R2" : "10",
-        "R3" : "11",
+        "R0" : "0",
+        "R1" : "1",
+        "R2" : "2",
+        "R3" : "3",
+        "R4" : "4",
+        "R5" : "5",
+        "R6" : "6",
+        "R7" : "7",
 }
 
+# Flag para indicar limpeza de botão
 flagClear = False
 
-#Converte o valor após o caractere arroba '@'
-#em um valor hexadecimal de 2 dígitos (8 bits)
+# Converte o valor após o caractere arroba '@'
+# em um valor binário de 9 bits
 def converteArroba(line):
     line = line.split('@')[1].split(', ')[0]
     if line in addr.keys():
@@ -155,57 +169,50 @@ def converteArroba(line):
     else:
         return bin(int(line))[2:].upper().zfill(9)
  
-#Converte o valor após o caractere cifrão'$'
-#em um valor hexadecimal de 2 dígitos (8 bits) 
+# Converte o valor após o caractere cifrão'$'
+# em um valor binário de 9 bits
 def converteCifrao(line):
     line = line.split('$')
     return bin(int(line[1]))[2:].upper().zfill(9)
 
+# Consulta o dicionário de registradores e "converte"
+# o registrador em seu respectivo valor em binário
 def converteReg(line):
     line = line.split(' ')
     if len(line) > 2:
         if '@' in line[1]:
-            return regs[line[2]]
+            return bin(int(regs[line[2]]))[2:].upper().zfill(3)
         else:
-            return regs[line[1].strip(',')]
+            return bin(int(regs[line[1].strip(',')]))[2:].upper().zfill(3)
     else:
-        return "00"
-        
-#Define a string que representa o comentário
-#a partir do caractere cerquilha '#'
-def defineComentario(line):
-    if '#' in line:
-        line = line.split('#')
-        line = line[0] + "\t#" + line[1]
-        return line
-    else:
-        return line
+        return "000"
 
-#Remove o comentário a partir do caractere cerquilha '#',
-#deixando apenas a instrução
+# Remove o comentário a partir do caractere 
+# cerquilha '#', deixando apenas a instrução
 def defineInstrucao(line):
     line = line.split(' #')
     line = line[0]
     return line
     
-#Consulta o dicionário e "converte" o mnemônico em
-#seu respectivo valor em hexadecimal
+# Consulta o dicionário e "converte" o mnemônico em
+# seu respectivo valor em binário (opcode)
 def trataMnemonico(line, flagClear):
-    line = line.replace("\n", "") #Remove o caracter de final de linha
-    line = line.replace("\t", "") #Remove o caracter de tabulacao
+    line = line.replace("\n", "") # Remove o caracter de final de linha
+    line = line.replace("\t", "") # Remove o caracter de tabulacao
     line = line.split(' ')
     if line[0] == "CLR":
         flagClear = True
-    return format(int("0x" + mne[line[0]], 16), "b").zfill(4), flagClear
+    return bin(int(mne[line[0]]))[2:].upper().zfill(4), flagClear
 
-with open(assembly, "r") as f: #Abre o arquivo ASM
-    lines = f.readlines() #Verifica a quantidade de linhas
+with open(assembly, "r") as f: # Abre o arquivo ASM
+    lines = f.readlines() # Lê as linhas
     
     
-with open(destinoBIN, "w") as f:  #Abre o destino BIN
+with open(destinoBIN, "w") as f:  # Abre o destino BIN
 
-    cont = 0 #Cria uma variável para contagem
+    cont = 0 # Cria uma variável para contagem
     
+    # Verificar labels e guardar seus endereços
     for line in lines:
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
             cont-=1
@@ -219,44 +226,51 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
     
     for line in lines:
         
-        #Verifica se a linha começa com caracteres '\n' ou ' ' ou '#'
+        # Verifica se a linha começa com o caractere '\n' ou ' ' ou '#'
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
             pass
         
+        # Indica onde há labels com comentário
         elif ':' in line:
             line = line.split(':')
             line = '\n-- LABEL ' + line[0] + '\n'
-            f.write(line) #Escreve no arquivo BIN.txt
-            print(line,end = '') #Print apenas para debug
+            f.write(line) # Escreve no arquivo BIN.txt
+            print(line,end = '') # Print apenas para debug
         
-        #Se a linha for válida para conversão, executa
+        # Se a linha for válida para conversão, executa
         else:
 
             flagClear = False
             
-            #Exemplo de linha => 1. JSR @14 #comentario1
-            comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha. Ex: #comentario1
-            instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
+            # Exemplo de linha => 1. STA @10, R1 #comentario1
+            comentarioLine = line.replace("\n","") # Linha será mostrada como comentário depois de comando
+            instrucaoLine = defineInstrucao(line).replace("\n","") # Define a instrução. Ex: STA @10, R1
 
-            opcode, flagClear = trataMnemonico(instrucaoLine, flagClear) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+            opcode, flagClear = trataMnemonico(instrucaoLine, flagClear) # Transforma o mnemonico em opcode
+                                                                         # e indica se está limpando um
+                                                                         # botão. Ex(STA @10, R1): 0110, False
+            reg = converteReg(instrucaoLine) # Verifica o registrador em questão. Ex(STA @10, R1): 001
 
-            if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
-                imed = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
-                reg = converteReg(instrucaoLine)
+            if '@' in instrucaoLine: # Se encontrar o caractere arroba '@' 
+                imed = converteArroba(instrucaoLine) # Converte o número após o caractere Ex(STA @10, R1): 000001010
                     
-            elif '$' in instrucaoLine: #Se encontrar o caractere cifrao '$' 
-                imed = converteCifrao(instrucaoLine) #converte o número após o caractere Ex(LDI $5): x"4" x"05"
-                reg = converteReg(instrucaoLine)
+            elif '$' in instrucaoLine: # Se encontrar o caractere cifrão '$' 
+                imed = converteCifrao(instrucaoLine) # Converte o número após o caractere Ex(LDI $5): 000000101
                 
-            else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
-                imed = "000000000" #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
-                reg = converteReg(instrucaoLine)
+            else: # Senão, se a instrução não possuir nenhum imediato, ou seja, nao conter '@' ou '$'
+                imed = "000000000" # Imediato não será utilizado, então pouco impota o valor atribuído aqui.
             
-            line = 'tmp(' + str(cont) + ') := "' + opcode + '" & "' + reg + '" & "' + imed + '" ;\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
-                                                                                                       #Entrada => 1. JSR @14 #comentario1
-                                                                                                       #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
+            line = ('tmp(' + str(cont) + ') := "' +
+                    opcode +
+                    '" & "' +
+                    reg +
+                    '" & "' +
+                    imed +
+                    '" ;\t-- ' + comentarioLine + '\n') # Formata para o arquivo BIN
+                                                        # Entrada => 1. STA @10, R1 #comentario1
+                                                        # Saída =>   1. tmp(0) := "0110" & "001" & "000001010";	-- STA @10, R1 	#comentario1
                                         
-            cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
-            f.write(line) #Escreve no arquivo BIN.txt
+            cont+=1 # Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
+            f.write(line) # Escreve no arquivo BIN.txt
             
-            print(line,end = '') #Print apenas para debug
+            print(line,end = '') # Print apenas para debug

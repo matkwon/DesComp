@@ -5,8 +5,8 @@ entity CPU is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
         larguraEnderecos : natural := 9;
-        larguraInstru : natural := 15;
-		  larguraEndRegs : natural := 2
+        larguraInstru : natural := 16;
+		  larguraEndRegs : natural := 3
   );
   port   (
     CLK : in std_logic;

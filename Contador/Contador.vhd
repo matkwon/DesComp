@@ -6,7 +6,7 @@ entity Contador is
 	generic (
 		larguraDados 	  : natural := 8;
 		larguraEnderecos : natural := 9;
-		larguraInstru 	  : natural := 15;
+		larguraInstru 	  : natural := 16;
 		larguraRAM		  : natural := 6;
 		simulacao 		  : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
 	);
