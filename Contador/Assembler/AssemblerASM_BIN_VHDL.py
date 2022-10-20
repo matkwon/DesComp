@@ -79,10 +79,10 @@ Regras:
 
 
 
-# assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' # Arquivo de entrada de contém o assembly
-# destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
-assembly = 'ASM.txt' # Arquivo de entrada de contém o assembly
-destinoBIN = 'BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
+assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' # Arquivo de entrada de contém o assembly
+destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
+# assembly = 'ASM.txt' # Arquivo de entrada de contém o assembly
+# destinoBIN = 'BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
 
 # Definição dos mnemônicos e seus 
 # respectivo OPCODEs (em Decimal)

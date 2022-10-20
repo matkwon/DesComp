@@ -38,24 +38,24 @@ begin
 
 -- O port map completo do decoder.
 decoder :  entity work.decoderInstru
-			  port map( opcode => Opcode,
-							saida => Sinais_Controle);
+			  port map(opcode => Opcode,
+						  saida => Sinais_Controle);
 
 -- O port map completo do MUX1.
-MUX1 :  entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-												  port map (entradaA_MUX => DIN,
-															   entradaB_MUX => INSTRU(larguraDados-1 downto 0),
-															   seletor_MUX => SelMUX,
-															   saida_MUX => MUX_OUT);
+MUXULA :  entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													 port map (entradaA_MUX => DIN,
+																  entradaB_MUX => INSTRU(larguraDados-1 downto 0),
+																  seletor_MUX => SelMUX,
+																  saida_MUX => MUX_OUT);
 
 -- O port map completo do MUX2.
-MUX2 :  entity work.muxGenerico4x1 generic map (larguraDados => larguraEnderecos)
-												  port map (entradaA_MUX => proxPC,
-															   entradaB_MUX => INSTRU(larguraEnderecos-1 downto 0),
-															   entradaC_MUX => EndRet_MUX,
-															   entradaD_MUX => "000000000",
-															   seletor_MUX => SelMUX2,
-															   saida_MUX => MUXPC);
+MUX_PC :  entity work.muxGenerico4x1 generic map (larguraDados => larguraEnderecos)
+													 port map (entradaA_MUX => proxPC,
+																  entradaB_MUX => INSTRU(larguraEnderecos-1 downto 0),
+																  entradaC_MUX => EndRet_MUX,
+																  entradaD_MUX => "000000000",
+																  seletor_MUX => SelMUX2,
+																  saida_MUX => MUXPC);
 					  
 -- O port map completo dos Registradores acumuladores.
 REGs : entity work.bancoRegistradoresArqRegMem generic map (larguraDados => larguraDados, larguraEndBancoRegs => larguraEndRegs)

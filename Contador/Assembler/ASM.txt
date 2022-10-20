@@ -27,6 +27,12 @@ STA @MEM2, R0
 STA @MEM3, R0
 STA @MEM4, R0
 STA @MEM5, R0
+STA @HEX0, R0
+STA @HEX1, R0
+STA @HEX2, R0
+STA @HEX3, R0
+STA @HEX4, R0
+STA @HEX5, R0
 
 LDA R7, @0
 LDA R6, @0
@@ -139,6 +145,7 @@ STA @HEX5, R1
 JMP @VerificaK1
 
 Set0:
+CLR @KEY1
 CEQ R0, @0
 JEQ @Set1
 CEQ R0, @1
@@ -167,3 +174,39 @@ LDI R0, @5
 RET
 
 Contador:
+LDA R3, @1
+STA @LED9, R3
+STA @HEX0, R3
+STA @HEX1, R3
+STA @HEX2, R3
+STA @HEX3, R3
+STA @HEX4, R3
+STA @HEX5, R3
+JMP @Contador
+
+VerificaK2:
+LDA R6, @KEY2
+AND R6, @1
+CEQ R6, @1
+JEQ @IncMem0
+JMP @VerificaK2
+IncMem0:
+LDA R0, @MEM0
+SOMA R0, @1
+CEQ R0, @10
+JEQ @ResetMem0
+STA @MEM0, R0
+STA @HEX0, R0
+JMP @VerificaK2
+ResetMem0:
+LDA R0, $0
+STA @HEX0, R0
+LDA R1, @MEM1
+SOMA R1, @1
+CEQ R1, @10
+JEQ ResetMem1
+STA @MEM1, R1
+STA @HEX1, R1
+JMP @VerificaK2
+ResetMem1:
+JMP @VerificaK2
