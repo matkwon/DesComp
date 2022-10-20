@@ -1,25 +1,169 @@
 Setup:
 LDI R0, $0
 STA @0, R0
-STA @2, R0
 LDI R1, $1
 STA @1, R1
+LDI R1, $2
+STA @2, R1
+LDI R1, $3
+STA @3, R1
+LDI R1, $4
+STA @4, R1
+LDI R1, $5
+STA @5, R1
 LDI R1, $10
 STA @10, R1
 
-Loop:
-LDA R0, @KEY2 #a
-AND R0, @1
-CEQ R0, @0
-JEQ @Loop
-JSR @Incremento
-JMP @Loop
+STA @FLAG, R0
+STA @LIM0, R0
+STA @LIM1, R0
+STA @LIM2, R0
+STA @LIM3, R0
+STA @LIM4, R0
+STA @LIM5, R0
+STA @MEM0, R0
+STA @MEM1, R0
+STA @MEM2, R0
+STA @MEM3, R0
+STA @MEM4, R0
+STA @MEM5, R0
 
-Incremento:
-CLR @KEY2
-LDA R0, @2
-SOMA R0, @1
-STA R0, @2
-STA R0, @HEX0
-STA R0, @LED9
+LDA R7, @0
+LDA R6, @0
+LDA R5, @0
+LDA R4, @0
+LDA R3, @0
+LDA R2, @0
+LDA R1, @0
+LDA R0, @0
+
+VerificaK0:
+LDA R6, @KEY0
+AND R6, @1
+CEQ R6, @0
+JEQ @VerificaK1
+JSR @IncLim
+VerificaK1:
+LDA R7, @KEY1
+AND R7, @1
+CEQ R7, @0
+JEQ @VerificaK0
+JSR @Set0
+JMP @VerificaK0
+
+IncLim:
+CLR @KEY0
+CEQ R0, @0
+JEQ @IncLim0
+CEQ R0, @1
+JEQ @IncLim1
+CEQ R0, @2
+JEQ @IncLim2
+CEQ R0, @3
+JEQ @IncLim3
+CEQ R0, @4
+JEQ @IncLim4
+CEQ R0, @5
+JEQ @IncLim5
+IncLim0:
+LDA R1, @LIM0
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetLim0
+JMP @StaLim0
+ResetLim0:
+LDA R1, $0
+StaLim0:
+STA @LIM0, R1
+STA @HEX0, R1
+JMP @VerificaK1
+IncLim1:
+LDA R1, @LIM1
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetLim1
+JMP @StaLim1
+ResetLim1:
+LDA R1, $0
+StaLim1:
+STA @LIM1, R1
+STA @HEX1, R1
+JMP @VerificaK1
+IncLim2:
+LDA R1, @LIM2
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetLim2
+JMP @StaLim2
+ResetLim2:
+LDA R1, $0
+StaLim2:
+STA @LIM2, R1
+STA @HEX2, R1
+JMP @VerificaK1
+IncLim3:
+LDA R1, @LIM3
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetLim3
+JMP @StaLim3
+ResetLim3:
+LDA R1, $0
+StaLim3:
+STA @LIM3, R1
+STA @HEX3, R1
+JMP @VerificaK1
+IncLim4:
+LDA R1, @LIM4
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetLim4
+JMP @StaLim4
+ResetLim4:
+LDA R1, $0
+StaLim4:
+STA @LIM4, R1
+STA @HEX4, R1
+JMP @VerificaK1
+IncLim5:
+LDA R1, @LIM5
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetLim5
+JMP @StaLim5
+ResetLim5:
+LDA R1, $0
+StaLim5:
+STA @LIM5, R1
+STA @HEX5, R1
+JMP @VerificaK1
+
+Set0:
+CEQ R0, @0
+JEQ @Set1
+CEQ R0, @1
+JEQ @Set2
+CEQ R0, @2
+JEQ @Set3
+CEQ R0, @3
+JEQ @Set4
+CEQ R0, @4
+JEQ @Set5
+JMP @Contador
+Set1:
+LDI R0, @1
 RET
+Set2:
+LDI R0, @2
+RET
+Set3:
+LDI R0, @3
+RET
+Set4:
+LDI R0, @4
+RET
+Set5:
+LDI R0, @5
+RET
+
+Contador:

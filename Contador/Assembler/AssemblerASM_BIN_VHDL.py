@@ -79,10 +79,10 @@ Regras:
 
 
 
-assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' # Arquivo de entrada de contém o assembly
-destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
-# assembly = 'ASM.txt' # Arquivo de entrada de contém o assembly
-# destinoBIN = 'BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
+# assembly = 'C:\DesComp\Contador\Assembler\ASM.txt' # Arquivo de entrada de contém o assembly
+# destinoBIN = 'C:\DesComp\Contador\Assembler\BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
+assembly = 'ASM.txt' # Arquivo de entrada de contém o assembly
+destinoBIN = 'BIN.txt' # Arquivo de saída que contém o binário formatado para VHDL
 
 # Definição dos mnemônicos e seus 
 # respectivo OPCODEs (em Decimal)
@@ -126,21 +126,21 @@ addr = {
         "KEY3": 355,
         "FPGA_RESET": 356,
 
-        "LIM0": 2,
-        "LIM1": 3,
-        "LIM2": 4,
-        "LIM3": 5,
-        "LIM4": 6,
-        "LIM5": 7,
+        "LIM0": 6,
+        "LIM1": 7,
+        "LIM2": 8,
+        "LIM3": 9,
+        "LIM4": 11,
+        "LIM5": 12,
 
-        "MEM0": 8,
-        "MEM1": 9,
-        "MEM2": 11,
-        "MEM3": 12,
-        "MEM4": 13,
-        "MEM5": 14,
+        "MEM0": 13,
+        "MEM1": 14,
+        "MEM2": 15,
+        "MEM3": 16,
+        "MEM4": 17,
+        "MEM5": 18,
 
-        "FLAG": 15,
+        "FLAG": 19,
 }
 
 # Endereçamento de registradores (em Decimal)
