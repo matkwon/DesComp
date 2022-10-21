@@ -1,4 +1,5 @@
 Setup:
+LDI R0, $128
 LDI R0, $0
 STA @0, R0
 LDI R1, $1
@@ -27,9 +28,9 @@ LDI R1, $8
 STA @MEM1, R1
 LDI R1, $9
 STA @MEM2, R1
-STA @MEM3, R0
-STA @MEM4, R0
-STA @MEM5, R0
+STA @MEM3, R1
+STA @MEM4, R1
+STA @MEM5, R1
 STA @HEX0, R0
 STA @HEX1, R0
 STA @HEX2, R0
@@ -62,12 +63,12 @@ STA @HEX5, R3
 JMP @IncCont
 
 IncCont:
-LDA R6, @KEY2
-AND R6, @1
-CEQ R6, @1
-JEQ @IncMem0
+LDA R7, @KEY2
+AND R7, @1
+CEQ R7, @1
+JEQ @IncMem
 JMP @WaitLimit
-IncMem0:
+IncMem:
 CLR @KEY2
 LDA R0, @MEM0
 SOMA R0, @1
@@ -135,7 +136,25 @@ LDA R7, @KEY3
 AND R7, @1
 CEQ R7, @1
 JEQ @SetLimit
+LDA R7, @FPGA_RESET
+AND R7, @1
+CEQ R7, @1
+JEQ @ResetCount
 JMP @IncCont
+ResetCount:
+CLR @FPGA_RESET
+LDA R7, @0
+STA @MEM0, R7
+STA @MEM1, R7
+STA @MEM2, R7
+STA @MEM3, R7
+STA @MEM4, R7
+STA @MEM5, R7
+STA @FLAG, R7
+STA @LED8, R7
+STA @LED9, R7
+STA @LEDb, R7
+JMP @Contador
 
 Limits:
 JSR @Limiter5
@@ -354,8 +373,9 @@ LDA R1, @0
 LDA R0, @0
 CLR @KEY2
 CLR @KEY3
+CLR @FPGA_RESET
 STA @FLAG, R0
-JMP @Contador
+JMP @VerificaOF
 Set1:
 LDI R2, $2
 STA @LEDb, R2
@@ -381,3 +401,9 @@ LDI R2, $32
 STA @LEDb, R2
 LDI R0, @5
 RET
+
+VerificaOF:
+LDA R0, @LIM5
+SUB R0, @MEM5
+AND R0, 
+JMP @Contador
