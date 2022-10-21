@@ -126,21 +126,21 @@ addr = {
         "KEY3": 355,
         "FPGA_RESET": 356,
 
-        "LIM0": 6,
-        "LIM1": 7,
-        "LIM2": 8,
-        "LIM3": 9,
-        "LIM4": 11,
-        "LIM5": 12,
+        "LIM0": 11,
+        "LIM1": 12,
+        "LIM2": 13,
+        "LIM3": 14,
+        "LIM4": 15,
+        "LIM5": 16,
 
-        "MEM0": 13,
-        "MEM1": 14,
-        "MEM2": 15,
-        "MEM3": 16,
-        "MEM4": 17,
-        "MEM5": 18,
+        "MEM0": 17,
+        "MEM1": 18,
+        "MEM2": 19,
+        "MEM3": 20,
+        "MEM4": 21,
+        "MEM5": 22,
 
-        "FLAG": 19,
+        "FLAG": 23,
 }
 
 # Endereçamento de registradores (em Decimal)
@@ -161,7 +161,9 @@ flagClear = False
 # Converte o valor após o caractere arroba '@'
 # em um valor binário de 9 bits
 def converteArroba(line):
-    line = line.split('@')[1].split(', ')[0]
+    line = line.split('@')[1]
+    if ', ' in line:
+        line = line.split(', ')[0]
     if line in addr.keys():
         line = addr[line]
     if flagClear:
@@ -274,3 +276,4 @@ with open(destinoBIN, "w") as f:  # Abre o destino BIN
             f.write(line) # Escreve no arquivo BIN.txt
             
             print(line,end = '') # Print apenas para debug
+

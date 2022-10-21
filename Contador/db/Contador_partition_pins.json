@@ -252,6 +252,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[2]",
 					"strict" : false
 				},
@@ -261,18 +273,6 @@
 				},
 				{
 					"name" : "SW[4]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[6]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
@@ -288,11 +288,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[7]",
-					"strict" : false
-				},
-				{
-					"name" : "FPGA_RESET_N",
+					"name" : "SW[5]",
 					"strict" : false
 				},
 				{
@@ -309,6 +305,10 @@
 				},
 				{
 					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_RESET_N",
 					"strict" : false
 				}
 			]
