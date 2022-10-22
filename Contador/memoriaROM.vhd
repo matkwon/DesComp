@@ -28,7 +28,6 @@ architecture assincrona of memoriaROM is
   constant JSR  : std_logic_vector(3 downto 0) := "1010";
   constant RET  : std_logic_vector(3 downto 0) := "1011";
   constant JNE  : std_logic_vector(3 downto 0) := "1100";
-  constant SKP  : std_logic_vector(3 downto 0) := "1101";
 
   type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
 

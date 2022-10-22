@@ -24,14 +24,14 @@ architecture arquitetura of CPU is
 
 -- Faltam alguns sinais:
   signal MUX_OUT, Saida_ULA, RegULA : std_logic_vector (larguraDados-1 downto 0);
-  signal proxPC, MUXPC, lastAddr, skipPC : std_logic_vector (larguraEnderecos-1 downto 0);
+  signal proxPC, MUXPC, lastAddr : std_logic_vector (larguraEnderecos-1 downto 0);
   signal SelMUX, FlagZero : std_logic;
   signal SelMUX2 : std_logic_vector(1 downto 0);
-  signal JMP, JEQ, RET, JSR, JNE, SKP, FlagIgual : std_logic;
+  signal JMP, JEQ, RET, JSR, JNE, FlagIgual : std_logic;
   signal HabilitaRegs, HabilitaFlag, HabEscritaEnd : std_logic;
   signal Operacao_ULA : std_logic_vector (1 downto 0);
   signal Opcode : std_logic_vector (3 downto 0);
-  signal Sinais_Controle : std_logic_vector (13 downto 0);
+  signal Sinais_Controle : std_logic_vector (12 downto 0);
   signal EndRet_MUX : std_logic_vector (larguraEnderecos-1 downto 0);
 
 begin
@@ -53,7 +53,7 @@ MUX_PC :  entity work.muxGenerico4x1 generic map (larguraDados => larguraEnderec
 													 port map (entradaA_MUX => proxPC,
 																  entradaB_MUX => INSTRU(larguraEnderecos-1 downto 0),
 																  entradaC_MUX => EndRet_MUX,
-																  entradaD_MUX => skipPC,
+																  entradaD_MUX => "000000000",
 																  seletor_MUX => SelMUX2,
 																  saida_MUX => MUXPC);
 					  
@@ -87,7 +87,6 @@ LogicaDesvio : entity work.logicaDesvio
 					  JSR => JSR,
 					  JEQ => JEQ,
 					  JNE => JNE,
-					  SKP => SKP,
 					  FlagIgual => FlagIgual,
 					  DOUT => SelMux2);
 
@@ -103,11 +102,6 @@ incrementaPC : entity work.somaConstante generic map (larguraDados => larguraEnd
 																		constante => 1)
 														  port map (entrada => lastAddr, saida => proxPC);
 
-somaPC : entity work.somadorGenerico generic map (larguraDados => larguraEnderecos)
-													 port map (entradaA => lastAddr,
-																  entradaB => INSTRU(larguraEnderecos-1 downto 0),
-																  saida => skipPC);
-
 
 -- O port map completo da ULA:
 ULA1 : entity work.ULA generic map (larguraDados => larguraDados)
@@ -120,7 +114,6 @@ ULA1 : entity work.ULA generic map (larguraDados => larguraDados)
 
 Opcode <= INSTRU(larguraInstru-1 downto larguraInstru-4);
 
-SKP <= Sinais_Controle(13);
 JNE <= Sinais_Controle(12);
 HabEscritaEnd <= Sinais_Controle(11);
 JMP <= Sinais_Controle(10);
