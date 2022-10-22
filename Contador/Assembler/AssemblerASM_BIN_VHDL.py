@@ -101,7 +101,6 @@ mne =	{
         "JSR":   10,
         "RET":   11,
         "JNE":   12,
-        "SKP":   13,
 }
 
 # Endereco de variáveis, outputs e 
