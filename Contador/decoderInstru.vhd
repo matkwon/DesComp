@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity decoderInstru is
   port ( opcode : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(11 downto 0)
+         saida : out std_logic_vector(13 downto 0)
   );
 end entity;
 
@@ -21,6 +21,8 @@ architecture comportamento of decoderInstru is
   constant CEQ  : std_logic_vector(3 downto 0) := "1001";
   constant JSR  : std_logic_vector(3 downto 0) := "1010";
   constant RET  : std_logic_vector(3 downto 0) := "1011";
+  constant JNE  : std_logic_vector(3 downto 0) := "1100";
+  constant SKP  : std_logic_vector(3 downto 0) := "1101";
   
   alias WR : std_logic is saida(0);
   alias RD : std_logic is saida(1);
@@ -33,6 +35,8 @@ architecture comportamento of decoderInstru is
   alias RETC : std_logic is saida(9);
   alias JMPC : std_logic is saida(10);
   alias HabWrRET : std_logic is saida(11);
+  alias JNEC : std_logic is saida(12);
+  alias SKPC : std_logic is saida(13);
   
   begin
   
@@ -65,5 +69,7 @@ architecture comportamento of decoderInstru is
   RETC <= '1' when (opcode = RET) else '0';
   JMPC <= '1' when (opcode = JMP) else '0';
   HabWrRET <= '1' when (opcode = JSR) else '0';
+  JNEC <= '1' when (opcode = JNE) else '0';
+  SKPC <= '1' when (opcode = SKP) else '0';
   
 end architecture;
