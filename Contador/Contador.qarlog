@@ -1,0 +1,36 @@
+Quartus Prime Archive log --	C:/DesComp/Contador/Contador.qarlog
+
+Archive:	C:/DesComp/Contador/Contador.qar
+Date:		Sun Oct 23 23:44:11 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/Contador/CPU.vhd
+C:/DesComp/Contador/Contador.qpf
+C:/DesComp/Contador/Contador.qsf
+C:/DesComp/Contador/Contador.vhd
+C:/DesComp/Contador/ULA.vhd
+C:/DesComp/Contador/Waveform.vwf
+C:/DesComp/Contador/Waveform1.vwf
+C:/DesComp/Contador/Waveform2.vwf
+C:/DesComp/Contador/bancoRegistradoresArqRegMem.vhd
+C:/DesComp/Contador/buffer_3_state_8x8.vhd
+C:/DesComp/Contador/conversorHex7Seg.vhd
+C:/DesComp/Contador/dataAddresser.vhd
+C:/DesComp/Contador/decoder3x8.vhd
+C:/DesComp/Contador/decoderInstru.vhd
+C:/DesComp/Contador/edgeDetector.vhd
+C:/DesComp/Contador/flipflop.vhd
+C:/DesComp/Contador/logicaDesvio.vhd
+C:/DesComp/Contador/memoriaRAM.vhd
+C:/DesComp/Contador/memoriaROM.vhd
+C:/DesComp/Contador/muxGenerico2x1.vhd
+C:/DesComp/Contador/muxGenerico4x1.vhd
+C:/DesComp/Contador/reg7Seg.vhd
+C:/DesComp/Contador/registradorGenerico.vhd
+C:/DesComp/Contador/somaConstante.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 25 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
