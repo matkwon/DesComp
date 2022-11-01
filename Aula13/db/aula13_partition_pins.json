@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "out_rd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "out_rd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "out_rd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "out_rd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "out_rs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "out_rt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_op",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "WR_rd",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
