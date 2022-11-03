@@ -8,7 +8,7 @@ entity relogio is
 		larguraEnderecos : natural := 9;
 		larguraInstru 	  : natural := 16;
 		larguraRAM		  : natural := 6;
-		simulacao 		  : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+		simulacao 		  : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
 	);
 	port (
 		CLOCK_50   	 : in std_logic;
