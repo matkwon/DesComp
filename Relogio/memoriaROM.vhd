@@ -30,6 +30,7 @@ architecture assincrona of memoriaROM is
   constant JNE  : std_logic_vector(3 downto 0) := "1100";
   constant CLT  : std_logic_vector(3 downto 0) := "1101";
   constant JLT  : std_logic_vector(3 downto 0) := "1110";
+  constant ADDI : std_logic_vector(3 downto 0) := "1111";
   
   constant R0   : std_logic_vector(2 downto 0) := "000";
   constant R1   : std_logic_vector(2 downto 0) := "001";
@@ -46,7 +47,10 @@ architecture assincrona of memoriaROM is
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
  
-
+tmp(0) := LDI  & R0 & "010000000" ;	-- LDI R0, $128
+tmp(1) := STA  & R0 & "100000000" ;	-- STA @LEDb, R0
+tmp(2) := ADDI & R0 & "000000001" ;	-- ADDI R0, $1
+tmp(3) := STA  & R0 & "100000000" ;	-- STA @LEDb, R0
 		  
         return tmp;
     end initMemory;

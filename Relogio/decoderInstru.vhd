@@ -24,6 +24,7 @@ architecture comportamento of decoderInstru is
   constant JNE  : std_logic_vector(3 downto 0) := "1100";
   constant CLT  : std_logic_vector(3 downto 0) := "1101";
   constant JLT  : std_logic_vector(3 downto 0) := "1110";
+  constant ADDI : std_logic_vector(3 downto 0) := "1111";
   
   alias WR : std_logic is saida(0);
   alias RD : std_logic is saida(1);
@@ -55,7 +56,8 @@ architecture comportamento of decoderInstru is
 					  
   HabFlagMenor <= '1' when (opcode = CLT) else '0';
   
-  OP <= "01" when (opcode = SOMA) else
+  OP <= "01" when (opcode = SOMA) or
+						(opcode = ADDI) else
 		  "10" when (opcode = LDA) or
 						(opcode = LDI) or
 						(opcode = STA) else
@@ -66,9 +68,11 @@ architecture comportamento of decoderInstru is
 							 (opcode = SOMA) or
 							 (opcode = SUB) or
 							 (opcode = ANDD) or
+							 (opcode = ADDI) or
 							 (opcode = LDI) else '0';
 
-  SelMUXULA <= '1' when (opcode = LDI) else '0';
+  SelMUXULA <= '1' when (opcode = LDI) or
+								(opcode = ADDI) else '0';
   JEQC <= '1' when (opcode = JEQ) else '0';
   JSRC <= '1' when (opcode = JSR) else '0';
   RETC <= '1' when (opcode = RET) else '0';
