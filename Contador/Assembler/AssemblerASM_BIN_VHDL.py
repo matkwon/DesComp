@@ -90,7 +90,6 @@ mne =	{
         "NOP":   0,
         "LDA":   1,
         "SOMA":  2,
-        "ADD":   2,
         "SUB":   3,
         "AND":   4,
         "LDI":   5,
@@ -102,9 +101,6 @@ mne =	{
         "JSR":   10,
         "RET":   11,
         "JNE":   12,
-        "CLT":   13,
-        "JLT":   14,
-        "ADDI":  15,
 }
 
 # Endereco de variáveis, outputs e 

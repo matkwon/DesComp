@@ -1,8 +1,463 @@
+Setup:
 LDI R0, $128
-STA @LEDb, R0
-ADDI R0, $1
-STA @LEDb, R0
+STA @63, R0
+LDI R0, $0
 STA @0, R0
-LDI R1, $8
-CLT @0, R1
-JLT @1
+LDI R1, $1
+STA @1, R1
+LDI R1, $2
+STA @2, R1
+LDI R1, $3
+STA @3, R1
+LDI R1, $4
+STA @4, R1
+LDI R1, $5
+STA @5, R1
+LDI R1, $10
+STA @10, R1
+LDI R1, $9
+
+STA @FLAG, R0
+STA @LIM0, R1
+STA @LIM1, R1
+STA @LIM2, R1
+STA @LIM3, R1
+STA @LIM4, R1
+STA @LIM5, R1
+STA @MEM0, R0
+STA @MEM2, R0
+STA @MEM1, R0
+STA @MEM3, R0
+STA @MEM4, R0
+STA @MEM5, R0
+STA @HEX0, R0
+STA @HEX1, R0
+STA @HEX2, R0
+STA @HEX3, R0
+STA @HEX4, R0
+STA @HEX5, R0
+
+LDA R7, @0
+LDA R6, @0
+LDA R5, @0
+LDA R4, @0
+LDA R3, @0
+LDA R2, @0
+LDA R1, @0
+LDA R0, @0
+
+Contador:
+LDA R3, @MEM0
+STA @HEX0, R3
+LDA R3, @MEM1
+STA @HEX1, R3
+LDA R3, @MEM2
+STA @HEX2, R3
+LDA R3, @MEM3
+STA @HEX3, R3
+LDA R3, @MEM4
+STA @HEX4, R3
+LDA R3, @MEM5
+STA @HEX5, R3
+JMP @IncCont
+
+IncCont:
+LDA R7, @KEY0
+AND R7, @1
+CEQ R7, @1
+JNE @Limits
+CLR @KEY0
+LDA R0, @MEM0
+SOMA R0, @1
+CEQ R0, @10
+JEQ @ResetMem0
+STA @MEM0, R0
+STA @HEX0, R0
+JMP @Limits
+ResetMem0:
+LDA R0, @0
+STA @MEM0, R0
+STA @HEX0, R0
+LDA R1, @MEM1
+SOMA R1, @1
+CEQ R1, @10
+JEQ @ResetMem1
+STA @MEM1, R1
+STA @HEX1, R1
+JMP @Limits
+ResetMem1:
+LDA R1, @0
+STA @MEM1, R1
+STA @HEX1, R1
+LDA R2, @MEM2
+SOMA R2, @1
+CEQ R2, @10
+JEQ @ResetMem2
+STA @MEM2, R2
+STA @HEX2, R2
+JMP @Limits
+ResetMem2:
+LDA R2, @0
+STA @MEM2, R2
+STA @HEX2, R2
+LDA R3, @MEM3
+SOMA R3, @1
+CEQ R3, @10
+JEQ @ResetMem3
+STA @MEM3, R3
+STA @HEX3, R3
+JMP @Limits
+ResetMem3:
+LDA R3, @0
+STA @MEM3, R3
+STA @HEX3, R3
+LDA R4, @MEM4
+SOMA R4, @1
+CEQ R4, @10
+JEQ @ResetMem4
+STA @MEM4, R4
+STA @HEX4, R4
+JMP @Limits
+ResetMem4:
+LDA R4, @0
+STA @MEM4, R4
+STA @HEX4, R4
+LDA R5, @MEM5
+SOMA R5, @1
+STA @MEM5, R5
+STA @HEX5, R5
+JMP @Limits
+
+WaitLimit:
+LDA R7, @KEY3
+AND R7, @1
+CEQ R7, @1
+JEQ @SetLimit
+LDA R7, @FPGA_RESET
+AND R7, @1
+CEQ R7, @1
+JNE @IncCont
+ResetCount:
+CLR @FPGA_RESET
+LDA R7, @0
+STA @MEM0, R7
+STA @MEM1, R7
+STA @MEM2, R7
+STA @MEM3, R7
+STA @MEM4, R7
+STA @MEM5, R7
+STA @FLAG, R7
+STA @LED8, R7
+STA @LED9, R7
+STA @LEDb, R7
+JMP @Contador
+
+Limits:
+JSR @Limiter
+JSR @VerificaFlag
+JMP @WaitLimit
+
+Limiter:
+LDA R0, @LIM5
+CEQ R0, @MEM5
+JNE @LimiterRet
+LDA R0, @LIM4
+CEQ R0, @MEM4
+JNE @LimiterRet
+LDA R0, @LIM3
+CEQ R0, @MEM3
+JNE @LimiterRet
+LDA R0, @LIM2
+CEQ R0, @MEM2
+JNE @LimiterRet
+LDA R0, @LIM1
+CEQ R0, @MEM1
+JNE @LimiterRet
+LDA R0, @LIM0
+CEQ R0, @MEM0
+JEQ @AcionaFlag
+LimiterRet:
+RET
+
+AcionaFlag:
+LDA R0, @1
+STA @FLAG, R0
+STA @LED9, R0
+STA @LED8, R0
+RET
+
+VerificaFlag:
+LDA R0, @1
+CEQ R0, @FLAG
+JEQ @Parado
+RET
+
+Parado:
+LDA R0, @KEY3
+AND R0, @1
+CEQ R0, @1
+JEQ @SetLimit
+LDA R0, @FPGA_RESET
+AND R0, @1
+CEQ R0, @1
+JEQ @ResetCount
+LDA R0, @KEY0
+AND R0, @1
+CEQ R0, @1
+JEQ @AllLEDs
+JMP @Parado
+AllLEDs:
+CLR @KEY0
+LDI R1, $255
+STA @LEDb, R1
+LDI R1, $1
+STA @LED8, R1
+STA @LED9, R1
+JMP @Parado
+
+SetLimit:
+CLR @KEY3
+LDA R3, @LIM0
+STA @HEX0, R3
+LDA R3, @LIM1
+STA @HEX1, R3
+LDA R3, @LIM2
+STA @HEX2, R3
+LDA R3, @LIM3
+STA @HEX3, R3
+LDA R3, @LIM4
+STA @HEX4, R3
+LDA R3, @LIM5
+STA @HEX5, R3
+LDA R0, @0
+LDA R6, @0
+LDA R7, @0
+STA @LED8, R0
+STA @LED9, R0
+LDA R2, @1
+STA @LEDb, R2
+CLR @KEY0
+CLR @KEY3
+JMP @VerificaK0
+
+VerificaK0:
+LDA R6, @KEY0
+AND R6, @1
+CEQ R6, @0
+JEQ @VerificaK1
+JSR @IncLim
+VerificaK1:
+LDA R7, @KEY3
+AND R7, @1
+CEQ R7, @0
+JNE @Set0
+JMP @VerificaK0
+
+IncLim:
+CLR @KEY0
+CEQ R0, @0
+JEQ @IncLim0
+CEQ R0, @1
+JEQ @IncLim1
+CEQ R0, @2
+JEQ @IncLim2
+CEQ R0, @3
+JEQ @IncLim3
+CEQ R0, @4
+JEQ @IncLim4
+CEQ R0, @5
+JEQ @IncLim5
+IncLim0:
+LDA R1, @LIM0
+SOMA R1, @1
+CEQ R1, @10
+JNE @StaLim0
+LDA R1, $0
+StaLim0:
+STA @LIM0, R1
+STA @HEX0, R1
+RET
+IncLim1:
+LDA R1, @LIM1
+SOMA R1, @1
+CEQ R1, @10
+JNE @StaLim1
+LDA R1, $0
+StaLim1:
+STA @LIM1, R1
+STA @HEX1, R1
+RET
+IncLim2:
+LDA R1, @LIM2
+SOMA R1, @1
+CEQ R1, @10
+JNE @StaLim2
+LDA R1, $0
+StaLim2:
+STA @LIM2, R1
+STA @HEX2, R1
+RET
+IncLim3:
+LDA R1, @LIM3
+SOMA R1, @1
+CEQ R1, @10
+JNE @StaLim3
+LDA R1, $0
+StaLim3:
+STA @LIM3, R1
+STA @HEX3, R1
+RET
+IncLim4:
+LDA R1, @LIM4
+SOMA R1, @1
+CEQ R1, @10
+JNE @StaLim4
+LDA R1, $0
+StaLim4:
+STA @LIM4, R1
+STA @HEX4, R1
+RET
+IncLim5:
+LDA R1, @LIM5
+SOMA R1, @1
+CEQ R1, @10
+JNE @StaLim5
+LDA R1, $0
+StaLim5:
+STA @LIM5, R1
+STA @HEX5, R1
+RET
+
+Set0:
+CLR @KEY3
+CEQ R0, @0
+JEQ @Set1
+CEQ R0, @1
+JEQ @Set2
+CEQ R0, @2
+JEQ @Set3
+CEQ R0, @3
+JEQ @Set4
+CEQ R0, @4
+JEQ @Set5
+LDI R2, @0
+STA @LEDb, R2
+LDA R7, @0
+LDA R6, @0
+LDA R5, @0
+LDA R4, @0
+LDA R3, @0
+LDA R2, @0
+LDA R1, @0
+LDA R0, @0
+CLR @KEY0
+CLR @KEY3
+CLR @FPGA_RESET
+STA @FLAG, R0
+JMP @VerificaOF5
+Set1:
+LDI R2, $2
+STA @LEDb, R2
+LDI R0, @1
+JMP @VerificaK0
+Set2:
+LDI R2, $4
+STA @LEDb, R2
+LDI R0, @2
+JMP @VerificaK0
+Set3:
+LDI R2, $8
+STA @LEDb, R2
+LDI R0, @3
+JMP @VerificaK0
+Set4:
+LDI R2, $16
+STA @LEDb, R2
+LDI R0, @4
+JMP @VerificaK0
+Set5:
+LDI R2, $32
+STA @LEDb, R2
+LDI R0, @5
+JMP @VerificaK0
+
+VerificaOF5:
+LDA R3, @MEM0
+STA @HEX0, R3
+LDA R3, @MEM1
+STA @HEX1, R3
+LDA R3, @MEM2
+STA @HEX2, R3
+LDA R3, @MEM3
+STA @HEX3, R3
+LDA R3, @MEM4
+STA @HEX4, R3
+LDA R3, @MEM5
+STA @HEX5, R3
+LDA R0, @LIM5
+SUB R0, @MEM5
+AND R0, @63
+CEQ R0, @63
+JNE @OFIgual5
+JSR @AcionaFlag
+JMP @AllLEDs
+OFIgual5:
+LDA R0, @LIM5
+SUB R0, @MEM5
+CEQ R0, @0
+JNE @Contador
+LDA R0, @LIM4
+SUB R0, @MEM4
+AND R0, @63
+CEQ R0, @63
+JNE @OFIgual4
+JSR @AcionaFlag
+JMP @AllLEDs
+OFIgual4:
+LDA R0, @LIM4
+SUB R0, @MEM4
+CEQ R0, @0
+JNE @Contador
+LDA R0, @LIM3
+SUB R0, @MEM3
+AND R0, @63
+CEQ R0, @63
+JNE @OFIgual3
+JSR @AcionaFlag
+JMP @AllLEDs
+OFIgual3:
+LDA R0, @LIM3
+SUB R0, @MEM3
+CEQ R0, @0
+JNE @Contador
+LDA R0, @LIM2
+SUB R0, @MEM2
+AND R0, @63
+CEQ R0, @63
+JNE @OFIgual2
+JSR @AcionaFlag
+JMP @AllLEDs
+OFIgual2:
+LDA R0, @LIM2
+SUB R0, @MEM2
+CEQ R0, @0
+JNE @Contador
+LDA R0, @LIM1
+SUB R0, @MEM1
+AND R0, @63
+CEQ R0, @63
+JNE @OFIgual1
+JSR @AcionaFlag
+JMP @AllLEDs
+OFIgual1:
+LDA R0, @LIM1
+SUB R0, @MEM1
+CEQ R0, @0
+JNE @Contador
+LDA R0, @LIM0
+SUB R0, @MEM0
+AND R0, @63
+CEQ R0, @63
+JNE @Contador
+JSR @AcionaFlag
+JMP @AllLEDs
