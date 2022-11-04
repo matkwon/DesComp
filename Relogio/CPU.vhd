@@ -25,13 +25,13 @@ architecture arquitetura of CPU is
 -- Faltam alguns sinais:
   signal MUX_OUT, Saida_ULA, RegULA : std_logic_vector (larguraDados-1 downto 0);
   signal proxPC, MUXPC, lastAddr : std_logic_vector (larguraEnderecos-1 downto 0);
-  signal SelMUX, FlagZero, FlagNeg : std_logic;
+  signal SelMUX, FlagZero : std_logic;
   signal SelMUX2 : std_logic_vector(1 downto 0);
-  signal JMP, JEQ, RET, JSR, JNE, JLT, FlagIgual, FlagMenor : std_logic;
-  signal HabRegs, HabFlagIgual, HabFlagMenor, HabEscritaEnd : std_logic;
+  signal JMP, JEQ, RET, JSR, JNE, FlagIgual : std_logic;
+  signal HabilitaRegs, HabilitaFlag, HabEscritaEnd : std_logic;
   signal Operacao_ULA : std_logic_vector (1 downto 0);
   signal Opcode : std_logic_vector (3 downto 0);
-  signal Sinais_Controle : std_logic_vector (14 downto 0);
+  signal Sinais_Controle : std_logic_vector (12 downto 0);
   signal EndRet_MUX : std_logic_vector (larguraEnderecos-1 downto 0);
 
 begin
@@ -62,21 +62,15 @@ REGs : entity work.bancoRegistradoresArqRegMem generic map (larguraDados => larg
 																  port map (clk => CLK,
 																				endereco => INSTRU(larguraInstru-4-1 downto larguraInstru-4-larguraEndRegs),
 																				dadoEscrita => Saida_ULA,
-																				habilitaEscrita => HabRegs,
+																				habilitaEscrita => HabilitaRegs,
 																				saida  => RegULA);
 
 -- O port map completo do Flag de Igual.
 FF_Zero : entity work.flipflop port map (DIN => FlagZero,
 													  DOUT => FlagIgual,
-													  ENABLE => HabFlagIgual,
+													  ENABLE => HabilitaFlag,
 													  CLK => CLK,
 													  RST => RST);
--- O port map completo do Flag de Menor.
-FF_Neg : entity work.flipflop port map (DIN => FlagNeg,
-													 DOUT => FlagMenor,
-													 ENABLE => HabFlagMenor,
-													 CLK => CLK,
-													 RST => RST);
 
 -- O port map completo do registrador End Retorno.
 REGRet : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
@@ -93,9 +87,7 @@ LogicaDesvio : entity work.logicaDesvio
 					  JSR => JSR,
 					  JEQ => JEQ,
 					  JNE => JNE,
-					  JLT => JLT,
 					  FlagIgual => FlagIgual,
-					  FlagMenor => FlagMenor,
 					  DOUT => SelMux2);
 
 -- O port map completo do Program Counter.
@@ -117,24 +109,21 @@ ULA1 : entity work.ULA generic map (larguraDados => larguraDados)
 								  			   entradaB => MUX_OUT,
 								  			   saida => Saida_ULA,
 								  			   seletor => Operacao_ULA,
-												flagZero => FlagZero,
-												flagNeg => FlagNeg);
+												flagZero => FlagZero);
 
 
 Opcode <= INSTRU(larguraInstru-1 downto larguraInstru-4);
 
-JLT <= Sinais_Controle(14);
-JNE <= Sinais_Controle(13);
-HabEscritaEnd <= Sinais_Controle(12);
-JMP <= Sinais_Controle(11);
-RET <= Sinais_Controle(10);
-JSR <= Sinais_Controle(9);
-JEQ <= Sinais_Controle(8);
-SelMUX <= Sinais_Controle(7);
-HabRegs <= Sinais_Controle(6);
-Operacao_ULA <= Sinais_Controle(5 downto 4);
-HabFlagMenor <= Sinais_Controle(3);
-HabFlagIgual <= Sinais_Controle(2);
+JNE <= Sinais_Controle(12);
+HabEscritaEnd <= Sinais_Controle(11);
+JMP <= Sinais_Controle(10);
+RET <= Sinais_Controle(9);
+JSR <= Sinais_Controle(8);
+JEQ <= Sinais_Controle(7);
+SelMUX <= Sinais_Controle(6);
+HabilitaRegs <= Sinais_Controle(5);
+Operacao_ULA <= Sinais_Controle(4 downto 3);
+HabilitaFlag <= Sinais_Controle(2);
 
 DOUT <= RegULA;
 ROM_ADDR <= lastAddr;
