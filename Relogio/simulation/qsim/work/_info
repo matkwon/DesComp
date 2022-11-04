@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/DesComp/Relogio/simulation/qsim
 Erelogio
-Z1 w1667504535
+Z1 w1667504143
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,7 +20,7 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 8
+!i122 6
 R0
 Z11 8relogio.vho
 Z12 Frelogio.vho
@@ -30,9 +30,9 @@ VPJcaQk<YN3[>L=G14hFj@2
 !s100 M=AQl2>[CL0VUKUV?n@M]3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1667504536
+Z14 !s110 1667504144
 !i10b 1
-Z15 !s108 1667504536.000000
+Z15 !s108 1667504144.000000
 Z16 !s90 -work|work|relogio.vho|
 Z17 !s107 relogio.vho|
 !i113 1
@@ -49,11 +49,11 @@ R8
 R9
 R10
 DEx4 work 7 relogio 0 22 PJcaQk<YN3[>L=G14hFj@2
-!i122 8
-l420
-L56 3972
-VC]LDhdZJ?l4?41aIcAbO12
-!s100 =iPT8c@XjMP^2Wlk^gn;_0
+!i122 6
+l173
+L56 2016
+V<zH9H`V;2PDZ3cSWRAm5T0
+!s100 X>TmN>m5Y?gE_SRh`K;HK2
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Erelogio_vhd_vec_tst
-Z20 w1667504534
+Z20 w1667504141
 R8
 R9
-!i122 9
+!i122 7
 R0
 Z21 8Waveform.vwf.vht
 Z22 FWaveform.vwf.vht
@@ -78,30 +78,30 @@ V<gOk6D1VGJQD`F=bE@c>A1
 !s100 ZiVeX1cEfACR]F<OXaF`>0
 R13
 32
-Z23 !s110 1667504537
+R14
 !i10b 1
-Z24 !s108 1667504537.000000
-Z25 !s90 -work|work|Waveform.vwf.vht|
-Z26 !s107 Waveform.vwf.vht|
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
 !i113 1
 R18
 R19
 Arelogio_arch
 R8
 R9
-Z27 DEx4 work 19 relogio_vhd_vec_tst 0 22 <gOk6D1VGJQD`F=bE@c>A1
-!i122 9
+Z25 DEx4 work 19 relogio_vhd_vec_tst 0 22 <gOk6D1VGJQD`F=bE@c>A1
+!i122 7
 l65
-Z28 L34 61
-Z29 V=UKP=1Cm<h<4?oDZW>VSC3
-Z30 !s100 8H6Fh@d51O7ha2_EXZX441
+Z26 L34 61
+Z27 V=UKP=1Cm<h<4?oDZW>VSC3
+Z28 !s100 8H6Fh@d51O7ha2_EXZX441
 R13
 32
-R23
+R14
 !i10b 1
+R15
+R23
 R24
-R25
-R26
 !i113 1
 R18
 R19

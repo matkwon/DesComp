@@ -4,5 +4,5 @@ ADDI R0, $1
 STA @LEDb, R0
 STA @0, R0
 LDI R1, $8
-CLT R1, @0
-JLT @2
+CLT @0, R1
+JLT @1
