@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Nov 03 16:35:41 2022
+    Info: Processing started: Thu Nov 03 16:25:30 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off relogio -c relogio --vector_source=C:/DesComp/Relogio/Waveform.vwf --testbench_file=C:/DesComp/Relogio/simulation/qsim/Waveform.vwf.vht
 Info (119006): Selected device 5CEBA4F23C7 for design "relogio"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -54,15 +54,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Nov 03 16:35:42 2022
+    Info: Processing started: Thu Nov 03 16:25:32 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/DesComp/Relogio/simulation/qsim/ relogio -c relogio
 Info (119006): Selected device 5CEBA4F23C7 for design "relogio"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file relogio.vho in folder "C:/DesComp/Relogio/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4714 megabytes
-    Info: Processing ended: Thu Nov 03 16:35:43 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Nov 03 16:25:32 2022
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -79,19 +79,20 @@ c:/intelfpga_lite/20.1/modelsim_ase/win32aloem//vsim -c -do relogio.do
 
 Reading pref.tcl
 
+
 # 2020.1
 
 # do relogio.do
 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:35:44 on Nov 03,2022
+# Start time: 16:25:33 on Nov 03,2022
 # vcom -work work relogio.vho 
-
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
+
 # -- Loading package VITAL_Primitives
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
@@ -101,10 +102,10 @@ Reading pref.tcl
 # -- Compiling entity relogio
 # -- Compiling architecture structure of relogio
 
-# End time: 16:35:44 on Nov 03,2022, Elapsed time: 0:00:00
+# End time: 16:25:34 on Nov 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:35:44 on Nov 03,2022
+# Start time: 16:25:34 on Nov 03,2022
 # vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
@@ -112,11 +113,11 @@ Reading pref.tcl
 # -- Loading package std_logic_1164
 # -- Compiling entity relogio_vhd_vec_tst
 # -- Compiling architecture relogio_arch of relogio_vhd_vec_tst
-# End time: 16:35:44 on Nov 03,2022, Elapsed time: 0:00:00
+# End time: 16:25:34 on Nov 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.relogio_vhd_vec_tst 
-# Start time: 16:35:44 on Nov 03,2022
+# Start time: 16:25:34 on Nov 03,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -134,11 +135,11 @@ Reading pref.tcl
 # Loading cyclonev.cyclonev_io_ibuf(arch)
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 17557 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 25975 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#34
 
-# End time: 16:35:45 on Nov 03,2022, Elapsed time: 0:00:01
+# End time: 16:25:35 on Nov 03,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -151,7 +152,7 @@ Reading C:/DesComp/Relogio/simulation/qsim/relogio.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/DesComp/Relogio/simulation/qsim/relogio_20221103163545.sim.vwf
+Writing the resulting VWF to C:/DesComp/Relogio/simulation/qsim/relogio_20221103162535.sim.vwf
 
 Finished VCD to VWF conversion.
 
