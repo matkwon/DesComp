@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity decoderInstru is
   port ( opcode : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(12 downto 0)
+         saida : out std_logic_vector(14 downto 0)
   );
 end entity;
 
@@ -22,19 +22,23 @@ architecture comportamento of decoderInstru is
   constant JSR  : std_logic_vector(3 downto 0) := "1010";
   constant RET  : std_logic_vector(3 downto 0) := "1011";
   constant JNE  : std_logic_vector(3 downto 0) := "1100";
+  constant JLT  : std_logic_vector(3 downto 0) := "1101";
+  constant CLT  : std_logic_vector(3 downto 0) := "1110";
   
   alias WR : std_logic is saida(0);
   alias RD : std_logic is saida(1);
-  alias HabFlag : std_logic is saida(2);
-  alias OP : std_logic_vector(1 downto 0) is saida(4 downto 3);
-  alias HabRegs : std_logic is saida(5);
-  alias SelMUXULA : std_logic is saida(6);
-  alias JEQC : std_logic is saida(7);
-  alias JSRC : std_logic is saida(8);
-  alias RETC : std_logic is saida(9);
-  alias JMPC : std_logic is saida(10);
-  alias HabWrRET : std_logic is saida(11);
-  alias JNEC : std_logic is saida(12);
+  alias HabFlagIgual : std_logic is saida(2);
+  alias HabFlagMenor : std_logic is saida(3);
+  alias OP : std_logic_vector(1 downto 0) is saida(5 downto 4);
+  alias HabRegs : std_logic is saida(6);
+  alias SelMUXULA : std_logic is saida(7);
+  alias JEQC : std_logic is saida(8);
+  alias JSRC : std_logic is saida(9);
+  alias RETC : std_logic is saida(10);
+  alias JMPC : std_logic is saida(11);
+  alias HabWrRET : std_logic is saida(12);
+  alias JNEC : std_logic is saida(13);
+  alias JLTC : std_logic is saida(14);
   
   begin
   
@@ -44,9 +48,11 @@ architecture comportamento of decoderInstru is
 					  (opcode = SOMA) or 
 					  (opcode = SUB) or 
 					  (opcode = ANDD) or 
-					  (opcode = CEQ) else '0';
+					  (opcode = CEQ) or
+					  (opcode = CLT) else '0';
 					  
-  HabFlag <= '1' when (opcode = CEQ) else '0';
+  HabFlagIgual <= '1' when (opcode = CEQ) else '0';
+  HabFlagMenor <= '1' when (opcode = CLT) else '0';
   
   OP <= "01" when (opcode = SOMA) else
 		  "10" when (opcode = LDA) or
@@ -68,5 +74,6 @@ architecture comportamento of decoderInstru is
   JMPC <= '1' when (opcode = JMP) else '0';
   HabWrRET <= '1' when (opcode = JSR) else '0';
   JNEC <= '1' when (opcode = JNE) else '0';
+  JLTC <= '1' when (opcode = JLT) else '0';
   
 end architecture;

@@ -8,7 +8,7 @@ entity relogio is
 		larguraEnderecos : natural := 9;
 		larguraInstru 	  : natural := 16;
 		larguraRAM		  : natural := 6;
-		simulacao 		  : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+		simulacao 		  : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
 	);
 	port (
 		CLOCK_50   	 : in std_logic;
@@ -45,7 +45,7 @@ architecture arquitetura of relogio is
   
   signal LED8, LED9 : std_logic;
   signal LEDb		  : std_logic_vector(larguraDados-1 downto 0);
-  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET, batida_segundo : std_logic;
+  signal KEY0, KEY1, KEY2, KEY3, FPGA_RESET, batida_segundo, batida_rapida, batida_mux : std_logic;
   
   signal FF_TRI0, FF_TRI1, FF_TRI2, FF_TRI3, FF_TRI_FPGA_RESET, FF_TRI_BATIDA_SEGUNDO : std_logic;
 
@@ -57,9 +57,9 @@ begin
 gravar:  if simulacao generate
 CLK <= KEY(0);
 else generate
-CLK <= CLOCK_50;
---detectorSub0: work.edgeDetector(bordaSubida)
---        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
+--CLK <= CLOCK_50;
+detectorSub0: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
 end generate;
 
 CPU : entity work.CPU generic map (larguraDados => larguraDados,
@@ -78,6 +78,21 @@ CPU : entity work.CPU generic map (larguraDados => larguraDados,
 BATIDA_SEGUNDO_ENTRADA : entity work.divisorGenerico
 								 generic map (divisor => 25000000)
 								    port map (clk => CLK, saida_clk => batida_segundo);
+											  
+BATIDA_RAPIDA_ENTRADA : entity work.divisorGenerico
+								generic map (divisor => 25000)
+								   port map (clk => CLK, saida_clk => batida_rapida);
+
+MUXSW9 :  entity work.mux2x1 port map (entradaA_MUX => batida_segundo,
+										 			entradaB_MUX => batida_rapida,
+										 			seletor_MUX => SW(9),
+										 			saida_MUX => batida_mux);
+												 
+FF_BATIDA_SEGUNDO : entity work.flipflop port map (DIN => '1',
+												 DOUT => FF_TRI_BATIDA_SEGUNDO,
+												 ENABLE => '1',
+												 CLK => batida_mux,
+												 RST => limpa_leitura_BATIDA_SEGUNDO);
 
 RAM : entity work.memoriaRAM generic map (dataWidth => larguraDados, 
 														addrWidth => larguraRAM)
@@ -161,12 +176,6 @@ FF_FPGA_RESET : entity work.flipflop port map (DIN => '1',
 												 ENABLE => '1',
 												 CLK => FPGA_RESET,
 												 RST => limpa_leitura_FPGA_RESET);
-												 
-FF_BATIDA_SEGUNDO : entity work.flipflop port map (DIN => '1',
-												 DOUT => FF_TRI_BATIDA_SEGUNDO,
-												 ENABLE => '1',
-												 CLK => batida_segundo,
-												 RST => limpa_leitura_BATIDA_SEGUNDO);
 												 
 Display0 : entity work.reg7Seg port map(Dado => DATA_WR(3 downto 0),
 													 Habilita => HabHex0,
@@ -262,9 +271,9 @@ limpa_leitura_BATIDA_SEGUNDO <= WR and Endereco(8)
 											  and Endereco(5) 
 											  and Endereco(4) 
 											  and Endereco(3) 
-											  and Endereco(2) 
+											  and not Endereco(2) 
 											  and Endereco(1) 
-											  and Endereco(0); 
+											  and not Endereco(0); 
 										
 	 
 HabLR <= WR and Bloco(4) and EndPerif(0) and not Endereco(5);
@@ -283,12 +292,12 @@ HabSWb <= RD and Bloco(5) and EndPerif(0) and not Endereco(5);
 HabSW8 <= RD and Bloco(5) and EndPerif(1) and not Endereco(5);
 HabSW9 <= RD and Bloco(5) and EndPerif(2) and not Endereco(5);
 
-HabKEY0 <= RD and Bloco(5) and EndPerif(5) and Endereco(5);
+HabKEY0 <= RD and Bloco(5) and EndPerif(0) and Endereco(5);
 HabKEY1 <= RD and Bloco(5) and EndPerif(1) and Endereco(5);
 HabKEY2 <= RD and Bloco(5) and EndPerif(2) and Endereco(5);
 HabKEY3 <= RD and Bloco(5) and EndPerif(3) and Endereco(5);
 HabFPGAReset <= RD and Bloco(5) and EndPerif(4) and Endereco(5);
-HabBatidaSegundo <= RD and Bloco(5) and EndPerif(0) and Endereco(5);
+HabBatidaSegundo <= RD and Bloco(5) and EndPerif(5) and Endereco(5);
 
 LEDR <= LED9 & LED8 & LEDb;
 PC_OUT <= EndROM;
