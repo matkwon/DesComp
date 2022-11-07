@@ -50,7 +50,7 @@ LDA R2, @0
 LDA R1, @0
 LDA R0, @0
 
-Contador:
+Clock:
 LDA R3, @MEM0
 STA @HEX0, R3
 LDA R3, @MEM1
@@ -63,13 +63,13 @@ LDA R3, @MEM4
 STA @HEX4, R3
 LDA R3, @MEM5
 STA @HEX5, R3
-JMP @IncCont
+JMP @IncClk
 
-IncCont:
+IncClk:
 LDA R7, @SEC
 AND R7, @1
 CEQ R7, @1
-JNE @Limits
+JNE @WaitSet
 CLR @SEC
 LDA R0, @MEM0
 SOMA R0, @1
@@ -77,7 +77,7 @@ CEQ R0, @10
 JEQ @ResetMem0
 STA @MEM0, R0
 STA @HEX0, R0
-JMP @Limits
+JMP @WaitSet
 ResetMem0:
 LDA R0, @0
 STA @MEM0, R0
@@ -88,7 +88,7 @@ CEQ R1, @6
 JEQ @ResetMem1
 STA @MEM1, R1
 STA @HEX1, R1
-JMP @Limits
+JMP @WaitSet
 ResetMem1:
 LDA R1, @0
 STA @MEM1, R1
@@ -99,7 +99,7 @@ CEQ R2, @10
 JEQ @ResetMem2
 STA @MEM2, R2
 STA @HEX2, R2
-JMP @Limits
+JMP @WaitSet
 ResetMem2:
 LDA R2, @0
 STA @MEM2, R2
@@ -110,7 +110,7 @@ CEQ R3, @6
 JEQ @ResetMem3
 STA @MEM3, R3
 STA @HEX3, R3
-JMP @Limits
+JMP @WaitSet
 ResetMem3:
 LDA R3, @0
 STA @MEM3, R3
@@ -121,7 +121,7 @@ CEQ R4, @BAS4
 JEQ @ResetMem4
 STA @MEM4, R4
 STA @HEX4, R4
-JMP @Limits
+JMP @WaitSet
 ResetMem4:
 LDA R4, @0
 STA @MEM4, R4
@@ -134,11 +134,16 @@ STA @MEM5, R5
 STA @HEX5, R5
 CEQ R5, @2
 JSR @BAS4SET4
-JMP @Limits
+JMP @WaitSet
 
 BAS4SET4:
-LDI R7, $4
-STA @BAS4, R7
+LDI R4, $4
+STA @BAS4, R4
+RET
+
+BAS4SET10:
+LDI R4, $10
+STA @BAS4, R4
 RET
 
 Zera:
@@ -155,126 +160,45 @@ STA @HEX2, R0
 STA @HEX3, R0
 STA @HEX4, R0
 STA @HEX5, R0
-JMP @Limits
+JSR @BAS4SET10
+JMP @WaitSet
 
-WaitLimit:
+WaitSet:
 LDA R7, @KEY3
 AND R7, @1
 CEQ R7, @1
-JEQ @SetLimit
-LDA R7, @FPGA_RESET
-AND R7, @1
-CEQ R7, @1
-JNE @IncCont
-ResetCount:
-CLR @FPGA_RESET
-LDA R7, @0
-STA @MEM0, R7
-STA @MEM1, R7
-STA @MEM2, R7
-STA @MEM3, R7
-STA @MEM4, R7
-STA @MEM5, R7
-STA @FLAG, R7
-STA @LED8, R7
-STA @LED9, R7
-STA @LEDb, R7
-JMP @Contador
+JEQ @SetMem
+JMP @IncClk
 
-Limits:
-JSR @Limiter
-JSR @VerificaFlag
-JMP @WaitLimit
-
-Limiter:
-LDA R0, @LIM5
-CEQ R0, @MEM5
-JNE @LimiterRet
-LDA R0, @LIM4
-CEQ R0, @MEM4
-JNE @LimiterRet
-LDA R0, @LIM3
-CEQ R0, @MEM3
-JNE @LimiterRet
-LDA R0, @LIM2
-CEQ R0, @MEM2
-JNE @LimiterRet
-LDA R0, @LIM1
-CEQ R0, @MEM1
-JNE @LimiterRet
-LDA R0, @LIM0
-CEQ R0, @MEM0
-JEQ @AcionaFlag
-LimiterRet:
-RET
-
-AcionaFlag:
-LDA R0, @1
-STA @FLAG, R0
-STA @LED9, R0
-STA @LED8, R0
-RET
-
-VerificaFlag:
-LDA R0, @1
-CEQ R0, @FLAG
-JEQ @Parado
-RET
-
-Parado:
-LDA R0, @KEY3
-AND R0, @1
-CEQ R0, @1
-JEQ @SetLimit
-LDA R0, @FPGA_RESET
-AND R0, @1
-CEQ R0, @1
-JEQ @ResetCount
-LDA R0, @SEC
-AND R0, @1
-CEQ R0, @1
-JEQ @AllLEDs
-JMP @Parado
-AllLEDs:
-CLR @SEC
-LDI R1, $255
-STA @LEDb, R1
-LDI R1, $1
-STA @LED8, R1
-STA @LED9, R1
-JMP @Parado
-
-SetLimit:
+SetMem:
 CLR @KEY3
-LDA R3, @LIM0
+LDA R3, @MEM0
 STA @HEX0, R3
-LDA R3, @LIM1
+LDA R3, @MEM1
 STA @HEX1, R3
-LDA R3, @LIM2
+LDA R3, @MEM2
 STA @HEX2, R3
-LDA R3, @LIM3
+LDA R3, @MEM3
 STA @HEX3, R3
-LDA R3, @LIM4
+LDA R3, @MEM4
 STA @HEX4, R3
-LDA R3, @LIM5
+LDA R3, @MEM5
 STA @HEX5, R3
 LDA R0, @0
 LDA R6, @0
 LDA R7, @0
-STA @LED8, R0
-STA @LED9, R0
 LDA R2, @1
 STA @LEDb, R2
-CLR @SEC
+CLR @KEY0
 CLR @KEY3
 JMP @VerificaK0
 
 VerificaK0:
-LDA R6, @SEC
+LDA R6, @KEY0
 AND R6, @1
 CEQ R6, @0
 JEQ @VerificaK1
-JSR @IncLim
+JMP @IncMem
 VerificaK1:
 LDA R7, @KEY3
 AND R7, @1
@@ -282,80 +206,98 @@ CEQ R7, @0
 JNE @Set0
 JMP @VerificaK0
 
-IncLim:
-CLR @SEC
+IncMem:
+CLR @KEY0
 CEQ R0, @0
-JEQ @IncLim0
+JEQ @IncMem0
 CEQ R0, @1
-JEQ @IncLim1
+JEQ @IncMem1
 CEQ R0, @2
-JEQ @IncLim2
+JEQ @IncMem2
 CEQ R0, @3
-JEQ @IncLim3
+JEQ @IncMem3
 CEQ R0, @4
-JEQ @IncLim4
+JEQ @IncMem4
 CEQ R0, @5
-JEQ @IncLim5
-IncLim0:
-LDA R1, @LIM0
+JEQ @IncMem5
+IncMem0:
+LDA R1, @MEM0
 SOMA R1, @1
 CEQ R1, @10
-JNE @StaLim0
+JNE @StaMem0
 LDA R1, $0
-StaLim0:
-STA @LIM0, R1
+StaMem0:
+STA @MEM0, R1
 STA @HEX0, R1
-RET
-IncLim1:
-LDA R1, @LIM1
+JMP @VerificaK1
+IncMem1:
+LDA R1, @MEM1
 SOMA R1, @1
-CEQ R1, @10
-JNE @StaLim1
+CEQ R1, @6
+JNE @StaMem1
 LDA R1, $0
-StaLim1:
-STA @LIM1, R1
+StaMem1:
+STA @MEM1, R1
 STA @HEX1, R1
-RET
-IncLim2:
-LDA R1, @LIM2
+JMP @VerificaK1
+IncMem2:
+LDA R1, @MEM2
 SOMA R1, @1
 CEQ R1, @10
-JNE @StaLim2
+JNE @StaMem2
 LDA R1, $0
-StaLim2:
-STA @LIM2, R1
+StaMem2:
+STA @MEM2, R1
 STA @HEX2, R1
-RET
-IncLim3:
-LDA R1, @LIM3
+JMP @VerificaK1
+IncMem3:
+LDA R1, @MEM3
 SOMA R1, @1
-CEQ R1, @10
-JNE @StaLim3
+CEQ R1, @6
+JNE @StaMem3
 LDA R1, $0
-StaLim3:
-STA @LIM3, R1
+StaMem3:
+STA @MEM3, R1
 STA @HEX3, R1
-RET
-IncLim4:
-LDA R1, @LIM4
+JMP @VerificaK1
+IncMem4:
+LDA R1, @MEM4
 SOMA R1, @1
-CEQ R1, @10
-JNE @StaLim4
+CEQ R1, @BAS4
+JNE @StaMem4
 LDA R1, $0
-StaLim4:
-STA @LIM4, R1
+StaMem4:
+STA @MEM4, R1
 STA @HEX4, R1
-RET
-IncLim5:
-LDA R1, @LIM5
+
+CLT R1, @4
+JLT @setMax2
+
+LDI R1, $2
+STA @BAS5, R1
+
+JMP @VerificaK1
+
+setMax2:
+LDI R1, $3
+STA @BAS5, R1
+
+JMP @VerificaK1
+IncMem5:
+LDA R1, @MEM5
 SOMA R1, @1
-CEQ R1, @10
-JNE @StaLim5
+CEQ R1, @BAS5
+JNE @StaMem5
 LDA R1, $0
-StaLim5:
-STA @LIM5, R1
+StaMem5:
+CEQ R1, @2
+JNE @SetBase24
+LDI R1, $4
+STA @BAS4, R1
+SetBase24:
+STA @MEM5, R1
 STA @HEX5, R1
-RET
+JMP @VerificaK1
 
 Set0:
 CLR @KEY3
@@ -379,11 +321,10 @@ LDA R3, @0
 LDA R2, @0
 LDA R1, @0
 LDA R0, @0
-CLR @SEC
+CLR @KEY0
 CLR @KEY3
-CLR @FPGA_RESET
 STA @FLAG, R0
-JMP @VerificaOF5
+JMP @Clock
 Set1:
 LDI R2, $2
 STA @LEDb, R2
@@ -409,84 +350,3 @@ LDI R2, $32
 STA @LEDb, R2
 LDI R0, @5
 JMP @VerificaK0
-
-VerificaOF5:
-LDA R3, @MEM0
-STA @HEX0, R3
-LDA R3, @MEM1
-STA @HEX1, R3
-LDA R3, @MEM2
-STA @HEX2, R3
-LDA R3, @MEM3
-STA @HEX3, R3
-LDA R3, @MEM4
-STA @HEX4, R3
-LDA R3, @MEM5
-STA @HEX5, R3
-LDA R0, @LIM5
-SUB R0, @MEM5
-AND R0, @63
-CEQ R0, @63
-JNE @OFIgual5
-JSR @AcionaFlag
-JMP @AllLEDs
-OFIgual5:
-LDA R0, @LIM5
-SUB R0, @MEM5
-CEQ R0, @0
-JNE @Contador
-LDA R0, @LIM4
-SUB R0, @MEM4
-AND R0, @63
-CEQ R0, @63
-JNE @OFIgual4
-JSR @AcionaFlag
-JMP @AllLEDs
-OFIgual4:
-LDA R0, @LIM4
-SUB R0, @MEM4
-CEQ R0, @0
-JNE @Contador
-LDA R0, @LIM3
-SUB R0, @MEM3
-AND R0, @63
-CEQ R0, @63
-JNE @OFIgual3
-JSR @AcionaFlag
-JMP @AllLEDs
-OFIgual3:
-LDA R0, @LIM3
-SUB R0, @MEM3
-CEQ R0, @0
-JNE @Contador
-LDA R0, @LIM2
-SUB R0, @MEM2
-AND R0, @63
-CEQ R0, @63
-JNE @OFIgual2
-JSR @AcionaFlag
-JMP @AllLEDs
-OFIgual2:
-LDA R0, @LIM2
-SUB R0, @MEM2
-CEQ R0, @0
-JNE @Contador
-LDA R0, @LIM1
-SUB R0, @MEM1
-AND R0, @63
-CEQ R0, @63
-JNE @OFIgual1
-JSR @AcionaFlag
-JMP @AllLEDs
-OFIgual1:
-LDA R0, @LIM1
-SUB R0, @MEM1
-CEQ R0, @0
-JNE @Contador
-LDA R0, @LIM0
-SUB R0, @MEM0
-AND R0, @63
-CEQ R0, @63
-JNE @Contador
-JSR @AcionaFlag
-JMP @AllLEDs
