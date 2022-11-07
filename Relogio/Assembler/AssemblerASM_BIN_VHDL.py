@@ -227,7 +227,6 @@ with open(destinoBIN, "w") as f:  # Abre o destino BIN
             cont-=1
         elif ':' in line:
             line = line.split(':')
-            print(line[0])
             addr[line[0]] = cont
             cont-=1
         cont+=1
@@ -245,7 +244,7 @@ with open(destinoBIN, "w") as f:  # Abre o destino BIN
             line = line.split(':')
             line = '\n-- LABEL ' + line[0] + '\n'
             f.write(line) # Escreve no arquivo BIN.txt
-            # print(line,end = '') # Print apenas para debug
+            print(line,end = '') # Print apenas para debug
         
         # Se a linha for válida para conversão, executa
         else:
@@ -283,6 +282,4 @@ with open(destinoBIN, "w") as f:  # Abre o destino BIN
             cont+=1 # Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) # Escreve no arquivo BIN.txt
             
-            # print(line,end = '') # Print apenas para debug
-
-# print(addr)
+            print(line,end = '') # Print apenas para debug
