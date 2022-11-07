@@ -17,6 +17,8 @@ entity relogio is
 		SW			  	 : in std_logic_vector(9 downto 0);
 		LEDR		  	 : out std_logic_vector(9 downto 0);
 		PC_OUT	  	 : out std_logic_vector(larguraEnderecos-1 downto 0);
+		A, B, C	  	 : out std_logic_vector(larguraDados-1 downto 0);
+		FN, FM		 : out std_logic;
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5	: out std_logic_vector(6 downto 0)
 	);
 end entity;
@@ -55,7 +57,7 @@ begin
 
 -- Para simular, fica mais simples tirar o edgeDetector
 gravar:  if simulacao generate
-CLK <= KEY(0);
+CLK <= KEY(3);
 else generate
 CLK <= CLOCK_50;
 --detectorSub0: work.edgeDetector(bordaSubida)
@@ -73,7 +75,12 @@ CPU : entity work.CPU generic map (larguraDados => larguraDados,
 											  ADDR => Endereco,
 											  ROM_ADDR => EndROM,
 											  RD => RD,
-											  WR => WR);
+											  WR => WR,
+											  A => A,
+											  B => B,
+											  C => C,
+											  FN => FN,
+											  FM => FM);
 											  
 BATIDA_SEGUNDO_ENTRADA : entity work.divisorGenerico
 								 generic map (divisor => 25000000)

@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/04/2022 15:56:37"
+-- Generated on "11/07/2022 01:00:10"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          relogio
 -- 
@@ -34,7 +34,12 @@ END relogio_vhd_vec_tst;
 ARCHITECTURE relogio_arch OF relogio_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL A : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL B : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL C : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL CLOCK_50 : STD_LOGIC;
+SIGNAL FM : STD_LOGIC;
+SIGNAL FN : STD_LOGIC;
 SIGNAL FPGA_RESET_N : STD_LOGIC;
 SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -48,7 +53,12 @@ SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
 SIGNAL SW : STD_LOGIC_VECTOR(9 DOWNTO 0);
 COMPONENT relogio
 	PORT (
+	A : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	B : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	C : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	CLOCK_50 : IN STD_LOGIC;
+	FM : OUT STD_LOGIC;
+	FN : OUT STD_LOGIC;
 	FPGA_RESET_N : IN STD_LOGIC;
 	HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -66,7 +76,12 @@ BEGIN
 	i1 : relogio
 	PORT MAP (
 -- list connections between master ports and signals
+	A => A,
+	B => B,
+	C => C,
 	CLOCK_50 => CLOCK_50,
+	FM => FM,
+	FN => FN,
 	FPGA_RESET_N => FPGA_RESET_N,
 	HEX0 => HEX0,
 	HEX1 => HEX1,
@@ -95,4 +110,20 @@ BEGIN
 	KEY(0) <= '0';
 WAIT;
 END PROCESS t_prcs_KEY_0;
+
+-- KEY[3]
+t_prcs_KEY_3: PROCESS
+BEGIN
+	KEY(3) <= '1';
+	WAIT FOR 10000 ps;
+	FOR i IN 1 TO 99
+	LOOP
+		KEY(3) <= '0';
+		WAIT FOR 10000 ps;
+		KEY(3) <= '1';
+		WAIT FOR 10000 ps;
+	END LOOP;
+	KEY(3) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_3;
 END relogio_arch;

@@ -273,13 +273,13 @@ STA @HEX4, R1
 CLT R1, @4
 JLT @setMax2
 
-LDI R1, $2
+LDA R1, @2
 STA @BAS5, R1
 
 JMP @VerificaK1
 
 setMax2:
-LDI R1, $3
+LDA R1, @3
 STA @BAS5, R1
 
 JMP @VerificaK1
