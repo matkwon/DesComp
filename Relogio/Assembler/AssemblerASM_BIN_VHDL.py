@@ -130,24 +130,17 @@ addr = {
         "FPGA_RESET": 356,
         "SEC": 357,
 
-        "LIM0": 11,
-        "LIM1": 12,
-        "LIM2": 13,
-        "LIM3": 14,
-        "LIM4": 15,
-        "LIM5": 16,
+        "MEM0": 11,
+        "MEM1": 12,
+        "MEM2": 13,
+        "MEM3": 14,
+        "MEM4": 15,
+        "MEM5": 16,
 
-        "MEM0": 17,
-        "MEM1": 18,
-        "MEM2": 19,
-        "MEM3": 20,
-        "MEM4": 21,
-        "MEM5": 22,
-
-        "FLAG": 23,
+        "AMPM": 17,
         
-        "BAS4": 24,
-        "BAS5": 25,
+        "BAS4": 18,
+        "BAS5": 19,
 }
 
 # Endereçamento de registradores (em Decimal)

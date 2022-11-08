@@ -17,8 +17,6 @@ entity relogio is
 		SW			  	 : in std_logic_vector(9 downto 0);
 		LEDR		  	 : out std_logic_vector(9 downto 0);
 		PC_OUT	  	 : out std_logic_vector(larguraEnderecos-1 downto 0);
-		A, B, C	  	 : out std_logic_vector(larguraDados-1 downto 0);
-		FN, FM		 : out std_logic;
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5	: out std_logic_vector(6 downto 0)
 	);
 end entity;
@@ -75,19 +73,14 @@ CPU : entity work.CPU generic map (larguraDados => larguraDados,
 											  ADDR => Endereco,
 											  ROM_ADDR => EndROM,
 											  RD => RD,
-											  WR => WR,
-											  A => A,
-											  B => B,
-											  C => C,
-											  FN => FN,
-											  FM => FM);
+											  WR => WR);
 											  
 BATIDA_SEGUNDO_ENTRADA : entity work.divisorGenerico
 								 generic map (divisor => 25000000)
 								    port map (clk => CLK, saida_clk => batida_segundo);
 											  
 BATIDA_RAPIDA_ENTRADA : entity work.divisorGenerico
-								generic map (divisor => 25000)
+								generic map (divisor => 10000)
 								   port map (clk => CLK, saida_clk => batida_rapida);
 
 MUXSW9 :  entity work.mux2x1 port map (entradaA_MUX => batida_segundo,
