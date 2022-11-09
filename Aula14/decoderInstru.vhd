@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity decoderInstru is
   port ( opcode : in std_logic_vector(5 downto 0);
-         saida : out std_logic_vector(4 downto 0)
+         saida : out std_logic_vector(5 downto 0)
   );
 end entity;
 
@@ -14,15 +14,20 @@ architecture comportamento of decoderInstru is
   constant BEQ : std_logic_vector(5 downto 0) := "000100";
   
   alias habEscritaReg : std_logic is saida(0);
-  alias op 				 : std_logic is saida(1);
-  alias beqc 			 : std_logic is saida(2);
-  alias habLeituraMem : std_logic is saida(3);
-  alias habEscritaMem : std_logic is saida(4);
+  alias selMuxUlaB	 : std_logic is saida(1);
+  alias op 				 : std_logic is saida(2);
+  alias beqc 			 : std_logic is saida(3);
+  alias habLeituraMem : std_logic is saida(4);
+  alias habEscritaMem : std_logic is saida(5);
 
   
   begin
   
-  habEscritaReg 	<= '1' when (opcode = LW) else '0';
+  habEscritaReg 	<= '1' when (opcode = LW)  else '0';
+  
+  selMuxUlaB		<= '1' when (opcode = LW)  or
+										(opcode = SW)  else
+										'0';
   
   op 					<= '1' when (opcode = LW)  or 
 										(opcode = SW)  else 

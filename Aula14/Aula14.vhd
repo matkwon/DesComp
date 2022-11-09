@@ -8,7 +8,7 @@ entity Aula14 is
 		CLOCK_50 : in std_logic;
 		KEY: in std_logic_vector(3 downto 0);
 		flagZero : out std_logic;
-		ram_out, reg_1_out, reg_2_out,
+		ram_out, reg_1_out, reg_2_out, sig_entrada_ula_b,
 		pc_out, ula_out, ula_in_1, ula_in_2: out std_logic_vector(larguraDados-1 downto 0)
 	 );
 end entity;
@@ -19,7 +19,7 @@ architecture comportamento of Aula14 is
 				sig_ram_out, sig_pc_inc_4_im, sig_prox_pc,
 				sig_estendido, sig_ula_out: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 				
-	signal	sinais_de_controle: STD_LOGIC_VECTOR(4 downto 0);
+	signal	sinais_de_controle: STD_LOGIC_VECTOR(5 downto 0);
 		
 	signal 	CLK : STD_LOGIC;
 	
@@ -57,7 +57,7 @@ architecture comportamento of Aula14 is
 		ula : entity work.ULASomaSub 	generic map(larguraDados => larguraDados)
 												port map (
 													entradaA => sig_reg_1, 
-													entradaB => sig_estendido, 
+													entradaB => sig_entrada_ula_b, 
 													saida => sig_ula_out, 
 													seletor => sig_ula_op,
 													flag_zero => sig_flag_zero
@@ -98,6 +98,14 @@ architecture comportamento of Aula14 is
 														saida_MUX => sig_prox_pc
 													);
 													
+		mux_entrada_ula_b : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map( 	
+														entradaA_MUX => sig_reg_2,
+														entradaB_MUX =>  sig_estendido,
+														seletor_MUX => sig_sel_mux_ula_b,
+														saida_MUX => sig_entrada_ula_b
+													);
+													
 		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
 																 port map( 
 																	entradaA => sig_pc_inc_4, 
@@ -108,10 +116,11 @@ architecture comportamento of Aula14 is
 																 
 		
 		sig_hab_escrita_reg  	<= sinais_de_controle(0);
-		sig_ula_op					<= sinais_de_controle(1);
-		sig_beq						<= sinais_de_controle(2);
-		sig_hab_leitura_memoria <= sinais_de_controle(3);
-		sig_hab_escrita_memoria <= sinais_de_controle(4);
+		sig_sel_mux_ula_b  		<= sinais_de_controle(1);
+		sig_ula_op					<= sinais_de_controle(2);
+		sig_beq						<= sinais_de_controle(3);
+		sig_hab_leitura_memoria <= sinais_de_controle(4);
+		sig_hab_escrita_memoria <= sinais_de_controle(5);
 		pc_out 						<= sig_pc;
 		ram_out						<= sig_ram_out;
 		reg_1_out					<= sig_reg_1;
