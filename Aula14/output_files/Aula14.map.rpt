@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula14
-Thu Nov 10 11:17:22 2022
+Thu Nov 10 11:43:43 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -25,13 +25,14 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  17. Parameter Settings for User Entity Instance: estendeSinalGenerico:estensor_de_sinal
  18. Parameter Settings for User Entity Instance: RAMMIPS:ram
  19. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_pc
- 20. Parameter Settings for User Entity Instance: somadorGenerico:somador_beq
- 21. Port Connectivity Checks: "somadorGenerico:somador_beq"
- 22. Port Connectivity Checks: "RAMMIPS:ram"
- 23. Port Connectivity Checks: "registradorGenerico:program_counter"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 20. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_entrada_ula_b
+ 21. Parameter Settings for User Entity Instance: somadorGenerico:somador_beq
+ 22. Port Connectivity Checks: "somadorGenerico:somador_beq"
+ 23. Port Connectivity Checks: "RAMMIPS:ram"
+ 24. Port Connectivity Checks: "registradorGenerico:program_counter"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -58,13 +59,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 10 11:17:22 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 10 11:43:43 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula14                                      ;
 ; Top-level Entity Name           ; Aula14                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2142                                        ;
+; Total registers                 ; 2123                                        ;
 ; Total pins                      ; 230                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -207,25 +208,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 1468         ;
+; Estimate of Logic utilization (ALMs needed) ; 1458         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 975          ;
+; Combinational ALUT usage for logic          ; 974          ;
 ;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 747          ;
-;     -- 5 input functions                    ; 36           ;
-;     -- 4 input functions                    ; 5            ;
-;     -- <=3 input functions                  ; 187          ;
+;     -- 6 input functions                    ; 765          ;
+;     -- 5 input functions                    ; 16           ;
+;     -- 4 input functions                    ; 4            ;
+;     -- <=3 input functions                  ; 189          ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 2142         ;
+; Dedicated logic registers                   ; 2123         ;
 ;                                             ;              ;
 ; I/O pins                                    ; 230          ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 2142         ;
-; Total fan-out                               ; 11900        ;
-; Average fan-out                             ; 3.33         ;
+; Maximum fan-out                             ; 2123         ;
+; Total fan-out                               ; 11881        ;
+; Average fan-out                             ; 3.34         ;
 +---------------------------------------------+--------------+
 
 
@@ -234,11 +235,11 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name         ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
-; |Aula14                                  ; 975 (1)             ; 2142 (0)                  ; 0                 ; 0          ; 230  ; 0            ; |Aula14                                     ; Aula14              ; work         ;
+; |Aula14                                  ; 974 (1)             ; 2123 (0)                  ; 0                 ; 0          ; 230  ; 0            ; |Aula14                                     ; Aula14              ; work         ;
 ;    |RAMMIPS:ram|                         ; 832 (832)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |Aula14|RAMMIPS:ram                         ; RAMMIPS             ; work         ;
 ;    |ROMMIPS:rom|                         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula14|ROMMIPS:rom                         ; ROMMIPS             ; work         ;
-;    |ULASomaSub:ula|                      ; 44 (44)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula14|ULASomaSub:ula                      ; ULASomaSub          ; work         ;
-;    |bancoReg:banco_reg|                  ; 38 (38)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula14|bancoReg:banco_reg                  ; bancoReg            ; work         ;
+;    |ULASomaSub:ula|                      ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula14|ULASomaSub:ula                      ; ULASomaSub          ; work         ;
+;    |bancoReg:banco_reg|                  ; 38 (38)             ; 45 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula14|bancoReg:banco_reg                  ; bancoReg            ; work         ;
 ;    |decoderInstru:decoder_instru|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula14|decoderInstru:decoder_instru        ; decoderInstru       ; work         ;
 ;    |registradorGenerico:program_counter| ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula14|registradorGenerico:program_counter ; registradorGenerico ; work         ;
 ;    |somaConstante:soma_constante|        ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula14|somaConstante:soma_constante        ; somaConstante       ; work         ;
@@ -1214,7 +1215,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bancoReg:banco_reg|registrador~132          ; Stuck at GND due to stuck port clock_enable             ;
 ; bancoReg:banco_reg|registrador~165          ; Stuck at GND due to stuck port clock_enable             ;
 ; bancoReg:banco_reg|registrador~133          ; Stuck at GND due to stuck port clock_enable             ;
-; Total Number of Removed Registers = 962     ;                                                         ;
+; bancoReg:banco_reg|registrador~359          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~360          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~361          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~362          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~363          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~364          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~365          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~366          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~367          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~368          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~369          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~370          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~371          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~372          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~373          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~374          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~375          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~376          ; Lost fanout                                             ;
+; bancoReg:banco_reg|registrador~377          ; Lost fanout                                             ;
+; Total Number of Removed Registers = 981     ;                                                         ;
 +---------------------------------------------+---------------------------------------------------------+
 
 
@@ -1301,7 +1321,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                   ;                                ; bancoReg:banco_reg|registrador~162, bancoReg:banco_reg|registrador~130, ;
 ;                                   ;                                ; bancoReg:banco_reg|registrador~163, bancoReg:banco_reg|registrador~131, ;
 ;                                   ;                                ; bancoReg:banco_reg|registrador~164, bancoReg:banco_reg|registrador~132, ;
-;                                   ;                                ; bancoReg:banco_reg|registrador~165, bancoReg:banco_reg|registrador~133  ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~165, bancoReg:banco_reg|registrador~133, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~365, bancoReg:banco_reg|registrador~366, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~367, bancoReg:banco_reg|registrador~368, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~369, bancoReg:banco_reg|registrador~370, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~371, bancoReg:banco_reg|registrador~372, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~373, bancoReg:banco_reg|registrador~374, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~375, bancoReg:banco_reg|registrador~376, ;
+;                                   ;                                ; bancoReg:banco_reg|registrador~377                                      ;
+; bancoReg:banco_reg|registrador~39 ; Stuck at GND                   ; bancoReg:banco_reg|registrador~359                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                         ;
+; bancoReg:banco_reg|registrador~40 ; Stuck at GND                   ; bancoReg:banco_reg|registrador~360                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                         ;
+; bancoReg:banco_reg|registrador~41 ; Stuck at GND                   ; bancoReg:banco_reg|registrador~361                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                         ;
+; bancoReg:banco_reg|registrador~42 ; Stuck at GND                   ; bancoReg:banco_reg|registrador~362                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                         ;
+; bancoReg:banco_reg|registrador~43 ; Stuck at GND                   ; bancoReg:banco_reg|registrador~363                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                         ;
+; bancoReg:banco_reg|registrador~44 ; Stuck at GND                   ; bancoReg:banco_reg|registrador~364                                      ;
+;                                   ; due to stuck port clock_enable ;                                                                         ;
 +-----------------------------------+--------------------------------+-------------------------------------------------------------------------+
 
 
@@ -1310,12 +1349,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2142  ;
+; Total registers                              ; 2123  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 25    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2112  ;
+; Number of registers using Clock Enable       ; 2093  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1417,6 +1456,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:mux_entrada_ula_b ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: somadorGenerico:somador_beq ;
 +----------------+-------+-------------------------------------------------+
@@ -1460,29 +1509,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2142                        ;
-;     ENA               ; 2112                        ;
+; arriav_ff             ; 2123                        ;
+;     ENA               ; 2093                        ;
 ;     SLD               ; 25                          ;
 ;     plain             ; 5                           ;
 ; arriav_io_obuf        ; 32                          ;
 ; arriav_lcell_comb     ; 976                         ;
 ;     arith             ; 88                          ;
-;         1 data inputs ; 84                          ;
-;         2 data inputs ; 1                           ;
+;         1 data inputs ; 55                          ;
+;         2 data inputs ; 30                          ;
 ;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 2                           ;
 ;     normal            ; 888                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 99                          ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 34                          ;
-;         6 data inputs ; 747                         ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 100                         ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 765                         ;
 ; boundary_port         ; 230                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.70                        ;
-; Average LUT depth     ; 4.59                        ;
+; Max LUT depth         ; 8.60                        ;
+; Average LUT depth     ; 4.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1501,7 +1550,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 10 11:17:02 2022
+    Info: Processing started: Thu Nov 10 11:43:21 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula14 -c Aula14
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1539,17 +1588,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file somador
     Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/DesComp/Aula14/somadorGenerico.vhd Line: 17
     Info (12023): Found entity 1: somadorGenerico File: C:/DesComp/Aula14/somadorGenerico.vhd Line: 5
 Info (12127): Elaborating entity "Aula14" for the top level hierarchy
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder_instru" File: C:/DesComp/Aula14/Aula14.vhd Line: 33
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:soma_constante" File: C:/DesComp/Aula14/Aula14.vhd Line: 38
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:program_counter" File: C:/DesComp/Aula14/Aula14.vhd Line: 43
-Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:rom" File: C:/DesComp/Aula14/Aula14.vhd Line: 52
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder_instru" File: C:/DesComp/Aula14/Aula14.vhd Line: 34
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:soma_constante" File: C:/DesComp/Aula14/Aula14.vhd Line: 39
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:program_counter" File: C:/DesComp/Aula14/Aula14.vhd Line: 44
+Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:rom" File: C:/DesComp/Aula14/Aula14.vhd Line: 53
 Warning (10541): VHDL Signal Declaration warning at ROMMIPS.vhd(19): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/DesComp/Aula14/ROMMIPS.vhd Line: 19
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ula" File: C:/DesComp/Aula14/Aula14.vhd Line: 57
-Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:banco_reg" File: C:/DesComp/Aula14/Aula14.vhd Line: 66
-Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:estensor_de_sinal" File: C:/DesComp/Aula14/Aula14.vhd Line: 77
-Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:ram" File: C:/DesComp/Aula14/Aula14.vhd Line: 83
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_pc" File: C:/DesComp/Aula14/Aula14.vhd Line: 93
-Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:somador_beq" File: C:/DesComp/Aula14/Aula14.vhd Line: 101
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ula" File: C:/DesComp/Aula14/Aula14.vhd Line: 58
+Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:banco_reg" File: C:/DesComp/Aula14/Aula14.vhd Line: 67
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:estensor_de_sinal" File: C:/DesComp/Aula14/Aula14.vhd Line: 78
+Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:ram" File: C:/DesComp/Aula14/Aula14.vhd Line: 84
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_pc" File: C:/DesComp/Aula14/Aula14.vhd Line: 94
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:somador_beq" File: C:/DesComp/Aula14/Aula14.vhd Line: 110
 Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "RAMMIPS:ram|memRAM" is uninferred due to asynchronous read logic File: C:/DesComp/Aula14/RAMMIPS.vhd Line: 21
     Info (276007): RAM logic "bancoReg:banco_reg|registrador" is uninferred due to asynchronous read logic File: C:/DesComp/Aula14/bancoReg.vhd Line: 45
@@ -1680,7 +1729,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ula_in_2[30]" is stuck at GND File: C:/DesComp/Aula14/Aula14.vhd Line: 12
     Warning (13410): Pin "ula_in_2[31]" is stuck at GND File: C:/DesComp/Aula14/Aula14.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 768 registers lost all their fanouts during netlist optimizations.
+Info (17049): 787 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
@@ -1688,14 +1737,14 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/Aula14/Aula14.vhd Line: 9
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/Aula14/Aula14.vhd Line: 9
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/Aula14/Aula14.vhd Line: 9
-Info (21057): Implemented 3316 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3277 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 225 output pins
-    Info (21061): Implemented 3086 logic cells
+    Info (21061): Implemented 3047 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 132 warnings
-    Info: Peak virtual memory: 4845 megabytes
-    Info: Processing ended: Thu Nov 10 11:17:22 2022
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 4843 megabytes
+    Info: Processing ended: Thu Nov 10 11:43:43 2022
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:39
 
 

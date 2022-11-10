@@ -8,7 +8,7 @@ entity Aula14 is
 		CLOCK_50 : in std_logic;
 		KEY: in std_logic_vector(3 downto 0);
 		flagZero : out std_logic;
-		ram_out, reg_1_out, reg_2_out, sig_entrada_ula_b,
+		ram_out, reg_1_out, reg_2_out,
 		pc_out, ula_out, ula_in_1, ula_in_2: out std_logic_vector(larguraDados-1 downto 0)
 	 );
 end entity;
@@ -16,7 +16,7 @@ end entity;
 architecture comportamento of Aula14 is
    signal 	sig_pc, sig_pc_inc_4, sig_dado, 
 				sig_rd, sig_rs, sig_rt, sig_reg_1, sig_reg_2,
-				sig_ram_out, sig_pc_inc_4_im, sig_prox_pc,
+				sig_ram_out, sig_pc_inc_4_im, sig_prox_pc, sig_entrada_ula_b,
 				sig_estendido, sig_ula_out: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 				
 	signal	sinais_de_controle: STD_LOGIC_VECTOR(5 downto 0);
@@ -25,7 +25,8 @@ architecture comportamento of Aula14 is
 	
 	signal 	sig_ula_op, sig_hab_escrita_reg, 
 				sig_hab_leitura_memoria, sig_flag_zero,
-				sig_hab_escrita_memoria, sig_beq : STD_LOGIC;
+				sig_hab_escrita_memoria, sig_beq,
+				sig_sel_mux_ula_b : STD_LOGIC;
    
 	begin
 		CLK <= KEY(0);
