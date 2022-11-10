@@ -7,7 +7,9 @@ entity Aula14 is
     port (
 		CLOCK_50 : in std_logic;
 		KEY: in std_logic_vector(3 downto 0);
-		ram_out, reg_1_out, reg_2_out, pc_out: out std_logic_vector(larguraDados-1 downto 0)
+		flagZero : out std_logic;
+		ram_out, reg_1_out, reg_2_out,
+		pc_out, ula_out, ula_in_1, ula_in_2: out std_logic_vector(larguraDados-1 downto 0)
 	 );
 end entity;
 
@@ -68,8 +70,8 @@ architecture comportamento of Aula14 is
 			endereco3 => sig_dado(20 downto 16),
 			dadoEscrita3 => sig_ram_out,
 			habEscritaReg => sig_hab_escrita_reg,
-			saidaA => sig_reg_1,
-			saidaB => sig_reg_2
+			saida1 => sig_reg_1,
+			saida2 => sig_reg_2
 		);
 		
 		estensor_de_sinal : entity work.estendeSinalGenerico 	generic map (larguraDadoEntrada => 16, larguraDadoSaida => 32)
@@ -83,8 +85,8 @@ architecture comportamento of Aula14 is
 			Endereco => sig_ula_out,
 			Dado_in => sig_reg_2,
 			Dado_out => sig_ram_out,
-			we => sig_hab_leitura_memoria, 
-			re => sig_hab_escrita_memoria, 
+			we => sig_hab_escrita_memoria, 
+			re => sig_hab_leitura_memoria, 
 			habilita => '1'
 		);
 		
@@ -114,6 +116,10 @@ architecture comportamento of Aula14 is
 		ram_out						<= sig_ram_out;
 		reg_1_out					<= sig_reg_1;
 		reg_2_out					<= sig_reg_2;
+		flagZero						<= sig_flag_zero;
+		ula_out						<= sig_ula_out;
+		ula_in_1						<= sig_reg_1;
+		ula_in_2						<= sig_estendido;
 
 
       

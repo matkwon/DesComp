@@ -14,16 +14,13 @@ entity bancoReg is
     port
     (
         clk        : in std_logic;
---
-        endereco1       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        endereco2       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        endereco3       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
---
+        endereco1,
+		  endereco2,
+		  endereco3       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
         dadoEscrita3    : in std_logic_vector((larguraDados-1) downto 0);
---
-        habEscritaReg        : in std_logic := '0';
-        saidaA          : out std_logic_vector((larguraDados -1) downto 0);
-        saidaB          : out std_logic_vector((larguraDados -1) downto 0)
+        habEscritaReg   : in std_logic := '0';
+        saida1,
+		  saida2				: out std_logic_vector((larguraDados -1) downto 0)
     );
 end entity;
 
@@ -37,9 +34,10 @@ function initMemory
   begin
         -- Inicializa os endereços:
 		  
-        tmp(8)  := 32x"05";  -- $t0 = 0x05
-        tmp(9)  := 32x"08";  -- $t1 = 0x08
-        tmp(10) := 32x"01";  -- $t2 = 0x01
+        tmp(8)  := 32x"6";  -- $t0 = 0x05
+        tmp(9)  := 32x"7";  -- $t1 = 0x08
+        tmp(10) := 32x"8";  -- $t2 = 0x01
+        tmp(11) := 32x"9";  -- $t3 = 0x12
         return tmp;
     end initMemory;
 
@@ -56,7 +54,7 @@ begin
         end if;
     end process;
     -- Se endereco = 0 : retorna ZERO
-	 saidaA <= zero when to_integer(unsigned(endereco1)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco1)));
-    saidaB <= zero when to_integer(unsigned(endereco2)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco2)));
---    saidaC <= zero when to_integer(unsigned(endereco3)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco3)));
+	 saida1 <= zero when to_integer(unsigned(endereco1)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco1)));
+    saida2 <= zero when to_integer(unsigned(endereco2)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco2)));
+--    saida3 <= zero when to_integer(unsigned(endereco3)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco3)));
 end architecture;

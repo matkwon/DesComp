@@ -22,10 +22,7 @@ architecture comportamento of decoderInstru is
   
   begin
   
-  habEscritaReg 	<= '1' when (opcode = LW)  or 
-										(opcode = SW)  or 
-										(opcode = BEQ) else 
-										'0';
+  habEscritaReg 	<= '1' when (opcode = LW) else '0';
   
   op 					<= '1' when (opcode = LW)  or 
 										(opcode = SW)  else 
