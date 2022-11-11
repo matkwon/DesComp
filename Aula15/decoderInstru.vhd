@@ -16,8 +16,8 @@ architecture comportamento of decoderInstru is
   
   constant OP_R 	 : std_logic_vector(5 downto 0) := "000000";
   
-  constant FN_ADD	 : std_logic_vector(5 downto 0) := "000000";
-  constant FN_SUB	 : std_logic_vector(5 downto 0) := "000000";
+  constant FN_ADD	 : std_logic_vector(5 downto 0) := "100000";
+  constant FN_SUB	 : std_logic_vector(5 downto 0) := "100010";
   
   alias selMuxRtRd	 : std_logic is saida(0);
   alias habEscritaReg : std_logic is saida(1);

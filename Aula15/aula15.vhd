@@ -151,7 +151,7 @@ architecture comportamento of aula15 is
 		flagZero						<= sig_flag_zero;
 		ula_out						<= sig_ula_out;
 		ula_in_1						<= sig_reg_1;
-		ula_in_2						<= sig_estendido;
+		ula_in_2						<= sig_entrada_ula_b;
 
 
       
