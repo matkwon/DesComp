@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity decoderInstru is
   port ( opcode : in std_logic_vector(5 downto 0);
 			funct	 : in std_logic_vector(5 downto 0);
-         saida  : out std_logic_vector(7 downto 0)
+         saida  : out std_logic_vector(8 downto 0)
   );
 end entity;
 
@@ -19,17 +19,23 @@ architecture comportamento of decoderInstru is
   constant FN_ADD	 : std_logic_vector(5 downto 0) := "100000";
   constant FN_SUB	 : std_logic_vector(5 downto 0) := "100010";
   
-  alias selMuxRtRd	 : std_logic is saida(0);
-  alias habEscritaReg : std_logic is saida(1);
-  alias selMuxRtIm	 : std_logic is saida(2);
-  alias op 				 : std_logic is saida(3);
-  alias selMuxUlaMem  : std_logic is saida(4);
-  alias beqc 			 : std_logic is saida(5);
-  alias habLeituraMem : std_logic is saida(6);
-  alias habEscritaMem : std_logic is saida(7);
+  constant OP_J 	 : std_logic_vector(5 downto 0) := "000010";
+  
+  alias selMuxJmp		 : std_logic is saida(0);
+  alias selMuxRtRd	 : std_logic is saida(1);
+  alias habEscritaReg : std_logic is saida(2);
+  alias selMuxRtIm	 : std_logic is saida(3);
+  alias op 				 : std_logic is saida(4);
+  alias selMuxUlaMem  : std_logic is saida(5);
+  alias beqc 			 : std_logic is saida(6);
+  alias habLeituraMem : std_logic is saida(7);
+  alias habEscritaMem : std_logic is saida(8);
 
   
   begin
+  
+  selMuxJmp			<= '1' when (opcode = OP_J)	else '0';
+  
   selMuxRtRd		<= '1' when (opcode = OP_R) 	else '0';
   
   habEscritaReg 	<= '1' when (opcode = OP_LW)  					  or

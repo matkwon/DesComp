@@ -1,0 +1,27 @@
+Quartus Prime Archive log --	/home/joao/descomp_oficial/DesComp/Aula15/aula15.qarlog
+
+Archive:	/home/joao/descomp_oficial/DesComp/Aula15/aula15.qar
+Date:		Fri Nov 11 15:54:07 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/joao/descomp_oficial/DesComp/Aula15/RAMMIPS.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/ROMContent.mif
+/home/joao/descomp_oficial/DesComp/Aula15/ROMMIPS.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/ULASomaSub.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/Waveform.vwf
+/home/joao/descomp_oficial/DesComp/Aula15/aula15.qpf
+/home/joao/descomp_oficial/DesComp/Aula15/aula15.qsf
+/home/joao/descomp_oficial/DesComp/Aula15/aula15.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/bancoReg.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/decoderInstru.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/estendeSinalGenerico.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/muxGenerico2x1.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/registradorGenerico.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/somaConstante.vhd
+/home/joao/descomp_oficial/DesComp/Aula15/somadorGenerico.vhd
+/home/joao/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 16 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

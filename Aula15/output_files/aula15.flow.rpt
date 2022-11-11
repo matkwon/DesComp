@@ -1,5 +1,5 @@
 Flow report for aula15
-Fri Nov 11 15:22:39 2022
+Fri Nov 11 15:52:45 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Nov 11 15:22:39 2022       ;
+; Flow Status                     ; Successful - Fri Nov 11 15:52:45 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula15                                      ;
 ; Top-level Entity Name           ; aula15                                      ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/11/2022 15:22:24 ;
+; Start date & time ; 11/11/2022 15:50:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; aula15              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 121371313149.166819094444917           ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 121371313149.166819260345089           ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -105,10 +105,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 485 MB              ; 00:00:12                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 664 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 672 MB              ; 00:00:01                           ;
-; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:13                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 480 MB              ; 00:00:11                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 663 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 674 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 666 MB              ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 676 MB              ; 00:00:01                           ;
+; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,6 +122,8 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 +----------------------+-------------------------------+----------------+------------+----------------+
 
 
@@ -127,6 +131,8 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off aula15 -c aula15
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula15 -c aula15 --vector_source=/home/joao/descomp_oficial/DesComp/Aula15/Waveform.vwf --testbench_file=/home/joao/descomp_oficial/DesComp/Aula15/simulation/qsim/Waveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/joao/descomp_oficial/DesComp/Aula15/simulation/qsim/ aula15 -c aula15
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula15 -c aula15 --vector_source=/home/joao/descomp_oficial/DesComp/Aula15/Waveform.vwf --testbench_file=/home/joao/descomp_oficial/DesComp/Aula15/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/joao/descomp_oficial/DesComp/Aula15/simulation/qsim/ aula15 -c aula15
 

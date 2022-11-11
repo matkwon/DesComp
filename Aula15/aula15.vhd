@@ -17,9 +17,9 @@ architecture comportamento of aula15 is
    signal 	sig_pc, sig_pc_inc_4, sig_dado, 
 				sig_reg_1, sig_reg_2,
 				sig_ram_out, sig_pc_inc_4_im, sig_prox_pc, sig_entrada_ula_b, sig_saida_mux_ula_mem,
-				sig_estendido, sig_ula_out: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+				sig_estendido, sig_ula_out, sig_saida_mux_jmp: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 				
-	signal	sinais_de_controle: STD_LOGIC_VECTOR(7 downto 0);
+	signal	sinais_de_controle: STD_LOGIC_VECTOR(8 downto 0);
 
 	signal 	sig_saida_mux_rt_rd: STD_LOGIC_VECTOR(4 downto 0);
 		
@@ -28,7 +28,7 @@ architecture comportamento of aula15 is
 	signal 	sig_ula_op, sig_hab_escrita_reg, sig_sel_mux_ula_mem,
 				sig_hab_leitura_memoria, sig_flag_zero, sig_sel_mux_rt_rd,
 				sig_hab_escrita_memoria, sig_beq,
-				sig_sel_mux_rt_im : STD_LOGIC;
+				sig_sel_mux_rt_im, sig_sel_mux_jmp : STD_LOGIC;
    
 	begin
 		CLK <= KEY(0);
@@ -39,7 +39,7 @@ architecture comportamento of aula15 is
 			saida  => sinais_de_controle
 		);
 		
-		soma_constante: entity work.somaConstante port map (
+		pc_inc_4: entity work.somaConstante port map (
 			entrada => sig_pc,
 			saida => sig_pc_inc_4
 		);
@@ -96,7 +96,7 @@ architecture comportamento of aula15 is
 		
 		mux_pc : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
 													port map( 	
-														entradaA_MUX => sig_pc_inc_4,
+														entradaA_MUX => sig_saida_mux_jmp,
 														entradaB_MUX =>  sig_pc_inc_4_im,
 														seletor_MUX => (sig_beq and sig_flag_zero),
 														saida_MUX => sig_prox_pc
@@ -126,22 +126,31 @@ architecture comportamento of aula15 is
 														saida_MUX => sig_saida_mux_rt_rd
 													);
 													
+		mux_jmp : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map( 	
+														entradaA_MUX => sig_pc_inc_4,
+														entradaB_MUX => (sig_pc_inc_4(31 downto 28) & sig_dado(25 downto 0) & "00"),
+														seletor_MUX => sig_sel_mux_jmp,
+														saida_MUX => sig_saida_mux_jmp
+													);
+													
 		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
 													 port map( 
-														entradaA => sig_pc_inc_4, 
+														entradaA => sig_saida_mux_jmp, 
 														entradaB => sig_estendido(29 downto 0) & "00", 
 														saida => sig_pc_inc_4_im
 													 );
 																 
 																 
-		sig_sel_mux_rt_rd			<= sinais_de_controle(0);
-		sig_hab_escrita_reg  	<= sinais_de_controle(1);
-		sig_sel_mux_rt_im  		<= sinais_de_controle(2);
-		sig_ula_op					<= sinais_de_controle(3);
-		sig_sel_mux_ula_mem		<= sinais_de_controle(4);
-		sig_beq						<= sinais_de_controle(5);
-		sig_hab_leitura_memoria <= sinais_de_controle(6);
-		sig_hab_escrita_memoria <= sinais_de_controle(7);
+		sig_sel_mux_jmp			<= sinais_de_controle(0);
+		sig_sel_mux_rt_rd			<= sinais_de_controle(1);
+		sig_hab_escrita_reg  	<= sinais_de_controle(2);
+		sig_sel_mux_rt_im  		<= sinais_de_controle(3);
+		sig_ula_op					<= sinais_de_controle(4);
+		sig_sel_mux_ula_mem		<= sinais_de_controle(5);
+		sig_beq						<= sinais_de_controle(6);
+		sig_hab_leitura_memoria <= sinais_de_controle(7);
+		sig_hab_escrita_memoria <= sinais_de_controle(8);
 		
 		
 		pc_out 						<= sig_pc;
