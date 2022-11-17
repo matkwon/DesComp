@@ -1,0 +1,21 @@
+Quartus Prime Archive log --	/home/joao/descomp_oficial/DesComp/Aula16/aula16.qarlog
+
+Archive:	/home/joao/descomp_oficial/DesComp/Aula16/aula16.qar
+Date:		Thu Nov 17 18:02:41 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/joao/descomp_oficial/DesComp/Aula16/ULA1Bit.vhd
+/home/joao/descomp_oficial/DesComp/Aula16/ULALastBit.vhd
+/home/joao/descomp_oficial/DesComp/Aula16/Waveform.vwf
+/home/joao/descomp_oficial/DesComp/Aula16/aula16.qpf
+/home/joao/descomp_oficial/DesComp/Aula16/aula16.qsf
+/home/joao/descomp_oficial/DesComp/Aula16/aula16.vhd
+/home/joao/descomp_oficial/DesComp/Aula16/fullAdder.vhd
+/home/joao/descomp_oficial/DesComp/Aula16/mux2x1.vhd
+/home/joao/descomp_oficial/DesComp/Aula16/mux4x1.vhd
+/home/joao/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 10 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

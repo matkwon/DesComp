@@ -5,151 +5,380 @@ use ieee.numeric_std.all;    -- Biblioteca IEEE para funções aritméticas
 entity aula16 is
     generic ( larguraDados : natural := 32 );
     port (
-		CLOCK_50 	: in std_logic;
-		KEY			: in std_logic_vector(3 downto 0);
-		in_A, in_B 	: in std_logic_vector(larguraDados-1 downto 0);
+		A, B 			: in std_logic_vector(larguraDados-1 downto 0);
 		inverte_B 	: in std_logic;
-		selecao 		: in std_logic_vector(1 downto 0);
+		sel	 		: in std_logic_vector(1 downto 0);
 		resultado 	: out std_logic_vector(larguraDados-1 downto 0);
 		zero 			: out std_logic
 	 );
 end entity;
 
 architecture comportamento of aula16 is
-   signal 	sig_saida_mux_jmp: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+   signal 	carry0, carry1, carry2, carry3, carry4, carry5, carry6, carry7, carry8,
+	carry9, carry10, carry11, carry12, carry13, carry14, carry15, carry16, carry17,
+	carry18, carry19, carry20, carry21, carry22, carry23, carry24, carry25, carry26,
+	carry27, carry28, carry29, carry30, carry_out, overflow: std_logic;
    
 	begin
-		CLK <= KEY(0);
-		
-		decoder_instru: entity work.decoderInstru port map (
-			opcode => sig_dado(31 downto 26),
-			funct  => sig_dado(5 downto 0),
-			saida  => sinais_de_controle
+		ULA0: entity work.ULA1Bit port map (
+			A => A(0),
+			B => B(0),
+			carry_in => inverte_B,
+			carry_out => carry0,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => overflow,
+			resultado => resultado(0)
 		);
 		
-		pc_inc_4: entity work.somaConstante port map (
-			entrada => sig_pc,
-			saida => sig_pc_inc_4
+		ULA1: entity work.ULA1Bit port map (
+			A => A(1),
+			B => B(1),
+			carry_in => carry0,
+			carry_out => carry1,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(1)
 		);
 		
-		program_counter: entity work.registradorGenerico generic map (larguraDados => larguraDados)
-																		 port map (
-																			DIN => sig_prox_pc, 
-																			DOUT => sig_pc, 
-																			ENABLE => '1', 
-																			CLK => CLK, 
-																			RST => '0'
-																		 );
-																		 
-		rom : entity work.ROMMIPS port map (
-			Endereco => sig_pc,
-			Dado => sig_dado
+		ULA2: entity work.ULA1Bit port map (
+			A => A(2),
+			B => B(2),
+			carry_in => carry1,
+			carry_out => carry2,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(2)
 		);
 		
-		ula : entity work.ULASomaSub 	generic map(larguraDados => larguraDados)
-												port map (
-													entradaA => sig_reg_1, 
-													entradaB => sig_entrada_ula_b, 
-													saida => sig_ula_out, 
-													seletor => sig_ula_op,
-													flag_zero => sig_flag_zero
-												);
-		
-		banco_reg : entity work.bancoReg port map (
-			clk => CLK,
-			endereco1 => sig_dado(25 downto 21),
-			endereco2 => sig_dado(20 downto 16),
-			endereco3 => sig_saida_mux_rt_rd,
-			dadoEscrita3 => sig_saida_mux_ula_mem,
-			habEscritaReg => sig_hab_escrita_reg,
-			saida1 => sig_reg_1,
-			saida2 => sig_reg_2
+		ULA3: entity work.ULA1Bit port map (
+			A => A(3),
+			B => B(3),
+			carry_in => carry2,
+			carry_out => carry3,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(3)
 		);
 		
-		estensor_de_sinal : entity work.estendeSinalGenerico 	generic map (larguraDadoEntrada => 16, larguraDadoSaida => 32)
-																				port map (
-																					estendeSinal_IN => sig_dado(15 downto 0), 
-																					estendeSinal_OUT => sig_estendido
-																				);
-																				
-		ram : entity work.RAMMIPS port map (
-			clk => CLK,
-			Endereco => sig_ula_out,
-			Dado_in => sig_reg_2,
-			Dado_out => sig_ram_out,
-			we => sig_hab_escrita_memoria, 
-			re => sig_hab_leitura_memoria, 
-			habilita => '1'
+		ULA4: entity work.ULA1Bit port map (
+			A => A(4),
+			B => B(4),
+			carry_in => carry3,
+			carry_out => carry4,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(4)
 		);
 		
-		mux_pc : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
-														entradaA_MUX => sig_saida_mux_jmp,
-														entradaB_MUX =>  sig_pc_inc_4_im,
-														seletor_MUX => (sig_beq and sig_flag_zero),
-														saida_MUX => sig_prox_pc
-													);
-								
-		mux_rt_im : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
-														entradaA_MUX => sig_reg_2,
-														entradaB_MUX =>  sig_estendido,
-														seletor_MUX => sig_sel_mux_rt_im,
-														saida_MUX => sig_entrada_ula_b
-													);
-													
-		mux_ula_mem : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
-														entradaA_MUX => sig_ula_out,
-														entradaB_MUX =>  sig_ram_out,
-														seletor_MUX => sig_sel_mux_ula_mem,
-														saida_MUX => sig_saida_mux_ula_mem
-													);
-													
-		mux_rt_rd : entity work.muxGenerico2x1 generic map (larguraDados => 5)
-													port map( 	
-														entradaA_MUX => sig_dado(20 downto 16),
-														entradaB_MUX => sig_dado(15 downto 11),
-														seletor_MUX => sig_sel_mux_rt_rd,
-														saida_MUX => sig_saida_mux_rt_rd
-													);
-													
-		mux_jmp : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
-														entradaA_MUX => sig_pc_inc_4,
-														entradaB_MUX => (sig_pc_inc_4(31 downto 28) & sig_dado(25 downto 0) & "00"),
-														seletor_MUX => sig_sel_mux_jmp,
-														saida_MUX => sig_saida_mux_jmp
-													);
-													
-		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
-													 port map( 
-														entradaA => sig_saida_mux_jmp, 
-														entradaB => sig_estendido(29 downto 0) & "00", 
-														saida => sig_pc_inc_4_im
-													 );
-																 
-																 
-		sig_sel_mux_jmp			<= sinais_de_controle(0);
-		sig_sel_mux_rt_rd			<= sinais_de_controle(1);
-		sig_hab_escrita_reg  	<= sinais_de_controle(2);
-		sig_sel_mux_rt_im  		<= sinais_de_controle(3);
-		sig_ula_op					<= sinais_de_controle(4);
-		sig_sel_mux_ula_mem		<= sinais_de_controle(5);
-		sig_beq						<= sinais_de_controle(6);
-		sig_hab_leitura_memoria <= sinais_de_controle(7);
-		sig_hab_escrita_memoria <= sinais_de_controle(8);
+		ULA5: entity work.ULA1Bit port map (
+			A => A(5),
+			B => B(5),
+			carry_in => carry4,
+			carry_out => carry5,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(5)
+		);
 		
+		ULA6: entity work.ULA1Bit port map (
+			A => A(6),
+			B => B(6),
+			carry_in => carry5,
+			carry_out => carry6,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(6)
+		);
 		
-		pc_out 						<= sig_pc;
-		ram_out						<= sig_ram_out;
-		reg_1_out					<= sig_reg_1;
-		reg_2_out					<= sig_reg_2;
-		flagZero						<= sig_flag_zero;
-		ula_out						<= sig_ula_out;
-		ula_in_1						<= sig_reg_1;
-		ula_in_2						<= sig_entrada_ula_b;
-
-
-      
+		ULA7: entity work.ULA1Bit port map (
+			A => A(7),
+			B => B(7),
+			carry_in => carry6,
+			carry_out => carry7,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(7)
+		);
+		
+		ULA8: entity work.ULA1Bit port map (
+			A => A(8),
+			B => B(8),
+			carry_in => carry7,
+			carry_out => carry8,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(8)
+		);
+		
+		ULA9: entity work.ULA1Bit port map (
+			A => A(9),
+			B => B(9),
+			carry_in => carry8,
+			carry_out => carry9,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(9)
+		);
+		
+		ULA10: entity work.ULA1Bit port map (
+			A => A(10),
+			B => B(10),
+			carry_in => carry9,
+			carry_out => carry10,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(10)
+		);
+		
+		ULA11: entity work.ULA1Bit port map (
+			A => A(11),
+			B => B(11),
+			carry_in => carry10,
+			carry_out => carry11,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(11)
+		);
+		
+		ULA12: entity work.ULA1Bit port map (
+			A => A(12),
+			B => B(12),
+			carry_in => carry11,
+			carry_out => carry12,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(12)
+		);
+		
+		ULA13: entity work.ULA1Bit port map (
+			A => A(13),
+			B => B(13),
+			carry_in => carry12,
+			carry_out => carry13,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(13)
+		);
+		
+		ULA14: entity work.ULA1Bit port map (
+			A => A(14),
+			B => B(14),
+			carry_in => carry13,
+			carry_out => carry14,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(14)
+		);
+		
+		ULA15: entity work.ULA1Bit port map (
+			A => A(15),
+			B => B(15),
+			carry_in => carry14,
+			carry_out => carry15,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(15)
+		);
+		
+		ULA16: entity work.ULA1Bit port map (
+			A => A(16),
+			B => B(16),
+			carry_in => carry15,
+			carry_out => carry16,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(16)
+		);
+		
+		ULA17: entity work.ULA1Bit port map (
+			A => A(17),
+			B => B(17),
+			carry_in => carry16,
+			carry_out => carry17,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(17)
+		);
+		
+		ULA18: entity work.ULA1Bit port map (
+			A => A(18),
+			B => B(18),
+			carry_in => carry17,
+			carry_out => carry18,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(18)
+		);
+		
+		ULA19: entity work.ULA1Bit port map (
+			A => A(19),
+			B => B(19),
+			carry_in => carry18,
+			carry_out => carry19,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(19)
+		);
+		
+		ULA20: entity work.ULA1Bit port map (
+			A => A(20),
+			B => B(20),
+			carry_in => carry19,
+			carry_out => carry20,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(20)
+		);
+		
+		ULA21: entity work.ULA1Bit port map (
+			A => A(21),
+			B => B(21),
+			carry_in => carry20,
+			carry_out => carry21,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(21)
+		);
+		
+		ULA22: entity work.ULA1Bit port map (
+			A => A(22),
+			B => B(22),
+			carry_in => carry21,
+			carry_out => carry22,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(22)
+		);
+		
+		ULA23: entity work.ULA1Bit port map (
+			A => A(23),
+			B => B(23),
+			carry_in => carry22,
+			carry_out => carry23,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(23)
+		);
+		
+		ULA24: entity work.ULA1Bit port map (
+			A => A(24),
+			B => B(24),
+			carry_in => carry23,
+			carry_out => carry24,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(24)
+		);
+		
+		ULA25: entity work.ULA1Bit port map (
+			A => A(25),
+			B => B(25),
+			carry_in => carry24,
+			carry_out => carry25,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(25)
+		);
+		
+		ULA26: entity work.ULA1Bit port map (
+			A => A(26),
+			B => B(26),
+			carry_in => carry25,
+			carry_out => carry26,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(26)
+		);
+		
+		ULA27: entity work.ULA1Bit port map (
+			A => A(27),
+			B => B(27),
+			carry_in => carry26,
+			carry_out => carry27,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(27)
+		);
+		
+		ULA28: entity work.ULA1Bit port map (
+			A => A(28),
+			B => B(28),
+			carry_in => carry27,
+			carry_out => carry28,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(28)
+		);
+		
+		ULA29: entity work.ULA1Bit port map (
+			A => A(29),
+			B => B(29),
+			carry_in => carry28,
+			carry_out => carry29,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(29)
+		);
+		
+		ULA30: entity work.ULA1Bit port map (
+			A => A(30),
+			B => B(30),
+			carry_in => carry29,
+			carry_out => carry30,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(30)
+		);
+		
+		ULA31: entity work.ULALastBit port map (
+			A => A(31),
+			B => B(31),
+			carry_in => carry30,
+			carry_out => carry_out,
+			inverte_B => inverte_B,
+			sel => sel,
+			slt => '0',
+			resultado => resultado(31),
+			overflow => overflow
+		);
+		
+		zero <= not (resultado(0)  or resultado(1)  or resultado(2)  or resultado(3)  or resultado(4)  or
+						 resultado(5)  or resultado(6)  or resultado(7)  or resultado(8)  or resultado(9)  or
+						 resultado(10) or resultado(11) or resultado(12) or resultado(13) or resultado(14) or
+						 resultado(15) or resultado(16) or resultado(17) or resultado(18) or resultado(19) or
+						 resultado(20) or resultado(21) or resultado(22) or resultado(23) or resultado(24) or
+						 resultado(25) or resultado(26) or resultado(27) or resultado(28) or resultado(29) or
+						 resultado(30) or resultado(31));
+		
 end architecture;
