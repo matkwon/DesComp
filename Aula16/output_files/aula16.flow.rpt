@@ -1,5 +1,5 @@
 Flow report for aula16
-Thu Nov 17 18:00:39 2022
+Thu Nov 17 18:25:18 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Nov 17 18:00:39 2022       ;
+; Flow Status                     ; Successful - Thu Nov 17 18:25:18 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula16                                      ;
 ; Top-level Entity Name           ; aula16                                      ;
@@ -50,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 100                                         ;
+; Total pins                      ; 101                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/17/2022 17:44:50 ;
+; Start date & time ; 11/17/2022 18:23:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; aula16              ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 121371313149.166871789046568           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 121371313149.166872023948094           ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -98,16 +98,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 476 MB              ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 666 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 666 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 662 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 666 MB              ; 00:00:00                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 476 MB              ; 00:00:13                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 661 MB              ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 665 MB              ; 00:00:00                           ;
-; Total                ; 00:00:12     ; --                      ; --                  ; 00:00:10                           ;
+; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -119,12 +113,6 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 ; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
-; EDA Netlist Writer   ; jz-Parallels-Virtual-Platform ; Ubuntu 22.04.1 ; 22         ; x86_64         ;
 +----------------------+-------------------------------+----------------+------------+----------------+
 
 
@@ -132,12 +120,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off aula16 -c aula16
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula16 -c aula16 --vector_source=/home/joao/descomp_oficial/DesComp/Aula16/Waveform.vwf --testbench_file=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/ aula16 -c aula16
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula16 -c aula16 --vector_source=/home/joao/descomp_oficial/DesComp/Aula16/Waveform.vwf --testbench_file=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/ aula16 -c aula16
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula16 -c aula16 --vector_source=/home/joao/descomp_oficial/DesComp/Aula16/Waveform.vwf --testbench_file=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/ aula16 -c aula16
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off aula16 -c aula16 --vector_source=/home/joao/descomp_oficial/DesComp/Aula16/Waveform.vwf --testbench_file=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/joao/descomp_oficial/DesComp/Aula16/simulation/qsim/ aula16 -c aula16
 

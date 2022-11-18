@@ -193,6 +193,7 @@ resultado[29] <= ula1bit:ULA29.resultado
 resultado[30] <= ula1bit:ULA30.resultado
 resultado[31] <= ulalastbit:ULA31.resultado
 zero <= zero.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= ulalastbit:ULA31.overflow
 
 
 |aula16|ULA1Bit:ULA0
@@ -1653,7 +1654,7 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |aula16|ULALastBit:ULA31
-carry_in => overflow.IN1
+carry_in => sig_overflow.IN1
 carry_in => fulladder:somador.carry_in
 A => sig_and.IN1
 A => sig_or.IN1
@@ -1665,8 +1666,9 @@ inverte_B => mux2x1:mux_inversor.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
-overflow <= overflow.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= sig_overflow.DB_MAX_OUTPUT_PORT_TYPE
 carry_out <= fulladder:somador.carry_out
+slt_in <= slt_in.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |aula16|ULALastBit:ULA31|mux4x1:mux_seletor

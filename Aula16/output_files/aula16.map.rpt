@@ -1,5 +1,5 @@
 Analysis & Synthesis report for aula16
-Thu Nov 17 17:44:58 2022
+Thu Nov 17 18:24:10 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -76,14 +76,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 17 17:44:58 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 17 18:24:10 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; aula16                                      ;
 ; Top-level Entity Name           ; aula16                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 100                                         ;
+; Total pins                      ; 101                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -219,25 +219,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimate of Logic utilization (ALMs needed) ; 73              ;
+; Estimate of Logic utilization (ALMs needed) ; 74              ;
 ;                                             ;                 ;
 ; Combinational ALUT usage for logic          ; 119             ;
 ;     -- 7 input functions                    ; 0               ;
-;     -- 6 input functions                    ; 27              ;
-;     -- 5 input functions                    ; 28              ;
+;     -- 6 input functions                    ; 29              ;
+;     -- 5 input functions                    ; 27              ;
 ;     -- 4 input functions                    ; 16              ;
-;     -- <=3 input functions                  ; 48              ;
+;     -- <=3 input functions                  ; 47              ;
 ;                                             ;                 ;
 ; Dedicated logic registers                   ; 0               ;
 ;                                             ;                 ;
-; I/O pins                                    ; 100             ;
+; I/O pins                                    ; 101             ;
 ;                                             ;                 ;
 ; Total DSP Blocks                            ; 0               ;
 ;                                             ;                 ;
 ; Maximum fan-out node                        ; inverte_B~input ;
-; Maximum fan-out                             ; 38              ;
-; Total fan-out                               ; 601             ;
-; Average fan-out                             ; 1.88            ;
+; Maximum fan-out                             ; 40              ;
+; Total fan-out                               ; 610             ;
+; Average fan-out                             ; 1.90            ;
 +---------------------------------------------+-----------------+
 
 
@@ -246,7 +246,7 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name ; Library Name ;
 +-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
-; |aula16                     ; 119 (9)             ; 0 (0)                     ; 0                 ; 0          ; 100  ; 0            ; |aula16                                      ; aula16      ; work         ;
+; |aula16                     ; 119 (9)             ; 0 (0)                     ; 0                 ; 0          ; 101  ; 0            ; |aula16                                      ; aula16      ; work         ;
 ;    |ULA1Bit:ULA0|           ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA0                         ; ULA1Bit     ; work         ;
 ;       |fullAdder:somador|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA0|fullAdder:somador       ; fullAdder   ; work         ;
 ;       |mux4x1:mux_seletor|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA0|mux4x1:mux_seletor      ; mux4x1      ; work         ;
@@ -325,9 +325,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |fullAdder:somador|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA28|fullAdder:somador      ; fullAdder   ; work         ;
 ;       |mux2x1:mux_inversor| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA28|mux2x1:mux_inversor    ; mux2x1      ; work         ;
 ;       |mux4x1:mux_seletor|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA28|mux4x1:mux_seletor     ; mux4x1      ; work         ;
-;    |ULA1Bit:ULA29|          ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA29                        ; ULA1Bit     ; work         ;
+;    |ULA1Bit:ULA29|          ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA29                        ; ULA1Bit     ; work         ;
 ;       |fullAdder:somador|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA29|fullAdder:somador      ; fullAdder   ; work         ;
-;       |mux2x1:mux_inversor| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA29|mux2x1:mux_inversor    ; mux2x1      ; work         ;
 ;       |mux4x1:mux_seletor|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA29|mux4x1:mux_seletor     ; mux4x1      ; work         ;
 ;    |ULA1Bit:ULA2|           ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA2                         ; ULA1Bit     ; work         ;
 ;       |fullAdder:somador|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA2|fullAdder:somador       ; fullAdder   ; work         ;
@@ -362,7 +361,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |ULA1Bit:ULA9|           ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA9                         ; ULA1Bit     ; work         ;
 ;       |fullAdder:somador|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA9|fullAdder:somador       ; fullAdder   ; work         ;
 ;       |mux4x1:mux_seletor|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULA1Bit:ULA9|mux4x1:mux_seletor      ; mux4x1      ; work         ;
-;    |ULALastBit:ULA31|       ; 3 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULALastBit:ULA31                     ; ULALastBit  ; work         ;
+;    |ULALastBit:ULA31|       ; 4 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULALastBit:ULA31                     ; ULALastBit  ; work         ;
 ;       |mux2x1:mux_inversor| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULALastBit:ULA31|mux2x1:mux_inversor ; mux2x1      ; work         ;
 ;       |mux4x1:mux_seletor|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |aula16|ULALastBit:ULA31|mux4x1:mux_seletor  ; mux4x1      ; work         ;
 +-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
@@ -691,15 +690,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_lcell_comb     ; 120                         ;
 ;     normal            ; 120                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 42                          ;
-;         3 data inputs ; 6                           ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 8                           ;
 ;         4 data inputs ; 16                          ;
-;         5 data inputs ; 28                          ;
-;         6 data inputs ; 27                          ;
-; boundary_port         ; 100                         ;
+;         5 data inputs ; 27                          ;
+;         6 data inputs ; 29                          ;
+; boundary_port         ; 101                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 16.00                       ;
-; Average LUT depth     ; 11.97                       ;
+; Average LUT depth     ; 11.99                       ;
 +-----------------------+-----------------------------+
 
 
@@ -718,7 +717,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 17 17:44:50 2022
+    Info: Processing started: Thu Nov 17 18:23:59 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off aula16 -c aula16
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -750,14 +749,14 @@ Info (12128): Elaborating entity "ULALastBit" for hierarchy "ULALastBit:ULA31" F
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 219 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 220 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 67 input pins
-    Info (21059): Implemented 33 output pins
+    Info (21059): Implemented 34 output pins
     Info (21061): Implemented 119 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 476 megabytes
-    Info: Processing ended: Thu Nov 17 17:44:58 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Processing ended: Thu Nov 17 18:24:10 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:13
 
 

@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "11/17/2022 18:00:39"
+-- DATE "11/17/2022 18:25:18"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -41,7 +41,8 @@ ENTITY 	aula16 IS
 	inverte_B : IN std_logic;
 	sel : IN std_logic_vector(1 DOWNTO 0);
 	resultado : OUT std_logic_vector(31 DOWNTO 0);
-	zero : OUT std_logic
+	zero : OUT std_logic;
+	overflow : OUT std_logic
 	);
 END aula16;
 
@@ -61,6 +62,7 @@ SIGNAL ww_inverte_B : std_logic;
 SIGNAL ww_sel : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_resultado : std_logic_vector(31 DOWNTO 0);
 SIGNAL ww_zero : std_logic;
+SIGNAL ww_overflow : std_logic;
 SIGNAL \resultado[0]~output_o\ : std_logic;
 SIGNAL \resultado[1]~output_o\ : std_logic;
 SIGNAL \resultado[2]~output_o\ : std_logic;
@@ -94,6 +96,7 @@ SIGNAL \resultado[29]~output_o\ : std_logic;
 SIGNAL \resultado[30]~output_o\ : std_logic;
 SIGNAL \resultado[31]~output_o\ : std_logic;
 SIGNAL \zero~output_o\ : std_logic;
+SIGNAL \overflow~output_o\ : std_logic;
 SIGNAL \inverte_B~input_o\ : std_logic;
 SIGNAL \B[0]~input_o\ : std_logic;
 SIGNAL \A[0]~input_o\ : std_logic;
@@ -206,14 +209,13 @@ SIGNAL \B[28]~input_o\ : std_logic;
 SIGNAL \ULA28|mux_inversor|saida_MUX~0_combout\ : std_logic;
 SIGNAL \A[29]~input_o\ : std_logic;
 SIGNAL \B[29]~input_o\ : std_logic;
-SIGNAL \ULA29|mux_inversor|saida_MUX~0_combout\ : std_logic;
 SIGNAL \ULA29|somador|soma~0_combout\ : std_logic;
 SIGNAL \ULA29|somador|carry_out~0_combout\ : std_logic;
 SIGNAL \ULA29|somador|carry_out~1_combout\ : std_logic;
 SIGNAL \A[30]~input_o\ : std_logic;
 SIGNAL \B[30]~input_o\ : std_logic;
 SIGNAL \ULA30|mux_inversor|saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA31|overflow~0_combout\ : std_logic;
+SIGNAL \ULA31|slt_in~combout\ : std_logic;
 SIGNAL \ULA0|mux_seletor|saida_MUX~0_combout\ : std_logic;
 SIGNAL \ULA0|somador|carry_out~0_combout\ : std_logic;
 SIGNAL \ULA1|mux_seletor|saida_MUX~0_combout\ : std_logic;
@@ -280,50 +282,7 @@ SIGNAL \zero~5_combout\ : std_logic;
 SIGNAL \zero~6_combout\ : std_logic;
 SIGNAL \zero~7_combout\ : std_logic;
 SIGNAL \zero~8_combout\ : std_logic;
-SIGNAL \ULA3|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA2|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA14|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA3|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA1|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA0|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA14|somador|ALT_INV_soma~0_combout\ : std_logic;
-SIGNAL \ULA19|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA0|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA31|ALT_INV_overflow~0_combout\ : std_logic;
-SIGNAL \ULA19|somador|ALT_INV_soma~0_combout\ : std_logic;
-SIGNAL \ULA19|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA18|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA17|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA16|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA30|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA16|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA13|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA15|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA12|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA14|somador|ALT_INV_carry_out~1_combout\ : std_logic;
-SIGNAL \ULA11|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA14|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA2|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA19|somador|ALT_INV_carry_out~1_combout\ : std_logic;
-SIGNAL \ULA27|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA26|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA26|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA25|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA24|somador|ALT_INV_carry_out~1_combout\ : std_logic;
-SIGNAL \ULA24|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA29|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA24|somador|ALT_INV_soma~0_combout\ : std_logic;
-SIGNAL \ULA29|somador|ALT_INV_soma~0_combout\ : std_logic;
-SIGNAL \ULA24|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA23|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA22|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA29|somador|ALT_INV_carry_out~1_combout\ : std_logic;
-SIGNAL \ULA21|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA29|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA28|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA21|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA20|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA11|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA31|overflow~combout\ : std_logic;
 SIGNAL \ALT_INV_A[18]~input_o\ : std_logic;
 SIGNAL \ALT_INV_B[17]~input_o\ : std_logic;
 SIGNAL \ALT_INV_A[17]~input_o\ : std_logic;
@@ -423,8 +382,67 @@ SIGNAL \ULA8|somador|ALT_INV_soma~0_combout\ : std_logic;
 SIGNAL \ULA7|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
 SIGNAL \ULA6|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
 SIGNAL \ULA5|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA3|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA2|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA14|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
 SIGNAL \ULA5|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
 SIGNAL \ULA4|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA2|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA13|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA3|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA1|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA14|somador|ALT_INV_soma~0_combout\ : std_logic;
+SIGNAL \ULA0|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA0|mux_seletor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA19|somador|ALT_INV_soma~0_combout\ : std_logic;
+SIGNAL \ULA31|ALT_INV_slt_in~combout\ : std_logic;
+SIGNAL \ULA19|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA18|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA17|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA16|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA30|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA16|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA15|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA12|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA14|somador|ALT_INV_carry_out~1_combout\ : std_logic;
+SIGNAL \ULA11|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA14|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA11|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA19|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA26|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA26|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA25|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA24|somador|ALT_INV_carry_out~1_combout\ : std_logic;
+SIGNAL \ULA29|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA24|somador|ALT_INV_soma~0_combout\ : std_logic;
+SIGNAL \ULA29|somador|ALT_INV_soma~0_combout\ : std_logic;
+SIGNAL \ULA24|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA23|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA22|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA21|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA29|somador|ALT_INV_carry_out~1_combout\ : std_logic;
+SIGNAL \ULA28|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA21|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA27|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA20|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA24|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA19|somador|ALT_INV_carry_out~1_combout\ : std_logic;
+SIGNAL \ULA10|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA9|somador|ALT_INV_carry_out~1_combout\ : std_logic;
+SIGNAL \ULA9|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA9|somador|ALT_INV_soma~0_combout\ : std_logic;
+SIGNAL \ULA8|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA7|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA6|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA6|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA5|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA4|somador|ALT_INV_carry_out~1_combout\ : std_logic;
+SIGNAL \ULA4|somador|ALT_INV_carry_out~0_combout\ : std_logic;
+SIGNAL \ULA4|somador|ALT_INV_soma~0_combout\ : std_logic;
+SIGNAL \ULA3|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA2|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
+SIGNAL \ULA1|somador|ALT_INV_carry_out~combout\ : std_logic;
+SIGNAL \ULA31|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
 SIGNAL \ALT_INV_B[30]~input_o\ : std_logic;
 SIGNAL \ALT_INV_A[30]~input_o\ : std_logic;
 SIGNAL \ALT_INV_B[29]~input_o\ : std_logic;
@@ -450,22 +468,6 @@ SIGNAL \ALT_INV_A[20]~input_o\ : std_logic;
 SIGNAL \ALT_INV_B[19]~input_o\ : std_logic;
 SIGNAL \ALT_INV_A[19]~input_o\ : std_logic;
 SIGNAL \ALT_INV_B[18]~input_o\ : std_logic;
-SIGNAL \ULA10|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA9|somador|ALT_INV_carry_out~1_combout\ : std_logic;
-SIGNAL \ULA9|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA9|somador|ALT_INV_soma~0_combout\ : std_logic;
-SIGNAL \ULA8|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA7|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA6|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA6|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA5|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA4|somador|ALT_INV_carry_out~1_combout\ : std_logic;
-SIGNAL \ULA4|somador|ALT_INV_carry_out~0_combout\ : std_logic;
-SIGNAL \ULA4|somador|ALT_INV_soma~0_combout\ : std_logic;
-SIGNAL \ULA3|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA2|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
-SIGNAL \ULA1|somador|ALT_INV_carry_out~combout\ : std_logic;
-SIGNAL \ULA31|mux_inversor|ALT_INV_saida_MUX~0_combout\ : std_logic;
 
 BEGIN
 
@@ -475,53 +477,10 @@ ww_inverte_B <= inverte_B;
 ww_sel <= sel;
 resultado <= ww_resultado;
 zero <= ww_zero;
+overflow <= ww_overflow;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-\ULA3|somador|ALT_INV_carry_out~combout\ <= NOT \ULA3|somador|carry_out~combout\;
-\ULA2|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA2|mux_seletor|saida_MUX~0_combout\;
-\ULA14|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA14|mux_inversor|saida_MUX~0_combout\;
-\ULA3|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA3|mux_seletor|saida_MUX~0_combout\;
-\ULA1|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA1|mux_seletor|saida_MUX~0_combout\;
-\ULA0|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA0|somador|carry_out~0_combout\;
-\ULA14|somador|ALT_INV_soma~0_combout\ <= NOT \ULA14|somador|soma~0_combout\;
-\ULA19|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA19|somador|carry_out~0_combout\;
-\ULA0|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA0|mux_seletor|saida_MUX~0_combout\;
-\ULA31|ALT_INV_overflow~0_combout\ <= NOT \ULA31|overflow~0_combout\;
-\ULA19|somador|ALT_INV_soma~0_combout\ <= NOT \ULA19|somador|soma~0_combout\;
-\ULA19|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA19|mux_inversor|saida_MUX~0_combout\;
-\ULA18|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA18|mux_inversor|saida_MUX~0_combout\;
-\ULA17|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA17|mux_inversor|saida_MUX~0_combout\;
-\ULA16|somador|ALT_INV_carry_out~combout\ <= NOT \ULA16|somador|carry_out~combout\;
-\ULA30|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA30|mux_inversor|saida_MUX~0_combout\;
-\ULA16|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA16|mux_inversor|saida_MUX~0_combout\;
-\ULA13|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA13|mux_inversor|saida_MUX~0_combout\;
-\ULA15|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA15|mux_inversor|saida_MUX~0_combout\;
-\ULA12|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA12|mux_inversor|saida_MUX~0_combout\;
-\ULA14|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA14|somador|carry_out~1_combout\;
-\ULA11|somador|ALT_INV_carry_out~combout\ <= NOT \ULA11|somador|carry_out~combout\;
-\ULA14|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA14|somador|carry_out~0_combout\;
-\ULA2|somador|ALT_INV_carry_out~combout\ <= NOT \ULA2|somador|carry_out~combout\;
-\ULA19|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA19|somador|carry_out~1_combout\;
-\ULA27|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA27|mux_inversor|saida_MUX~0_combout\;
-\ULA26|somador|ALT_INV_carry_out~combout\ <= NOT \ULA26|somador|carry_out~combout\;
-\ULA26|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA26|mux_inversor|saida_MUX~0_combout\;
-\ULA25|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA25|mux_inversor|saida_MUX~0_combout\;
-\ULA24|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA24|somador|carry_out~1_combout\;
-\ULA24|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA24|somador|carry_out~0_combout\;
-\ULA29|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA29|somador|carry_out~0_combout\;
-\ULA24|somador|ALT_INV_soma~0_combout\ <= NOT \ULA24|somador|soma~0_combout\;
-\ULA29|somador|ALT_INV_soma~0_combout\ <= NOT \ULA29|somador|soma~0_combout\;
-\ULA24|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA24|mux_inversor|saida_MUX~0_combout\;
-\ULA23|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA23|mux_inversor|saida_MUX~0_combout\;
-\ULA22|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA22|mux_inversor|saida_MUX~0_combout\;
-\ULA29|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA29|somador|carry_out~1_combout\;
-\ULA21|somador|ALT_INV_carry_out~combout\ <= NOT \ULA21|somador|carry_out~combout\;
-\ULA29|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA29|mux_inversor|saida_MUX~0_combout\;
-\ULA28|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA28|mux_inversor|saida_MUX~0_combout\;
-\ULA21|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA21|mux_inversor|saida_MUX~0_combout\;
-\ULA20|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA20|mux_inversor|saida_MUX~0_combout\;
-\ULA11|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA11|mux_inversor|saida_MUX~0_combout\;
 \ALT_INV_A[18]~input_o\ <= NOT \A[18]~input_o\;
 \ALT_INV_B[17]~input_o\ <= NOT \B[17]~input_o\;
 \ALT_INV_A[17]~input_o\ <= NOT \A[17]~input_o\;
@@ -621,8 +580,67 @@ ww_devpor <= devpor;
 \ULA7|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA7|mux_seletor|saida_MUX~0_combout\;
 \ULA6|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA6|mux_seletor|saida_MUX~0_combout\;
 \ULA5|somador|ALT_INV_carry_out~combout\ <= NOT \ULA5|somador|carry_out~combout\;
+\ULA3|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA3|mux_seletor|saida_MUX~0_combout\;
+\ULA2|somador|ALT_INV_carry_out~combout\ <= NOT \ULA2|somador|carry_out~combout\;
+\ULA14|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA14|mux_inversor|saida_MUX~0_combout\;
 \ULA5|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA5|mux_seletor|saida_MUX~0_combout\;
 \ULA4|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA4|mux_seletor|saida_MUX~0_combout\;
+\ULA2|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA2|mux_seletor|saida_MUX~0_combout\;
+\ULA13|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA13|mux_inversor|saida_MUX~0_combout\;
+\ULA3|somador|ALT_INV_carry_out~combout\ <= NOT \ULA3|somador|carry_out~combout\;
+\ULA1|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA1|mux_seletor|saida_MUX~0_combout\;
+\ULA14|somador|ALT_INV_soma~0_combout\ <= NOT \ULA14|somador|soma~0_combout\;
+\ULA0|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA0|somador|carry_out~0_combout\;
+\ULA0|mux_seletor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA0|mux_seletor|saida_MUX~0_combout\;
+\ULA19|somador|ALT_INV_soma~0_combout\ <= NOT \ULA19|somador|soma~0_combout\;
+\ULA31|ALT_INV_slt_in~combout\ <= NOT \ULA31|slt_in~combout\;
+\ULA19|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA19|mux_inversor|saida_MUX~0_combout\;
+\ULA18|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA18|mux_inversor|saida_MUX~0_combout\;
+\ULA17|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA17|mux_inversor|saida_MUX~0_combout\;
+\ULA16|somador|ALT_INV_carry_out~combout\ <= NOT \ULA16|somador|carry_out~combout\;
+\ULA30|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA30|mux_inversor|saida_MUX~0_combout\;
+\ULA16|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA16|mux_inversor|saida_MUX~0_combout\;
+\ULA15|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA15|mux_inversor|saida_MUX~0_combout\;
+\ULA12|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA12|mux_inversor|saida_MUX~0_combout\;
+\ULA14|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA14|somador|carry_out~1_combout\;
+\ULA11|somador|ALT_INV_carry_out~combout\ <= NOT \ULA11|somador|carry_out~combout\;
+\ULA14|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA14|somador|carry_out~0_combout\;
+\ULA11|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA11|mux_inversor|saida_MUX~0_combout\;
+\ULA19|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA19|somador|carry_out~0_combout\;
+\ULA26|somador|ALT_INV_carry_out~combout\ <= NOT \ULA26|somador|carry_out~combout\;
+\ULA26|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA26|mux_inversor|saida_MUX~0_combout\;
+\ULA25|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA25|mux_inversor|saida_MUX~0_combout\;
+\ULA24|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA24|somador|carry_out~1_combout\;
+\ULA29|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA29|somador|carry_out~0_combout\;
+\ULA24|somador|ALT_INV_soma~0_combout\ <= NOT \ULA24|somador|soma~0_combout\;
+\ULA29|somador|ALT_INV_soma~0_combout\ <= NOT \ULA29|somador|soma~0_combout\;
+\ULA24|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA24|mux_inversor|saida_MUX~0_combout\;
+\ULA23|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA23|mux_inversor|saida_MUX~0_combout\;
+\ULA22|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA22|mux_inversor|saida_MUX~0_combout\;
+\ULA21|somador|ALT_INV_carry_out~combout\ <= NOT \ULA21|somador|carry_out~combout\;
+\ULA29|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA29|somador|carry_out~1_combout\;
+\ULA28|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA28|mux_inversor|saida_MUX~0_combout\;
+\ULA21|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA21|mux_inversor|saida_MUX~0_combout\;
+\ULA27|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA27|mux_inversor|saida_MUX~0_combout\;
+\ULA20|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA20|mux_inversor|saida_MUX~0_combout\;
+\ULA24|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA24|somador|carry_out~0_combout\;
+\ULA19|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA19|somador|carry_out~1_combout\;
+\ULA10|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA10|mux_inversor|saida_MUX~0_combout\;
+\ULA9|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA9|somador|carry_out~1_combout\;
+\ULA9|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA9|somador|carry_out~0_combout\;
+\ULA9|somador|ALT_INV_soma~0_combout\ <= NOT \ULA9|somador|soma~0_combout\;
+\ULA8|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA8|mux_inversor|saida_MUX~0_combout\;
+\ULA7|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA7|mux_inversor|saida_MUX~0_combout\;
+\ULA6|somador|ALT_INV_carry_out~combout\ <= NOT \ULA6|somador|carry_out~combout\;
+\ULA6|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA6|mux_inversor|saida_MUX~0_combout\;
+\ULA5|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA5|mux_inversor|saida_MUX~0_combout\;
+\ULA4|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA4|somador|carry_out~1_combout\;
+\ULA4|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA4|somador|carry_out~0_combout\;
+\ULA4|somador|ALT_INV_soma~0_combout\ <= NOT \ULA4|somador|soma~0_combout\;
+\ULA3|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA3|mux_inversor|saida_MUX~0_combout\;
+\ULA2|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA2|mux_inversor|saida_MUX~0_combout\;
+\ULA1|somador|ALT_INV_carry_out~combout\ <= NOT \ULA1|somador|carry_out~combout\;
+\ULA31|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA31|mux_inversor|saida_MUX~0_combout\;
 \ALT_INV_B[30]~input_o\ <= NOT \B[30]~input_o\;
 \ALT_INV_A[30]~input_o\ <= NOT \A[30]~input_o\;
 \ALT_INV_B[29]~input_o\ <= NOT \B[29]~input_o\;
@@ -648,22 +666,6 @@ ww_devpor <= devpor;
 \ALT_INV_B[19]~input_o\ <= NOT \B[19]~input_o\;
 \ALT_INV_A[19]~input_o\ <= NOT \A[19]~input_o\;
 \ALT_INV_B[18]~input_o\ <= NOT \B[18]~input_o\;
-\ULA10|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA10|mux_inversor|saida_MUX~0_combout\;
-\ULA9|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA9|somador|carry_out~1_combout\;
-\ULA9|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA9|somador|carry_out~0_combout\;
-\ULA9|somador|ALT_INV_soma~0_combout\ <= NOT \ULA9|somador|soma~0_combout\;
-\ULA8|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA8|mux_inversor|saida_MUX~0_combout\;
-\ULA7|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA7|mux_inversor|saida_MUX~0_combout\;
-\ULA6|somador|ALT_INV_carry_out~combout\ <= NOT \ULA6|somador|carry_out~combout\;
-\ULA6|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA6|mux_inversor|saida_MUX~0_combout\;
-\ULA5|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA5|mux_inversor|saida_MUX~0_combout\;
-\ULA4|somador|ALT_INV_carry_out~1_combout\ <= NOT \ULA4|somador|carry_out~1_combout\;
-\ULA4|somador|ALT_INV_carry_out~0_combout\ <= NOT \ULA4|somador|carry_out~0_combout\;
-\ULA4|somador|ALT_INV_soma~0_combout\ <= NOT \ULA4|somador|soma~0_combout\;
-\ULA3|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA3|mux_inversor|saida_MUX~0_combout\;
-\ULA2|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA2|mux_inversor|saida_MUX~0_combout\;
-\ULA1|somador|ALT_INV_carry_out~combout\ <= NOT \ULA1|somador|carry_out~combout\;
-\ULA31|mux_inversor|ALT_INV_saida_MUX~0_combout\ <= NOT \ULA31|mux_inversor|saida_MUX~0_combout\;
 
 \resultado[0]~output\ : cyclonev_io_obuf
 -- pragma translate_off
@@ -1060,6 +1062,18 @@ PORT MAP (
 	i => \ALT_INV_zero~8_combout\,
 	devoe => ww_devoe,
 	o => \zero~output_o\);
+
+\overflow~output\ : cyclonev_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "false",
+	shift_series_termination_control => "false")
+-- pragma translate_on
+PORT MAP (
+	i => \ULA31|overflow~combout\,
+	devoe => ww_devoe,
+	o => \overflow~output_o\);
 
 \inverte_B~input\ : cyclonev_io_ibuf
 -- pragma translate_off
@@ -2489,34 +2503,20 @@ PORT MAP (
 	i => ww_B(29),
 	o => \B[29]~input_o\);
 
-\ULA29|mux_inversor|saida_MUX~0\ : cyclonev_lcell_comb
+\ULA29|somador|soma~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA29|mux_inversor|saida_MUX~0_combout\ = !\inverte_B~input_o\ $ (!\B[29]~input_o\)
+-- \ULA29|somador|soma~0_combout\ = !\inverte_B~input_o\ $ (!\A[29]~input_o\ $ (\B[29]~input_o\))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
+	lut_mask => "0110100101101001011010010110100101101001011010010110100101101001",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ALT_INV_inverte_B~input_o\,
-	datab => \ALT_INV_B[29]~input_o\,
-	combout => \ULA29|mux_inversor|saida_MUX~0_combout\);
-
-\ULA29|somador|soma~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \ULA29|somador|soma~0_combout\ = !\A[29]~input_o\ $ (!\ULA29|mux_inversor|saida_MUX~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0110011001100110011001100110011001100110011001100110011001100110",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ALT_INV_A[29]~input_o\,
-	datab => \ULA29|mux_inversor|ALT_INV_saida_MUX~0_combout\,
+	datab => \ALT_INV_A[29]~input_o\,
+	datac => \ALT_INV_B[29]~input_o\,
 	combout => \ULA29|somador|soma~0_combout\);
 
 \ULA29|somador|carry_out~0\ : cyclonev_lcell_comb
@@ -2542,17 +2542,18 @@ PORT MAP (
 
 \ULA29|somador|carry_out~1\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA29|somador|carry_out~1_combout\ = (\A[29]~input_o\ & \ULA29|mux_inversor|saida_MUX~0_combout\)
+-- \ULA29|somador|carry_out~1_combout\ = (\A[29]~input_o\ & (!\inverte_B~input_o\ $ (!\B[29]~input_o\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0001000100010001000100010001000100010001000100010001000100010001",
+	lut_mask => "0001001000010010000100100001001000010010000100100001001000010010",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_A[29]~input_o\,
-	datab => \ULA29|mux_inversor|ALT_INV_saida_MUX~0_combout\,
+	dataa => \ALT_INV_inverte_B~input_o\,
+	datab => \ALT_INV_A[29]~input_o\,
+	datac => \ALT_INV_B[29]~input_o\,
 	combout => \ULA29|somador|carry_out~1_combout\);
 
 \A[30]~input\ : cyclonev_io_ibuf
@@ -2590,9 +2591,9 @@ PORT MAP (
 	datab => \ALT_INV_B[30]~input_o\,
 	combout => \ULA30|mux_inversor|saida_MUX~0_combout\);
 
-\ULA31|overflow~0\ : cyclonev_lcell_comb
+\ULA31|slt_in\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA31|overflow~0_combout\ = ( \A[30]~input_o\ & ( \ULA30|mux_inversor|saida_MUX~0_combout\ & ( (\A[31]~input_o\ & \ULA31|mux_inversor|saida_MUX~0_combout\) ) ) ) # ( !\A[30]~input_o\ & ( \ULA30|mux_inversor|saida_MUX~0_combout\ & ( (!\A[31]~input_o\ & 
+-- \ULA31|slt_in~combout\ = ( \A[30]~input_o\ & ( \ULA30|mux_inversor|saida_MUX~0_combout\ & ( (\A[31]~input_o\ & \ULA31|mux_inversor|saida_MUX~0_combout\) ) ) ) # ( !\A[30]~input_o\ & ( \ULA30|mux_inversor|saida_MUX~0_combout\ & ( (!\A[31]~input_o\ & 
 -- (\ULA31|mux_inversor|saida_MUX~0_combout\ & (!\ULA29|somador|carry_out~0_combout\ & !\ULA29|somador|carry_out~1_combout\))) # (\A[31]~input_o\ & (((!\ULA29|somador|carry_out~0_combout\ & !\ULA29|somador|carry_out~1_combout\)) # 
 -- (\ULA31|mux_inversor|saida_MUX~0_combout\))) ) ) ) # ( \A[30]~input_o\ & ( !\ULA30|mux_inversor|saida_MUX~0_combout\ & ( (!\A[31]~input_o\ & (\ULA31|mux_inversor|saida_MUX~0_combout\ & (!\ULA29|somador|carry_out~0_combout\ & 
 -- !\ULA29|somador|carry_out~1_combout\))) # (\A[31]~input_o\ & (((!\ULA29|somador|carry_out~0_combout\ & !\ULA29|somador|carry_out~1_combout\)) # (\ULA31|mux_inversor|saida_MUX~0_combout\))) ) ) ) # ( !\A[30]~input_o\ & ( 
@@ -2611,13 +2612,13 @@ PORT MAP (
 	datad => \ULA29|somador|ALT_INV_carry_out~1_combout\,
 	datae => \ALT_INV_A[30]~input_o\,
 	dataf => \ULA30|mux_inversor|ALT_INV_saida_MUX~0_combout\,
-	combout => \ULA31|overflow~0_combout\);
+	combout => \ULA31|slt_in~combout\);
 
 \ULA0|mux_seletor|saida_MUX~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA0|mux_seletor|saida_MUX~0_combout\ = ( \sel[1]~input_o\ & ( \ULA31|overflow~0_combout\ & ( (!\B[0]~input_o\ $ (!\A[0]~input_o\)) # (\sel[0]~input_o\) ) ) ) # ( !\sel[1]~input_o\ & ( \ULA31|overflow~0_combout\ & ( (!\A[0]~input_o\ & (\sel[0]~input_o\ & 
--- (!\inverte_B~input_o\ $ (!\B[0]~input_o\)))) # (\A[0]~input_o\ & ((!\inverte_B~input_o\ $ (!\B[0]~input_o\)) # (\sel[0]~input_o\))) ) ) ) # ( \sel[1]~input_o\ & ( !\ULA31|overflow~0_combout\ & ( (!\sel[0]~input_o\ & (!\B[0]~input_o\ $ (!\A[0]~input_o\))) 
--- ) ) ) # ( !\sel[1]~input_o\ & ( !\ULA31|overflow~0_combout\ & ( (!\A[0]~input_o\ & (\sel[0]~input_o\ & (!\inverte_B~input_o\ $ (!\B[0]~input_o\)))) # (\A[0]~input_o\ & ((!\inverte_B~input_o\ $ (!\B[0]~input_o\)) # (\sel[0]~input_o\))) ) ) )
+-- \ULA0|mux_seletor|saida_MUX~0_combout\ = ( \sel[1]~input_o\ & ( \ULA31|slt_in~combout\ & ( (!\B[0]~input_o\ $ (!\A[0]~input_o\)) # (\sel[0]~input_o\) ) ) ) # ( !\sel[1]~input_o\ & ( \ULA31|slt_in~combout\ & ( (!\A[0]~input_o\ & (\sel[0]~input_o\ & 
+-- (!\inverte_B~input_o\ $ (!\B[0]~input_o\)))) # (\A[0]~input_o\ & ((!\inverte_B~input_o\ $ (!\B[0]~input_o\)) # (\sel[0]~input_o\))) ) ) ) # ( \sel[1]~input_o\ & ( !\ULA31|slt_in~combout\ & ( (!\sel[0]~input_o\ & (!\B[0]~input_o\ $ (!\A[0]~input_o\))) ) ) 
+-- ) # ( !\sel[1]~input_o\ & ( !\ULA31|slt_in~combout\ & ( (!\A[0]~input_o\ & (\sel[0]~input_o\ & (!\inverte_B~input_o\ $ (!\B[0]~input_o\)))) # (\A[0]~input_o\ & ((!\inverte_B~input_o\ $ (!\B[0]~input_o\)) # (\sel[0]~input_o\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2631,7 +2632,7 @@ PORT MAP (
 	datac => \ALT_INV_A[0]~input_o\,
 	datad => \ALT_INV_sel[0]~input_o\,
 	datae => \ALT_INV_sel[1]~input_o\,
-	dataf => \ULA31|ALT_INV_overflow~0_combout\,
+	dataf => \ULA31|ALT_INV_slt_in~combout\,
 	combout => \ULA0|mux_seletor|saida_MUX~0_combout\);
 
 \ULA0|somador|carry_out~0\ : cyclonev_lcell_comb
@@ -3620,21 +3621,24 @@ PORT MAP (
 
 \ULA29|mux_seletor|saida_MUX~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \ULA29|mux_seletor|saida_MUX~0_combout\ = ( \ULA29|mux_inversor|saida_MUX~0_combout\ & ( (!\sel[0]~input_o\ & (!\A[29]~input_o\ $ (((!\sel[1]~input_o\) # (\ULA28|somador|carry_out~combout\))))) # (\sel[0]~input_o\ & (!\sel[1]~input_o\)) ) ) # ( 
--- !\ULA29|mux_inversor|saida_MUX~0_combout\ & ( (!\sel[0]~input_o\ & (\sel[1]~input_o\ & (!\ULA28|somador|carry_out~combout\ $ (!\A[29]~input_o\)))) # (\sel[0]~input_o\ & (!\sel[1]~input_o\ & ((\A[29]~input_o\)))) ) )
+-- \ULA29|mux_seletor|saida_MUX~0_combout\ = ( \A[29]~input_o\ & ( \B[29]~input_o\ & ( (!\sel[0]~input_o\ & (!\inverte_B~input_o\ $ (((\sel[1]~input_o\ & !\ULA28|somador|carry_out~combout\))))) # (\sel[0]~input_o\ & (((!\sel[1]~input_o\)))) ) ) ) # ( 
+-- !\A[29]~input_o\ & ( \B[29]~input_o\ & ( (!\sel[0]~input_o\ & (\sel[1]~input_o\ & (!\inverte_B~input_o\ $ (\ULA28|somador|carry_out~combout\)))) # (\sel[0]~input_o\ & (!\inverte_B~input_o\ & (!\sel[1]~input_o\))) ) ) ) # ( \A[29]~input_o\ & ( 
+-- !\B[29]~input_o\ & ( (!\sel[0]~input_o\ & (!\inverte_B~input_o\ $ (((!\sel[1]~input_o\) # (\ULA28|somador|carry_out~combout\))))) # (\sel[0]~input_o\ & (((!\sel[1]~input_o\)))) ) ) ) # ( !\A[29]~input_o\ & ( !\B[29]~input_o\ & ( (!\sel[0]~input_o\ & 
+-- (\sel[1]~input_o\ & (!\inverte_B~input_o\ $ (!\ULA28|somador|carry_out~combout\)))) # (\sel[0]~input_o\ & (\inverte_B~input_o\ & (!\sel[1]~input_o\))) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000001001100100011001001100111000000010011001000110010011001110",
+	lut_mask => "0001010000011000011110000111010000101000001001001011010010111000",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ALT_INV_sel[0]~input_o\,
-	datab => \ALT_INV_sel[1]~input_o\,
-	datac => \ULA28|somador|ALT_INV_carry_out~combout\,
-	datad => \ALT_INV_A[29]~input_o\,
-	datae => \ULA29|mux_inversor|ALT_INV_saida_MUX~0_combout\,
+	dataa => \ALT_INV_inverte_B~input_o\,
+	datab => \ALT_INV_sel[0]~input_o\,
+	datac => \ALT_INV_sel[1]~input_o\,
+	datad => \ULA28|somador|ALT_INV_carry_out~combout\,
+	datae => \ALT_INV_A[29]~input_o\,
+	dataf => \ALT_INV_B[29]~input_o\,
 	combout => \ULA29|mux_seletor|saida_MUX~0_combout\);
 
 \ULA30|mux_seletor|saida_MUX~0\ : cyclonev_lcell_comb
@@ -3854,6 +3858,29 @@ PORT MAP (
 	datae => \ALT_INV_zero~7_combout\,
 	combout => \zero~8_combout\);
 
+\ULA31|overflow\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \ULA31|overflow~combout\ = ( \A[30]~input_o\ & ( \ULA30|mux_inversor|saida_MUX~0_combout\ & ( (!\A[31]~input_o\ & !\ULA31|mux_inversor|saida_MUX~0_combout\) ) ) ) # ( !\A[30]~input_o\ & ( \ULA30|mux_inversor|saida_MUX~0_combout\ & ( (!\A[31]~input_o\ & 
+-- (!\ULA31|mux_inversor|saida_MUX~0_combout\ & ((\ULA29|somador|carry_out~1_combout\) # (\ULA29|somador|carry_out~0_combout\)))) # (\A[31]~input_o\ & (\ULA31|mux_inversor|saida_MUX~0_combout\ & (!\ULA29|somador|carry_out~0_combout\ & 
+-- !\ULA29|somador|carry_out~1_combout\))) ) ) ) # ( \A[30]~input_o\ & ( !\ULA30|mux_inversor|saida_MUX~0_combout\ & ( (!\A[31]~input_o\ & (!\ULA31|mux_inversor|saida_MUX~0_combout\ & ((\ULA29|somador|carry_out~1_combout\) # 
+-- (\ULA29|somador|carry_out~0_combout\)))) # (\A[31]~input_o\ & (\ULA31|mux_inversor|saida_MUX~0_combout\ & (!\ULA29|somador|carry_out~0_combout\ & !\ULA29|somador|carry_out~1_combout\))) ) ) ) # ( !\A[30]~input_o\ & ( 
+-- !\ULA30|mux_inversor|saida_MUX~0_combout\ & ( (\A[31]~input_o\ & \ULA31|mux_inversor|saida_MUX~0_combout\) ) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0001000100010001000110001000100000011000100010001000100010001000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ALT_INV_A[31]~input_o\,
+	datab => \ULA31|mux_inversor|ALT_INV_saida_MUX~0_combout\,
+	datac => \ULA29|somador|ALT_INV_carry_out~0_combout\,
+	datad => \ULA29|somador|ALT_INV_carry_out~1_combout\,
+	datae => \ALT_INV_A[30]~input_o\,
+	dataf => \ULA30|mux_inversor|ALT_INV_saida_MUX~0_combout\,
+	combout => \ULA31|overflow~combout\);
+
 ww_resultado(0) <= \resultado[0]~output_o\;
 
 ww_resultado(1) <= \resultado[1]~output_o\;
@@ -3919,6 +3946,8 @@ ww_resultado(30) <= \resultado[30]~output_o\;
 ww_resultado(31) <= \resultado[31]~output_o\;
 
 ww_zero <= \zero~output_o\;
+
+ww_overflow <= \overflow~output_o\;
 END structure;
 
 

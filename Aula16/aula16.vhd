@@ -5,11 +5,11 @@ use ieee.numeric_std.all;    -- Biblioteca IEEE para funções aritméticas
 entity aula16 is
     generic ( larguraDados : natural := 32 );
     port (
-		A, B 			: in std_logic_vector(larguraDados-1 downto 0);
-		inverte_B 	: in std_logic;
-		sel	 		: in std_logic_vector(1 downto 0);
-		resultado 	: out std_logic_vector(larguraDados-1 downto 0);
-		zero 			: out std_logic
+		A, B 							: in std_logic_vector(larguraDados-1 downto 0);
+		inverte_B 					: in std_logic;
+		sel	 						: in std_logic_vector(1 downto 0);
+		resultado 					: out std_logic_vector(larguraDados-1 downto 0);
+		zero, overflow 			: out std_logic
 	 );
 end entity;
 
@@ -17,7 +17,7 @@ architecture comportamento of aula16 is
    signal 	carry0, carry1, carry2, carry3, carry4, carry5, carry6, carry7, carry8,
 	carry9, carry10, carry11, carry12, carry13, carry14, carry15, carry16, carry17,
 	carry18, carry19, carry20, carry21, carry22, carry23, carry24, carry25, carry26,
-	carry27, carry28, carry29, carry30, carry_out, overflow: std_logic;
+	carry27, carry28, carry29, carry30, carry_out, slt_in: std_logic;
    
 	begin
 		ULA0: entity work.ULA1Bit port map (
@@ -27,7 +27,7 @@ architecture comportamento of aula16 is
 			carry_out => carry0,
 			inverte_B => inverte_B,
 			sel => sel,
-			slt => overflow,
+			slt => slt_in,
 			resultado => resultado(0)
 		);
 		
@@ -370,7 +370,8 @@ architecture comportamento of aula16 is
 			sel => sel,
 			slt => '0',
 			resultado => resultado(31),
-			overflow => overflow
+			overflow => overflow,
+			slt_in => slt_in
 		);
 		
 		zero <= not (resultado(0)  or resultado(1)  or resultado(2)  or resultado(3)  or resultado(4)  or

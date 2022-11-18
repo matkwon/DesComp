@@ -1,5 +1,5 @@
 Archive Project report for aula16
-Thu Nov 17 18:02:41 2022
+Fri Nov 18 15:49:09 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Thu Nov 17 18:02:41 2022 ;
+; Archive Project Status ; Successful - Fri Nov 18 15:49:09 2022 ;
 ; Revision Name          ; aula16                                ;
 ; Top-level Entity Name  ; aula16                                ;
 ; Family                 ; Cyclone V                             ;
@@ -61,9 +61,9 @@ Info: Generated report 'aula16.archive.rpt'
 Info (23030): Evaluation of Tcl script /home/joao/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 574 megabytes
-    Info: Processing ended: Thu Nov 17 18:02:41 2022
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Processing ended: Fri Nov 18 15:49:09 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +------------------------------------------------------------------------+

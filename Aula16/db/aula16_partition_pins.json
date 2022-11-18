@@ -136,6 +136,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "overflow",
+					"strict" : false
+				},
+				{
 					"name" : "inverte_B",
 					"strict" : false
 				},

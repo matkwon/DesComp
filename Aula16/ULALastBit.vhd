@@ -4,12 +4,12 @@ use ieee.std_logic_1164.all;
 entity ULALastBit is port (
 	carry_in, A, B, slt, inverte_B: in std_logic;
 	sel: in std_logic_vector(1 downto 0);
-	resultado, overflow, carry_out: out std_logic
+	resultado, overflow, carry_out, slt_in: out std_logic
 );
 end entity;
 
 architecture comportamento of ULALastBit is
-   signal	sig_carry_out, sig_soma, sig_or, sig_and, sig_inversor: std_logic;
+   signal	sig_carry_out, sig_soma, sig_or, sig_and, sig_inversor, sig_overflow: std_logic;
    
 	begin
 		
@@ -38,7 +38,9 @@ architecture comportamento of ULALastBit is
 		);
 		
 		carry_out <= sig_carry_out;
-		overflow <= (sig_carry_out xor carry_in) xor sig_soma;
+		sig_overflow <= sig_carry_out xor carry_in;
+		slt_in <= sig_overflow xor sig_soma;
 		sig_and <= sig_inversor and A;
 		sig_or <= sig_inversor or A;
+		overflow <= sig_overflow;
 end architecture;
