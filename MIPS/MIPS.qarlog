@@ -1,0 +1,34 @@
+Quartus Prime Archive log --	C:/DesComp/MIPS/MIPS.qarlog
+
+Archive:	C:/DesComp/MIPS/MIPS.qar
+Date:		Mon Nov 21 18:06:39 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/DesComp/MIPS/MIPS.qpf
+C:/DesComp/MIPS/MIPS.qsf
+C:/DesComp/MIPS/MIPS.vhd
+C:/DesComp/MIPS/RAMMIPS.vhd
+C:/DesComp/MIPS/ROMContent.mif
+C:/DesComp/MIPS/ROMMIPS.vhd
+C:/DesComp/MIPS/ULA/ULA.vhd
+C:/DesComp/MIPS/ULA/ULA1Bit.vhd
+C:/DesComp/MIPS/ULA/ULALastBit.vhd
+C:/DesComp/MIPS/ULA/fullAdder.vhd
+C:/DesComp/MIPS/ULA/mux2x1.vhd
+C:/DesComp/MIPS/ULA/mux4x1.vhd
+C:/DesComp/MIPS/ULActrl.vhd
+C:/DesComp/MIPS/Waveform.vwf
+C:/DesComp/MIPS/bancoReg.vhd
+C:/DesComp/MIPS/conversorHex7Seg.vhd
+C:/DesComp/MIPS/decoderInstru.vhd
+C:/DesComp/MIPS/estendeSinalGenerico.vhd
+C:/DesComp/MIPS/muxGenerico2x1.vhd
+C:/DesComp/MIPS/registradorGenerico.vhd
+C:/DesComp/MIPS/somaConstante.vhd
+C:/DesComp/MIPS/somadorGenerico.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 23 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

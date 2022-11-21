@@ -7,9 +7,12 @@ entity MIPS is
     port (
 		CLOCK_50 : in std_logic;
 		KEY: in std_logic_vector(3 downto 0);
-		flagZero, V : out std_logic;
-		ram_out, reg_1_out, reg_2_out,
-		pc_out, ula_out, ula_in_1, ula_in_2: out std_logic_vector(larguraDados-1 downto 0)
+		SW: in std_logic_vector(9 downto 0);
+--		flagZero, V : out std_logic;
+--		ram_out, reg_1_out, reg_2_out,
+--		pc_out, ula_out, ula_in_1, ula_in_2: out std_logic_vector(larguraDados-1 downto 0);
+		LEDR: out std_logic_vector(9 downto 0);
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector(6 downto 0)
 	 );
 end entity;
 
@@ -17,7 +20,8 @@ architecture comportamento of MIPS is
    signal 	sig_pc, sig_pc_inc_4, sig_dado, 
 				sig_reg_1, sig_reg_2,
 				sig_ram_out, sig_pc_inc_4_im, sig_prox_pc, sig_entrada_ula_b, sig_saida_mux_ula_mem,
-				sig_estendido, sig_ula_out, sig_saida_mux_jmp: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+				sig_estendido, sig_ula_out, sig_saida_mux_jmp,
+				sig_mux_display: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 				
 	signal	sinais_de_controle: STD_LOGIC_VECTOR(8 downto 0);
 
@@ -30,7 +34,7 @@ architecture comportamento of MIPS is
 	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_sel_mux_ula_mem,
 				sig_hab_leitura_memoria, sig_flag_zero, sig_sel_mux_rt_rd,
 				sig_hab_escrita_memoria, sig_beq,
-				sig_sel_mux_rt_im, sig_sel_mux_jmp : STD_LOGIC;
+				sig_sel_mux_rt_im, sig_sel_mux_jmp, V : STD_LOGIC;
    
 	begin
 		CLK <= KEY(0);
@@ -144,6 +148,14 @@ architecture comportamento of MIPS is
 														saida_MUX => sig_saida_mux_jmp
 													);
 													
+		mux_display : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map( 	
+														entradaA_MUX => sig_pc,
+														entradaB_MUX => sig_ula_out,
+														seletor_MUX => SW(0),
+														saida_MUX => sig_mux_display
+													);
+													
 		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
 													 port map( 
 														entradaA => sig_saida_mux_jmp, 
@@ -164,15 +176,31 @@ architecture comportamento of MIPS is
 		sig_hab_escrita_memoria <= sinais_de_controle(8);
 		
 		
-		pc_out 						<= sig_pc;
-		ram_out						<= sig_ram_out;
-		reg_1_out					<= sig_reg_1;
-		reg_2_out					<= sig_reg_2;
-		flagZero						<= sig_flag_zero;
-		ula_out						<= sig_ula_out;
-		ula_in_1						<= sig_reg_1;
-		ula_in_2						<= sig_entrada_ula_b;
-
+--		pc_out 						<= sig_pc;
+--		ram_out						<= sig_ram_out;
+--		reg_1_out					<= sig_reg_1;
+--		reg_2_out					<= sig_reg_2;
+--		flagZero						<= sig_flag_zero;
+--		ula_out						<= sig_ula_out;
+--		ula_in_1						<= sig_reg_1;
+--		ula_in_2						<= sig_entrada_ula_b;
+		
+		
+		LEDR(7)						<= sig_mux_display(31);
+		LEDR(6)						<= sig_mux_display(30);
+		LEDR(5)						<= sig_mux_display(29);
+		LEDR(4)						<= sig_mux_display(28);
+		LEDR(3)						<= sig_mux_display(27);
+		LEDR(2)						<= sig_mux_display(26);
+		LEDR(1)						<= sig_mux_display(25);
+		LEDR(0)						<= sig_mux_display(24);
+		
+		DispHex5 : entity work.conversorHex7Seg port map (dadoHex => sig_mux_display(23 downto 20), saida7seg => HEX5);
+		DispHex4 : entity work.conversorHex7Seg port map (dadoHex => sig_mux_display(19 downto 16), saida7seg => HEX4);
+		DispHex3 : entity work.conversorHex7Seg port map (dadoHex => sig_mux_display(15 downto 12), saida7seg => HEX3);
+		DispHex2 : entity work.conversorHex7Seg port map (dadoHex => sig_mux_display(11 downto 8), saida7seg => HEX2);
+		DispHex1 : entity work.conversorHex7Seg port map (dadoHex => sig_mux_display(7 downto 4), saida7seg => HEX1);
+		DispHex0 : entity work.conversorHex7Seg port map (dadoHex => sig_mux_display(3 downto 0), saida7seg => HEX0);
 
       
 end architecture;
