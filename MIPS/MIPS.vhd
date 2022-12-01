@@ -17,13 +17,13 @@ entity MIPS is
 end entity;
 
 architecture comportamento of MIPS is
-   signal 	sig_pc, sig_pc_inc_4, sig_dado, 
-				sig_reg_1, sig_reg_2,
-				sig_ram_out, sig_pc_inc_4_im, sig_prox_pc, sig_entrada_ula_b, sig_saida_mux_ula_mem,
+   signal 	sig_pc, sig_pc_inc_4, sig_dado, sig_prox_pc,
+				sig_reg_1, sig_reg_2, sig_saida_mux_ula_mem,
+				sig_ram_out, sig_pc_inc_4_im, sig_entrada_ula_b,
 				sig_estendido, sig_ula_out, sig_saida_mux_jmp,
-				sig_mux_display: STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+				sig_mux_display, sig_lui, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 				
-	signal	sinais_de_controle: STD_LOGIC_VECTOR(8 downto 0);
+	signal	sinais_de_controle: STD_LOGIC_VECTOR(9 downto 0);
 
 	signal 	sig_saida_mux_rt_rd: STD_LOGIC_VECTOR(4 downto 0);
 	
@@ -31,10 +31,12 @@ architecture comportamento of MIPS is
 		
 	signal 	CLK : STD_LOGIC;
 	
-	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_sel_mux_ula_mem,
-				sig_hab_leitura_memoria, sig_flag_zero, sig_sel_mux_rt_rd,
-				sig_hab_escrita_memoria, sig_beq,
+	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_beq,
+				sig_hab_leitura_memoria, sig_flag_zero,
+				sig_hab_escrita_memoria, sig_sel_mux_rt_rd,
 				sig_sel_mux_rt_im, sig_sel_mux_jmp, V : STD_LOGIC;
+	
+	signal	sig_sel_mux_ula_mem : STD_LOGIC_VECTOR(1 downto 0);
    
 	begin
 		CLK <= KEY(0);
@@ -58,10 +60,7 @@ architecture comportamento of MIPS is
 																			RST => '0'
 																		 );
 																		 
-		rom : entity work.ROMMIPS port map (
-			Endereco => sig_pc,
-			Dado => sig_dado
-		);
+		rom : entity work.ROMMIPS port map (Endereco => sig_pc, Dado => sig_dado);
 		
 		ULActrl : entity work.ULActrl port map (
 			opcode => sig_dado(31 downto 26),
@@ -107,61 +106,65 @@ architecture comportamento of MIPS is
 			re => sig_hab_leitura_memoria, 
 			habilita => '1'
 		);
-		
-		mux_pc : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
-														entradaA_MUX => sig_saida_mux_jmp,
-														entradaB_MUX =>  sig_pc_inc_4_im,
-														seletor_MUX => (sig_beq and sig_flag_zero),
-														saida_MUX => sig_prox_pc
-													);
 								
 		mux_rt_im : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
+													port map ( 	
 														entradaA_MUX => sig_reg_2,
-														entradaB_MUX =>  sig_estendido,
+														entradaB_MUX => sig_estendido,
 														seletor_MUX => sig_sel_mux_rt_im,
 														saida_MUX => sig_entrada_ula_b
 													);
 													
-		mux_ula_mem : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
+		mux_ula_mem : entity work.muxGenerico4x1 generic map (larguraDados => larguraDados)
+													port map (
 														entradaA_MUX => sig_ula_out,
-														entradaB_MUX =>  sig_ram_out,
+														entradaB_MUX => sig_ram_out,
+														entradaC_MUX => sig_pc_inc_4,
+														entradaD_MUX => sig_lui,
 														seletor_MUX => sig_sel_mux_ula_mem,
 														saida_MUX => sig_saida_mux_ula_mem
 													);
 													
 		mux_rt_rd : entity work.muxGenerico2x1 generic map (larguraDados => 5)
-													port map( 	
+													port map ( 	
 														entradaA_MUX => sig_dado(20 downto 16),
 														entradaB_MUX => sig_dado(15 downto 11),
 														seletor_MUX => sig_sel_mux_rt_rd,
 														saida_MUX => sig_saida_mux_rt_rd
 													);
-													
-		mux_jmp : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
+		
+		mux_beq : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map ( 	
 														entradaA_MUX => sig_pc_inc_4,
-														entradaB_MUX => (sig_pc_inc_4(31 downto 28) & sig_dado(25 downto 0) & "00"),
-														seletor_MUX => sig_sel_mux_jmp,
-														saida_MUX => sig_saida_mux_jmp
+														entradaB_MUX => sig_pc_inc_4_im,
+														seletor_MUX => (sig_beq and sig_flag_zero),
+														saida_MUX => sig_saida_mux_beq
 													);
 													
+		mux_jmp : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map ( 	
+														entradaA_MUX => sig_saida_mux_beq,
+														entradaB_MUX => (sig_pc_inc_4(31 downto 28) & sig_dado(25 downto 0) & "00"),
+														seletor_MUX => sig_sel_mux_jmp,
+														saida_MUX => sig_prox_pc
+													);
+													
+		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
+													 port map ( 
+														entradaA => sig_pc_inc_4, 
+														entradaB => sig_estendido(29 downto 0) & "00", 
+														saida => sig_pc_inc_4_im
+													 );
+													
 		mux_display : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
-													port map( 	
+													port map ( 	
 														entradaA_MUX => sig_pc,
 														entradaB_MUX => sig_ula_out,
 														seletor_MUX => SW(0),
 														saida_MUX => sig_mux_display
 													);
-													
-		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
-													 port map( 
-														entradaA => sig_saida_mux_jmp, 
-														entradaB => sig_estendido(29 downto 0) & "00", 
-														saida => sig_pc_inc_4_im
-													 );
+													 
+		lui : entity work.LUI port map (entrada => sig_dado(15 downto 0), saida => sig_lui);
 													
 						
 																 
@@ -170,10 +173,10 @@ architecture comportamento of MIPS is
 		sig_hab_escrita_reg  	<= sinais_de_controle(2);
 		sig_sel_mux_rt_im  		<= sinais_de_controle(3);
 		sig_tipo_r					<= sinais_de_controle(4);
-		sig_sel_mux_ula_mem		<= sinais_de_controle(5);
-		sig_beq						<= sinais_de_controle(6);
-		sig_hab_leitura_memoria <= sinais_de_controle(7);
-		sig_hab_escrita_memoria <= sinais_de_controle(8);
+		sig_sel_mux_ula_mem		<= sinais_de_controle(6 downto 5);
+		sig_beq						<= sinais_de_controle(7);
+		sig_hab_leitura_memoria <= sinais_de_controle(8);
+		sig_hab_escrita_memoria <= sinais_de_controle(9);
 		
 		
 --		pc_out 						<= sig_pc;
