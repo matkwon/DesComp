@@ -34,15 +34,15 @@ architecture comportamento of decoderInstru is
   
   selMuxRtRd		<= '1' when (opcode = OP_R) 	else '0';
   
-  tipoR 				<= '1' when (opcode = OP_R) 	else '0';
-  
   habEscritaReg 	<= '1' when (opcode = OP_LW) or
-										(opcode = OP_R ) else
-										'0';
+  (opcode = OP_R) else
+  '0';
   
   selMuxRtIm		<= '1' when (opcode = OP_LW)  or
-										(opcode = OP_SW)  else
-										'0';
+  (opcode = OP_SW)  else
+  '0';
+  
+  tipoR 				<= '1' when (opcode = OP_R) 	else '0';
 										
   selMuxUlaMem		<= '1' when (opcode = OP_LW) else
 										'0';
