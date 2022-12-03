@@ -21,9 +21,9 @@ architecture comportamento of MIPS is
 				sig_reg_1, sig_reg_2, sig_saida_mux_ula_mem,
 				sig_ram_out, sig_pc_inc_4_im, sig_entrada_ula_b,
 				sig_estendido, sig_ula_out, sig_saida_mux_jmp,
-				sig_mux_display, sig_lui, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+				sig_mux_display, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 				
-	signal	sinais_de_controle: STD_LOGIC_VECTOR(9 downto 0);
+	signal	sinais_de_controle: STD_LOGIC_VECTOR(10 downto 0);
 
 	signal 	sig_saida_mux_rt_rd: STD_LOGIC_VECTOR(4 downto 0);
 	
@@ -34,7 +34,7 @@ architecture comportamento of MIPS is
 	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_beq,
 				sig_hab_leitura_memoria, sig_flag_zero,
 				sig_hab_escrita_memoria, sig_sel_mux_rt_rd,
-				sig_sel_mux_rt_im, sig_sel_mux_jmp, V : STD_LOGIC;
+				sig_sel_mux_rt_im, sig_sel_mux_jmp, V, sig_ORIANDI : STD_LOGIC;
 	
 	signal	sig_sel_mux_ula_mem : STD_LOGIC_VECTOR(1 downto 0);
    
@@ -94,6 +94,7 @@ architecture comportamento of MIPS is
 		estensor_de_sinal : entity work.estendeSinalGenerico 	generic map (larguraDadoEntrada => 16, larguraDadoSaida => 32)
 																				port map (
 																					estendeSinal_IN => sig_dado(15 downto 0), 
+																					oriandi => sig_ORIANDI,
 																					estendeSinal_OUT => sig_estendido
 																				);
 																				
@@ -120,7 +121,7 @@ architecture comportamento of MIPS is
 														entradaA_MUX => sig_ula_out,
 														entradaB_MUX => sig_ram_out,
 														entradaC_MUX => sig_pc_inc_4,
-														entradaD_MUX => sig_lui,
+														entradaD_MUX => sig_dado(15 downto 0) & 16x"0",
 														seletor_MUX => sig_sel_mux_ula_mem,
 														saida_MUX => sig_saida_mux_ula_mem
 													);
@@ -163,20 +164,19 @@ architecture comportamento of MIPS is
 														seletor_MUX => SW(0),
 														saida_MUX => sig_mux_display
 													);
-													 
-		lui : entity work.LUI port map (entrada => sig_dado(15 downto 0), saida => sig_lui);
-													
+													 													
 						
 																 
 		sig_sel_mux_jmp			<= sinais_de_controle(0);
 		sig_sel_mux_rt_rd			<= sinais_de_controle(1);
-		sig_hab_escrita_reg  	<= sinais_de_controle(2);
-		sig_sel_mux_rt_im  		<= sinais_de_controle(3);
-		sig_tipo_r					<= sinais_de_controle(4);
-		sig_sel_mux_ula_mem		<= sinais_de_controle(6 downto 5);
-		sig_beq						<= sinais_de_controle(7);
-		sig_hab_leitura_memoria <= sinais_de_controle(8);
-		sig_hab_escrita_memoria <= sinais_de_controle(9);
+		sig_ORIANDI					<= sinais_de_controle(2);
+		sig_hab_escrita_reg  	<= sinais_de_controle(3);
+		sig_sel_mux_rt_im  		<= sinais_de_controle(4);
+		sig_tipo_r					<= sinais_de_controle(5);
+		sig_sel_mux_ula_mem		<= sinais_de_controle(7 downto 6);
+		sig_beq						<= sinais_de_controle(8);
+		sig_hab_leitura_memoria <= sinais_de_controle(9);
+		sig_hab_escrita_memoria <= sinais_de_controle(10);
 		
 		
 --		pc_out 						<= sig_pc;
