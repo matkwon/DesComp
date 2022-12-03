@@ -17,13 +17,13 @@ entity MIPS is
 end entity;
 
 architecture comportamento of MIPS is
-   signal 	sig_pc, sig_pc_inc_4, sig_dado, sig_prox_pc,
+   signal 	sig_pc, sig_pc_inc_4, sig_dado, sig_prox_pc, sig_saida_mux_jmp,
 				sig_reg_1, sig_reg_2, sig_saida_mux_ula_mem,
 				sig_ram_out, sig_pc_inc_4_im, sig_entrada_ula_b,
-				sig_estendido, sig_ula_out, sig_saida_mux_jmp,
+				sig_estendido, sig_ula_out,
 				sig_mux_display, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-				
-	signal	sinais_de_controle: STD_LOGIC_VECTOR(10 downto 0);
+								
+	signal	sinais_de_controle: STD_LOGIC_VECTOR(13 downto 0);
 
 	signal 	sig_saida_mux_rt_rd: STD_LOGIC_VECTOR(4 downto 0);
 	
@@ -31,18 +31,19 @@ architecture comportamento of MIPS is
 		
 	signal 	CLK : STD_LOGIC;
 	
-	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_beq,
-				sig_hab_leitura_memoria, sig_flag_zero,
-				sig_hab_escrita_memoria, sig_sel_mux_rt_rd,
+	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_beq, sig_bne,
+				sig_hab_leitura_memoria, sig_flag_zero, sig_sel_mux_jr,
+				sig_hab_escrita_memoria, sig_mux_ula_zero,
 				sig_sel_mux_rt_im, sig_sel_mux_jmp, V, sig_ORIANDI : STD_LOGIC;
 	
-	signal	sig_sel_mux_ula_mem : STD_LOGIC_VECTOR(1 downto 0);
+	signal	sig_sel_mux_ula_mem, sig_sel_mux_rt_rd: STD_LOGIC_VECTOR(1 downto 0);
    
 	begin
 		CLK <= KEY(0);
 		
 		decoder_instru: entity work.decoderInstru port map (
 			opcode => sig_dado(31 downto 26),
+			funct => sig_dado(5 downto 0),
 			saida  => sinais_de_controle
 		);
 		
@@ -126,10 +127,12 @@ architecture comportamento of MIPS is
 														saida_MUX => sig_saida_mux_ula_mem
 													);
 													
-		mux_rt_rd : entity work.muxGenerico2x1 generic map (larguraDados => 5)
+		mux_rt_rd : entity work.muxGenerico4x1 generic map (larguraDados => 5)
 													port map ( 	
 														entradaA_MUX => sig_dado(20 downto 16),
 														entradaB_MUX => sig_dado(15 downto 11),
+														entradaC_MUX => 5x"1f",
+														entradaD_MUX => 5x"0",
 														seletor_MUX => sig_sel_mux_rt_rd,
 														saida_MUX => sig_saida_mux_rt_rd
 													);
@@ -138,7 +141,7 @@ architecture comportamento of MIPS is
 													port map ( 	
 														entradaA_MUX => sig_pc_inc_4,
 														entradaB_MUX => sig_pc_inc_4_im,
-														seletor_MUX => (sig_beq and sig_flag_zero),
+														seletor_MUX => ((sig_beq or sig_bne) and sig_mux_ula_zero),
 														saida_MUX => sig_saida_mux_beq
 													);
 													
@@ -147,7 +150,22 @@ architecture comportamento of MIPS is
 														entradaA_MUX => sig_saida_mux_beq,
 														entradaB_MUX => (sig_pc_inc_4(31 downto 28) & sig_dado(25 downto 0) & "00"),
 														seletor_MUX => sig_sel_mux_jmp,
+														saida_MUX => sig_saida_mux_jmp
+													);
+													
+		mux_jr : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map ( 	
+														entradaA_MUX => sig_saida_mux_jmp,
+														entradaB_MUX => sig_reg_1,
+														seletor_MUX => sig_sel_mux_jr,
 														saida_MUX => sig_prox_pc
+													);
+													
+		mux_ula_zero : entity work.mux2x1 port map ( 	
+														entradaA_MUX => not sig_flag_zero,
+														entradaB_MUX => sig_flag_zero,
+														seletor_MUX => sig_beq,
+														saida_MUX => sig_mux_ula_zero
 													);
 													
 		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
@@ -166,17 +184,18 @@ architecture comportamento of MIPS is
 													);
 													 													
 						
-																 
-		sig_sel_mux_jmp			<= sinais_de_controle(0);
-		sig_sel_mux_rt_rd			<= sinais_de_controle(1);
-		sig_ORIANDI					<= sinais_de_controle(2);
-		sig_hab_escrita_reg  	<= sinais_de_controle(3);
-		sig_sel_mux_rt_im  		<= sinais_de_controle(4);
-		sig_tipo_r					<= sinais_de_controle(5);
-		sig_sel_mux_ula_mem		<= sinais_de_controle(7 downto 6);
-		sig_beq						<= sinais_de_controle(8);
-		sig_hab_leitura_memoria <= sinais_de_controle(9);
-		sig_hab_escrita_memoria <= sinais_de_controle(10);
+		sig_sel_mux_jr				<=	sinais_de_controle(0);													 
+		sig_sel_mux_jmp			<= sinais_de_controle(1);
+		sig_sel_mux_rt_rd			<= sinais_de_controle(3 downto 2);
+		sig_ORIANDI					<= sinais_de_controle(4);
+		sig_hab_escrita_reg  	<= sinais_de_controle(5);
+		sig_sel_mux_rt_im  		<= sinais_de_controle(6);
+		sig_tipo_r					<= sinais_de_controle(7);
+		sig_sel_mux_ula_mem		<= sinais_de_controle(9 downto 8);
+		sig_beq						<= sinais_de_controle(10);
+		sig_bne						<= sinais_de_controle(11);
+		sig_hab_leitura_memoria <= sinais_de_controle(12);
+		sig_hab_escrita_memoria <= sinais_de_controle(13);
 		
 		
 --		pc_out 						<= sig_pc;

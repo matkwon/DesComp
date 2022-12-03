@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS
-Sat Dec 03 17:01:57 2022
+Sat Dec  3 18:00:49 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -26,57 +26,59 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  18. Parameter Settings for User Entity Instance: RAMMIPS:ram
  19. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_rt_im
  20. Parameter Settings for User Entity Instance: muxGenerico4x1:mux_ula_mem
- 21. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_rt_rd
+ 21. Parameter Settings for User Entity Instance: muxGenerico4x1:mux_rt_rd
  22. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_beq
  23. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_jmp
- 24. Parameter Settings for User Entity Instance: somadorGenerico:somador_beq
- 25. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_display
- 26. Port Connectivity Checks: "conversorHex7Seg:DispHex0"
- 27. Port Connectivity Checks: "conversorHex7Seg:DispHex1"
- 28. Port Connectivity Checks: "conversorHex7Seg:DispHex2"
- 29. Port Connectivity Checks: "conversorHex7Seg:DispHex3"
- 30. Port Connectivity Checks: "conversorHex7Seg:DispHex4"
- 31. Port Connectivity Checks: "conversorHex7Seg:DispHex5"
- 32. Port Connectivity Checks: "somadorGenerico:somador_beq"
- 33. Port Connectivity Checks: "muxGenerico2x1:mux_jmp"
- 34. Port Connectivity Checks: "muxGenerico4x1:mux_ula_mem"
- 35. Port Connectivity Checks: "RAMMIPS:ram"
- 36. Port Connectivity Checks: "ULA:ula|ULALastBit:ULA31"
- 37. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA30"
- 38. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA29"
- 39. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA28"
- 40. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA27"
- 41. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA26"
- 42. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA25"
- 43. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA24"
- 44. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA23"
- 45. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA22"
- 46. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA21"
- 47. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA20"
- 48. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA19"
- 49. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA18"
- 50. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA17"
- 51. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA16"
- 52. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA15"
- 53. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA14"
- 54. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA13"
- 55. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA12"
- 56. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA11"
- 57. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA10"
- 58. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA9"
- 59. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA8"
- 60. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA7"
- 61. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA6"
- 62. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA5"
- 63. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA4"
- 64. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA3"
- 65. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA2"
- 66. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA1"
- 67. Port Connectivity Checks: "ULA:ula"
- 68. Port Connectivity Checks: "registradorGenerico:program_counter"
- 69. Post-Synthesis Netlist Statistics for Top Partition
- 70. Elapsed Time Per Partition
- 71. Analysis & Synthesis Messages
+ 24. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_jr
+ 25. Parameter Settings for User Entity Instance: somadorGenerico:somador_beq
+ 26. Parameter Settings for User Entity Instance: muxGenerico2x1:mux_display
+ 27. Port Connectivity Checks: "conversorHex7Seg:DispHex0"
+ 28. Port Connectivity Checks: "conversorHex7Seg:DispHex1"
+ 29. Port Connectivity Checks: "conversorHex7Seg:DispHex2"
+ 30. Port Connectivity Checks: "conversorHex7Seg:DispHex3"
+ 31. Port Connectivity Checks: "conversorHex7Seg:DispHex4"
+ 32. Port Connectivity Checks: "conversorHex7Seg:DispHex5"
+ 33. Port Connectivity Checks: "somadorGenerico:somador_beq"
+ 34. Port Connectivity Checks: "muxGenerico2x1:mux_jmp"
+ 35. Port Connectivity Checks: "muxGenerico4x1:mux_rt_rd"
+ 36. Port Connectivity Checks: "muxGenerico4x1:mux_ula_mem"
+ 37. Port Connectivity Checks: "RAMMIPS:ram"
+ 38. Port Connectivity Checks: "ULA:ula|ULALastBit:ULA31"
+ 39. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA30"
+ 40. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA29"
+ 41. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA28"
+ 42. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA27"
+ 43. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA26"
+ 44. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA25"
+ 45. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA24"
+ 46. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA23"
+ 47. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA22"
+ 48. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA21"
+ 49. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA20"
+ 50. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA19"
+ 51. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA18"
+ 52. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA17"
+ 53. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA16"
+ 54. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA15"
+ 55. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA14"
+ 56. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA13"
+ 57. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA12"
+ 58. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA11"
+ 59. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA10"
+ 60. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA9"
+ 61. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA8"
+ 62. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA7"
+ 63. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA6"
+ 64. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA5"
+ 65. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA4"
+ 66. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA3"
+ 67. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA2"
+ 68. Port Connectivity Checks: "ULA:ula|ULA1Bit:ULA1"
+ 69. Port Connectivity Checks: "ULA:ula"
+ 70. Port Connectivity Checks: "registradorGenerico:program_counter"
+ 71. Post-Synthesis Netlist Statistics for Top Partition
+ 72. Elapsed Time Per Partition
+ 73. Analysis & Synthesis Messages
 
 
 
@@ -103,13 +105,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Dec 03 17:01:57 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Dec  3 18:00:49 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; MIPS                                        ;
 ; Top-level Entity Name           ; MIPS                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2846                                        ;
+; Total registers                 ; 2848                                        ;
 ; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -216,7 +218,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 2           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -224,35 +226,35 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                    ;
-+----------------------------------+-----------------+-----------------+------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------+---------+
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/MIPS/muxGenerico4x1.vhd       ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/DesComp/MIPS/conversorHex7Seg.vhd     ;         ;
-; ULA/ULALastBit.vhd               ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/ULALastBit.vhd       ;         ;
-; ULA/ULA1Bit.vhd                  ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/ULA1Bit.vhd          ;         ;
-; ULA/ULA.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/ULA.vhd              ;         ;
-; ULA/mux4x1.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/mux4x1.vhd           ;         ;
-; ULA/mux2x1.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/mux2x1.vhd           ;         ;
-; ULA/fullAdder.vhd                ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/fullAdder.vhd        ;         ;
-; RAMMIPS.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/RAMMIPS.vhd              ;         ;
-; ROMMIPS.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ROMMIPS.vhd              ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/DesComp/MIPS/decoderInstru.vhd        ;         ;
-; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; C:/DesComp/MIPS/estendeSinalGenerico.vhd ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/MIPS/muxGenerico2x1.vhd       ;         ;
-; MIPS.vhd                         ; yes             ; User VHDL File  ; C:/DesComp/MIPS/MIPS.vhd                 ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/DesComp/MIPS/somaConstante.vhd        ;         ;
-; somadorGenerico.vhd              ; yes             ; User VHDL File  ; C:/DesComp/MIPS/somadorGenerico.vhd      ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/DesComp/MIPS/registradorGenerico.vhd  ;         ;
-; bancoReg.vhd                     ; yes             ; User VHDL File  ; C:/DesComp/MIPS/bancoReg.vhd             ;         ;
-; ULActrl.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULActrl.vhd              ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico4x1.vhd       ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/conversorHex7Seg.vhd     ;         ;
+; ULA/ULALastBit.vhd               ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULALastBit.vhd       ;         ;
+; ULA/ULA1Bit.vhd                  ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd          ;         ;
+; ULA/ULA.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd              ;         ;
+; ULA/mux4x1.vhd                   ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux4x1.vhd           ;         ;
+; ULA/mux2x1.vhd                   ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux2x1.vhd           ;         ;
+; ULA/fullAdder.vhd                ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/fullAdder.vhd        ;         ;
+; RAMMIPS.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd              ;         ;
+; ROMMIPS.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd              ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/decoderInstru.vhd        ;         ;
+; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/estendeSinalGenerico.vhd ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico2x1.vhd       ;         ;
+; MIPS.vhd                         ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd                 ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/somaConstante.vhd        ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/somadorGenerico.vhd      ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/registradorGenerico.vhd  ;         ;
+; bancoReg.vhd                     ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd             ;         ;
+; ULActrl.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULActrl.vhd              ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -260,25 +262,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 2227         ;
+; Estimate of Logic utilization (ALMs needed) ; 2234         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 1719         ;
-;     -- 7 input functions                    ; 210          ;
-;     -- 6 input functions                    ; 1063         ;
-;     -- 5 input functions                    ; 82           ;
-;     -- 4 input functions                    ; 98           ;
-;     -- <=3 input functions                  ; 266          ;
+; Combinational ALUT usage for logic          ; 1770         ;
+;     -- 7 input functions                    ; 195          ;
+;     -- 6 input functions                    ; 1094         ;
+;     -- 5 input functions                    ; 79           ;
+;     -- 4 input functions                    ; 91           ;
+;     -- <=3 input functions                  ; 311          ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 2846         ;
+; Dedicated logic registers                   ; 2848         ;
 ;                                             ;              ;
 ; I/O pins                                    ; 67           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 2846         ;
-; Total fan-out                               ; 17911        ;
-; Average fan-out                             ; 3.81         ;
+; Maximum fan-out                             ; 2848         ;
+; Total fan-out                               ; 18018        ;
+; Average fan-out                             ; 3.79         ;
 +---------------------------------------------+--------------+
 
 
@@ -287,17 +289,17 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name         ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+---------------------+--------------+
-; |MIPS                                    ; 1719 (8)            ; 2846 (0)                  ; 0                 ; 0          ; 67   ; 0            ; |MIPS                                              ; MIPS                ; work         ;
+; |MIPS                                    ; 1770 (0)            ; 2848 (0)                  ; 0                 ; 0          ; 67   ; 0            ; |MIPS                                              ; MIPS                ; work         ;
 ;    |RAMMIPS:ram|                         ; 800 (800)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |MIPS|RAMMIPS:ram                                  ; RAMMIPS             ; work         ;
-;    |ROMMIPS:rom|                         ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ROMMIPS:rom                                  ; ROMMIPS             ; work         ;
-;    |ULA:ula|                             ; 143 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula                                      ; ULA                 ; work         ;
+;    |ROMMIPS:rom|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ROMMIPS:rom                                  ; ROMMIPS             ; work         ;
+;    |ULA:ula|                             ; 155 (8)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula                                      ; ULA                 ; work         ;
 ;       |ULA1Bit:ULA0|                     ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA0                         ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA0|fullAdder:somador       ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversor     ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA0|mux4x1:mux_seletor      ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA10|                    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA10                        ; ULA1Bit             ; work         ;
+;       |ULA1Bit:ULA10|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA10                        ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA10|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA10|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA10|mux4x1:mux_seletor     ; mux4x1              ; work         ;
 ;       |ULA1Bit:ULA11|                    ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA11                        ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA11|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA11|mux2x1:mux_inversor    ; mux2x1              ; work         ;
@@ -347,28 +349,28 @@ https://fpgasoftware.intel.com/eula.
 ;       |ULA1Bit:ULA22|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA22                        ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA22|mux2x1:mux_inversor    ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA22|mux4x1:mux_seletor     ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA23|                    ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23                        ; ULA1Bit             ; work         ;
-;          |fullAdder:somador|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23|fullAdder:somador      ; fullAdder           ; work         ;
+;       |ULA1Bit:ULA23|                    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23                        ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23|mux4x1:mux_seletor     ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA24|                    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24                        ; ULA1Bit             ; work         ;
+;          |mux4x1:mux_seletor|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;       |ULA1Bit:ULA24|                    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24                        ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;          |mux4x1:mux_seletor|            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux4x1:mux_seletor     ; mux4x1              ; work         ;
 ;       |ULA1Bit:ULA25|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA25                        ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA25|mux2x1:mux_inversor    ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA25|mux4x1:mux_seletor     ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA26|                    ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA26                        ; ULA1Bit             ; work         ;
+;       |ULA1Bit:ULA26|                    ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA26                        ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA26|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA26|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA26|mux4x1:mux_seletor     ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA27|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA27                        ; ULA1Bit             ; work         ;
+;          |mux4x1:mux_seletor|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA26|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;       |ULA1Bit:ULA27|                    ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA27                        ; ULA1Bit             ; work         ;
+;          |fullAdder:somador|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA27|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA27|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA27|mux4x1:mux_seletor     ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA28|                    ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA28                        ; ULA1Bit             ; work         ;
+;          |mux4x1:mux_seletor|            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA27|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;       |ULA1Bit:ULA28|                    ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA28                        ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA28|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA28|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA28|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA28|mux4x1:mux_seletor     ; mux4x1              ; work         ;
 ;       |ULA1Bit:ULA29|                    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA29                        ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA29|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA29|mux2x1:mux_inversor    ; mux2x1              ; work         ;
@@ -376,7 +378,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |ULA1Bit:ULA2|                     ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA2                         ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA2|mux2x1:mux_inversor     ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA2|mux4x1:mux_seletor      ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA30|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA30                        ; ULA1Bit             ; work         ;
+;       |ULA1Bit:ULA30|                    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA30                        ; ULA1Bit             ; work         ;
+;          |fullAdder:somador|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA30|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA30|mux2x1:mux_inversor    ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA30|mux4x1:mux_seletor     ; mux4x1              ; work         ;
 ;       |ULA1Bit:ULA3|                     ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA3                         ; ULA1Bit             ; work         ;
@@ -405,295 +408,293 @@ https://fpgasoftware.intel.com/eula.
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|fullAdder:somador       ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|mux2x1:mux_inversor     ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|mux4x1:mux_seletor      ; mux4x1              ; work         ;
-;       |ULALastBit:ULA31|                 ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31                     ; ULALastBit          ; work         ;
+;       |ULALastBit:ULA31|                 ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31                     ; ULALastBit          ; work         ;
 ;          |fullAdder:somador|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|fullAdder:somador   ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|mux2x1:mux_inversor ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|mux4x1:mux_seletor  ; mux4x1              ; work         ;
-;    |ULActrl:ULActrl|                     ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULActrl:ULActrl                              ; ULActrl             ; work         ;
-;    |bancoReg:banco_reg|                  ; 471 (471)           ; 768 (768)                 ; 0                 ; 0          ; 0    ; 0            ; |MIPS|bancoReg:banco_reg                           ; bancoReg            ; work         ;
+;          |mux4x1:mux_seletor|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|mux4x1:mux_seletor  ; mux4x1              ; work         ;
+;    |ULActrl:ULActrl|                     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULActrl:ULActrl                              ; ULActrl             ; work         ;
+;    |bancoReg:banco_reg|                  ; 553 (553)           ; 768 (768)                 ; 0                 ; 0          ; 0    ; 0            ; |MIPS|bancoReg:banco_reg                           ; bancoReg            ; work         ;
 ;    |conversorHex7Seg:DispHex0|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex0                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex1|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex1                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex2|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex2                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex3|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex3                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex4|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex4                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex5|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex5                    ; conversorHex7Seg    ; work         ;
-;    |decoderInstru:decoder_instru|        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|decoderInstru:decoder_instru                 ; decoderInstru       ; work         ;
-;    |muxGenerico2x1:mux_display|          ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_display                   ; muxGenerico2x1      ; work         ;
-;    |muxGenerico2x1:mux_jmp|              ; 82 (82)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_jmp                       ; muxGenerico2x1      ; work         ;
-;    |muxGenerico2x1:mux_rt_rd|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_rt_rd                     ; muxGenerico2x1      ; work         ;
-;    |muxGenerico4x1:mux_ula_mem|          ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico4x1:mux_ula_mem                   ; muxGenerico4x1      ; work         ;
-;    |registradorGenerico:program_counter| ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS|registradorGenerico:program_counter          ; registradorGenerico ; work         ;
+;    |decoderInstru:decoder_instru|        ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|decoderInstru:decoder_instru                 ; decoderInstru       ; work         ;
+;    |muxGenerico2x1:mux_display|          ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_display                   ; muxGenerico2x1      ; work         ;
+;    |muxGenerico2x1:mux_jr|               ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_jr                        ; muxGenerico2x1      ; work         ;
+;    |muxGenerico4x1:mux_rt_rd|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico4x1:mux_rt_rd                     ; muxGenerico4x1      ; work         ;
+;    |muxGenerico4x1:mux_ula_mem|          ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico4x1:mux_ula_mem                   ; muxGenerico4x1      ; work         ;
+;    |registradorGenerico:program_counter| ; 5 (5)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS|registradorGenerico:program_counter          ; registradorGenerico ; work         ;
 ;    |somaConstante:pc_inc_4|              ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|somaConstante:pc_inc_4                       ; somaConstante       ; work         ;
-;    |somadorGenerico:somador_beq|         ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|somadorGenerico:somador_beq                  ; somadorGenerico     ; work         ;
+;    |somadorGenerico:somador_beq|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|somadorGenerico:somador_beq                  ; somadorGenerico     ; work         ;
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+---------------------------------------------+---------------------------------------------------------+
-; Register name                               ; Reason for Removal                                      ;
-+---------------------------------------------+---------------------------------------------------------+
-; registradorGenerico:program_counter|DOUT[0] ; Merged with registradorGenerico:program_counter|DOUT[1] ;
-; registradorGenerico:program_counter|DOUT[1] ; Stuck at GND due to stuck port data_in                  ;
-; bancoReg:banco_reg|registrador~605          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~669          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~573          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~637          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~861          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~925          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~829          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~893          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~604          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~668          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~572          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~636          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~860          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~924          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~828          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~892          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~603          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~667          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~571          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~635          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~859          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~923          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~827          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~891          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~602          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~666          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~570          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~634          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~858          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~922          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~826          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~890          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~601          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~665          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~569          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~633          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~857          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~921          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~825          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~889          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~600          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~664          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~568          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~632          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~856          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~920          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~824          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~888          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~599          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~663          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~567          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~631          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~855          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~919          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~823          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~887          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~598          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~662          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~566          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~630          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~854          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~918          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~822          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~886          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~597          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~661          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~565          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~629          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~853          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~917          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~821          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~885          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~596          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~660          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~564          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~628          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~852          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~916          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~820          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~884          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~595          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~659          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~563          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~627          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~851          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~915          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~819          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~883          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~594          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~658          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~562          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~626          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~850          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~914          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~818          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~882          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~593          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~657          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~561          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~625          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~849          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~913          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~817          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~881          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~592          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~656          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~560          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~624          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~848          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~912          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~816          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~880          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~591          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~655          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~559          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~623          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~847          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~911          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~815          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~879          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~590          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~654          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~558          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~622          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~846          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~910          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~814          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~878          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~589          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~653          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~557          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~621          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~845          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~909          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~813          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~877          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~588          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~652          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~556          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~620          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~844          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~908          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~812          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~876          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~587          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~651          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~555          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~619          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~843          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~907          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~811          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~875          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~586          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~650          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~554          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~618          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~842          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~906          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~810          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~874          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~585          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~649          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~553          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~617          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~841          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~905          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~809          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~873          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~584          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~648          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~552          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~616          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~840          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~904          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~808          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~872          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~583          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~647          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~551          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~615          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~839          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~903          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~807          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~871          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~582          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~646          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~550          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~614          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~838          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~902          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~806          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~870          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~606          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~670          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~574          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~638          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~862          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~926          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~830          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~894          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~607          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~671          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~575          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~639          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~863          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~927          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~831          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~895          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~608          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~672          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~576          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~640          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~864          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~928          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~832          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~896          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~609          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~673          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~577          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~641          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~865          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~929          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~833          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~897          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~610          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~674          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~578          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~642          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~866          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~930          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~834          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~898          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~611          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~675          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~579          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~643          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~867          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~931          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~835          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~899          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~612          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~676          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~580          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~644          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~868          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~932          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~836          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~900          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~613          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~677          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~581          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~645          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~869          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~933          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~837          ; Stuck at GND due to stuck port clock_enable             ;
-; bancoReg:banco_reg|registrador~901          ; Stuck at GND due to stuck port clock_enable             ;
-; Total Number of Removed Registers = 258     ;                                                         ;
-+---------------------------------------------+---------------------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; bancoReg:banco_reg|registrador~606      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~670      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~574      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~638      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~862      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~926      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~830      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~894      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~583      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~647      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~551      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~615      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~839      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~903      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~807      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~871      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~582      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~646      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~550      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~614      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~838      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~902      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~806      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~870      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~584      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~648      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~552      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~616      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~840      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~904      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~808      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~872      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~585      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~649      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~553      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~617      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~841      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~905      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~809      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~873      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~586      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~650      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~554      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~618      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~842      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~906      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~810      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~874      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~587      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~651      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~555      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~619      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~843      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~907      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~811      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~875      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~588      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~652      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~556      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~620      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~844      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~908      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~812      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~876      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~589      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~653      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~557      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~621      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~845      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~909      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~813      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~877      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~590      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~654      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~558      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~622      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~846      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~910      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~814      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~878      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~591      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~655      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~559      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~623      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~847      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~911      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~815      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~879      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~592      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~656      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~560      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~624      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~848      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~912      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~816      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~880      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~593      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~657      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~561      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~625      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~849      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~913      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~817      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~881      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~594      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~658      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~562      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~626      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~850      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~914      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~818      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~882      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~595      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~659      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~563      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~627      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~851      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~915      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~819      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~883      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~596      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~660      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~564      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~628      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~852      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~916      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~820      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~884      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~597      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~661      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~565      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~629      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~853      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~917      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~821      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~885      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~598      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~662      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~566      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~630      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~854      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~918      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~822      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~886      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~599      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~663      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~567      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~631      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~855      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~919      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~823      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~887      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~600      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~664      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~568      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~632      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~856      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~920      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~824      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~888      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~601      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~665      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~569      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~633      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~857      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~921      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~825      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~889      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~602      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~666      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~570      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~634      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~858      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~922      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~826      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~890      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~603      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~667      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~571      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~635      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~859      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~923      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~827      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~891      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~604      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~668      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~572      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~636      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~860      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~924      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~828      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~892      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~605      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~669      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~573      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~637      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~861      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~925      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~829      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~893      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~607      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~671      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~575      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~639      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~863      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~927      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~831      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~895      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~608      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~672      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~576      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~640      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~864      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~928      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~832      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~896      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~609      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~673      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~577      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~641      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~865      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~929      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~833      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~897      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~610      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~674      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~578      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~642      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~866      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~930      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~834      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~898      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~611      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~675      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~579      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~643      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~867      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~931      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~835      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~899      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~612      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~676      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~580      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~644      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~868      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~932      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~836      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~900      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~613      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~677      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~581      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~645      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~869      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~933      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~837      ; Stuck at GND due to stuck port clock_enable ;
+; bancoReg:banco_reg|registrador~901      ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 256 ;                                             ;
++-----------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -701,28 +702,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2846  ;
+; Total registers                              ; 2848  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2816  ;
+; Number of registers using Clock Enable       ; 2818  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[25]       ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA10|mux4x1:mux_seletor|saida_MUX ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA1|mux2x1:mux_inversor|saida_MUX ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[1]            ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[6]            ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[16]           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[0]         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[31]        ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[27]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux4x1:mux_seletor|saida_MUX  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA15|mux2x1:mux_inversor|saida_MUX ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[7]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[28]            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_rt_rd|saida_MUX[0]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
 +----------------------------------------------------------------------+
@@ -833,7 +836,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: muxGenerico2x1:mux_rt_rd ;
+; Parameter Settings for User Entity Instance: muxGenerico4x1:mux_rt_rd ;
 +----------------+-------+----------------------------------------------+
 ; Parameter Name ; Value ; Type                                         ;
 +----------------+-------+----------------------------------------------+
@@ -859,6 +862,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------+
 ; larguradados   ; 32    ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:mux_jr ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -964,6 +977,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+-------+----------+--------------+
 ; entradab_mux[1..0] ; Input ; Info     ; Stuck at GND ;
 +--------------------+-------+----------+--------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "muxGenerico4x1:mux_rt_rd" ;
++--------------+-------+----------+--------------------+
+; Port         ; Type  ; Severity ; Details            ;
++--------------+-------+----------+--------------------+
+; entradac_mux ; Input ; Info     ; Stuck at VCC       ;
+; entradad_mux ; Input ; Info     ; Stuck at GND       ;
++--------------+-------+----------+--------------------+
 
 
 +--------------------------------------------------------+
@@ -1288,29 +1311,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2846                        ;
-;     ENA               ; 2816                        ;
+; arriav_ff             ; 2848                        ;
+;     ENA               ; 2818                        ;
 ;     plain             ; 30                          ;
-; arriav_lcell_comb     ; 1721                        ;
-;     arith             ; 60                          ;
-;         1 data inputs ; 30                          ;
+; arriav_lcell_comb     ; 1771                        ;
+;     arith             ; 62                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 31                          ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 15                          ;
 ;         5 data inputs ; 14                          ;
-;     extend            ; 210                         ;
-;         7 data inputs ; 210                         ;
-;     normal            ; 1451                        ;
+;     extend            ; 195                         ;
+;         7 data inputs ; 195                         ;
+;     normal            ; 1514                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 134                         ;
-;         3 data inputs ; 88                          ;
-;         4 data inputs ; 83                          ;
-;         5 data inputs ; 68                          ;
-;         6 data inputs ; 1063                        ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 203                         ;
+;         3 data inputs ; 62                          ;
+;         4 data inputs ; 76                          ;
+;         5 data inputs ; 65                          ;
+;         6 data inputs ; 1094                        ;
 ; boundary_port         ; 67                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 20.00                       ;
-; Average LUT depth     ; 8.97                        ;
+; Average LUT depth     ; 9.02                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1319,7 +1343,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:17     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -1329,160 +1353,160 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Dec 03 17:01:17 2022
+    Info: Processing started: Sat Dec  3 18:00:34 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/DesComp/MIPS/muxGenerico4x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico4x1 File: C:/DesComp/MIPS/muxGenerico4x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/DesComp/MIPS/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/DesComp/MIPS/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ula/ulalastbit.vhd
-    Info (12022): Found design unit 1: ULALastBit-comportamento File: C:/DesComp/MIPS/ULA/ULALastBit.vhd Line: 11
-    Info (12023): Found entity 1: ULALastBit File: C:/DesComp/MIPS/ULA/ULALastBit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ula/ula1bit.vhd
-    Info (12022): Found design unit 1: ULA1Bit-comportamento File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 11
-    Info (12023): Found entity 1: ULA1Bit File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ula/ula.vhd
-    Info (12022): Found design unit 1: ULA-comportamento File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 16
-    Info (12023): Found entity 1: ULA File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ula/mux4x1.vhd
-    Info (12022): Found design unit 1: mux4x1-comportamento File: C:/DesComp/MIPS/ULA/mux4x1.vhd Line: 12
-    Info (12023): Found entity 1: mux4x1 File: C:/DesComp/MIPS/ULA/mux4x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ula/mux2x1.vhd
-    Info (12022): Found design unit 1: mux2x1-comportamento File: C:/DesComp/MIPS/ULA/mux2x1.vhd Line: 12
-    Info (12023): Found entity 1: mux2x1 File: C:/DesComp/MIPS/ULA/mux2x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ula/fulladder.vhd
-    Info (12022): Found design unit 1: fullAdder-comportamento File: C:/DesComp/MIPS/ULA/fullAdder.vhd Line: 10
-    Info (12023): Found entity 1: fullAdder File: C:/DesComp/MIPS/ULA/fullAdder.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file rammips.vhd
-    Info (12022): Found design unit 1: RAMMIPS-assincrona File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 18
-    Info (12023): Found entity 1: RAMMIPS File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file rommips.vhd
-    Info (12022): Found design unit 1: ROMMIPS-assincrona File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 16
-    Info (12023): Found entity 1: ROMMIPS File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/DesComp/MIPS/decoderInstru.vhd Line: 10
-    Info (12023): Found entity 1: decoderInstru File: C:/DesComp/MIPS/decoderInstru.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file estendesinalgenerico.vhd
-    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: C:/DesComp/MIPS/estendeSinalGenerico.vhd Line: 21
-    Info (12023): Found entity 1: estendeSinalGenerico File: C:/DesComp/MIPS/estendeSinalGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/DesComp/MIPS/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: C:/DesComp/MIPS/muxGenerico2x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file mips.vhd
-    Info (12022): Found design unit 1: MIPS-comportamento File: C:/DesComp/MIPS/MIPS.vhd Line: 19
-    Info (12023): Found entity 1: MIPS File: C:/DesComp/MIPS/MIPS.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/DesComp/MIPS/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: C:/DesComp/MIPS/somaConstante.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
-    Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/DesComp/MIPS/somadorGenerico.vhd Line: 17
-    Info (12023): Found entity 1: somadorGenerico File: C:/DesComp/MIPS/somadorGenerico.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/DesComp/MIPS/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: C:/DesComp/MIPS/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file bancoreg.vhd
-    Info (12022): Found design unit 1: bancoReg-comportamento File: C:/DesComp/MIPS/bancoReg.vhd Line: 27
-    Info (12023): Found entity 1: bancoReg File: C:/DesComp/MIPS/bancoReg.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file ulactrl.vhd
-    Info (12022): Found design unit 1: ULActrl-comportamento File: C:/DesComp/MIPS/ULActrl.vhd Line: 11
-    Info (12023): Found entity 1: ULActrl File: C:/DesComp/MIPS/ULActrl.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/joao/descomp_oficial/DesComp/MIPS/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULALastBit.vhd
+    Info (12022): Found design unit 1: ULALastBit-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULALastBit.vhd Line: 11
+    Info (12023): Found entity 1: ULALastBit File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULALastBit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULA1Bit.vhd
+    Info (12022): Found design unit 1: ULA1Bit-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 11
+    Info (12023): Found entity 1: ULA1Bit File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULA.vhd
+    Info (12022): Found design unit 1: ULA-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 16
+    Info (12023): Found entity 1: ULA File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux4x1.vhd
+    Info (12022): Found design unit 1: mux4x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux4x1.vhd Line: 12
+    Info (12023): Found entity 1: mux4x1 File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux2x1.vhd
+    Info (12022): Found design unit 1: mux2x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux2x1.vhd Line: 12
+    Info (12023): Found entity 1: mux2x1 File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/fullAdder.vhd
+    Info (12022): Found design unit 1: fullAdder-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/fullAdder.vhd Line: 10
+    Info (12023): Found entity 1: fullAdder File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/fullAdder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file RAMMIPS.vhd
+    Info (12022): Found design unit 1: RAMMIPS-assincrona File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 18
+    Info (12023): Found entity 1: RAMMIPS File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ROMMIPS.vhd
+    Info (12022): Found design unit 1: ROMMIPS-assincrona File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 16
+    Info (12023): Found entity 1: ROMMIPS File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/decoderInstru.vhd Line: 11
+    Info (12023): Found entity 1: decoderInstru File: /home/joao/descomp_oficial/DesComp/MIPS/decoderInstru.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file estendeSinalGenerico.vhd
+    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/estendeSinalGenerico.vhd Line: 21
+    Info (12023): Found entity 1: estendeSinalGenerico File: /home/joao/descomp_oficial/DesComp/MIPS/estendeSinalGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vhd
+    Info (12022): Found design unit 1: MIPS-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 19
+    Info (12023): Found entity 1: MIPS File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: /home/joao/descomp_oficial/DesComp/MIPS/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorGenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/somadorGenerico.vhd Line: 17
+    Info (12023): Found entity 1: somadorGenerico File: /home/joao/descomp_oficial/DesComp/MIPS/somadorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: /home/joao/descomp_oficial/DesComp/MIPS/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoReg.vhd
+    Info (12022): Found design unit 1: bancoReg-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd Line: 27
+    Info (12023): Found entity 1: bancoReg File: /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file ULActrl.vhd
+    Info (12022): Found design unit 1: ULActrl-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULActrl.vhd Line: 11
+    Info (12023): Found entity 1: ULActrl File: /home/joao/descomp_oficial/DesComp/MIPS/ULActrl.vhd Line: 4
 Info (12127): Elaborating entity "MIPS" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(37): object "V" assigned a value but never read File: C:/DesComp/MIPS/MIPS.vhd Line: 37
-Warning (10873): Using initial value X (don't care) for net "LEDR[9..8]" at MIPS.vhd(14) File: C:/DesComp/MIPS/MIPS.vhd Line: 14
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder_instru" File: C:/DesComp/MIPS/MIPS.vhd Line: 44
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:pc_inc_4" File: C:/DesComp/MIPS/MIPS.vhd Line: 49
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:program_counter" File: C:/DesComp/MIPS/MIPS.vhd Line: 54
-Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:rom" File: C:/DesComp/MIPS/MIPS.vhd Line: 63
-Warning (10541): VHDL Signal Declaration warning at ROMMIPS.vhd(19): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 19
-Info (12128): Elaborating entity "ULActrl" for hierarchy "ULActrl:ULActrl" File: C:/DesComp/MIPS/MIPS.vhd Line: 65
-Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ula" File: C:/DesComp/MIPS/MIPS.vhd Line: 72
-Warning (10036): Verilog HDL or VHDL warning at ULA.vhd(20): object "carry_out" assigned a value but never read File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 20
-Info (12128): Elaborating entity "ULA1Bit" for hierarchy "ULA:ula|ULA1Bit:ULA0" File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 23
-Info (12128): Elaborating entity "mux4x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux4x1:mux_seletor" File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 16
-Info (12128): Elaborating entity "mux2x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversor" File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 25
-Info (12128): Elaborating entity "fullAdder" for hierarchy "ULA:ula|ULA1Bit:ULA0|fullAdder:somador" File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 32
-Info (12128): Elaborating entity "ULALastBit" for hierarchy "ULA:ula|ULALastBit:ULA31" File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 364
-Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:banco_reg" File: C:/DesComp/MIPS/MIPS.vhd Line: 83
-Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:estensor_de_sinal" File: C:/DesComp/MIPS/MIPS.vhd Line: 94
-Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:ram" File: C:/DesComp/MIPS/MIPS.vhd Line: 101
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_rt_im" File: C:/DesComp/MIPS/MIPS.vhd Line: 111
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_ula_mem" File: C:/DesComp/MIPS/MIPS.vhd Line: 119
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_rt_rd" File: C:/DesComp/MIPS/MIPS.vhd Line: 129
-Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:somador_beq" File: C:/DesComp/MIPS/MIPS.vhd Line: 153
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DispHex5" File: C:/DesComp/MIPS/MIPS.vhd Line: 201
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(37): object "V" assigned a value but never read File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 37
+Warning (10873): Using initial value X (don't care) for net "LEDR[9..8]" at MIPS.vhd(14) File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 14
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder_instru" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 44
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:pc_inc_4" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 50
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:program_counter" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 55
+Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:rom" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 64
+Warning (10541): VHDL Signal Declaration warning at ROMMIPS.vhd(19): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 19
+Info (12128): Elaborating entity "ULActrl" for hierarchy "ULActrl:ULActrl" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 66
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ula" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 73
+Warning (10036): Verilog HDL or VHDL warning at ULA.vhd(20): object "carry_out" assigned a value but never read File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 20
+Info (12128): Elaborating entity "ULA1Bit" for hierarchy "ULA:ula|ULA1Bit:ULA0" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 23
+Info (12128): Elaborating entity "mux4x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux4x1:mux_seletor" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 16
+Info (12128): Elaborating entity "mux2x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversor" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 25
+Info (12128): Elaborating entity "fullAdder" for hierarchy "ULA:ula|ULA1Bit:ULA0|fullAdder:somador" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 32
+Info (12128): Elaborating entity "ULALastBit" for hierarchy "ULA:ula|ULALastBit:ULA31" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 364
+Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:banco_reg" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 84
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:estensor_de_sinal" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 95
+Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:ram" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 102
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_rt_im" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 112
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_ula_mem" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 120
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_rt_rd" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 130
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:somador_beq" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 171
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DispHex5" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 220
 Info (276014): Found 3 instances of uninferred RAM logic
-    Info (276007): RAM logic "RAMMIPS:ram|memRAM" is uninferred due to asynchronous read logic File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 21
-    Info (276007): RAM logic "bancoReg:banco_reg|registrador" is uninferred due to asynchronous read logic File: C:/DesComp/MIPS/bancoReg.vhd Line: 47
-    Info (276004): RAM logic "ROMMIPS:rom|memROM" is uninferred due to inappropriate RAM size File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 19
-Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: C:/DesComp/MIPS/ROMContent.mif Line: 1
-    Warning (113026): Memory Initialization File Address 16 is not initialized File: C:/DesComp/MIPS/ROMContent.mif Line: 1
-    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: C:/DesComp/MIPS/ROMContent.mif Line: 1
-    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: C:/DesComp/MIPS/ROMContent.mif Line: 1
+    Info (276007): RAM logic "RAMMIPS:ram|memRAM" is uninferred due to asynchronous read logic File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 21
+    Info (276007): RAM logic "bancoReg:banco_reg|registrador" is uninferred due to asynchronous read logic File: /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd Line: 47
+    Info (276004): RAM logic "ROMMIPS:rom|memROM" is uninferred due to inappropriate RAM size File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 19
+Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
+    Warning (113026): Memory Initialization File Address 16 is not initialized File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
+    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
+    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[12]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[11]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[10]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[9]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[8]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[7]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[6]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[5]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[4]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[3]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[2]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[1]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[0]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[13]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[14]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[15]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[16]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[17]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[18]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[19]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[20]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[21]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[22]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[23]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[24]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[25]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[26]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[27]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[28]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[29]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[30]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[31]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[12]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[11]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[10]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[9]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[8]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[7]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[6]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[5]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[4]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[3]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[2]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[1]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[0]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[13]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[14]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[15]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[16]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[17]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[18]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[19]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[20]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[21]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[22]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[23]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[24]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[25]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[26]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[27]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[28]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[29]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[30]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[31]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/DesComp/MIPS/MIPS.vhd Line: 14
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/DesComp/MIPS/MIPS.vhd Line: 14
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 14
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 13 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/DesComp/MIPS/MIPS.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/MIPS/MIPS.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/MIPS/MIPS.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/MIPS/MIPS.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-Info (21057): Implemented 4589 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 9
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
+Info (21057): Implemented 4640 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 4522 logic cells
+    Info (21061): Implemented 4573 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Sat Dec 03 17:01:58 2022
-    Info: Elapsed time: 00:00:41
-    Info: Total CPU time (on all processors): 00:00:59
+    Info: Peak virtual memory: 490 megabytes
+    Info: Processing ended: Sat Dec  3 18:00:49 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:18
 
 

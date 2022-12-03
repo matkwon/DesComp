@@ -18,6 +18,7 @@ architecture comportamento of ULActrl is
   constant OP_ADDI : std_logic_vector(5 downto 0) := "001000";
   constant OP_ORI	 : std_logic_vector(5 downto 0) := "001101";
   constant OP_SLTI : std_logic_vector(5 downto 0) := "001010";
+  constant OP_BNE  : std_logic_vector(5 downto 0) := "000101";
   
   constant FN_ADD  : std_logic_vector(5 downto 0) := "100000";
   constant FN_SUB  : std_logic_vector(5 downto 0) := "100010";
@@ -33,11 +34,11 @@ architecture comportamento of ULActrl is
 
   decode_op(1) <= '1' when (opcode = OP_LW) or
                            (opcode = OP_SW) or
-                           (opcode = OP_BEQ) or
+                           (opcode = OP_BEQ) or (opcode = OP_BNE) or
                            (opcode = OP_ADDI) or
                            (opcode = OP_SLTI) else '0';
 
-  decode_op(2) <= '1' when (opcode = OP_BEQ) or
+  decode_op(2) <= '1' when (opcode = OP_BEQ) or (opcode = OP_BNE) or
 									(opcode = OP_SLTI) else
 									'0';
   
