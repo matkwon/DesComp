@@ -45,7 +45,9 @@ architecture comportamento of decoderInstru is
   
   selMuxJr			<= '1' when  (opcode = OP_R) and (funct = FN_JR) else '0';
   
-  selMuxJmp			<= '1' when (opcode = OP_J) or (opcode = OP_JAL) else '0';
+  selMuxJmp			<= '1' when (opcode = OP_J) or
+										(opcode = OP_JAL) else 
+										'0';
   
   selMuxRtRd		<= "01" when (opcode = OP_R) 	else 
 							"10" when (opcode = OP_JAL)else "00";

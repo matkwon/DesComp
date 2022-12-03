@@ -10,7 +10,7 @@ entity MIPS is
 		SW: in std_logic_vector(9 downto 0);
 --		flagZero, V : out std_logic;
 --		ram_out, reg_1_out, reg_2_out,
---		pc_out, ula_out, ula_in_1, ula_in_2: out std_logic_vector(larguraDados-1 downto 0);
+--		pc_out, ula_out: out std_logic_vector(larguraDados-1 downto 0);
 		LEDR: out std_logic_vector(9 downto 0);
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector(6 downto 0)
 	 );
@@ -199,11 +199,11 @@ architecture comportamento of MIPS is
 		
 		
 --		pc_out 						<= sig_pc;
+--		ula_out						<= sig_ula_out;
 --		ram_out						<= sig_ram_out;
 --		reg_1_out					<= sig_reg_1;
 --		reg_2_out					<= sig_reg_2;
 --		flagZero						<= sig_flag_zero;
---		ula_out						<= sig_ula_out;
 --		ula_in_1						<= sig_reg_1;
 --		ula_in_2						<= sig_entrada_ula_b;
 		

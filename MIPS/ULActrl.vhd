@@ -30,11 +30,13 @@ architecture comportamento of ULActrl is
   
   begin
   
-  decode_op(0) <= '1' when (opcode = OP_SLTI) else '0';
+  decode_op(0) <= '1' when (opcode = OP_SLTI) or
+									(opcode = OP_ORI) else '0';
 
   decode_op(1) <= '1' when (opcode = OP_LW) or
                            (opcode = OP_SW) or
-                           (opcode = OP_BEQ) or (opcode = OP_BNE) or
+                           (opcode = OP_BEQ) or
+									(opcode = OP_BNE) or
                            (opcode = OP_ADDI) or
                            (opcode = OP_SLTI) else '0';
 

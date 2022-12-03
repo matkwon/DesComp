@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS
-Sat Dec  3 18:00:49 2022
+Sat Dec 03 18:27:55 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -105,7 +105,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Dec  3 18:00:49 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Dec 03 18:27:54 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; MIPS                                        ;
 ; Top-level Entity Name           ; MIPS                                        ;
@@ -218,7 +218,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 2           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -226,35 +226,35 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico4x1.vhd       ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/conversorHex7Seg.vhd     ;         ;
-; ULA/ULALastBit.vhd               ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULALastBit.vhd       ;         ;
-; ULA/ULA1Bit.vhd                  ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd          ;         ;
-; ULA/ULA.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd              ;         ;
-; ULA/mux4x1.vhd                   ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux4x1.vhd           ;         ;
-; ULA/mux2x1.vhd                   ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux2x1.vhd           ;         ;
-; ULA/fullAdder.vhd                ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULA/fullAdder.vhd        ;         ;
-; RAMMIPS.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd              ;         ;
-; ROMMIPS.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd              ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/decoderInstru.vhd        ;         ;
-; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/estendeSinalGenerico.vhd ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico2x1.vhd       ;         ;
-; MIPS.vhd                         ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd                 ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/somaConstante.vhd        ;         ;
-; somadorGenerico.vhd              ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/somadorGenerico.vhd      ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/registradorGenerico.vhd  ;         ;
-; bancoReg.vhd                     ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd             ;         ;
-; ULActrl.vhd                      ; yes             ; User VHDL File  ; /home/joao/descomp_oficial/DesComp/MIPS/ULActrl.vhd              ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/MIPS/muxGenerico4x1.vhd       ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/DesComp/MIPS/conversorHex7Seg.vhd     ;         ;
+; ULA/ULALastBit.vhd               ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/ULALastBit.vhd       ;         ;
+; ULA/ULA1Bit.vhd                  ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/ULA1Bit.vhd          ;         ;
+; ULA/ULA.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/ULA.vhd              ;         ;
+; ULA/mux4x1.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/mux4x1.vhd           ;         ;
+; ULA/mux2x1.vhd                   ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/mux2x1.vhd           ;         ;
+; ULA/fullAdder.vhd                ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULA/fullAdder.vhd        ;         ;
+; RAMMIPS.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/RAMMIPS.vhd              ;         ;
+; ROMMIPS.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ROMMIPS.vhd              ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/DesComp/MIPS/decoderInstru.vhd        ;         ;
+; estendeSinalGenerico.vhd         ; yes             ; User VHDL File  ; C:/DesComp/MIPS/estendeSinalGenerico.vhd ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/DesComp/MIPS/muxGenerico2x1.vhd       ;         ;
+; MIPS.vhd                         ; yes             ; User VHDL File  ; C:/DesComp/MIPS/MIPS.vhd                 ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/DesComp/MIPS/somaConstante.vhd        ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File  ; C:/DesComp/MIPS/somadorGenerico.vhd      ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/DesComp/MIPS/registradorGenerico.vhd  ;         ;
+; bancoReg.vhd                     ; yes             ; User VHDL File  ; C:/DesComp/MIPS/bancoReg.vhd             ;         ;
+; ULActrl.vhd                      ; yes             ; User VHDL File  ; C:/DesComp/MIPS/ULActrl.vhd              ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -262,14 +262,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 2234         ;
+; Estimate of Logic utilization (ALMs needed) ; 2233         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 1770         ;
+; Combinational ALUT usage for logic          ; 1771         ;
 ;     -- 7 input functions                    ; 195          ;
 ;     -- 6 input functions                    ; 1094         ;
-;     -- 5 input functions                    ; 79           ;
-;     -- 4 input functions                    ; 91           ;
-;     -- <=3 input functions                  ; 311          ;
+;     -- 5 input functions                    ; 75           ;
+;     -- 4 input functions                    ; 95           ;
+;     -- <=3 input functions                  ; 312          ;
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 2848         ;
 ;                                             ;              ;
@@ -289,7 +289,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name         ; Library Name ;
 +------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+---------------------+--------------+
-; |MIPS                                    ; 1770 (0)            ; 2848 (0)                  ; 0                 ; 0          ; 67   ; 0            ; |MIPS                                              ; MIPS                ; work         ;
+; |MIPS                                    ; 1771 (0)            ; 2848 (0)                  ; 0                 ; 0          ; 67   ; 0            ; |MIPS                                              ; MIPS                ; work         ;
 ;    |RAMMIPS:ram|                         ; 800 (800)           ; 2048 (2048)               ; 0                 ; 0          ; 0    ; 0            ; |MIPS|RAMMIPS:ram                                  ; RAMMIPS             ; work         ;
 ;    |ROMMIPS:rom|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ROMMIPS:rom                                  ; ROMMIPS             ; work         ;
 ;    |ULA:ula|                             ; 155 (8)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula                                      ; ULA                 ; work         ;
@@ -352,10 +352,10 @@ https://fpgasoftware.intel.com/eula.
 ;       |ULA1Bit:ULA23|                    ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23                        ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23|mux2x1:mux_inversor    ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA23|mux4x1:mux_seletor     ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA24|                    ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24                        ; ULA1Bit             ; work         ;
+;       |ULA1Bit:ULA24|                    ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24                        ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|fullAdder:somador      ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux2x1:mux_inversor    ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux4x1:mux_seletor     ; mux4x1              ; work         ;
+;          |mux4x1:mux_seletor|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux4x1:mux_seletor     ; mux4x1              ; work         ;
 ;       |ULA1Bit:ULA25|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA25                        ; ULA1Bit             ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA25|mux2x1:mux_inversor    ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA25|mux4x1:mux_seletor     ; mux4x1              ; work         ;
@@ -404,15 +404,15 @@ https://fpgasoftware.intel.com/eula.
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA8|fullAdder:somador       ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA8|mux2x1:mux_inversor     ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA8|mux4x1:mux_seletor      ; mux4x1              ; work         ;
-;       |ULA1Bit:ULA9|                     ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9                         ; ULA1Bit             ; work         ;
+;       |ULA1Bit:ULA9|                     ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9                         ; ULA1Bit             ; work         ;
 ;          |fullAdder:somador|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|fullAdder:somador       ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|mux2x1:mux_inversor     ; mux2x1              ; work         ;
-;          |mux4x1:mux_seletor|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|mux4x1:mux_seletor      ; mux4x1              ; work         ;
+;          |mux4x1:mux_seletor|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULA1Bit:ULA9|mux4x1:mux_seletor      ; mux4x1              ; work         ;
 ;       |ULALastBit:ULA31|                 ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31                     ; ULALastBit          ; work         ;
 ;          |fullAdder:somador|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|fullAdder:somador   ; fullAdder           ; work         ;
 ;          |mux2x1:mux_inversor|           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|mux2x1:mux_inversor ; mux2x1              ; work         ;
 ;          |mux4x1:mux_seletor|            ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULA:ula|ULALastBit:ULA31|mux4x1:mux_seletor  ; mux4x1              ; work         ;
-;    |ULActrl:ULActrl|                     ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULActrl:ULActrl                              ; ULActrl             ; work         ;
+;    |ULActrl:ULActrl|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|ULActrl:ULActrl                              ; ULActrl             ; work         ;
 ;    |bancoReg:banco_reg|                  ; 553 (553)           ; 768 (768)                 ; 0                 ; 0          ; 0    ; 0            ; |MIPS|bancoReg:banco_reg                           ; bancoReg            ; work         ;
 ;    |conversorHex7Seg:DispHex0|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex0                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex1|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex1                    ; conversorHex7Seg    ; work         ;
@@ -420,11 +420,11 @@ https://fpgasoftware.intel.com/eula.
 ;    |conversorHex7Seg:DispHex3|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex3                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex4|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex4                    ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:DispHex5|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|conversorHex7Seg:DispHex5                    ; conversorHex7Seg    ; work         ;
-;    |decoderInstru:decoder_instru|        ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|decoderInstru:decoder_instru                 ; decoderInstru       ; work         ;
+;    |decoderInstru:decoder_instru|        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|decoderInstru:decoder_instru                 ; decoderInstru       ; work         ;
 ;    |muxGenerico2x1:mux_display|          ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_display                   ; muxGenerico2x1      ; work         ;
 ;    |muxGenerico2x1:mux_jr|               ; 37 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico2x1:mux_jr                        ; muxGenerico2x1      ; work         ;
 ;    |muxGenerico4x1:mux_rt_rd|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico4x1:mux_rt_rd                     ; muxGenerico4x1      ; work         ;
-;    |muxGenerico4x1:mux_ula_mem|          ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico4x1:mux_ula_mem                   ; muxGenerico4x1      ; work         ;
+;    |muxGenerico4x1:mux_ula_mem|          ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|muxGenerico4x1:mux_ula_mem                   ; muxGenerico4x1      ; work         ;
 ;    |registradorGenerico:program_counter| ; 5 (5)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS|registradorGenerico:program_counter          ; registradorGenerico ; work         ;
 ;    |somaConstante:pc_inc_4|              ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|somaConstante:pc_inc_4                       ; somaConstante       ; work         ;
 ;    |somadorGenerico:somador_beq|         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|somadorGenerico:somador_beq                  ; somadorGenerico     ; work         ;
@@ -719,11 +719,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[0]         ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[31]        ;
-; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[27]        ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA24|mux4x1:mux_seletor|saida_MUX  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA15|mux2x1:mux_inversor|saida_MUX ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[7]             ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[28]            ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:program_counter|DOUT[19]        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA9|mux4x1:mux_seletor|saida_MUX   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|ULA:ula|ULA1Bit:ULA25|mux2x1:mux_inversor|saida_MUX ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[8]             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_ula_mem|saida_MUX[27]            ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_rt_rd|saida_MUX[0]               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
@@ -1314,7 +1314,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_ff             ; 2848                        ;
 ;     ENA               ; 2818                        ;
 ;     plain             ; 30                          ;
-; arriav_lcell_comb     ; 1771                        ;
+; arriav_lcell_comb     ; 1772                        ;
 ;     arith             ; 62                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 31                          ;
@@ -1323,13 +1323,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 14                          ;
 ;     extend            ; 195                         ;
 ;         7 data inputs ; 195                         ;
-;     normal            ; 1514                        ;
+;     normal            ; 1515                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 203                         ;
-;         3 data inputs ; 62                          ;
-;         4 data inputs ; 76                          ;
-;         5 data inputs ; 65                          ;
+;         2 data inputs ; 202                         ;
+;         3 data inputs ; 64                          ;
+;         4 data inputs ; 80                          ;
+;         5 data inputs ; 61                          ;
 ;         6 data inputs ; 1094                        ;
 ; boundary_port         ; 67                          ;
 ;                       ;                             ;
@@ -1343,7 +1343,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:13     ;
 +----------------+--------------+
 
 
@@ -1353,160 +1353,160 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Dec  3 18:00:34 2022
+    Info: Processing started: Sat Dec 03 18:27:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico4x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico4x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/joao/descomp_oficial/DesComp/MIPS/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULALastBit.vhd
-    Info (12022): Found design unit 1: ULALastBit-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULALastBit.vhd Line: 11
-    Info (12023): Found entity 1: ULALastBit File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULALastBit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULA1Bit.vhd
-    Info (12022): Found design unit 1: ULA1Bit-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 11
-    Info (12023): Found entity 1: ULA1Bit File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULA.vhd
-    Info (12022): Found design unit 1: ULA-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 16
-    Info (12023): Found entity 1: ULA File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux4x1.vhd
-    Info (12022): Found design unit 1: mux4x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux4x1.vhd Line: 12
-    Info (12023): Found entity 1: mux4x1 File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux4x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux2x1.vhd
-    Info (12022): Found design unit 1: mux2x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux2x1.vhd Line: 12
-    Info (12023): Found entity 1: mux2x1 File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/mux2x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file ULA/fullAdder.vhd
-    Info (12022): Found design unit 1: fullAdder-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/fullAdder.vhd Line: 10
-    Info (12023): Found entity 1: fullAdder File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/fullAdder.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file RAMMIPS.vhd
-    Info (12022): Found design unit 1: RAMMIPS-assincrona File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 18
-    Info (12023): Found entity 1: RAMMIPS File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ROMMIPS.vhd
-    Info (12022): Found design unit 1: ROMMIPS-assincrona File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 16
-    Info (12023): Found entity 1: ROMMIPS File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/decoderInstru.vhd Line: 11
-    Info (12023): Found entity 1: decoderInstru File: /home/joao/descomp_oficial/DesComp/MIPS/decoderInstru.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file estendeSinalGenerico.vhd
-    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/estendeSinalGenerico.vhd Line: 21
-    Info (12023): Found entity 1: estendeSinalGenerico File: /home/joao/descomp_oficial/DesComp/MIPS/estendeSinalGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/joao/descomp_oficial/DesComp/MIPS/muxGenerico2x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vhd
-    Info (12022): Found design unit 1: MIPS-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 19
-    Info (12023): Found entity 1: MIPS File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: /home/joao/descomp_oficial/DesComp/MIPS/somaConstante.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somadorGenerico.vhd
-    Info (12022): Found design unit 1: somadorGenerico-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/somadorGenerico.vhd Line: 17
-    Info (12023): Found entity 1: somadorGenerico File: /home/joao/descomp_oficial/DesComp/MIPS/somadorGenerico.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: /home/joao/descomp_oficial/DesComp/MIPS/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file bancoReg.vhd
-    Info (12022): Found design unit 1: bancoReg-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd Line: 27
-    Info (12023): Found entity 1: bancoReg File: /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file ULActrl.vhd
-    Info (12022): Found design unit 1: ULActrl-comportamento File: /home/joao/descomp_oficial/DesComp/MIPS/ULActrl.vhd Line: 11
-    Info (12023): Found entity 1: ULActrl File: /home/joao/descomp_oficial/DesComp/MIPS/ULActrl.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/DesComp/MIPS/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/DesComp/MIPS/muxGenerico4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/DesComp/MIPS/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/DesComp/MIPS/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ula/ulalastbit.vhd
+    Info (12022): Found design unit 1: ULALastBit-comportamento File: C:/DesComp/MIPS/ULA/ULALastBit.vhd Line: 11
+    Info (12023): Found entity 1: ULALastBit File: C:/DesComp/MIPS/ULA/ULALastBit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ula/ula1bit.vhd
+    Info (12022): Found design unit 1: ULA1Bit-comportamento File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 11
+    Info (12023): Found entity 1: ULA1Bit File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ula/ula.vhd
+    Info (12022): Found design unit 1: ULA-comportamento File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 16
+    Info (12023): Found entity 1: ULA File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ula/mux4x1.vhd
+    Info (12022): Found design unit 1: mux4x1-comportamento File: C:/DesComp/MIPS/ULA/mux4x1.vhd Line: 12
+    Info (12023): Found entity 1: mux4x1 File: C:/DesComp/MIPS/ULA/mux4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ula/mux2x1.vhd
+    Info (12022): Found design unit 1: mux2x1-comportamento File: C:/DesComp/MIPS/ULA/mux2x1.vhd Line: 12
+    Info (12023): Found entity 1: mux2x1 File: C:/DesComp/MIPS/ULA/mux2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ula/fulladder.vhd
+    Info (12022): Found design unit 1: fullAdder-comportamento File: C:/DesComp/MIPS/ULA/fullAdder.vhd Line: 10
+    Info (12023): Found entity 1: fullAdder File: C:/DesComp/MIPS/ULA/fullAdder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file rammips.vhd
+    Info (12022): Found design unit 1: RAMMIPS-assincrona File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 18
+    Info (12023): Found entity 1: RAMMIPS File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rommips.vhd
+    Info (12022): Found design unit 1: ROMMIPS-assincrona File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 16
+    Info (12023): Found entity 1: ROMMIPS File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/DesComp/MIPS/decoderInstru.vhd Line: 11
+    Info (12023): Found entity 1: decoderInstru File: C:/DesComp/MIPS/decoderInstru.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file estendesinalgenerico.vhd
+    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: C:/DesComp/MIPS/estendeSinalGenerico.vhd Line: 21
+    Info (12023): Found entity 1: estendeSinalGenerico File: C:/DesComp/MIPS/estendeSinalGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/DesComp/MIPS/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/DesComp/MIPS/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mips.vhd
+    Info (12022): Found design unit 1: MIPS-comportamento File: C:/DesComp/MIPS/MIPS.vhd Line: 19
+    Info (12023): Found entity 1: MIPS File: C:/DesComp/MIPS/MIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/DesComp/MIPS/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: C:/DesComp/MIPS/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/DesComp/MIPS/somadorGenerico.vhd Line: 17
+    Info (12023): Found entity 1: somadorGenerico File: C:/DesComp/MIPS/somadorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/DesComp/MIPS/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/DesComp/MIPS/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoreg.vhd
+    Info (12022): Found design unit 1: bancoReg-comportamento File: C:/DesComp/MIPS/bancoReg.vhd Line: 27
+    Info (12023): Found entity 1: bancoReg File: C:/DesComp/MIPS/bancoReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file ulactrl.vhd
+    Info (12022): Found design unit 1: ULActrl-comportamento File: C:/DesComp/MIPS/ULActrl.vhd Line: 11
+    Info (12023): Found entity 1: ULActrl File: C:/DesComp/MIPS/ULActrl.vhd Line: 4
 Info (12127): Elaborating entity "MIPS" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(37): object "V" assigned a value but never read File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 37
-Warning (10873): Using initial value X (don't care) for net "LEDR[9..8]" at MIPS.vhd(14) File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 14
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder_instru" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 44
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:pc_inc_4" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 50
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:program_counter" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 55
-Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:rom" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 64
-Warning (10541): VHDL Signal Declaration warning at ROMMIPS.vhd(19): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 19
-Info (12128): Elaborating entity "ULActrl" for hierarchy "ULActrl:ULActrl" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 66
-Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ula" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 73
-Warning (10036): Verilog HDL or VHDL warning at ULA.vhd(20): object "carry_out" assigned a value but never read File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 20
-Info (12128): Elaborating entity "ULA1Bit" for hierarchy "ULA:ula|ULA1Bit:ULA0" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 23
-Info (12128): Elaborating entity "mux4x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux4x1:mux_seletor" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 16
-Info (12128): Elaborating entity "mux2x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversor" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 25
-Info (12128): Elaborating entity "fullAdder" for hierarchy "ULA:ula|ULA1Bit:ULA0|fullAdder:somador" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 32
-Info (12128): Elaborating entity "ULALastBit" for hierarchy "ULA:ula|ULALastBit:ULA31" File: /home/joao/descomp_oficial/DesComp/MIPS/ULA/ULA.vhd Line: 364
-Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:banco_reg" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 84
-Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:estensor_de_sinal" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 95
-Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:ram" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 102
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_rt_im" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 112
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_ula_mem" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 120
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_rt_rd" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 130
-Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:somador_beq" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 171
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DispHex5" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 220
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(37): object "V" assigned a value but never read File: C:/DesComp/MIPS/MIPS.vhd Line: 37
+Warning (10873): Using initial value X (don't care) for net "LEDR[9..8]" at MIPS.vhd(14) File: C:/DesComp/MIPS/MIPS.vhd Line: 14
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:decoder_instru" File: C:/DesComp/MIPS/MIPS.vhd Line: 44
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:pc_inc_4" File: C:/DesComp/MIPS/MIPS.vhd Line: 50
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:program_counter" File: C:/DesComp/MIPS/MIPS.vhd Line: 55
+Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:rom" File: C:/DesComp/MIPS/MIPS.vhd Line: 64
+Warning (10541): VHDL Signal Declaration warning at ROMMIPS.vhd(19): used implicit default value for signal "memROM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 19
+Info (12128): Elaborating entity "ULActrl" for hierarchy "ULActrl:ULActrl" File: C:/DesComp/MIPS/MIPS.vhd Line: 66
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ula" File: C:/DesComp/MIPS/MIPS.vhd Line: 73
+Warning (10036): Verilog HDL or VHDL warning at ULA.vhd(20): object "carry_out" assigned a value but never read File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 20
+Info (12128): Elaborating entity "ULA1Bit" for hierarchy "ULA:ula|ULA1Bit:ULA0" File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 23
+Info (12128): Elaborating entity "mux4x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux4x1:mux_seletor" File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 16
+Info (12128): Elaborating entity "mux2x1" for hierarchy "ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversor" File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 25
+Info (12128): Elaborating entity "fullAdder" for hierarchy "ULA:ula|ULA1Bit:ULA0|fullAdder:somador" File: C:/DesComp/MIPS/ULA/ULA1Bit.vhd Line: 32
+Info (12128): Elaborating entity "ULALastBit" for hierarchy "ULA:ula|ULALastBit:ULA31" File: C:/DesComp/MIPS/ULA/ULA.vhd Line: 364
+Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:banco_reg" File: C:/DesComp/MIPS/MIPS.vhd Line: 84
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:estensor_de_sinal" File: C:/DesComp/MIPS/MIPS.vhd Line: 95
+Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:ram" File: C:/DesComp/MIPS/MIPS.vhd Line: 102
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:mux_rt_im" File: C:/DesComp/MIPS/MIPS.vhd Line: 112
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_ula_mem" File: C:/DesComp/MIPS/MIPS.vhd Line: 120
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "muxGenerico4x1:mux_rt_rd" File: C:/DesComp/MIPS/MIPS.vhd Line: 130
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:somador_beq" File: C:/DesComp/MIPS/MIPS.vhd Line: 171
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:DispHex5" File: C:/DesComp/MIPS/MIPS.vhd Line: 220
 Info (276014): Found 3 instances of uninferred RAM logic
-    Info (276007): RAM logic "RAMMIPS:ram|memRAM" is uninferred due to asynchronous read logic File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 21
-    Info (276007): RAM logic "bancoReg:banco_reg|registrador" is uninferred due to asynchronous read logic File: /home/joao/descomp_oficial/DesComp/MIPS/bancoReg.vhd Line: 47
-    Info (276004): RAM logic "ROMMIPS:rom|memROM" is uninferred due to inappropriate RAM size File: /home/joao/descomp_oficial/DesComp/MIPS/ROMMIPS.vhd Line: 19
-Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
-    Warning (113026): Memory Initialization File Address 16 is not initialized File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
-    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
-    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: /home/joao/descomp_oficial/DesComp/MIPS/ROMContent.mif Line: 1
+    Info (276007): RAM logic "RAMMIPS:ram|memRAM" is uninferred due to asynchronous read logic File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 21
+    Info (276007): RAM logic "bancoReg:banco_reg|registrador" is uninferred due to asynchronous read logic File: C:/DesComp/MIPS/bancoReg.vhd Line: 47
+    Info (276004): RAM logic "ROMMIPS:rom|memROM" is uninferred due to inappropriate RAM size File: C:/DesComp/MIPS/ROMMIPS.vhd Line: 19
+Warning (113028): 46 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 3 warnings found, and 3 warnings are reported. File: C:/DesComp/MIPS/ROMContent.mif Line: 1
+    Warning (113026): Memory Initialization File Address 16 is not initialized File: C:/DesComp/MIPS/ROMContent.mif Line: 1
+    Warning (113027): Addresses ranging from 18 to 30 are not initialized File: C:/DesComp/MIPS/ROMContent.mif Line: 1
+    Warning (113027): Addresses ranging from 32 to 63 are not initialized File: C:/DesComp/MIPS/ROMContent.mif Line: 1
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[12]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[11]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[10]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[9]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[8]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[7]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[6]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[5]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[4]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[3]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[2]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[1]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[0]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[13]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[14]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[15]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[16]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[17]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[18]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[19]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[20]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[21]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[22]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[23]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[24]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[25]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[26]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[27]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[28]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[29]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[30]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
-    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[31]" feeding internal logic into a wire File: /home/joao/descomp_oficial/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[12]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[11]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[10]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[9]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[8]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[7]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[6]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[5]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[4]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[3]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[2]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[1]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[0]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[13]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[14]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[15]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[16]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[17]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[18]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[19]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[20]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[21]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[22]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[23]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[24]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[25]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[26]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[27]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[28]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[29]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[30]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
+    Warning (13049): Converted tri-state buffer "RAMMIPS:ram|Dado_out[31]" feeding internal logic into a wire File: C:/DesComp/MIPS/RAMMIPS.vhd Line: 13
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 14
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 14
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/DesComp/MIPS/MIPS.vhd Line: 14
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/DesComp/MIPS/MIPS.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 13 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 9
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/joao/descomp_oficial/DesComp/MIPS/MIPS.vhd Line: 10
-Info (21057): Implemented 4640 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/DesComp/MIPS/MIPS.vhd Line: 8
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/DesComp/MIPS/MIPS.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/DesComp/MIPS/MIPS.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/DesComp/MIPS/MIPS.vhd Line: 9
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
+Info (21057): Implemented 4641 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 4573 logic cells
+    Info (21061): Implemented 4574 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 490 megabytes
-    Info: Processing ended: Sat Dec  3 18:00:49 2022
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Sat Dec 03 18:27:55 2022
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:49
 
 
