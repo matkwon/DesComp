@@ -16,58 +16,122 @@ SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
-LEDR[0] <= muxgenerico2x1:mux_display.saida_MUX[24]
-LEDR[1] <= muxgenerico2x1:mux_display.saida_MUX[25]
-LEDR[2] <= muxgenerico2x1:mux_display.saida_MUX[26]
-LEDR[3] <= muxgenerico2x1:mux_display.saida_MUX[27]
-LEDR[4] <= muxgenerico2x1:mux_display.saida_MUX[28]
-LEDR[5] <= muxgenerico2x1:mux_display.saida_MUX[29]
-LEDR[6] <= muxgenerico2x1:mux_display.saida_MUX[30]
-LEDR[7] <= muxgenerico2x1:mux_display.saida_MUX[31]
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
-HEX0[0] <= conversorhex7seg:DispHex0.saida7seg[0]
-HEX0[1] <= conversorhex7seg:DispHex0.saida7seg[1]
-HEX0[2] <= conversorhex7seg:DispHex0.saida7seg[2]
-HEX0[3] <= conversorhex7seg:DispHex0.saida7seg[3]
-HEX0[4] <= conversorhex7seg:DispHex0.saida7seg[4]
-HEX0[5] <= conversorhex7seg:DispHex0.saida7seg[5]
-HEX0[6] <= conversorhex7seg:DispHex0.saida7seg[6]
-HEX1[0] <= conversorhex7seg:DispHex1.saida7seg[0]
-HEX1[1] <= conversorhex7seg:DispHex1.saida7seg[1]
-HEX1[2] <= conversorhex7seg:DispHex1.saida7seg[2]
-HEX1[3] <= conversorhex7seg:DispHex1.saida7seg[3]
-HEX1[4] <= conversorhex7seg:DispHex1.saida7seg[4]
-HEX1[5] <= conversorhex7seg:DispHex1.saida7seg[5]
-HEX1[6] <= conversorhex7seg:DispHex1.saida7seg[6]
-HEX2[0] <= conversorhex7seg:DispHex2.saida7seg[0]
-HEX2[1] <= conversorhex7seg:DispHex2.saida7seg[1]
-HEX2[2] <= conversorhex7seg:DispHex2.saida7seg[2]
-HEX2[3] <= conversorhex7seg:DispHex2.saida7seg[3]
-HEX2[4] <= conversorhex7seg:DispHex2.saida7seg[4]
-HEX2[5] <= conversorhex7seg:DispHex2.saida7seg[5]
-HEX2[6] <= conversorhex7seg:DispHex2.saida7seg[6]
-HEX3[0] <= conversorhex7seg:DispHex3.saida7seg[0]
-HEX3[1] <= conversorhex7seg:DispHex3.saida7seg[1]
-HEX3[2] <= conversorhex7seg:DispHex3.saida7seg[2]
-HEX3[3] <= conversorhex7seg:DispHex3.saida7seg[3]
-HEX3[4] <= conversorhex7seg:DispHex3.saida7seg[4]
-HEX3[5] <= conversorhex7seg:DispHex3.saida7seg[5]
-HEX3[6] <= conversorhex7seg:DispHex3.saida7seg[6]
-HEX4[0] <= conversorhex7seg:DispHex4.saida7seg[0]
-HEX4[1] <= conversorhex7seg:DispHex4.saida7seg[1]
-HEX4[2] <= conversorhex7seg:DispHex4.saida7seg[2]
-HEX4[3] <= conversorhex7seg:DispHex4.saida7seg[3]
-HEX4[4] <= conversorhex7seg:DispHex4.saida7seg[4]
-HEX4[5] <= conversorhex7seg:DispHex4.saida7seg[5]
-HEX4[6] <= conversorhex7seg:DispHex4.saida7seg[6]
-HEX5[0] <= conversorhex7seg:DispHex5.saida7seg[0]
-HEX5[1] <= conversorhex7seg:DispHex5.saida7seg[1]
-HEX5[2] <= conversorhex7seg:DispHex5.saida7seg[2]
-HEX5[3] <= conversorhex7seg:DispHex5.saida7seg[3]
-HEX5[4] <= conversorhex7seg:DispHex5.saida7seg[4]
-HEX5[5] <= conversorhex7seg:DispHex5.saida7seg[5]
-HEX5[6] <= conversorhex7seg:DispHex5.saida7seg[6]
+pc_out[0] << registradorgenerico:program_counter.DOUT[0]
+pc_out[1] << registradorgenerico:program_counter.DOUT[1]
+pc_out[2] << registradorgenerico:program_counter.DOUT[2]
+pc_out[3] << registradorgenerico:program_counter.DOUT[3]
+pc_out[4] << registradorgenerico:program_counter.DOUT[4]
+pc_out[5] << registradorgenerico:program_counter.DOUT[5]
+pc_out[6] << registradorgenerico:program_counter.DOUT[6]
+pc_out[7] << registradorgenerico:program_counter.DOUT[7]
+pc_out[8] << registradorgenerico:program_counter.DOUT[8]
+pc_out[9] << registradorgenerico:program_counter.DOUT[9]
+pc_out[10] << registradorgenerico:program_counter.DOUT[10]
+pc_out[11] << registradorgenerico:program_counter.DOUT[11]
+pc_out[12] << registradorgenerico:program_counter.DOUT[12]
+pc_out[13] << registradorgenerico:program_counter.DOUT[13]
+pc_out[14] << registradorgenerico:program_counter.DOUT[14]
+pc_out[15] << registradorgenerico:program_counter.DOUT[15]
+pc_out[16] << registradorgenerico:program_counter.DOUT[16]
+pc_out[17] << registradorgenerico:program_counter.DOUT[17]
+pc_out[18] << registradorgenerico:program_counter.DOUT[18]
+pc_out[19] << registradorgenerico:program_counter.DOUT[19]
+pc_out[20] << registradorgenerico:program_counter.DOUT[20]
+pc_out[21] << registradorgenerico:program_counter.DOUT[21]
+pc_out[22] << registradorgenerico:program_counter.DOUT[22]
+pc_out[23] << registradorgenerico:program_counter.DOUT[23]
+pc_out[24] << registradorgenerico:program_counter.DOUT[24]
+pc_out[25] << registradorgenerico:program_counter.DOUT[25]
+pc_out[26] << registradorgenerico:program_counter.DOUT[26]
+pc_out[27] << registradorgenerico:program_counter.DOUT[27]
+pc_out[28] << registradorgenerico:program_counter.DOUT[28]
+pc_out[29] << registradorgenerico:program_counter.DOUT[29]
+pc_out[30] << registradorgenerico:program_counter.DOUT[30]
+pc_out[31] << registradorgenerico:program_counter.DOUT[31]
+ula_out[0] << ula:ula.resultado[0]
+ula_out[1] << ula:ula.resultado[1]
+ula_out[2] << ula:ula.resultado[2]
+ula_out[3] << ula:ula.resultado[3]
+ula_out[4] << ula:ula.resultado[4]
+ula_out[5] << ula:ula.resultado[5]
+ula_out[6] << ula:ula.resultado[6]
+ula_out[7] << ula:ula.resultado[7]
+ula_out[8] << ula:ula.resultado[8]
+ula_out[9] << ula:ula.resultado[9]
+ula_out[10] << ula:ula.resultado[10]
+ula_out[11] << ula:ula.resultado[11]
+ula_out[12] << ula:ula.resultado[12]
+ula_out[13] << ula:ula.resultado[13]
+ula_out[14] << ula:ula.resultado[14]
+ula_out[15] << ula:ula.resultado[15]
+ula_out[16] << ula:ula.resultado[16]
+ula_out[17] << ula:ula.resultado[17]
+ula_out[18] << ula:ula.resultado[18]
+ula_out[19] << ula:ula.resultado[19]
+ula_out[20] << ula:ula.resultado[20]
+ula_out[21] << ula:ula.resultado[21]
+ula_out[22] << ula:ula.resultado[22]
+ula_out[23] << ula:ula.resultado[23]
+ula_out[24] << ula:ula.resultado[24]
+ula_out[25] << ula:ula.resultado[25]
+ula_out[26] << ula:ula.resultado[26]
+ula_out[27] << ula:ula.resultado[27]
+ula_out[28] << ula:ula.resultado[28]
+ula_out[29] << ula:ula.resultado[29]
+ula_out[30] << ula:ula.resultado[30]
+ula_out[31] << ula:ula.resultado[31]
+LEDR[0] << muxgenerico2x1:mux_display.saida_MUX[24]
+LEDR[1] << muxgenerico2x1:mux_display.saida_MUX[25]
+LEDR[2] << muxgenerico2x1:mux_display.saida_MUX[26]
+LEDR[3] << muxgenerico2x1:mux_display.saida_MUX[27]
+LEDR[4] << muxgenerico2x1:mux_display.saida_MUX[28]
+LEDR[5] << muxgenerico2x1:mux_display.saida_MUX[29]
+LEDR[6] << muxgenerico2x1:mux_display.saida_MUX[30]
+LEDR[7] << muxgenerico2x1:mux_display.saida_MUX[31]
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+HEX0[0] << conversorhex7seg:DispHex0.saida7seg[0]
+HEX0[1] << conversorhex7seg:DispHex0.saida7seg[1]
+HEX0[2] << conversorhex7seg:DispHex0.saida7seg[2]
+HEX0[3] << conversorhex7seg:DispHex0.saida7seg[3]
+HEX0[4] << conversorhex7seg:DispHex0.saida7seg[4]
+HEX0[5] << conversorhex7seg:DispHex0.saida7seg[5]
+HEX0[6] << conversorhex7seg:DispHex0.saida7seg[6]
+HEX1[0] << conversorhex7seg:DispHex1.saida7seg[0]
+HEX1[1] << conversorhex7seg:DispHex1.saida7seg[1]
+HEX1[2] << conversorhex7seg:DispHex1.saida7seg[2]
+HEX1[3] << conversorhex7seg:DispHex1.saida7seg[3]
+HEX1[4] << conversorhex7seg:DispHex1.saida7seg[4]
+HEX1[5] << conversorhex7seg:DispHex1.saida7seg[5]
+HEX1[6] << conversorhex7seg:DispHex1.saida7seg[6]
+HEX2[0] << conversorhex7seg:DispHex2.saida7seg[0]
+HEX2[1] << conversorhex7seg:DispHex2.saida7seg[1]
+HEX2[2] << conversorhex7seg:DispHex2.saida7seg[2]
+HEX2[3] << conversorhex7seg:DispHex2.saida7seg[3]
+HEX2[4] << conversorhex7seg:DispHex2.saida7seg[4]
+HEX2[5] << conversorhex7seg:DispHex2.saida7seg[5]
+HEX2[6] << conversorhex7seg:DispHex2.saida7seg[6]
+HEX3[0] << conversorhex7seg:DispHex3.saida7seg[0]
+HEX3[1] << conversorhex7seg:DispHex3.saida7seg[1]
+HEX3[2] << conversorhex7seg:DispHex3.saida7seg[2]
+HEX3[3] << conversorhex7seg:DispHex3.saida7seg[3]
+HEX3[4] << conversorhex7seg:DispHex3.saida7seg[4]
+HEX3[5] << conversorhex7seg:DispHex3.saida7seg[5]
+HEX3[6] << conversorhex7seg:DispHex3.saida7seg[6]
+HEX4[0] << conversorhex7seg:DispHex4.saida7seg[0]
+HEX4[1] << conversorhex7seg:DispHex4.saida7seg[1]
+HEX4[2] << conversorhex7seg:DispHex4.saida7seg[2]
+HEX4[3] << conversorhex7seg:DispHex4.saida7seg[3]
+HEX4[4] << conversorhex7seg:DispHex4.saida7seg[4]
+HEX4[5] << conversorhex7seg:DispHex4.saida7seg[5]
+HEX4[6] << conversorhex7seg:DispHex4.saida7seg[6]
+HEX5[0] << conversorhex7seg:DispHex5.saida7seg[0]
+HEX5[1] << conversorhex7seg:DispHex5.saida7seg[1]
+HEX5[2] << conversorhex7seg:DispHex5.saida7seg[2]
+HEX5[3] << conversorhex7seg:DispHex5.saida7seg[3]
+HEX5[4] << conversorhex7seg:DispHex5.saida7seg[4]
+HEX5[5] << conversorhex7seg:DispHex5.saida7seg[5]
+HEX5[6] << conversorhex7seg:DispHex5.saida7seg[6]
 
 
 |MIPS|decoderInstru:decoder_instru
@@ -80,10 +144,11 @@ opcode[0] => Equal6.IN3
 opcode[0] => Equal7.IN5
 opcode[0] => Equal8.IN5
 opcode[0] => Equal9.IN5
-opcode[0] => Equal10.IN4
-opcode[0] => Equal11.IN5
+opcode[0] => Equal10.IN5
+opcode[0] => Equal11.IN4
 opcode[0] => Equal12.IN5
 opcode[0] => Equal13.IN5
+opcode[0] => Equal14.IN5
 opcode[1] => Equal1.IN5
 opcode[1] => Equal2.IN4
 opcode[1] => Equal3.IN3
@@ -93,36 +158,39 @@ opcode[1] => Equal6.IN5
 opcode[1] => Equal7.IN4
 opcode[1] => Equal8.IN4
 opcode[1] => Equal9.IN4
-opcode[1] => Equal10.IN3
+opcode[1] => Equal10.IN4
 opcode[1] => Equal11.IN3
-opcode[1] => Equal12.IN4
+opcode[1] => Equal12.IN3
 opcode[1] => Equal13.IN4
+opcode[1] => Equal14.IN4
 opcode[2] => Equal1.IN3
 opcode[2] => Equal2.IN3
 opcode[2] => Equal3.IN2
 opcode[2] => Equal4.IN5
 opcode[2] => Equal5.IN4
 opcode[2] => Equal6.IN2
-opcode[2] => Equal7.IN3
+opcode[2] => Equal7.IN2
 opcode[2] => Equal8.IN3
 opcode[2] => Equal9.IN3
-opcode[2] => Equal10.IN5
-opcode[2] => Equal11.IN4
-opcode[2] => Equal12.IN2
-opcode[2] => Equal13.IN1
+opcode[2] => Equal10.IN3
+opcode[2] => Equal11.IN5
+opcode[2] => Equal12.IN4
+opcode[2] => Equal13.IN2
+opcode[2] => Equal14.IN1
 opcode[3] => Equal1.IN2
 opcode[3] => Equal2.IN2
 opcode[3] => Equal3.IN5
 opcode[3] => Equal4.IN4
 opcode[3] => Equal5.IN3
 opcode[3] => Equal6.IN4
-opcode[3] => Equal7.IN2
+opcode[3] => Equal7.IN3
 opcode[3] => Equal8.IN2
 opcode[3] => Equal9.IN2
 opcode[3] => Equal10.IN2
 opcode[3] => Equal11.IN2
-opcode[3] => Equal12.IN1
-opcode[3] => Equal13.IN3
+opcode[3] => Equal12.IN2
+opcode[3] => Equal13.IN1
+opcode[3] => Equal14.IN3
 opcode[4] => Equal1.IN1
 opcode[4] => Equal2.IN1
 opcode[4] => Equal3.IN1
@@ -134,8 +202,9 @@ opcode[4] => Equal8.IN1
 opcode[4] => Equal9.IN1
 opcode[4] => Equal10.IN1
 opcode[4] => Equal11.IN1
-opcode[4] => Equal12.IN0
+opcode[4] => Equal12.IN1
 opcode[4] => Equal13.IN0
+opcode[4] => Equal14.IN0
 opcode[5] => Equal1.IN0
 opcode[5] => Equal2.IN0
 opcode[5] => Equal3.IN0
@@ -147,8 +216,9 @@ opcode[5] => Equal8.IN0
 opcode[5] => Equal9.IN0
 opcode[5] => Equal10.IN0
 opcode[5] => Equal11.IN0
-opcode[5] => Equal12.IN3
-opcode[5] => Equal13.IN2
+opcode[5] => Equal12.IN0
+opcode[5] => Equal13.IN3
+opcode[5] => Equal14.IN2
 funct[0] => Equal0.IN4
 funct[1] => Equal0.IN3
 funct[2] => Equal0.IN2
@@ -162,13 +232,13 @@ saida[3] <= selMuxRtRd.DB_MAX_OUTPUT_PORT_TYPE
 saida[4] <= ORIANDI.DB_MAX_OUTPUT_PORT_TYPE
 saida[5] <= habEscritaReg.DB_MAX_OUTPUT_PORT_TYPE
 saida[6] <= selMuxRtIm.DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= Equal8.DB_MAX_OUTPUT_PORT_TYPE
 saida[8] <= selMuxUlaMem.DB_MAX_OUTPUT_PORT_TYPE
 saida[9] <= selMuxUlaMem.DB_MAX_OUTPUT_PORT_TYPE
-saida[10] <= Equal10.DB_MAX_OUTPUT_PORT_TYPE
-saida[11] <= Equal11.DB_MAX_OUTPUT_PORT_TYPE
-saida[12] <= Equal12.DB_MAX_OUTPUT_PORT_TYPE
-saida[13] <= Equal13.DB_MAX_OUTPUT_PORT_TYPE
+saida[10] <= Equal11.DB_MAX_OUTPUT_PORT_TYPE
+saida[11] <= Equal12.DB_MAX_OUTPUT_PORT_TYPE
+saida[12] <= Equal13.DB_MAX_OUTPUT_PORT_TYPE
+saida[13] <= Equal14.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS|somaConstante:pc_inc_4
@@ -469,78 +539,94 @@ Dado[31] <= memROM.DATAOUT31
 
 
 |MIPS|ULActrl:ULActrl
-opcode[0] => Equal0.IN5
-opcode[0] => Equal1.IN5
-opcode[0] => Equal2.IN5
-opcode[0] => Equal3.IN4
-opcode[0] => Equal4.IN4
-opcode[0] => Equal5.IN5
-opcode[0] => Equal6.IN3
-opcode[1] => Equal0.IN2
-opcode[1] => Equal1.IN4
-opcode[1] => Equal2.IN4
-opcode[1] => Equal3.IN3
-opcode[1] => Equal4.IN3
-opcode[1] => Equal5.IN3
-opcode[1] => Equal6.IN5
-opcode[2] => Equal0.IN4
-opcode[2] => Equal1.IN2
-opcode[2] => Equal2.IN1
-opcode[2] => Equal3.IN2
-opcode[2] => Equal4.IN5
-opcode[2] => Equal5.IN4
-opcode[2] => Equal6.IN2
-opcode[3] => Equal0.IN3
-opcode[3] => Equal1.IN1
-opcode[3] => Equal2.IN3
-opcode[3] => Equal3.IN5
-opcode[3] => Equal4.IN2
-opcode[3] => Equal5.IN2
-opcode[3] => Equal6.IN4
-opcode[4] => Equal0.IN1
-opcode[4] => Equal1.IN0
-opcode[4] => Equal2.IN0
-opcode[4] => Equal3.IN1
-opcode[4] => Equal4.IN1
-opcode[4] => Equal5.IN1
-opcode[4] => Equal6.IN1
-opcode[5] => Equal0.IN0
-opcode[5] => Equal1.IN3
-opcode[5] => Equal2.IN2
-opcode[5] => Equal3.IN0
-opcode[5] => Equal4.IN0
-opcode[5] => Equal5.IN0
-opcode[5] => Equal6.IN0
-funct[0] => Equal7.IN5
-funct[0] => Equal8.IN4
-funct[0] => Equal9.IN3
-funct[0] => Equal10.IN2
-funct[1] => Equal7.IN2
-funct[1] => Equal8.IN3
-funct[1] => Equal9.IN5
-funct[1] => Equal10.IN5
-funct[2] => Equal7.IN4
-funct[2] => Equal8.IN2
-funct[2] => Equal9.IN2
-funct[2] => Equal10.IN1
-funct[3] => Equal7.IN1
-funct[3] => Equal8.IN1
-funct[3] => Equal9.IN1
-funct[3] => Equal10.IN4
-funct[4] => Equal7.IN0
-funct[4] => Equal8.IN0
-funct[4] => Equal9.IN0
-funct[4] => Equal10.IN0
-funct[5] => Equal7.IN3
-funct[5] => Equal8.IN5
-funct[5] => Equal9.IN4
-funct[5] => Equal10.IN3
+opcode[0] => Equal0.IN2
+opcode[0] => Equal1.IN2
+opcode[0] => Equal2.IN3
+opcode[0] => Equal3.IN5
+opcode[0] => Equal4.IN5
+opcode[0] => Equal5.IN1
+opcode[0] => Equal6.IN5
+opcode[0] => Equal7.IN2
+opcode[1] => Equal0.IN5
+opcode[1] => Equal1.IN1
+opcode[1] => Equal2.IN2
+opcode[1] => Equal3.IN4
+opcode[1] => Equal4.IN4
+opcode[1] => Equal5.IN5
+opcode[1] => Equal6.IN1
+opcode[1] => Equal7.IN1
+opcode[2] => Equal0.IN1
+opcode[2] => Equal1.IN5
+opcode[2] => Equal2.IN5
+opcode[2] => Equal3.IN3
+opcode[2] => Equal4.IN0
+opcode[2] => Equal5.IN0
+opcode[2] => Equal6.IN4
+opcode[2] => Equal7.IN5
+opcode[3] => Equal0.IN0
+opcode[3] => Equal1.IN4
+opcode[3] => Equal2.IN1
+opcode[3] => Equal3.IN0
+opcode[3] => Equal4.IN3
+opcode[3] => Equal5.IN4
+opcode[3] => Equal6.IN0
+opcode[3] => Equal7.IN0
+opcode[4] => Equal0.IN4
+opcode[4] => Equal1.IN3
+opcode[4] => Equal2.IN4
+opcode[4] => Equal3.IN2
+opcode[4] => Equal4.IN2
+opcode[4] => Equal5.IN3
+opcode[4] => Equal6.IN3
+opcode[4] => Equal7.IN4
+opcode[5] => Equal0.IN3
+opcode[5] => Equal1.IN0
+opcode[5] => Equal2.IN0
+opcode[5] => Equal3.IN1
+opcode[5] => Equal4.IN1
+opcode[5] => Equal5.IN2
+opcode[5] => Equal6.IN2
+opcode[5] => Equal7.IN3
+funct[0] => Equal8.IN2
+funct[0] => Equal9.IN5
+funct[0] => Equal10.IN5
+funct[0] => Equal11.IN5
+funct[0] => Equal12.IN3
+funct[1] => Equal8.IN5
+funct[1] => Equal9.IN4
+funct[1] => Equal10.IN1
+funct[1] => Equal11.IN2
+funct[1] => Equal12.IN2
+funct[2] => Equal8.IN1
+funct[2] => Equal9.IN3
+funct[2] => Equal10.IN4
+funct[2] => Equal11.IN4
+funct[2] => Equal12.IN1
+funct[3] => Equal8.IN4
+funct[3] => Equal9.IN2
+funct[3] => Equal10.IN3
+funct[3] => Equal11.IN1
+funct[3] => Equal12.IN5
+funct[4] => Equal8.IN3
+funct[4] => Equal9.IN1
+funct[4] => Equal10.IN2
+funct[4] => Equal11.IN3
+funct[4] => Equal12.IN4
+funct[5] => Equal8.IN0
+funct[5] => Equal9.IN0
+funct[5] => Equal10.IN0
+funct[5] => Equal11.IN0
+funct[5] => Equal12.IN0
+tipoR => saida.OUTPUTSELECT
+tipoR => saida.OUTPUTSELECT
 tipoR => saida.OUTPUTSELECT
 tipoR => saida.OUTPUTSELECT
 tipoR => saida.OUTPUTSELECT
 saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS|ULA:ula
@@ -608,6 +694,38 @@ B[28] => ula1bit:ULA28.B
 B[29] => ula1bit:ULA29.B
 B[30] => ula1bit:ULA30.B
 B[31] => ulalastbit:ULA31.B
+inverte_A => ula1bit:ULA0.inverte_A
+inverte_A => ula1bit:ULA1.inverte_A
+inverte_A => ula1bit:ULA2.inverte_A
+inverte_A => ula1bit:ULA3.inverte_A
+inverte_A => ula1bit:ULA4.inverte_A
+inverte_A => ula1bit:ULA5.inverte_A
+inverte_A => ula1bit:ULA6.inverte_A
+inverte_A => ula1bit:ULA7.inverte_A
+inverte_A => ula1bit:ULA8.inverte_A
+inverte_A => ula1bit:ULA9.inverte_A
+inverte_A => ula1bit:ULA10.inverte_A
+inverte_A => ula1bit:ULA11.inverte_A
+inverte_A => ula1bit:ULA12.inverte_A
+inverte_A => ula1bit:ULA13.inverte_A
+inverte_A => ula1bit:ULA14.inverte_A
+inverte_A => ula1bit:ULA15.inverte_A
+inverte_A => ula1bit:ULA16.inverte_A
+inverte_A => ula1bit:ULA17.inverte_A
+inverte_A => ula1bit:ULA18.inverte_A
+inverte_A => ula1bit:ULA19.inverte_A
+inverte_A => ula1bit:ULA20.inverte_A
+inverte_A => ula1bit:ULA21.inverte_A
+inverte_A => ula1bit:ULA22.inverte_A
+inverte_A => ula1bit:ULA23.inverte_A
+inverte_A => ula1bit:ULA24.inverte_A
+inverte_A => ula1bit:ULA25.inverte_A
+inverte_A => ula1bit:ULA26.inverte_A
+inverte_A => ula1bit:ULA27.inverte_A
+inverte_A => ula1bit:ULA28.inverte_A
+inverte_A => ula1bit:ULA29.inverte_A
+inverte_A => ula1bit:ULA30.inverte_A
+inverte_A => ulalastbit:ULA31.inverte_A
 inverte_B => ula1bit:ULA0.carry_in
 inverte_B => ula1bit:ULA0.inverte_B
 inverte_B => ula1bit:ULA1.inverte_B
@@ -641,6 +759,7 @@ inverte_B => ula1bit:ULA28.inverte_B
 inverte_B => ula1bit:ULA29.inverte_B
 inverte_B => ula1bit:ULA30.inverte_B
 inverte_B => ulalastbit:ULA31.inverte_B
+sel_slt => mux2x1:MUX_SLT.seletor_MUX
 sel[0] => ula1bit:ULA0.sel[0]
 sel[0] => ula1bit:ULA1.sel[0]
 sel[0] => ula1bit:ULA2.sel[0]
@@ -743,13 +862,13 @@ overflow <= ulalastbit:ULA31.overflow
 
 |MIPS|ULA:ula|ULA1Bit:ULA0
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -770,7 +889,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA0|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -790,13 +916,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA1
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -817,7 +943,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA1|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA1|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA1|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -837,13 +970,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA2
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -864,7 +997,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA2|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA2|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA2|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -884,13 +1024,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA3
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -911,7 +1051,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA3|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA3|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA3|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -931,13 +1078,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA4
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -958,7 +1105,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA4|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA4|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA4|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -978,13 +1132,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA5
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1005,7 +1159,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA5|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA5|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA5|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1025,13 +1186,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA6
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1052,7 +1213,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA6|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA6|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA6|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1072,13 +1240,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA7
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1099,7 +1267,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA7|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA7|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA7|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1119,13 +1294,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA8
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1146,7 +1321,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA8|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA8|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA8|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1166,13 +1348,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA9
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1193,7 +1375,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA9|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA9|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA9|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1213,13 +1402,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA10
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1240,7 +1429,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA10|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA10|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA10|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1260,13 +1456,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA11
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1287,7 +1483,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA11|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA11|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA11|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1307,13 +1510,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA12
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1334,7 +1537,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA12|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA12|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA12|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1354,13 +1564,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA13
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1381,7 +1591,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA13|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA13|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA13|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1401,13 +1618,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA14
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1428,7 +1645,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA14|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA14|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA14|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1448,13 +1672,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA15
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1475,7 +1699,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA15|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA15|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA15|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1495,13 +1726,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA16
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1522,7 +1753,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA16|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA16|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA16|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1542,13 +1780,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA17
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1569,7 +1807,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA17|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA17|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA17|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1589,13 +1834,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA18
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1616,7 +1861,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA18|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA18|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA18|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1636,13 +1888,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA19
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1663,7 +1915,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA19|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA19|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA19|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1683,13 +1942,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA20
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1710,7 +1969,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA20|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA20|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA20|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1730,13 +1996,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA21
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1757,7 +2023,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA21|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA21|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA21|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1777,13 +2050,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA22
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1804,7 +2077,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA22|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA22|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA22|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1824,13 +2104,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA23
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1851,7 +2131,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA23|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA23|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA23|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1871,13 +2158,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA24
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1898,7 +2185,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA24|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA24|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA24|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1918,13 +2212,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA25
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1945,7 +2239,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA25|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA25|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA25|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -1965,13 +2266,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA26
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -1992,7 +2293,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA26|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA26|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA26|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -2012,13 +2320,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA27
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -2039,7 +2347,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA27|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA27|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA27|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -2059,13 +2374,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA28
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -2086,7 +2401,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA28|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA28|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA28|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -2106,13 +2428,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA29
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -2133,7 +2455,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA29|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA29|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA29|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -2153,13 +2482,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 
 |MIPS|ULA:ula|ULA1Bit:ULA30
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -2180,7 +2509,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULA1Bit:ULA30|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULA1Bit:ULA30|mux2x1:mux_inversorA
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULA1Bit:ULA30|mux2x1:mux_inversorB
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -2201,13 +2537,13 @@ carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
 |MIPS|ULA:ula|ULALastBit:ULA31
 carry_in => sig_overflow.IN1
 carry_in => fulladder:somador.carry_in
-A => sig_and.IN1
-A => sig_or.IN1
-A => fulladder:somador.A
-B => mux2x1:mux_inversor.entradaA_MUX
-B => mux2x1:mux_inversor.entradaB_MUX
+A => mux2x1:mux_inversorA.entradaA_MUX
+A => mux2x1:mux_inversorA.entradaB_MUX
+B => mux2x1:mux_inversorB.entradaA_MUX
+B => mux2x1:mux_inversorB.entradaB_MUX
 slt => mux4x1:mux_seletor.entradaD_MUX
-inverte_B => mux2x1:mux_inversor.seletor_MUX
+inverte_A => mux2x1:mux_inversorA.seletor_MUX
+inverte_B => mux2x1:mux_inversorB.seletor_MUX
 sel[0] => mux4x1:mux_seletor.seletor_MUX[0]
 sel[1] => mux4x1:mux_seletor.seletor_MUX[1]
 resultado <= mux4x1:mux_seletor.saida_MUX
@@ -2230,7 +2566,14 @@ seletor_MUX[1] => Equal2.IN0
 saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MIPS|ULA:ula|ULALastBit:ULA31|mux2x1:mux_inversor
+|MIPS|ULA:ula|ULALastBit:ULA31|mux2x1:mux_inversorB
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|ULALastBit:ULA31|mux2x1:mux_inversorA
 entradaA_MUX => saida_MUX.DATAA
 entradaB_MUX => saida_MUX.DATAB
 seletor_MUX => saida_MUX.OUTPUTSELECT
@@ -2246,6 +2589,13 @@ B => soma.IN1
 B => carry_out.IN1
 soma <= soma.DB_MAX_OUTPUT_PORT_TYPE
 carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|ULA:ula|mux2x1:MUX_SLT
+entradaA_MUX => saida_MUX.DATAA
+entradaB_MUX => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |MIPS|bancoReg:banco_reg

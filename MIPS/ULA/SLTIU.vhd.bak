@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SLTIU is port (
+	carry_in, B: in std_logic;
+	resultado: out std_logic
+);
+end entity;
+
+architecture comportamento of SLTIU is   
+	begin
+        resultado <= (carry_in xor B) xor ((carry_in and B) xor carry_in);
+end architecture;

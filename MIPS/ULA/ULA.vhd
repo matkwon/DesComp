@@ -6,7 +6,7 @@ entity ULA is
     generic ( larguraDados : natural := 32 );
     port (
 		A, B 							: in std_logic_vector(larguraDados-1 downto 0);
-		inverte_B 					: in std_logic;
+		inverte_A, inverte_B, sel_slt 	: in std_logic;
 		sel	 						: in std_logic_vector(1 downto 0);
 		resultado 					: out std_logic_vector(larguraDados-1 downto 0);
 		zero, overflow 			: out std_logic
@@ -14,17 +14,19 @@ entity ULA is
 end entity;
 
 architecture comportamento of ULA is
-   signal 	carry0, carry1, carry2, carry3, carry4, carry5, carry6, carry7, carry8,
+   signal carry0, carry1, carry2, carry3, carry4, carry5, carry6, carry7, carry8,
 	carry9, carry10, carry11, carry12, carry13, carry14, carry15, carry16, carry17,
 	carry18, carry19, carry20, carry21, carry22, carry23, carry24, carry25, carry26,
-	carry27, carry28, carry29, carry30, carry_out, slt_in: std_logic;
+	carry27, carry28, carry29, carry30, carry_out, slt_in, slt, sltiu: std_logic;
    
 	begin
+	
 		ULA0: entity work.ULA1Bit port map (
 			A => A(0),
 			B => B(0),
 			carry_in => inverte_B,
 			carry_out => carry0,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => slt_in,
@@ -36,6 +38,7 @@ architecture comportamento of ULA is
 			B => B(1),
 			carry_in => carry0,
 			carry_out => carry1,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -47,6 +50,7 @@ architecture comportamento of ULA is
 			B => B(2),
 			carry_in => carry1,
 			carry_out => carry2,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -58,6 +62,7 @@ architecture comportamento of ULA is
 			B => B(3),
 			carry_in => carry2,
 			carry_out => carry3,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -69,6 +74,7 @@ architecture comportamento of ULA is
 			B => B(4),
 			carry_in => carry3,
 			carry_out => carry4,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -80,6 +86,7 @@ architecture comportamento of ULA is
 			B => B(5),
 			carry_in => carry4,
 			carry_out => carry5,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -91,6 +98,7 @@ architecture comportamento of ULA is
 			B => B(6),
 			carry_in => carry5,
 			carry_out => carry6,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -102,6 +110,7 @@ architecture comportamento of ULA is
 			B => B(7),
 			carry_in => carry6,
 			carry_out => carry7,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -113,6 +122,7 @@ architecture comportamento of ULA is
 			B => B(8),
 			carry_in => carry7,
 			carry_out => carry8,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -124,6 +134,7 @@ architecture comportamento of ULA is
 			B => B(9),
 			carry_in => carry8,
 			carry_out => carry9,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -135,6 +146,7 @@ architecture comportamento of ULA is
 			B => B(10),
 			carry_in => carry9,
 			carry_out => carry10,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -146,6 +158,7 @@ architecture comportamento of ULA is
 			B => B(11),
 			carry_in => carry10,
 			carry_out => carry11,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -157,6 +170,7 @@ architecture comportamento of ULA is
 			B => B(12),
 			carry_in => carry11,
 			carry_out => carry12,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -168,6 +182,7 @@ architecture comportamento of ULA is
 			B => B(13),
 			carry_in => carry12,
 			carry_out => carry13,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -179,6 +194,7 @@ architecture comportamento of ULA is
 			B => B(14),
 			carry_in => carry13,
 			carry_out => carry14,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -190,6 +206,7 @@ architecture comportamento of ULA is
 			B => B(15),
 			carry_in => carry14,
 			carry_out => carry15,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -201,6 +218,7 @@ architecture comportamento of ULA is
 			B => B(16),
 			carry_in => carry15,
 			carry_out => carry16,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -212,6 +230,7 @@ architecture comportamento of ULA is
 			B => B(17),
 			carry_in => carry16,
 			carry_out => carry17,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -223,6 +242,7 @@ architecture comportamento of ULA is
 			B => B(18),
 			carry_in => carry17,
 			carry_out => carry18,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -234,6 +254,7 @@ architecture comportamento of ULA is
 			B => B(19),
 			carry_in => carry18,
 			carry_out => carry19,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -245,6 +266,7 @@ architecture comportamento of ULA is
 			B => B(20),
 			carry_in => carry19,
 			carry_out => carry20,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -256,6 +278,7 @@ architecture comportamento of ULA is
 			B => B(21),
 			carry_in => carry20,
 			carry_out => carry21,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -267,6 +290,7 @@ architecture comportamento of ULA is
 			B => B(22),
 			carry_in => carry21,
 			carry_out => carry22,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -278,6 +302,7 @@ architecture comportamento of ULA is
 			B => B(23),
 			carry_in => carry22,
 			carry_out => carry23,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -289,6 +314,7 @@ architecture comportamento of ULA is
 			B => B(24),
 			carry_in => carry23,
 			carry_out => carry24,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -300,6 +326,7 @@ architecture comportamento of ULA is
 			B => B(25),
 			carry_in => carry24,
 			carry_out => carry25,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -311,6 +338,7 @@ architecture comportamento of ULA is
 			B => B(26),
 			carry_in => carry25,
 			carry_out => carry26,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -322,6 +350,7 @@ architecture comportamento of ULA is
 			B => B(27),
 			carry_in => carry26,
 			carry_out => carry27,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -333,6 +362,7 @@ architecture comportamento of ULA is
 			B => B(28),
 			carry_in => carry27,
 			carry_out => carry28,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -344,6 +374,7 @@ architecture comportamento of ULA is
 			B => B(29),
 			carry_in => carry28,
 			carry_out => carry29,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -355,6 +386,7 @@ architecture comportamento of ULA is
 			B => B(30),
 			carry_in => carry29,
 			carry_out => carry30,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
@@ -366,13 +398,18 @@ architecture comportamento of ULA is
 			B => B(31),
 			carry_in => carry30,
 			carry_out => carry_out,
+			inverte_A => inverte_A,
 			inverte_B => inverte_B,
 			sel => sel,
 			slt => '0',
 			resultado => resultado(31),
 			overflow => overflow,
-			slt_in => slt_in
+			slt_in => slt
 		);
+		
+		sltiu <= not carry_out;
+
+		MUX_SLT: entity work.mux2x1 port map (entradaA_MUX => slt, entradaB_MUX => sltiu, seletor_MUX => sel_slt, saida_MUX => slt_in);
 		
 		zero <= not (resultado(0)  or resultado(1)  or resultado(2)  or resultado(3)  or resultado(4)  or
 						 resultado(5)  or resultado(6)  or resultado(7)  or resultado(8)  or resultado(9)  or

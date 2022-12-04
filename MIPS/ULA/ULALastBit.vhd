@@ -2,14 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity ULALastBit is port (
-	carry_in, A, B, slt, inverte_B: in std_logic;
+	carry_in, A, B, slt, inverte_A, inverte_B: in std_logic;
 	sel: in std_logic_vector(1 downto 0);
 	resultado, overflow, carry_out, slt_in: out std_logic
 );
 end entity;
 
 architecture comportamento of ULALastBit is
-   signal	sig_carry_out, sig_soma, sig_or, sig_and, sig_inversor, sig_overflow: std_logic;
+   signal	sig_carry_out, sig_soma, sig_or, sig_and, sig_inversor_A, sig_inversor_B, sig_overflow: std_logic;
    
 	begin
 		
@@ -22,17 +22,24 @@ architecture comportamento of ULALastBit is
 			saida_MUX => resultado
 		);
 		
-		mux_inversor: entity work.mux2x1 port map (
+		mux_inversorB: entity work.mux2x1 port map (
 			entradaA_MUX => B,
 			entradaB_MUX => not B,
 			seletor_MUX => inverte_B,
-			saida_MUX => sig_inversor
+			saida_MUX => sig_inversor_B
+		);
+		
+		mux_inversorA: entity work.mux2x1 port map (
+			entradaA_MUX => A,
+			entradaB_MUX => not A,
+			seletor_MUX => inverte_A,
+			saida_MUX => sig_inversor_A
 		);
 		
 		somador: entity work.fullAdder port map (
 			carry_in => carry_in,
-			A => A,
-			B => sig_inversor,
+			A => sig_inversor_A,
+			B => sig_inversor_B,
 			soma => sig_soma,
 			carry_out => sig_carry_out
 		);
@@ -40,7 +47,7 @@ architecture comportamento of ULALastBit is
 		carry_out <= sig_carry_out;
 		sig_overflow <= sig_carry_out xor carry_in;
 		slt_in <= sig_overflow xor sig_soma;
-		sig_and <= sig_inversor and A;
-		sig_or <= sig_inversor or A;
+		sig_and <= sig_inversor_A and sig_inversor_B;
+		sig_or <= sig_inversor_A or sig_inversor_B;
 		overflow <= sig_overflow;
 end architecture;

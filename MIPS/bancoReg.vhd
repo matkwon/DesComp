@@ -40,6 +40,7 @@ function initMemory
         tmp(11) := 32x"0C";  -- $t3 = 0x0C
         tmp(12) := 32x"0D";  -- $t4 = 0x0D
         tmp(13) := 32x"16";  -- $t5 = 0x16
+        tmp(14) := 32x"FFFFFFFF";  -- $t6 = 0xFFFFFFFF
         return tmp;
     end initMemory;
 

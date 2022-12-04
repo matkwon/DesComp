@@ -10,7 +10,7 @@ entity MIPS is
 		SW: in std_logic_vector(9 downto 0);
 --		flagZero, V : out std_logic;
 --		ram_out, reg_1_out, reg_2_out,
---		pc_out, ula_out: out std_logic_vector(larguraDados-1 downto 0);
+		pc_out, ula_out: out std_logic_vector(larguraDados-1 downto 0);
 		LEDR: out std_logic_vector(9 downto 0);
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector(6 downto 0)
 	 );
@@ -27,7 +27,7 @@ architecture comportamento of MIPS is
 
 	signal 	sig_saida_mux_rt_rd: STD_LOGIC_VECTOR(4 downto 0);
 	
-	signal	sig_saida_ula_ctrl: STD_LOGIC_VECTOR(2 downto 0);
+	signal	sig_saida_ula_ctrl: STD_LOGIC_VECTOR(4 downto 0);
 		
 	signal 	CLK : STD_LOGIC;
 	
@@ -75,7 +75,9 @@ architecture comportamento of MIPS is
 													A => sig_reg_1, 
 													B => sig_entrada_ula_b, 
 													sel => sig_saida_ula_ctrl(1 downto 0),
+													inverte_A => sig_saida_ula_ctrl(3),
 													inverte_B => sig_saida_ula_ctrl(2),
+													sel_slt => sig_saida_ula_ctrl(4),
 													resultado => sig_ula_out,
 													zero => sig_flag_zero,
 													overflow => V
@@ -198,8 +200,8 @@ architecture comportamento of MIPS is
 		sig_hab_escrita_memoria <= sinais_de_controle(13);
 		
 		
---		pc_out 						<= sig_pc;
---		ula_out						<= sig_ula_out;
+		pc_out 						<= sig_pc;
+		ula_out						<= sig_ula_out;
 --		ram_out						<= sig_ram_out;
 --		reg_1_out					<= sig_reg_1;
 --		reg_2_out					<= sig_reg_2;
