@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity decoderInstru is
   port ( opcode : in std_logic_vector(5 downto 0);
 			funct  : in std_logic_vector(5 downto 0);
-         saida  : out std_logic_vector(13 downto 0)
+         saida  : out std_logic_vector(14 downto 0)
   );
 end entity;
 
@@ -26,6 +26,7 @@ architecture comportamento of decoderInstru is
   constant OP_BNE  : std_logic_vector(5 downto 0) := "000101";
   constant OP_JAL  : std_logic_vector(5 downto 0) := "000011";
   constant OP_SLTIU: std_logic_vector(5 downto 0) := "001011";
+  constant OP_LBU  : std_logic_vector(5 downto 0) := "100100";
 	
   constant FN_JR   : std_logic_vector(5 downto 0) := "001000";
   
@@ -39,8 +40,9 @@ architecture comportamento of decoderInstru is
   alias selMuxUlaMem  : std_logic_vector is saida(9 downto 8);
   alias beqc 			 : std_logic is saida(10);
   alias bnec			 : std_logic is saida(11);
-  alias habLeituraMem : std_logic is saida(12);
-  alias habEscritaMem : std_logic is saida(13);
+  alias lbuc			 : std_logic is saida(12);
+  alias habLeituraMem : std_logic is saida(13);
+  alias habEscritaMem : std_logic is saida(14);
 
   
   begin
@@ -59,7 +61,7 @@ architecture comportamento of decoderInstru is
 													(opcode = OP_SLTIU) else
 													'0';
   
-  habEscritaReg 	<= '1' when (opcode = OP_LW) or
+  habEscritaReg 	<= '1' when (opcode = OP_LW) or (opcode = OP_LBU) or
 															(opcode = OP_R) or
 															(opcode = OP_ADDI) or
 															(opcode = OP_LUI) or
@@ -70,7 +72,7 @@ architecture comportamento of decoderInstru is
 															(opcode = OP_SLTIU) else
 															'0';
   
-  selMuxRtIm		<= '1' when (opcode = OP_LW) or
+  selMuxRtIm		<= '1' when (opcode = OP_LW) or (opcode = OP_LBU) or
 														(opcode = OP_SW) or
 														(opcode = OP_ADDI) or
 														(opcode = OP_ANDI) or
@@ -81,7 +83,7 @@ architecture comportamento of decoderInstru is
   
   tipoR 				<= '1' when (opcode = OP_R) 	else '0';
 										
-  selMuxUlaMem		<= "01" when (opcode = OP_LW) else
+  selMuxUlaMem		<= "01" when (opcode = OP_LW) or (opcode = OP_LBU) else
 										 "11" when (opcode = OP_LUI) else
 										 "10" when (opcode = OP_JAL) else
 										 "00";
@@ -89,8 +91,10 @@ architecture comportamento of decoderInstru is
   beqc 				<= '1' when (opcode = OP_BEQ)	else '0';
   
   bnec 				<= '1' when (opcode = OP_BNE)	else '0';
+  
+  lbuc 				<= '1' when (opcode = OP_LBU)	else '0';
 					  
-  habLeituraMem 	<= '1' when (opcode = OP_LW) 	else '0';
+  habLeituraMem 	<= '1' when (opcode = OP_LW) or (opcode = OP_LBU) 	else '0';
 
   habEscritaMem 	<= '1' when (opcode = OP_SW) 	else '0';
   

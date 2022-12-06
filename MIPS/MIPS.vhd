@@ -20,10 +20,10 @@ architecture comportamento of MIPS is
    signal 	sig_pc, sig_pc_inc_4, sig_dado, sig_prox_pc, sig_saida_mux_jmp,
 				sig_reg_1, sig_reg_2, sig_saida_mux_ula_mem,
 				sig_ram_out, sig_pc_inc_4_im, sig_entrada_ula_b,
-				sig_estendido, sig_ula_out,
+				sig_estendido, sig_ula_out, sig_saida_mux_lbu,
 				sig_mux_display, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 								
-	signal	sinais_de_controle: STD_LOGIC_VECTOR(13 downto 0);
+	signal	sinais_de_controle: STD_LOGIC_VECTOR(14 downto 0);
 
 	signal 	sig_saida_mux_rt_rd: STD_LOGIC_VECTOR(4 downto 0);
 	
@@ -31,7 +31,7 @@ architecture comportamento of MIPS is
 		
 	signal 	CLK : STD_LOGIC;
 	
-	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_beq, sig_bne,
+	signal 	sig_tipo_r, sig_hab_escrita_reg, sig_beq, sig_bne, sig_lbu,
 				sig_hab_leitura_memoria, sig_flag_zero, sig_sel_mux_jr,
 				sig_hab_escrita_memoria, sig_mux_ula_zero,
 				sig_sel_mux_rt_im, sig_sel_mux_jmp, V, sig_ORIANDI : STD_LOGIC;
@@ -122,7 +122,7 @@ architecture comportamento of MIPS is
 		mux_ula_mem : entity work.muxGenerico4x1 generic map (larguraDados => larguraDados)
 													port map (
 														entradaA_MUX => sig_ula_out,
-														entradaB_MUX => sig_ram_out,
+														entradaB_MUX => sig_saida_mux_lbu,
 														entradaC_MUX => sig_pc_inc_4,
 														entradaD_MUX => sig_dado(15 downto 0) & 16x"0",
 														seletor_MUX => sig_sel_mux_ula_mem,
@@ -169,6 +169,14 @@ architecture comportamento of MIPS is
 														seletor_MUX => sig_beq,
 														saida_MUX => sig_mux_ula_zero
 													);
+				
+		mux_lbu : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
+													port map ( 	
+														entradaA_MUX => 24x"0" & sig_ram_out(7 downto 0),
+														entradaB_MUX => sig_ram_out,
+														seletor_MUX => sig_lbu,
+														saida_MUX => sig_saida_mux_lbu
+													);
 													
 		somador_beq : entity work.somadorGenerico  generic map (larguraDados => larguraDados)
 													 port map ( 
@@ -196,8 +204,9 @@ architecture comportamento of MIPS is
 		sig_sel_mux_ula_mem		<= sinais_de_controle(9 downto 8);
 		sig_beq						<= sinais_de_controle(10);
 		sig_bne						<= sinais_de_controle(11);
-		sig_hab_leitura_memoria <= sinais_de_controle(12);
-		sig_hab_escrita_memoria <= sinais_de_controle(13);
+		sig_lbu						<= sinais_de_controle(12);
+		sig_hab_leitura_memoria <= sinais_de_controle(13);
+		sig_hab_escrita_memoria <= sinais_de_controle(14);
 		
 		
 		pc_out 						<= sig_pc;
