@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/joao/descomp_oficial/DesComp/MIPS/simulation/qsim
 Emips
-Z0 w1670115293
+Z0 w1670360753
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,19 +20,19 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 16
+!i122 22
 Z10 dC:/DesComp/MIPS/simulation/qsim
 Z11 8MIPS.vho
 Z12 FMIPS.vho
 l0
 L39 1
-Vz<_Wz6iO?NEG60EmhDHlO1
-!s100 ;z2UCX1mbBeYPloYk8RMR3
+V5n:6nAOUXo`i6T0JlPXnX1
+!s100 ^@hMETPokNf^8>gT9KeZN3
 Z13 OV;C;2020.1;71
 32
-!s110 1670115294
+!s110 1670360756
 !i10b 1
-Z14 !s108 1670115294.000000
+Z14 !s108 1670360756.000000
 Z15 !s90 -work|work|MIPS.vho|
 Z16 !s107 MIPS.vho|
 !i113 1
@@ -48,15 +48,15 @@ R6
 R7
 R8
 R9
-DEx4 work 4 mips 0 22 z<_Wz6iO?NEG60EmhDHlO1
-!i122 16
-l7500
-L56 73719
-ViOZAUd9NBLkzOALYN1UMF3
-!s100 5k2SMOhT>CQ?^[CK>n`3X2
+DEx4 work 4 mips 0 22 5n:6nAOUXo`i6T0JlPXnX1
+!i122 22
+l7574
+L57 74490
+VI=DMSW0O>K=_I3B9S?:G12
+!s100 TN`fU>l7<N@a<2=e2YIe82
 R13
 32
-!s110 1670115295
+!s110 1670360757
 !i10b 1
 R14
 R15
@@ -65,10 +65,10 @@ R16
 R17
 R18
 Emips_vhd_vec_tst
-Z19 w1670115291
+Z19 w1670360750
 R7
 R8
-!i122 17
+!i122 23
 R10
 Z20 8Waveform1.vwf.vht
 Z21 FWaveform1.vwf.vht
@@ -78,9 +78,9 @@ V^1o__g;YWkg:5i`P8mICm3
 !s100 <M8I65P>A0UMgF43I31;A1
 R13
 32
-Z22 !s110 1670115296
+Z22 !s110 1670360759
 !i10b 1
-Z23 !s108 1670115296.000000
+Z23 !s108 1670360759.000000
 Z24 !s90 -work|work|Waveform1.vwf.vht|
 Z25 !s107 Waveform1.vwf.vht|
 !i113 1
@@ -90,11 +90,11 @@ Amips_arch
 R7
 R8
 Z26 DEx4 work 16 mips_vhd_vec_tst 0 22 ^1o__g;YWkg:5i`P8mICm3
-!i122 17
-l65
-Z27 L34 65
-V:Z?P;o4zMMa6MI9F3X1Og3
-!s100 zmz7i6U^gHo4zHh?:bD?o0
+!i122 23
+l67
+Z27 L34 68
+Z28 VaHFUJmPT>eSb;>510aHkf1
+Z29 !s100 `ON_<0MS>Do^YdB17YBSR0
 R13
 32
 R22

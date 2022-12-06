@@ -8,20 +8,21 @@ entity MIPS is
 		CLOCK_50 : in std_logic;
 		KEY: in std_logic_vector(3 downto 0);
 		SW: in std_logic_vector(9 downto 0);
---		flagZero, V : out std_logic;
---		ram_out, reg_1_out, reg_2_out,
-		pc_out, ula_out: out std_logic_vector(larguraDados-1 downto 0);
+		
+		-- portas para waveform:
+--		pc_out, ula_out, regt0: out std_logic_vector(larguraDados-1 downto 0);
+		
 		LEDR: out std_logic_vector(9 downto 0);
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5: out std_logic_vector(6 downto 0)
 	 );
 end entity;
 
 architecture comportamento of MIPS is
-   signal 	sig_pc, sig_pc_inc_4, sig_dado, sig_prox_pc, sig_saida_mux_jmp,
-				sig_reg_1, sig_reg_2, sig_saida_mux_ula_mem,
-				sig_ram_out, sig_pc_inc_4_im, sig_entrada_ula_b,
-				sig_estendido, sig_ula_out, sig_saida_mux_lbu,
-				sig_mux_display, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+  signal 	sig_pc, sig_pc_inc_4, sig_dado, sig_prox_pc, sig_saida_mux_jmp,
+					sig_reg_1, sig_reg_2, sig_saida_mux_ula_mem,
+					sig_ram_out, sig_pc_inc_4_im, sig_entrada_ula_b,
+					sig_estendido, sig_ula_out, sig_saida_mux_lbu,
+					sig_mux_display, sig_saida_mux_beq : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 								
 	signal	sinais_de_controle: STD_LOGIC_VECTOR(14 downto 0);
 
@@ -91,6 +92,8 @@ architecture comportamento of MIPS is
 			dadoEscrita3 => sig_saida_mux_ula_mem,
 			habEscritaReg => sig_hab_escrita_reg,
 			saida1 => sig_reg_1,
+			-- porta de teste waveform regt0:
+--			regt0 => regt0,
 			saida2 => sig_reg_2
 		);
 		
@@ -172,8 +175,8 @@ architecture comportamento of MIPS is
 				
 		mux_lbu : entity work.muxGenerico2x1 generic map (larguraDados => larguraDados)
 													port map ( 	
-														entradaA_MUX => 24x"0" & sig_ram_out(7 downto 0),
-														entradaB_MUX => sig_ram_out,
+														entradaA_MUX => sig_ram_out,
+														entradaB_MUX => 24x"0" & sig_ram_out(7 downto 0),
 														seletor_MUX => sig_lbu,
 														saida_MUX => sig_saida_mux_lbu
 													);
@@ -209,14 +212,9 @@ architecture comportamento of MIPS is
 		sig_hab_escrita_memoria <= sinais_de_controle(14);
 		
 		
-		pc_out 						<= sig_pc;
-		ula_out						<= sig_ula_out;
---		ram_out						<= sig_ram_out;
---		reg_1_out					<= sig_reg_1;
---		reg_2_out					<= sig_reg_2;
---		flagZero						<= sig_flag_zero;
---		ula_in_1						<= sig_reg_1;
---		ula_in_2						<= sig_entrada_ula_b;
+		-- portas de teste waveform:
+--		pc_out 						<= sig_pc;
+--		ula_out						<= sig_ula_out;
 		
 		
 		LEDR(7)						<= sig_mux_display(31);

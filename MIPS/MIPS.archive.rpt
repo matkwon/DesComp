@@ -1,5 +1,5 @@
 Archive Project report for MIPS
-Mon Nov 21 18:06:39 2022
+Tue Dec 06 18:36:44 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Mon Nov 21 18:06:39 2022 ;
+; Archive Project Status ; Successful - Tue Dec 06 18:36:44 2022 ;
 ; Revision Name          ; MIPS                                  ;
 ; Top-level Entity Name  ; MIPS                                  ;
 ; Family                 ; Cyclone V                             ;
@@ -54,15 +54,15 @@ Info: Archive will store files relative to the closest common parent directory
 Info (13213): Using common directory C:/DesComp/MIPS/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/DesComp/MIPS/MIPS.qar'
+Info: Generated archive 'C:/DesComp/MIPS/MIPS2.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'MIPS.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4822 megabytes
-    Info: Processing ended: Mon Nov 21 18:06:39 2022
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Tue Dec 06 18:36:44 2022
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -80,6 +80,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; MIPS.qsf                                                     ;
 ; MIPS.vhd                                                     ;
 ; muxGenerico2x1.vhd                                           ;
+; muxGenerico4x1.vhd                                           ;
 ; RAMMIPS.vhd                                                  ;
 ; registradorGenerico.vhd                                      ;
 ; ROMContent.mif                                               ;
@@ -89,11 +90,13 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; ULA/fullAdder.vhd                                            ;
 ; ULA/mux2x1.vhd                                               ;
 ; ULA/mux4x1.vhd                                               ;
+; ULA/SLTIU.vhd                                                ;
 ; ULA/ULA.vhd                                                  ;
 ; ULA/ULA1Bit.vhd                                              ;
 ; ULA/ULALastBit.vhd                                           ;
 ; ULActrl.vhd                                                  ;
 ; Waveform.vwf                                                 ;
+; Waveform1.vwf                                                ;
 +--------------------------------------------------------------+
 
 

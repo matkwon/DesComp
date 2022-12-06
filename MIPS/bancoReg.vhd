@@ -17,9 +17,11 @@ entity bancoReg is
         endereco1,
 		  endereco2,
 		  endereco3       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        dadoEscrita3    : in std_logic_vector((larguraDados-1) downto 0);
-        habEscritaReg   : in std_logic := '0';
-        saida1,
+      dadoEscrita3    : in std_logic_vector((larguraDados-1) downto 0);
+      habEscritaReg   : in std_logic := '0';
+      saida1,
+			-- porta de teste waveform:
+--			regt0,
 		  saida2				: out std_logic_vector((larguraDados -1) downto 0)
     );
 end entity;
@@ -48,6 +50,8 @@ function initMemory
     shared variable registrador : memoria_t := initMemory;
     constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
 begin
+		-- porta de teste waveform:
+--		regt0 <= registrador(8);
     process(clk) is
     begin
         if (rising_edge(clk)) then

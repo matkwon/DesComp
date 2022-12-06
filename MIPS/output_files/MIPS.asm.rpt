@@ -1,5 +1,5 @@
 Assembler report for MIPS
-Sat Dec 03 18:32:43 2022
+Tue Dec 06 18:24:03 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Dec 03 18:32:43 2022 ;
+; Assembler Status      ; Successful - Tue Dec 06 18:24:03 2022 ;
 ; Revision Name         ; MIPS                                  ;
 ; Top-level Entity Name ; MIPS                                  ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+------------------------------------------------+
 ; Option         ; Setting                                        ;
 +----------------+------------------------------------------------+
-; JTAG usercode  ; 0x00957D84                                     ;
-; Checksum       ; 0x00957D84                                     ;
+; JTAG usercode  ; 0x008B82C6                                     ;
+; Checksum       ; 0x008B82C6                                     ;
 +----------------+------------------------------------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Dec 03 18:32:34 2022
+    Info: Processing started: Tue Dec 06 18:23:55 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPS -c MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Sat Dec 03 18:32:43 2022
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Tue Dec 06 18:24:03 2022
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
 
 
