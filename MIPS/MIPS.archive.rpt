@@ -1,5 +1,5 @@
 Archive Project report for MIPS
-Tue Dec 06 18:36:44 2022
+Wed Dec 07 12:48:27 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Tue Dec 06 18:36:44 2022 ;
+; Archive Project Status ; Successful - Wed Dec 07 12:48:27 2022 ;
 ; Revision Name          ; MIPS                                  ;
 ; Top-level Entity Name  ; MIPS                                  ;
 ; Family                 ; Cyclone V                             ;
@@ -54,15 +54,15 @@ Info: Archive will store files relative to the closest common parent directory
 Info (13213): Using common directory C:/DesComp/MIPS/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/DesComp/MIPS/MIPS2.qar'
+Info: Generated archive 'C:/DesComp/MIPS/MIPSpipeline.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'MIPS.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4823 megabytes
-    Info: Processing ended: Tue Dec 06 18:36:44 2022
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Wed Dec 07 12:48:27 2022
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -81,6 +81,11 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; MIPS.vhd                                                     ;
 ; muxGenerico2x1.vhd                                           ;
 ; muxGenerico4x1.vhd                                           ;
+; Pipeline/DECODE.vhd                                          ;
+; Pipeline/EXECUTE.vhd                                         ;
+; Pipeline/FETCH.vhd                                           ;
+; Pipeline/MEMORY.vhd                                          ;
+; Pipeline/WRITEBACK.vhd                                       ;
 ; RAMMIPS.vhd                                                  ;
 ; registradorGenerico.vhd                                      ;
 ; ROMContent.mif                                               ;
