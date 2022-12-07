@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS
-Wed Dec 07 03:39:13 2022
+Wed Dec 07 12:42:28 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -128,7 +128,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec 07 03:39:13 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 07 12:42:28 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; MIPS                                        ;
 ; Top-level Entity Name           ; MIPS                                        ;
@@ -301,14 +301,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 1786         ;
+; Estimate of Logic utilization (ALMs needed) ; 1796         ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 1289         ;
+; Combinational ALUT usage for logic          ; 1355         ;
 ;     -- 7 input functions                    ; 16           ;
-;     -- 6 input functions                    ; 907          ;
-;     -- 5 input functions                    ; 118          ;
-;     -- 4 input functions                    ; 92           ;
-;     -- <=3 input functions                  ; 156          ;
+;     -- 6 input functions                    ; 905          ;
+;     -- 5 input functions                    ; 57           ;
+;     -- 4 input functions                    ; 218          ;
+;     -- <=3 input functions                  ; 159          ;
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 2679         ;
 ;                                             ;              ;
@@ -320,8 +320,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
 ; Maximum fan-out                             ; 2743         ;
-; Total fan-out                               ; 15158        ;
-; Average fan-out                             ; 3.64         ;
+; Total fan-out                               ; 15357        ;
+; Average fan-out                             ; 3.63         ;
 +---------------------------------------------+--------------+
 
 
@@ -330,14 +330,14 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Entity Name          ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |MIPS                                          ; 1289 (1)            ; 2679 (0)                  ; 2048              ; 0          ; 67   ; 0            ; |MIPS                                                                                              ; MIPS                 ; work         ;
-;    |DECODE:DECODE|                             ; 88 (0)              ; 149 (0)                   ; 2048              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE                                                                                ; DECODE               ; work         ;
-;       |bancoReg:banco_reg|                     ; 73 (73)             ; 149 (149)                 ; 2048              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|bancoReg:banco_reg                                                             ; bancoReg             ; work         ;
+; |MIPS                                          ; 1355 (1)            ; 2679 (0)                  ; 2048              ; 0          ; 67   ; 0            ; |MIPS                                                                                              ; MIPS                 ; work         ;
+;    |DECODE:DECODE|                             ; 155 (0)             ; 149 (0)                   ; 2048              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE                                                                                ; DECODE               ; work         ;
+;       |bancoReg:banco_reg|                     ; 142 (142)           ; 149 (149)                 ; 2048              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|bancoReg:banco_reg                                                             ; bancoReg             ; work         ;
 ;          |altsyncram:registrador_rtl_0|        ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|bancoReg:banco_reg|altsyncram:registrador_rtl_0                                ; altsyncram           ; work         ;
 ;             |altsyncram_svm1:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|bancoReg:banco_reg|altsyncram:registrador_rtl_0|altsyncram_svm1:auto_generated ; altsyncram_svm1      ; work         ;
 ;          |altsyncram:registrador_rtl_1|        ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|bancoReg:banco_reg|altsyncram:registrador_rtl_1                                ; altsyncram           ; work         ;
 ;             |altsyncram_svm1:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|bancoReg:banco_reg|altsyncram:registrador_rtl_1|altsyncram_svm1:auto_generated ; altsyncram_svm1      ; work         ;
-;       |decoderInstru:decoder_instru|           ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|decoderInstru:decoder_instru                                                   ; decoderInstru        ; work         ;
+;       |decoderInstru:decoder_instru|           ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|decoderInstru:decoder_instru                                                   ; decoderInstru        ; work         ;
 ;       |estendeSinalGenerico:estensor_de_sinal| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|DECODE:DECODE|estendeSinalGenerico:estensor_de_sinal                                         ; estendeSinalGenerico ; work         ;
 ;    |EXECUTE:EXECUTE|                           ; 200 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|EXECUTE:EXECUTE                                                                              ; EXECUTE              ; work         ;
 ;       |ULA:ula|                                ; 154 (11)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|EXECUTE:EXECUTE|ULA:ula                                                                      ; ULA                  ; work         ;
@@ -480,9 +480,9 @@ https://fpgasoftware.intel.com/eula.
 ;       |ULActrl:ULActrl|                        ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|EXECUTE:EXECUTE|ULActrl:ULActrl                                                              ; ULActrl              ; work         ;
 ;       |muxGenerico4x1:mux_rt_rd|               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|EXECUTE:EXECUTE|muxGenerico4x1:mux_rt_rd                                                     ; muxGenerico4x1       ; work         ;
 ;       |somadorGenerico:somador_beq|            ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|EXECUTE:EXECUTE|somadorGenerico:somador_beq                                                  ; somadorGenerico      ; work         ;
-;    |FETCH:FETCH|                               ; 92 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH                                                                                  ; FETCH                ; work         ;
+;    |FETCH:FETCH|                               ; 91 (0)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH                                                                                  ; FETCH                ; work         ;
 ;       |ROMMIPS:rom|                            ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH|ROMMIPS:rom                                                                      ; ROMMIPS              ; work         ;
-;       |muxGenerico2x1:mux_jr|                  ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH|muxGenerico2x1:mux_jr                                                            ; muxGenerico2x1       ; work         ;
+;       |muxGenerico2x1:mux_jr|                  ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH|muxGenerico2x1:mux_jr                                                            ; muxGenerico2x1       ; work         ;
 ;       |registradorGenerico:program_counter|    ; 3 (3)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH|registradorGenerico:program_counter                                              ; registradorGenerico  ; work         ;
 ;       |somaConstante:pc_inc_4|                 ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MIPS|FETCH:FETCH|somaConstante:pc_inc_4                                                           ; somaConstante        ; work         ;
 ;    |MEMORY:MEMORY|                             ; 801 (1)             ; 2048 (0)                  ; 0                 ; 0          ; 0    ; 0            ; |MIPS|MEMORY:MEMORY                                                                                ; MEMORY               ; work         ;
@@ -564,7 +564,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 2679  ;
-; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -810,14 +810,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPS|registradorGenerico:EX_MEM|DOUT[17]                                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MIPS|FETCH:FETCH|registradorGenerico:program_counter|DOUT[1]             ;
-; 4:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |MIPS|FETCH:FETCH|registradorGenerico:program_counter|DOUT[31]            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MIPS|FETCH:FETCH|registradorGenerico:program_counter|DOUT[0]             ;
+; 4:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |MIPS|FETCH:FETCH|registradorGenerico:program_counter|DOUT[5]             ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|muxGenerico4x1:mux_display|saida_MUX[24]                            ;
-; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPS|EXECUTE:EXECUTE|ULA:ula|ULA1Bit:ULA2|mux4x1:mux_seletor|saida_MUX   ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|EXECUTE:EXECUTE|ULA:ula|ULA1Bit:ULA4|mux2x1:mux_inversorB|saida_MUX ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MIPS|WRITEBACK:WRITEBACK|muxGenerico4x1:mux_ula_mem|saida_MUX[4]         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |MIPS|EXECUTE:EXECUTE|ULA:ula|ULA1Bit:ULA1|mux4x1:mux_seletor|saida_MUX   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |MIPS|EXECUTE:EXECUTE|ULA:ula|ULA1Bit:ULA7|mux2x1:mux_inversorB|saida_MUX ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MIPS|WRITEBACK:WRITEBACK|muxGenerico4x1:mux_ula_mem|saida_MUX[5]         ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |MIPS|WRITEBACK:WRITEBACK|muxGenerico4x1:mux_ula_mem|saida_MUX[13]        ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |MIPS|WRITEBACK:WRITEBACK|muxGenerico4x1:mux_ula_mem|saida_MUX[17]        ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |MIPS|WRITEBACK:WRITEBACK|muxGenerico4x1:mux_ula_mem|saida_MUX[24]        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 
 
@@ -1716,27 +1716,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 2679                        ;
 ;     ENA               ; 2050                        ;
-;     SCLR              ; 5                           ;
-;     plain             ; 624                         ;
-; arriav_lcell_comb     ; 1290                        ;
+;     SCLR              ; 9                           ;
+;     plain             ; 620                         ;
+; arriav_lcell_comb     ; 1356                        ;
 ;     arith             ; 60                          ;
 ;         1 data inputs ; 30                          ;
 ;         2 data inputs ; 30                          ;
 ;     extend            ; 16                          ;
 ;         7 data inputs ; 16                          ;
-;     normal            ; 1214                        ;
+;     normal            ; 1280                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 85                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 92                          ;
-;         5 data inputs ; 118                         ;
-;         6 data inputs ; 907                         ;
+;         2 data inputs ; 86                          ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 218                         ;
+;         5 data inputs ; 57                          ;
+;         6 data inputs ; 905                         ;
 ; boundary_port         ; 67                          ;
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 19.00                       ;
-; Average LUT depth     ; 3.61                        ;
+; Average LUT depth     ; 3.70                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1745,7 +1745,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -1755,7 +1755,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Dec 07 03:38:54 2022
+    Info: Processing started: Wed Dec 07 12:42:01 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1990,15 +1990,15 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/DesComp/MIPS/MIPS.vhd Line: 10
-Info (21057): Implemented 3939 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4004 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 3808 logic cells
+    Info (21061): Implemented 3873 logic cells
     Info (21064): Implemented 64 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Wed Dec 07 03:39:13 2022
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Peak virtual memory: 4877 megabytes
+    Info: Processing ended: Wed Dec 07 12:42:29 2022
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:42
 
 

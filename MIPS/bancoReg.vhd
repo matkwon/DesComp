@@ -13,16 +13,16 @@ entity bancoReg is
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
     port
     (
-        clk        : in std_logic;
-        endereco1,
-		  endereco2,
-		  endereco3       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
-      dadoEscrita3    : in std_logic_vector((larguraDados-1) downto 0);
-      habEscritaReg   : in std_logic := '0';
-      saida1,
-			-- porta de teste waveform:
---			regt0,
-		  saida2				: out std_logic_vector((larguraDados -1) downto 0)
+				clk        : in std_logic;
+				endereco1,
+				endereco2,
+				endereco3       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
+				dadoEscrita3    : in std_logic_vector((larguraDados-1) downto 0);
+				habEscritaReg   : in std_logic := '0';
+				saida1,
+				-- porta de teste waveform:
+--				regt0,
+				saida2				: out std_logic_vector((larguraDados -1) downto 0)
     );
 end entity;
 
@@ -61,7 +61,11 @@ begin
         end if;
     end process;
     -- Se endereco = 0 : retorna ZERO
-	 saida1 <= zero when to_integer(unsigned(endereco1)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco1)));
-    saida2 <= zero when to_integer(unsigned(endereco2)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco2)));
+		saida1 <= zero when to_integer(unsigned(endereco1)) = to_integer(unsigned(zero)) else
+							dadoEscrita3 when (endereco1 = endereco3 and habEscritaReg = '1') else
+							registrador(to_integer(unsigned(endereco1)));
+    saida2 <= zero when to_integer(unsigned(endereco2)) = to_integer(unsigned(zero)) else
+							dadoEscrita3 when (endereco2 = endereco3 and habEscritaReg = '1') else
+							registrador(to_integer(unsigned(endereco2)));
 --    saida3 <= zero when to_integer(unsigned(endereco3)) = to_integer(unsigned(zero)) else registrador(to_integer(unsigned(endereco3)));
 end architecture;

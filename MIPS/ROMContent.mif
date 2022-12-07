@@ -27,39 +27,47 @@ CONTENT BEGIN
 6   :  212a0001;      --addi $t2, $t1, 0x01;       # $t2 (#10) := 0x0B
 7   :  01606025;      --or $t4, $t3, $0;           # $t4 (#12) := 0xAAAAAAAA
 8   :  316dffff;      --andi $t5, $t3, 0xFFFF;     # $t5 (#13) := 0x0000AAAA
-9   :  01497022;      --sub $t6, $t2, $t1;         # $t6 (#14) := 0x01
-10  :  ac090008;      --sw $t1, 8($zero);          # M[8) = 0x0A
-11  :  8c080008;      --lw $t0, 8($zero);
-12  :  010a7824;      --and $t7, $t0, $t2;         # Hazard Load Use
-13  :  290fffff;      --slti $t7, $t0, 0xFFFF;
-14  :  012a402a;      --slt $t0, $t1, $t2;
+9   :  01406827;      --nor $t6, $t2, $0;          # $t6 (#14) := 0xFFFFFFF4
+10  :  01497022;      --sub $t6, $t2, $t1;         # $t6 (#14) := 0x01
+11  :  ac0c0008;      --sw $t4, 8($zero);          # M(8) = 0xAAAAAAAA
+12  :  90080008;      --lbu $t0, 8($zero);         # $t0 (#8) := 0xAA
+13  :  ac0e0008;      --sw $t6, 8($zero);          # M(8) = 0x01
+14  :  8c080008;      --lw $t0, 8($zero);          # $t0 (#8) := 0x1
+15  :  ac090008;      --sw $t1, 8($zero);          # M(8) = 0x0A
+16  :  8c080008;      --lw $t0, 8($zero);          # $t0 (#8) := 0xA
+17  :  010a7824;      --and $t7, $t0, $t2;         # Hazard Load Use
+18  :  00000000;      --nop;
+19  :  2d0f0009;      --sltiu $t7, $t0, 0x9;       # $t7 := 0x00000000
+20  :  2d0fffff;      --sltiu $t7, $t0, 0xFFFF;    # $t7 := 0x00000001
+21  :  290fffff;      --slti $t7, $t0, 0xFFFF;
+22  :  012a402a;      --slt $t0, $t1, $t2;
 --destinoBEQ:
-15  :  012e4820;      --add $t1, $t1, $t6;         # t0 = t2, segunda vez: t0 != t2
-16  :  00000000;      --nop;
-17  :  00000000;      --nop;
-18  :  112afffc;      --beq $t1, $t2, destinoBEQ;  # Desvia na primeira e nao desvia depois
-19  :  00000000;      --nop;
-20  :  00000000;      --nop;
-21  :  00000000;      --nop;
-22  :  0c000020;      --jal subrotina;
-23  :  00000000;      --nop;
+23  :  012e4820;      --add $t1, $t1, $t6;         # t0 = t2, segunda vez: t0 != t2
 24  :  00000000;      --nop;
 25  :  00000000;      --nop;
-26  :  00000000;      --nop;
-27  :  150d0008;      --bne $t0, $t5, fim
+26  :  112afffc;      --beq $t1, $t2, destinoBEQ;  # Desvia na primeira e nao desvia depois
+27  :  00000000;      --nop;
 28  :  00000000;      --nop;
 29  :  00000000;      --nop;
-30  :  00000000;      --nop;
+30  :  0c000028;      --jal subrotina;
 31  :  00000000;      --nop;
---subrotina:
 32  :  00000000;      --nop;
-33  :  03e00008;      --jr $ra;
+33  :  00000000;      --nop;
 34  :  00000000;      --nop;
-35  :  00000000;      --nop;
---fim:
+35  :  150d0008;      --bne $t0, $t5, fim
 36  :  00000000;      --nop;
-37  :  08000024;      --j fim;
+37  :  00000000;      --nop;
 38  :  00000000;      --nop;
 39  :  00000000;      --nop;
-[40..63]  :  00000000; --nop;
+--subrotina:
+40  :  00000000;      --nop;
+41  :  03e00008;      --jr $ra;
+42  :  00000000;      --nop;
+43  :  00000000;      --nop;
+--fim:
+44  :  00000000;      --nop;
+45  :  0800002c;      --j fim;
+46  :  00000000;      --nop;
+47  :  00000000;      --nop;
+[48..63]  :  00000000; --nop;
 END;
