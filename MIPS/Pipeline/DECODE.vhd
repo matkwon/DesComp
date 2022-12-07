@@ -5,10 +5,11 @@ use ieee.numeric_std.all;    -- Biblioteca IEEE para funções aritméticas
 entity DECODE is
     generic ( larguraDados : natural := 32 );
     port (
-		CLK, hab_reg, sel_mux_jr, sel_mux_jmp : in std_logic;
+		CLK, hab_reg : in std_logic;
 		pc_inc_4_4u : in std_logic_vector(3 downto 0);
 		reg_sel : in std_logic_vector(4 downto 0);
 		DIN, reg_wr : in std_logic_vector(larguraDados-1 downto 0);
+		sel_mux_jr, sel_mux_jmp : out std_logic;
 		reg_1_out, reg_2_out, im_ext, pc_jmp : out std_logic_vector(larguraDados-1 downto 0);
 		rt, rd : out std_logic_vector(4 downto 0);
 		ctrlEX : out std_logic_vector(9 downto 0);

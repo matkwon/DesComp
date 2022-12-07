@@ -35,6 +35,14 @@ architecture comportamento of MIPS is
 	signal	ctrlM_ID, ctrlM_EX, ctrlM_M, ctrlWB_ID, ctrlWB_EX, ctrlWB_M, ctrlWB_WB : std_logic_vector(3 downto 0);
 
 	signal	im_M, im_WB : std_logic_vector(15 downto 0);
+	
+	signal	out_IF_ID : std_logic_vector(63 downto 0);
+	
+	signal	out_ID_EX : std_logic_vector(155 downto 0);
+	
+	signal	out_EX_MEM : std_logic_vector(157 downto 0);
+	
+	signal	out_MEM_WB : std_logic_vector(120 downto 0);
 
 	begin
 		CLK <= KEY(0);
@@ -56,22 +64,25 @@ architecture comportamento of MIPS is
 		IF_ID: entity work.registradorGenerico generic map (larguraDados => 64) 
 		port map (
 			DIN => pc_inc_4_IF & data_IF, 
-			DOUT => pc_inc_4_ID & data_ID, 
+			DOUT => out_IF_ID, 
 			ENABLE => '1', 
 			CLK => CLK, 
 			RST => '0'
 		);
 		
+		pc_inc_4_ID <= out_IF_ID(63 downto 32);
+		data_ID <= out_IF_ID(31 downto 0);
+		
 		DECODE : entity work.DECODE generic map (larguraDados => larguraDados) 
 		port map (
 			CLK => CLK,
 			hab_reg => ctrlWB_WB(3),
-			sel_mux_jr => sig_sel_mux_jr,
-			sel_mux_jmp => sig_sel_mux_jmp,
 			pc_inc_4_4u => pc_inc_4_ID(larguraDados-1 downto larguraDados-4),
 			reg_sel => mux_out_rt_rd_WB,
 			DIN => data_ID,
 			reg_wr => sig_reg_wr,
+			sel_mux_jr => sig_sel_mux_jr,
+			sel_mux_jmp => sig_sel_mux_jmp,
 			reg_1_out => reg_1_out_ID,
 			reg_2_out => reg_2_out_ID,
 			im_ext => im_ext_ID,
@@ -86,11 +97,21 @@ architecture comportamento of MIPS is
 		ID_EX: entity work.registradorGenerico generic map (larguraDados => 156) 
 		port map (
 			DIN => ctrlEX_ID & ctrlM_ID & ctrlWB_ID & pc_inc_4_ID & reg_1_out_ID & reg_2_out_ID & im_ext_ID & rt_ID & rd_ID, 
-			DOUT => ctrlEX_EX & ctrlM_EX & ctrlWB_EX & pc_inc_4_EX & reg_1_out_EX & reg_2_out_EX & im_ext_EX & rt_EX & rd_EX, 
+			DOUT => out_ID_EX, 
 			ENABLE => '1', 
 			CLK => CLK, 
 			RST => '0'
 		);
+		
+		ctrlEX_EX <= out_ID_EX(155 downto 146);
+		ctrlM_EX <= out_ID_EX(145 downto 142);
+		ctrlWB_EX <= out_ID_EX(141 downto 138);
+		pc_inc_4_EX <= out_ID_EX(137 downto 106);
+		reg_1_out_EX <= out_ID_EX(105 downto 74);
+		reg_2_out_EX <= out_ID_EX(73 downto 42);
+		im_ext_EX <= out_ID_EX(41 downto 10);
+		rt_EX <= out_ID_EX(9 downto 5);
+		rd_EX <= out_ID_EX(4 downto 0);
 		
 		EXECUTE : entity work.EXECUTE generic map (larguraDados => larguraDados) 
 		port map (
@@ -111,11 +132,21 @@ architecture comportamento of MIPS is
 		EX_MEM: entity work.registradorGenerico generic map (larguraDados => 158) 
 		port map (
 			DIN => ctrlM_EX & ctrlWB_EX & pc_inc_4_EX & pc_inc_4_im_EX & flag_zero_EX & ula_out_EX & reg_2_out_EX & mux_out_rt_rd_EX & im_ext_EX(15 downto 0), 
-			DOUT => ctrlM_M & ctrlWB_M & pc_inc_4_M & pc_inc_4_im_M & flag_zero_M & ula_out_M & reg_2_out_M & mux_out_rt_rd_M & im_M, 
+			DOUT => out_EX_MEM, 
 			ENABLE => '1', 
 			CLK => CLK, 
 			RST => '0'
 		);
+		
+		ctrlM_M <= out_EX_MEM(157 downto 154);
+		ctrlWB_M <= out_EX_MEM(153 downto 150);
+		pc_inc_4_M <= out_EX_MEM(149 downto 118);
+		pc_inc_4_im_M <= out_EX_MEM(117 downto 86);
+		flag_zero_M <= out_EX_MEM(85);
+		ula_out_M <= out_EX_MEM(84 downto 53);
+		reg_2_out_M <= out_EX_MEM(52 downto 21);
+		mux_out_rt_rd_M <= out_EX_MEM(20 downto 16);
+		im_M <= out_EX_MEM(15 downto 0);
 		
 		MEMORY : entity work.MEMORY generic map (larguraDados => larguraDados) 
 		port map (
@@ -130,12 +161,19 @@ architecture comportamento of MIPS is
 		
 		MEM_WB: entity work.registradorGenerico generic map (larguraDados => 121) 
 		port map (
-			DIN => ctrlWB_M & pc_inc_4_M & ula_out_M & DOUT_M & im_M & mux_out_rt_rd_M, 
-			DOUT => ctrlWB_WB & pc_inc_4_WB & ula_out_WB & DOUT_WB & im_WB & mux_out_rt_rd_WB, 
+			DIN => ctrlWB_M & pc_inc_4_M & ula_out_M & DOUT_M & mux_out_rt_rd_M & im_M, 
+			DOUT => out_MEM_WB, 
 			ENABLE => '1', 
 			CLK => CLK, 
 			RST => '0'
 		);
+		
+		ctrlWB_WB <= out_MEM_WB(120 downto 117);
+		pc_inc_4_WB <= out_MEM_WB(116 downto 85);
+		ula_out_WB <= out_MEM_WB(84 downto 53);
+		DOUT_WB <= out_MEM_WB(52 downto 21);
+		mux_out_rt_rd_WB <= out_MEM_WB(20 downto 16);
+		im_WB <= out_MEM_WB(15 downto 0);
 		
 		WRITEBACK : entity work.WRITEBACK generic map (larguraDados => larguraDados) 
 		port map (

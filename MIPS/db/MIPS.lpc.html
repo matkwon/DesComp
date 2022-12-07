@@ -113,7 +113,7 @@
 </TR>
 <TR >
 <TD >mux_display</TD>
-<TD >65</TD>
+<TD >130</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -128,23 +128,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >somador_beq</TD>
-<TD >64</TD>
-<TD >2</TD>
-<TD >0</TD>
-<TD >2</TD>
-<TD >32</TD>
-<TD >2</TD>
-<TD >2</TD>
-<TD >2</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >mux_lbu</TD>
+<TD >WRITEBACK|mux_lbu</TD>
 <TD >65</TD>
 <TD >24</TD>
 <TD >0</TD>
@@ -160,87 +144,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >mux_ula_zero</TD>
-<TD >3</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >mux_jr</TD>
-<TD >65</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >32</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >mux_jmp</TD>
-<TD >65</TD>
-<TD >2</TD>
-<TD >0</TD>
-<TD >2</TD>
-<TD >32</TD>
-<TD >2</TD>
-<TD >2</TD>
-<TD >2</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >mux_beq</TD>
-<TD >65</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >32</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >mux_rt_rd</TD>
-<TD >22</TD>
-<TD >10</TD>
-<TD >0</TD>
-<TD >10</TD>
-<TD >5</TD>
-<TD >10</TD>
-<TD >10</TD>
-<TD >10</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >mux_ula_mem</TD>
+<TD >WRITEBACK|mux_ula_mem</TD>
 <TD >130</TD>
 <TD >16</TD>
 <TD >0</TD>
@@ -256,10 +160,10 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >mux_rt_im</TD>
-<TD >65</TD>
+<TD >WRITEBACK</TD>
+<TD >117</TD>
 <TD >0</TD>
-<TD >0</TD>
+<TD >2</TD>
 <TD >0</TD>
 <TD >32</TD>
 <TD >0</TD>
@@ -272,7 +176,39 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ram</TD>
+<TD >MEM_WB</TD>
+<TD >124</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >121</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >MEMORY|mux_ula_zero</TD>
+<TD >3</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >MEMORY|ram</TD>
 <TD >68</TD>
 <TD >1</TD>
 <TD >26</TD>
@@ -288,8 +224,72 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >estensor_de_sinal</TD>
-<TD >17</TD>
+<TD >MEMORY</TD>
+<TD >70</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >33</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >EX_MEM</TD>
+<TD >161</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >158</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >EXECUTE|somador_beq</TD>
+<TD >64</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >32</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >EXECUTE|mux_rt_rd</TD>
+<TD >22</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >10</TD>
+<TD >5</TD>
+<TD >10</TD>
+<TD >10</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >EXECUTE|mux_rt_im</TD>
+<TD >65</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -304,23 +304,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >banco_reg</TD>
-<TD >49</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >64</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >ula|MUX_SLT</TD>
+<TD >EXECUTE|ula|MUX_SLT</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -336,7 +320,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA31|somador</TD>
+<TD >EXECUTE|ula|ULA31|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -352,7 +336,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA31|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA31|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -368,7 +352,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA31|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA31|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -384,7 +368,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA31|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA31|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -400,7 +384,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA31</TD>
+<TD >EXECUTE|ula|ULA31</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -416,7 +400,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA30|somador</TD>
+<TD >EXECUTE|ula|ULA30|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -432,7 +416,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA30|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA30|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -448,7 +432,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA30|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA30|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -464,7 +448,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA30|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA30|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -480,7 +464,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA30</TD>
+<TD >EXECUTE|ula|ULA30</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -496,7 +480,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA29|somador</TD>
+<TD >EXECUTE|ula|ULA29|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -512,7 +496,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA29|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA29|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -528,7 +512,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA29|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA29|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -544,7 +528,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA29|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA29|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -560,7 +544,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA29</TD>
+<TD >EXECUTE|ula|ULA29</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -576,7 +560,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA28|somador</TD>
+<TD >EXECUTE|ula|ULA28|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -592,7 +576,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA28|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA28|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -608,7 +592,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA28|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA28|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -624,7 +608,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA28|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA28|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -640,7 +624,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA28</TD>
+<TD >EXECUTE|ula|ULA28</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -656,7 +640,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA27|somador</TD>
+<TD >EXECUTE|ula|ULA27|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -672,7 +656,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA27|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA27|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -688,7 +672,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA27|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA27|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -704,7 +688,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA27|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA27|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -720,7 +704,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA27</TD>
+<TD >EXECUTE|ula|ULA27</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -736,7 +720,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA26|somador</TD>
+<TD >EXECUTE|ula|ULA26|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -752,7 +736,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA26|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA26|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -768,7 +752,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA26|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA26|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -784,7 +768,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA26|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA26|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -800,7 +784,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA26</TD>
+<TD >EXECUTE|ula|ULA26</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -816,7 +800,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA25|somador</TD>
+<TD >EXECUTE|ula|ULA25|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -832,7 +816,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA25|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA25|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -848,7 +832,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA25|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA25|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -864,7 +848,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA25|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA25|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -880,7 +864,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA25</TD>
+<TD >EXECUTE|ula|ULA25</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -896,7 +880,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA24|somador</TD>
+<TD >EXECUTE|ula|ULA24|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -912,7 +896,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA24|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA24|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -928,7 +912,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA24|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA24|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -944,7 +928,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA24|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA24|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -960,7 +944,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA24</TD>
+<TD >EXECUTE|ula|ULA24</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -976,7 +960,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA23|somador</TD>
+<TD >EXECUTE|ula|ULA23|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -992,7 +976,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA23|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA23|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1008,7 +992,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA23|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA23|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1024,7 +1008,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA23|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA23|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1040,7 +1024,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA23</TD>
+<TD >EXECUTE|ula|ULA23</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1056,7 +1040,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA22|somador</TD>
+<TD >EXECUTE|ula|ULA22|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1072,7 +1056,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA22|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA22|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1088,7 +1072,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA22|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA22|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1104,7 +1088,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA22|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA22|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1120,7 +1104,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA22</TD>
+<TD >EXECUTE|ula|ULA22</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1136,7 +1120,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA21|somador</TD>
+<TD >EXECUTE|ula|ULA21|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1152,7 +1136,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA21|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA21|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1168,7 +1152,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA21|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA21|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1184,7 +1168,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA21|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA21|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1200,7 +1184,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA21</TD>
+<TD >EXECUTE|ula|ULA21</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1216,7 +1200,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA20|somador</TD>
+<TD >EXECUTE|ula|ULA20|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1232,7 +1216,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA20|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA20|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1248,7 +1232,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA20|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA20|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1264,7 +1248,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA20|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA20|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1280,7 +1264,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA20</TD>
+<TD >EXECUTE|ula|ULA20</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1296,7 +1280,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA19|somador</TD>
+<TD >EXECUTE|ula|ULA19|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1312,7 +1296,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA19|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA19|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1328,7 +1312,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA19|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA19|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1344,7 +1328,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA19|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA19|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1360,7 +1344,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA19</TD>
+<TD >EXECUTE|ula|ULA19</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1376,7 +1360,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA18|somador</TD>
+<TD >EXECUTE|ula|ULA18|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1392,7 +1376,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA18|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA18|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1408,7 +1392,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA18|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA18|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1424,7 +1408,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA18|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA18|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1440,7 +1424,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA18</TD>
+<TD >EXECUTE|ula|ULA18</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1456,7 +1440,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA17|somador</TD>
+<TD >EXECUTE|ula|ULA17|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1472,7 +1456,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA17|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA17|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1488,7 +1472,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA17|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA17|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1504,7 +1488,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA17|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA17|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1520,7 +1504,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA17</TD>
+<TD >EXECUTE|ula|ULA17</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1536,7 +1520,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA16|somador</TD>
+<TD >EXECUTE|ula|ULA16|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1552,7 +1536,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA16|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA16|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1568,7 +1552,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA16|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA16|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1584,7 +1568,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA16|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA16|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1600,7 +1584,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA16</TD>
+<TD >EXECUTE|ula|ULA16</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1616,7 +1600,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA15|somador</TD>
+<TD >EXECUTE|ula|ULA15|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1632,7 +1616,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA15|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA15|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1648,7 +1632,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA15|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA15|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1664,7 +1648,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA15|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA15|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1680,7 +1664,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA15</TD>
+<TD >EXECUTE|ula|ULA15</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1696,7 +1680,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA14|somador</TD>
+<TD >EXECUTE|ula|ULA14|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1712,7 +1696,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA14|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA14|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1728,7 +1712,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA14|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA14|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1744,7 +1728,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA14|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA14|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1760,7 +1744,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA14</TD>
+<TD >EXECUTE|ula|ULA14</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1776,7 +1760,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA13|somador</TD>
+<TD >EXECUTE|ula|ULA13|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1792,7 +1776,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA13|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA13|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1808,7 +1792,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA13|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA13|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1824,7 +1808,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA13|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA13|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1840,7 +1824,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA13</TD>
+<TD >EXECUTE|ula|ULA13</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1856,7 +1840,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA12|somador</TD>
+<TD >EXECUTE|ula|ULA12|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1872,7 +1856,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA12|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA12|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1888,7 +1872,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA12|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA12|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1904,7 +1888,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA12|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA12|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1920,7 +1904,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA12</TD>
+<TD >EXECUTE|ula|ULA12</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -1936,7 +1920,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA11|somador</TD>
+<TD >EXECUTE|ula|ULA11|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1952,7 +1936,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA11|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA11|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1968,7 +1952,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA11|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA11|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -1984,7 +1968,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA11|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA11|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2000,7 +1984,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA11</TD>
+<TD >EXECUTE|ula|ULA11</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2016,7 +2000,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA10|somador</TD>
+<TD >EXECUTE|ula|ULA10|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2032,7 +2016,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA10|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA10|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2048,7 +2032,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA10|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA10|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2064,7 +2048,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA10|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA10|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2080,7 +2064,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA10</TD>
+<TD >EXECUTE|ula|ULA10</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2096,7 +2080,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA9|somador</TD>
+<TD >EXECUTE|ula|ULA9|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2112,7 +2096,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA9|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA9|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2128,7 +2112,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA9|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA9|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2144,7 +2128,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA9|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA9|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2160,7 +2144,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA9</TD>
+<TD >EXECUTE|ula|ULA9</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2176,7 +2160,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA8|somador</TD>
+<TD >EXECUTE|ula|ULA8|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2192,7 +2176,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA8|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA8|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2208,7 +2192,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA8|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA8|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2224,7 +2208,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA8|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA8|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2240,7 +2224,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA8</TD>
+<TD >EXECUTE|ula|ULA8</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2256,7 +2240,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA7|somador</TD>
+<TD >EXECUTE|ula|ULA7|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2272,7 +2256,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA7|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA7|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2288,7 +2272,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA7|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA7|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2304,7 +2288,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA7|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA7|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2320,7 +2304,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA7</TD>
+<TD >EXECUTE|ula|ULA7</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2336,7 +2320,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA6|somador</TD>
+<TD >EXECUTE|ula|ULA6|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2352,7 +2336,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA6|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA6|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2368,7 +2352,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA6|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA6|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2384,7 +2368,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA6|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA6|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2400,7 +2384,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA6</TD>
+<TD >EXECUTE|ula|ULA6</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2416,7 +2400,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA5|somador</TD>
+<TD >EXECUTE|ula|ULA5|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2432,7 +2416,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA5|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA5|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2448,7 +2432,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA5|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA5|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2464,7 +2448,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA5|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA5|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2480,7 +2464,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA5</TD>
+<TD >EXECUTE|ula|ULA5</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2496,7 +2480,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA4|somador</TD>
+<TD >EXECUTE|ula|ULA4|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2512,7 +2496,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA4|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA4|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2528,7 +2512,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA4|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA4|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2544,7 +2528,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA4|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA4|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2560,7 +2544,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA4</TD>
+<TD >EXECUTE|ula|ULA4</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2576,7 +2560,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA3|somador</TD>
+<TD >EXECUTE|ula|ULA3|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2592,7 +2576,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA3|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA3|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2608,7 +2592,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA3|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA3|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2624,7 +2608,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA3|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA3|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2640,7 +2624,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA3</TD>
+<TD >EXECUTE|ula|ULA3</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2656,7 +2640,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA2|somador</TD>
+<TD >EXECUTE|ula|ULA2|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2672,7 +2656,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA2|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA2|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2688,7 +2672,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA2|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA2|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2704,7 +2688,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA2|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA2|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2720,7 +2704,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA2</TD>
+<TD >EXECUTE|ula|ULA2</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2736,7 +2720,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA1|somador</TD>
+<TD >EXECUTE|ula|ULA1|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2752,7 +2736,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA1|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA1|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2768,7 +2752,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA1|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA1|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2784,7 +2768,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA1|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA1|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2800,7 +2784,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA1</TD>
+<TD >EXECUTE|ula|ULA1</TD>
 <TD >8</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2816,7 +2800,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA0|somador</TD>
+<TD >EXECUTE|ula|ULA0|somador</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2832,7 +2816,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA0|mux_inversorB</TD>
+<TD >EXECUTE|ula|ULA0|mux_inversorB</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2848,7 +2832,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA0|mux_inversorA</TD>
+<TD >EXECUTE|ula|ULA0|mux_inversorA</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2864,7 +2848,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA0|mux_seletor</TD>
+<TD >EXECUTE|ula|ULA0|mux_seletor</TD>
 <TD >6</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2880,7 +2864,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula|ULA0</TD>
+<TD >EXECUTE|ula|ULA0</TD>
 <TD >8</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2896,7 +2880,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ula</TD>
+<TD >EXECUTE|ula</TD>
 <TD >69</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -2912,7 +2896,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ULActrl</TD>
+<TD >EXECUTE|ULActrl</TD>
 <TD >13</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2928,7 +2912,167 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rom</TD>
+<TD >EXECUTE</TD>
+<TD >149</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >70</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >ID_EX</TD>
+<TD >159</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >156</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >DECODE|estensor_de_sinal</TD>
+<TD >17</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >DECODE|banco_reg</TD>
+<TD >49</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >64</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >DECODE|decoder_instru</TD>
+<TD >12</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >15</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >DECODE</TD>
+<TD >75</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >158</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >IF_ID</TD>
+<TD >67</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >64</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >FETCH|mux_jr</TD>
+<TD >65</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >FETCH|mux_jmp</TD>
+<TD >65</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >FETCH|mux_beq</TD>
+<TD >65</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >FETCH|rom</TD>
 <TD >32</TD>
 <TD >0</TD>
 <TD >26</TD>
@@ -2944,7 +3088,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >program_counter</TD>
+<TD >FETCH|program_counter</TD>
 <TD >35</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -2960,7 +3104,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >pc_inc_4</TD>
+<TD >FETCH|pc_inc_4</TD>
 <TD >32</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -2976,12 +3120,12 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >decoder_instru</TD>
-<TD >12</TD>
+<TD >FETCH</TD>
+<TD >100</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
-<TD >15</TD>
+<TD >96</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>

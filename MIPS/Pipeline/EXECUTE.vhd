@@ -10,7 +10,7 @@ entity EXECUTE is
 		ctrlEX : in std_logic_vector(9 downto 0);
 		ULA_in_A, mux_in_A, im_ext, pc_inc_4 : in std_logic_vector(larguraDados-1 downto 0);
 		flag_zero : out std_logic;
-		ula_out, pc_inc_4_im : out std_logic_vector(larguraDados-1 downto 0)
+		ula_out, pc_inc_4_im : out std_logic_vector(larguraDados-1 downto 0);
 		mux_out_rt_rd : out std_logic_vector(4 downto 0)
 	);
 end entity;
